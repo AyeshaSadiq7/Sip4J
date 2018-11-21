@@ -1,0 +1,1 @@
+/Users/ayeshasadiq/Documents/sip4j/runtime-sip4j-application/evmdd-smc -q <  /Users/ayeshasadiq/Documents/sip4j/runtime-sip4j-application/model.stm

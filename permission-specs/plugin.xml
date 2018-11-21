@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="PlugIn.HelloWorldView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+         
+         <objectContribution id="PlugIn.GAPCompUnit" objectClass="org.eclipse.jdt.core.ICompilationUnit">
+
+			<menu label="CONCUR" id="PlugIn.menu.GAPCompUnit">
+
+				<separator name="PlugIn.separator.GAPCompUnit"> </separator>
+	
+			</menu>
+
+		<action label="All Tests" id="EVMDD_SMC_ModelGenerator.action.alltest" menubarPath="PlugIn.menu.GAPCompUnit/PlugIn.separator.GAPCompUnit" enablesFor="*" class="plugin.Sip4JIFileAction"> </action>
+
+		<action label="Context-Null Test" id="EVMDD_SMC_ModelGenerator.action.Context-Null.Test" menubarPath="PlugIn.menu.GAPCompUnit/PlugIn.separator.GAPCompUnit" class="plugin.Sip4JIFileAction"> </action>
+
+		<action label="Context-RW Test" id="EVMDD_SMC_ModelGenerator.action.Context-RW.Test" menubarPath="PlugIn.menu.GAPCompUnit/PlugIn.separator.GAPCompUnit" class="plugin.Sip4JIFileAction"> </action>
+
+		<action label="Context-R Test" id="EVMDD_SMC_ModelGenerator.action.Context-R.Test" menubarPath="PlugIn.menu.GAPCompUnit/PlugIn.separator.GAPCompUnit" class="plugin.Sip4JIFileAction"> </action>
+
+		<action label="Context-N Test" id="EVMDD_SMC_ModelGenerator.action.Context-N.Test" menubarPath="PlugIn.menu.GAPCompUnit/PlugIn.separator.GAPCompUnit" class="plugin.Sip4JIFileAction"></action>
+		</objectContribution>
+		
+		<objectContribution
+            adaptable="false"
+            id="PlugIn.GAPPackage"
+            objectClass="org.eclipse.jdt.core.IPackageFragment">
+         <menu
+               id="PlugIn.menu.GAPPackage"
+               label="CONCUR">
+            <separator
+                  name="PlugIn.separator.GAPPackage">
+            </separator>
+         </menu>
+         <action
+               class="plugin.Sip4JIFileAction"
+               enablesFor="*"
+               id="EVMDD_SMC_ModelGenerator.action.alltest"
+               label="All Tests"
+               menubarPath="PlugIn.menu.GAPPackage/PlugIn.separator.GAPPackage">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-Null.Test"
+               label="Context Null Test"
+               menubarPath="PlugIn.menu.GAPPackage/PlugIn.separator.GAPPackage">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-RW.Test"
+               label="Context-RW Test"
+               menubarPath="PlugIn.menu.GAPPackage/PlugIn.separator.GAPPackage">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-R.Test"
+               label="Context-R Test"
+               menubarPath="PlugIn.menu.GAPPackage/PlugIn.separator.GAPPackage">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-N.Test"
+               label="Context-N Test"
+               menubarPath="PlugIn.menu.GAPPackage/PlugIn.separator.GAPPackage">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="PlugIn.GAPPackageRoot"
+            objectClass="org.eclipse.jdt.core.IPackageFragmentRoot">
+         <menu
+               id="PlugIn.menu.GAPPackageRoot"
+               label="CONCUR">
+            <separator
+                  name="PlugIn.separator.GAPPackageRoot">
+            </separator>
+         </menu>
+         <action
+               class="plugin.Sip4JIFileAction"
+               enablesFor="*"
+               id="EVMDD_SMC_ModelGenerator.action.alltest"
+               label="All Tests"
+               menubarPath="PlugIn.menu.GAPPackageRoot/PlugIn.separator.GAPPackageRoot">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-Null.Test"
+               label="Context Null Test"
+               menubarPath="PlugIn.menu.GAPPackageRoot/PlugIn.separator.GAPPackageRoot">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-RW.Test"
+               label="Context-RW Test"
+               menubarPath="PlugIn.menu.GAPPackageRoot/PlugIn.separator.GAPPackageRoot">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-R Test"
+               label="Context-R Test"
+               menubarPath="PlugIn.menu.GAPPackageRoot/PlugIn.separator.GAPPackageRoot">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-N.Test"
+               label="Context-N Test"
+               menubarPath="PlugIn.menu.GAPPackageRoot/PlugIn.separator.GAPPackageRoot">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="PlugIn.GAPProject"
+            objectClass="org.eclipse.jdt.core.IJavaProject">
+         <menu
+               id="PlugIn.menu.GAPProject"
+               label="CONCUR">
+            <separator
+                  name="PlugIn.separator.GAPProject">
+            </separator>
+         </menu>
+         <action
+               class="plugin.Sip4JIFileAction"
+               enablesFor="*"
+               id="EVMDD_SMC_ModelGenerator.action.alltest"            
+               label="All Tests"
+               menubarPath="PlugIn.menu.GAPProject/PlugIn.separator.GAPProject">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-Null.Test"
+               label="Context Null Test"
+               menubarPath="PlugIn.menu.GAPProject/PlugIn.separator.GAPProject">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-RW.Test"
+               label="Context-RW Test"
+               menubarPath="PlugIn.menu.GAPProject/PlugIn.separator.GAPProject">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-R.Test"
+               label="Context-R Test"
+               menubarPath="PlugIn.menu.GAPProject/PlugIn.separator.GAPProject">
+         </action>
+         <action
+               class="plugin.Sip4JIFileAction"
+               id="EVMDD_SMC_ModelGenerator.action.Context-N.Test"
+               label="Context-N Test"
+               menubarPath="PlugIn.menu.GAPProject/PlugIn.separator.GAPProject">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

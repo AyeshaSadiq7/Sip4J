@@ -1,0 +1,51 @@
+IVariableBinding b = node.resolveFieldBinding();
+		
+		String fName = node.getName().toString();
+		
+		String fType = b.getType().getQualifiedName().toString();
+		
+		String declarClass = "";
+		
+		String op = opp;
+		
+		boolean retExp = false;
+		
+		if(ifReturnedField(node))
+			retExp = true;
+		else
+			retExp = false;
+		
+		if(b.getType().getSuperclass()!= null){
+				
+			 if(b.getType().getSuperclass().isFromSource()){
+					
+			}
+		 }
+		 if (node.getParent().getNodeType() == ASTNode.PREFIX_EXPRESSION
+					|| node.getParent().getNodeType() == ASTNode.POSTFIX_EXPRESSION)
+				op = GlobalVariables.WRITE;
+		 
+		if (b.isField() == true){
+			
+			if(b.getDeclaringClass() != null) {
+					
+					if (b.getDeclaringClass().getTypeDeclaration()
+							.isFromSource()) {
+				
+							declarClass = b.getDeclaringClass().getQualifiedName();
+									
+							AST_Parser.addMRefField(fName, fType,
+											declarClass, op, expType, retExp);
+					}
+			}
+		}
+		else if (b.isParameter() == true) {
+					//if (b.getType().isPrimitive() == false) {
+						//if (AST_Parser.checkWrapperType(b.getType().getName()) == false) {
+		   if(b.getType().isFromSource() || b.getType().isArray()){		
+							
+			 int pos = b.getVariableId();
+							
+			  AST_Parser.addRefParameters(fName, fType,declarClass, pos, op,
+									expType,b.getDeclaringMethod().getName());
+			}
