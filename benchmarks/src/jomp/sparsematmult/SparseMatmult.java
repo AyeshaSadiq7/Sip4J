@@ -30,21 +30,7 @@ public class SparseMatmult
 	/* 10 iterations used to make kernel have roughly
 		same granulairty as other Scimark kernels. */
   
-  /*Method Name = test
-		  Vertex Name = y, Post Permissions = share, Pre-Permissions =share
-		  Vertex Name = val, Post Permissions = pure, Pre-Permissions =pure
-		  Vertex Name = row, Post Permissions = pure, Pre-Permissions =pure
-		  Vertex Name = col, Post Permissions = pure, Pre-Permissions =pure
-		  Vertex Name = x, Post Permissions = pure, Pre-Permissions =pure
-		  Vertex Name = SPARSE_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
-		  Vertex Name = ytotal, Post Permissions = share, Pre-Permissions =share
-		  Vertex Name = timers, Post Permissions = immutable, Pre-Permissions =immutable
-		  Vertex Name = on, Post Permissions = share, Pre-Permissions =share
-		  Vertex Name = name, Post Permissions = immutable, Pre-Permissions =immutable
-		  Vertex Name = start_time, Post Permissions = share, Pre-Permissions =share
-		  Vertex Name = time, Post Permissions = share, Pre-Permissions =share
-		  Vertex Name = calls, Post Permissions = immutable, Pre-Permissions =immutable*/
-  
+
 	public static void test( double y[], double val[], int row[],
 				int col[], double x[], int NUM_ITERATIONS)
 	{
