@@ -81,30 +81,3 @@ Ref-Var= area, Pre-Permissions=pure, Post Permissions=pure
 
 //////////////////////////////////////////////////////
 
-Class Name = SeqIntegral
-Method Name = main
-none java.lang.Double integral.SeqIntegral.x1 >> unique java.lang.Double integral.SeqIntegral.x1
-none java.lang.Double integral.SeqIntegral.x2 >> unique java.lang.Double integral.SeqIntegral.x2
-none java.lang.Double integral.SeqIntegral.area >> unique java.lang.Double integral.SeqIntegral.area
-Method Name = compute
-immutable java.lang.Double integral.SeqIntegral.x1 >> immutable java.lang.Double integral.SeqIntegral.x1
-immutable java.lang.Double integral.SeqIntegral.x2 >> immutable java.lang.Double integral.SeqIntegral.x2
-full java.lang.Double integral.SeqIntegral.area >> full java.lang.Double integral.SeqIntegral.area
-Method Name = f
-immutable java.lang.Double integral.SeqIntegral.x1 >> immutable java.lang.Double integral.SeqIntegral.x1
-immutable java.lang.Double integral.SeqIntegral.x2 >> immutable java.lang.Double integral.SeqIntegral.x2
-Method Name = display
-pure java.lang.Double integral.SeqIntegral.area >> pure java.lang.Double integral.SeqIntegral.area
-
-//////////////////////////////////////////////////////
-Class Name = SeqIntegral
-Method Name = main
-@Perm(requires="none(integral.SeqIntegral.x1) * none(integral.SeqIntegral.x2) * none(integral.SeqIntegral.area) in ALIVE", ensures= "unique(integral.SeqIntegral.x1) * unique(integral.SeqIntegral.x2) * unique(integral.SeqIntegral.area) in ALIVE")
-Method Name = compute
-@Perm(requires="immutable(integral.SeqIntegral.x1) * immutable(integral.SeqIntegral.x2) * full(integral.SeqIntegral.area) in ALIVE", ensures= "immutable(integral.SeqIntegral.x1) * immutable(integral.SeqIntegral.x2) * full(integral.SeqIntegral.area) in ALIVE")
-Method Name = f
-@Perm(requires="immutable(integral.SeqIntegral.x1) * immutable(integral.SeqIntegral.x2) in ALIVE", ensures= "immutable(integral.SeqIntegral.x1) * immutable(integral.SeqIntegral.x2) in ALIVE")
-Method Name = display
-@Perm(requires="pure(integral.SeqIntegral.area) in ALIVE", ensures= "pure(integral.SeqIntegral.area) in ALIVE")
-
-//////////////////////////////////////////////////////*/

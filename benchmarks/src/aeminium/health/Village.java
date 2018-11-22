@@ -16,9 +16,7 @@ public class Village {
 	public List<Patient> population = new ArrayList<Patient>();//  List of patients in a village
 	public Hosp hosp = new Hosp(); // hospitals in a village
 	
-	
-//Unique(this.hosp), unique(this.population), Unique(this.root), Full(this.level), Immutable(Health.sim_convalescence_time), Immutable(Health.sim_convalescence_p), Immutable(Health.sim_realloc_p),  Immutable(Health.sim_level), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time)  
-//->Unique(this.hosp), unique(this.population), Unique(this.root), Full(this.level), Immutable(Health.sim_convalescence_time), Immutable(Health.sim_convalescence_p), Immutable(Health.sim_realloc_p),  Immutable(Health.sim_level), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time)  
+
 	public void tick() {
 		this.checkPatientsInside();
 		this.checkPatientsAssess();
@@ -26,9 +24,8 @@ public class Village {
 		this.checkPatientsRealloc();
 		this.checkPatientsPopulation();
 	}
-	
-//  Unique(this.hosp.), Unique(this.population), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time) -> Unique(this.hosp),Unique(this.population), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time)
-	public void checkPatientsPopulation() {
+    
+    public void checkPatientsPopulation() {
 		List<Patient> rem = new ArrayList<Patient>(); 
 		for (Patient p : this.population) {
 			Random r = new Random(p.seed);
