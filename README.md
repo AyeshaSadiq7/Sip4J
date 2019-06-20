@@ -1,2 +1,2 @@
 # sip4j
-Statically inferring permission-based specifications for sequential Java programs
+Statically Inferring Access Permission Contracts for Sequential Java Programs
