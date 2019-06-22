@@ -32,7 +32,6 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
-import parser.MyClassLoader;
 import datautilities.Data_Generator;
 
 import uma.SMC.UserSelectedClassesAnalysis;
