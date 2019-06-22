@@ -79,7 +79,7 @@ public class Permission_Generation {
 						// generate permissions for every vertex
 								//assignPermissions(vertex, writeList,  readList, graph);
 							  //if(graph.getMgraphName().equals(GlobalVariables.MAIN)){
-								assignDBCPermissions(vertex, writeList,  readList, graph);
+								 assignDBCPermissions(vertex, writeList,  readList, graph);
 						     //}
 						}
 							   
@@ -141,19 +141,18 @@ public class Permission_Generation {
 	
 	}
  public static void assignDBCPermissions(E_MVertice vertex, ArrayList<String> writeList, ArrayList<String> readList, E_MethodGraph graph){
-		
-	//if(graph.getMgraphName().equals("buildTestData")){
-	 
+		//if(graph.getMgraphName().equals("cons")){	
+			
 	  if(checkFooInRead(readList) && !checkFooInWrite(writeList) && checkContextInRead(readList) &&  (!checkContextInWrite(writeList))){
 			  //System.out.println("Immutable Access = "+vertex.getVName());
-			  vertex.setPre_permissions("pure");// should be immutable
-			  vertex.setPost_permissions("pure");
+			  vertex.setPre_permissions("immutable");// should be immutable
+			  vertex.setPost_permissions("immutable");//changed on 23May 2013
 			 // graph.addVertices(vertex);
 		}
 		else if(checkFooInWrite(writeList) && checkContextInWrite(writeList)){
 			 // System.out.println("Share Access = "+vertex.getVName());
-			  vertex.setPre_permissions("full");// should be share
-			  vertex.setPost_permissions("full");
+			  vertex.setPre_permissions("share");// should be share
+			  vertex.setPost_permissions("share");
 			  //graph.addVertices(vertex);
 		  } 
 		  else if(checkFooInRead(readList) && !checkFooInWrite(writeList) && checkContextInWrite(writeList)){
@@ -162,16 +161,27 @@ public class Permission_Generation {
 				  vertex.setPost_permissions("pure");
 				  //graph.addVertices(vertex);
 		  }
-		 else if(checkFooInWrite(writeList) && checkContextInWrite(writeList) == false && checkContextInRead(readList) == false){
+		 else if(checkFooInWrite(writeList) && checkContextInWrite(writeList) == false && checkContextInRead(readList) == false && vertex.getRefMethod().getMgraphName().equals(GlobalVariables.MAIN) == false){
 			 //if(vertex.getRefMethod().getMgraphName().equals(GlobalVariables.MAIN) == false){
-			     if(vertex.getExpType() == ASTNode.CLASS_INSTANCE_CREATION || vertex.getExpType() == ASTNode.ARRAY_INITIALIZER){
-			 		 vertex.setPre_permissions("none");// revert back to none
+			 	if(vertex.getExpType() == ASTNode.CLASS_INSTANCE_CREATION || vertex.getExpType() == ASTNode.ARRAY_INITIALIZER 
+			    		 || vertex.getExpType() == ASTNode.ARRAY_CREATION){
+			 		 vertex.setPre_permissions("unique");// toggle between none and unique
 			 		 vertex.setPost_permissions("unique");
-		 			}
-			      else if(vertex.getExpType() == ASTNode.NULL_LITERAL){
+		 		}
+			   else if(vertex.getExpType() == ASTNode.NULL_LITERAL){
+			    	  /*if(graph.getDeclClass().equals(graph.getMgraphName())){// This is added to check null pointer exceptions on 18th June
+			    		     vertex.setPre_permissions(""); 
+				 			 vertex.setPost_permissions("");
+			    	  }
+			    	  else{*/
 			 			 vertex.setPre_permissions("unique"); 
 			 			 vertex.setPost_permissions("unique");
-		 			}
+			    	 // }
+		 		}
+			   else{
+				     vertex.setPre_permissions("unique");// toggle between none and unique
+			 		 vertex.setPost_permissions("unique");
+			   }
 			 //}
 			 // graph.addVertices(vertex);
 		  }
@@ -182,17 +192,16 @@ public class Permission_Generation {
 			  //graph.addVertices(vertex);
 		  }
 		 else if((checkFooInRead(readList) || checkFooInWrite(writeList)) && checkContextInWrite(writeList) == false && checkContextInRead(readList) == false 
-				  && vertex.getRefMethod().getMgraphName().equals(GlobalVariables.MAIN)){
-			  vertex.setPre_permissions("none");
-			  vertex.setPost_permissions("unique");
+				  && (vertex.getRefMethod().getMgraphName().equals(GlobalVariables.MAIN) || vertex.getRefMethod().getMgraphName().equals(GlobalVariables.JGFrun))){
+			      vertex.setPre_permissions("unique");//can be revert back to original permission i.e. none
+			      vertex.setPost_permissions("unique");
 		  }
 		  else{
 			  vertex.setPre_permissions("none");
 			  vertex.setPost_permissions("none");
 		  }
-	//}
-		
-		}
+		//}
+	}
 	public static boolean checkFooInRead(ArrayList<String> arraylist) {
 		
 		boolean flag = false;

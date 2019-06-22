@@ -115,6 +115,28 @@ public class Parser_Utilities{
 	    //create the pulse output file
 		File file = createPulseFileInDir(folder);
 		
+		
+		return file;
+		
+		
+	}
+	public static File createAnnotationFile() throws IOException{
+		
+		//String folder= workspace.getRoot().getLocation().toFile().getPath().toString();
+		
+		//LinkedList<String> sipOutput = new LinkedList<String>();
+	
+		IProject[] projects = Workspace_Utilities.getWorkspaceProjects();
+		
+		IProject annProj = getAnnotationProject(projects);
+		
+		IFolder destination = annProj.getFolder("src/java_annotations");
+		
+		String folder = destination.getLocation().toString();
+		
+	    //create the pulse output file
+		File file = createAnnotationFileInDir(folder);
+		
 		return file;
 		
 		
@@ -152,6 +174,18 @@ public class Parser_Utilities{
 		}
 		return pulseProj;
 	}
+	public static IProject getAnnotationProject(IProject[] projects) {
+		//IFolder pulseTest = null;
+		IProject annoProj=null;
+		for(IProject proj: projects){
+			//pulseTest = proj.getFolder("output");
+			if(proj.getName().toString().equals("TestCase")){
+				annoProj = proj;
+				
+			}
+		}
+		return annoProj;
+	}
 			
     public static File createPulseFileInDir(String path){
 
@@ -177,6 +211,31 @@ public class Parser_Utilities{
 	}
 	return file;
     }
+    public static File createAnnotationFileInDir(String path){
+
+    	
+    	File file = null;
+    	
+    	try {
+        		 
+    		   file = new File(path+"/TestExample.java");  
+    	     	   
+    		   if(Files.deleteIfExists(file.toPath())){
+    			   System.out.println("existing file is deleted");
+    		   }
+    		   if (file.createNewFile()){
+    		     System.out.println("File is created!");
+    		    }
+    	      else{
+    	         System.out.println("File already exists.");
+    	      }
+          
+        	} catch (IOException e) {
+    	      e.printStackTrace();
+    	}
+    	return file;
+        }
+
 
 
 public static void openPdfFile(){

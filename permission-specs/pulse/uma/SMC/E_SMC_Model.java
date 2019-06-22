@@ -65,7 +65,7 @@ public class E_SMC_Model {
 				sTestType = testType;
 				
 				pkg = _pkg;
-				//FileWriter fstream = new FileWriter("/Users/ijazahmed/sal/model.stm");
+
 				IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
 				
 				String folder= workspace.getRoot().getLocation().toFile().getPath().toString();
@@ -529,11 +529,26 @@ public class E_SMC_Model {
 				    tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 1"+
 				    tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = "+(K+1)
 				    );
-
+		else if (ap.compareToIgnoreCase("SHARE")==0)
+			  out.write(
+					  	tab+"/\\ tkrB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" - 1"+
+					    tab+"/\\ tkwB_"+className+"_"+objectIndex+"'"+" = 0"+
+					    tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 1"+
+					    tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = "+(K+1)
+					    );
 		else if (ap.compareToIgnoreCase("PURE")==0)
 			out.write( 
 					tab+"/\\ tkrB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" - 1"+
-					tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 1"
+				   tab+"/\\ tkwB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" - 1"+// added by me
+				  tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 1"+
+				  tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 1"
+					);
+		else if (ap.compareToIgnoreCase("IMMUTABLE")==0)
+			out.write( 
+					tab+"/\\ tkrB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" - 1"+
+				   tab+"/\\ tkwB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" - 1"+// added by me
+				  tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 1"+
+				  tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 1"
 					);
 	}
 	private static int getAPId(String ap) {
@@ -749,12 +764,28 @@ private static void updateStateInvariants(E_Class _class,String methodName, Stri
 				    tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"+
 				    tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"
 				    );
-		
+		else if (ap.compareToIgnoreCase("SHARE")==0)// added by ayesha
+			  out.write(
+					  	tab+"/\\ tkrB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" + 1"+
+					    tab+"/\\ tkwB_"+className+"_"+objectIndex+"'"+" = "+(K+1)+
+					    tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"+
+					    tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"
+					    );
 		else if (ap.compareToIgnoreCase("PURE")==0)
 			out.write(
 					tab+"/\\ tkrB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" + 1"+
-				    tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"
+					tab+"/\\ tkwB_"+className+"_"+objectIndex+"'"+" = "+"tkwB_"+className+"_"+objectIndex+" + 1"+// added by ayesha
+				    tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"+
+				    tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"
 				    );
+		else if (ap.compareToIgnoreCase("IMMUTABLE")==0)
+			out.write(
+					tab+"/\\ tkrB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" + 1"+
+					tab+"/\\ tkwB_"+className+"_"+objectIndex+"'"+" = "+"tkwB_"+className+"_"+objectIndex+" + 1"+// added by ayesha
+				    tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"+
+				    tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 0"
+				    );
+		
 	}
 
 	private static void updateState(String methodName, String state,E_Class _class, Integer objectIndex) throws IOException {
@@ -1008,9 +1039,20 @@ private static void updateStateInvariants(E_Class _class,String methodName, Stri
 				  tab+"/\\ tkrB_"+_class.getName()+"_"+objectIndex+" > 0"+
 				  tab+"/\\ tkwB_"+_class.getName()+"_"+objectIndex+" = "+(K+1)
 				  );
+		else if (ap.compareToIgnoreCase("SHARE")==0)
+			out.write(
+				  tab+"/\\ tkrB_"+_class.getName()+"_"+objectIndex+" > 0"+
+				  tab+"/\\ tkwB_"+_class.getName()+"_"+objectIndex+" = "+(K+1)//added by ayesha
+				  );
 		else if (ap.compareToIgnoreCase("PURE")==0)
 			out.write(
-					tab+"/\\ tkrB_"+_class.getName()+"_"+objectIndex+" > 0"
+					tab+"/\\ tkrB_"+_class.getName()+"_"+objectIndex+" > 0"+
+					tab+"/\\ tkwB_"+_class.getName()+"_"+objectIndex+" > 0"// added by ayesha
+					);
+		else if (ap.compareToIgnoreCase("IMMUTABLE")==0)
+			out.write(
+					tab+"/\\ tkrB_"+_class.getName()+"_"+objectIndex+" > 0"+
+					tab+"/\\ tkwB_"+_class.getName()+"_"+objectIndex+" > 0"// added by ayesha
 					);
 	}
 	

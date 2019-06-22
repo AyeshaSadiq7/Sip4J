@@ -111,7 +111,7 @@ public class UserSelectedClassesAnalysis {
 			}
 			
 			E_SMC_Model.generateSMCmodel_Plugin(EVMDD_SMC_Generator.getPkgObject(),test);
-			starttime=getTime();	
+			starttime = getTime();	
 			//callModelCheckerThroughPlugin(); //uncomment later
 			callModelCheckerThroughCommandLine();//uncomment later
 			
@@ -171,14 +171,14 @@ public class UserSelectedClassesAnalysis {
 		String folder= workspace.getRoot().getLocation().toFile().getPath().toString();
 		E_OutputLatex.reset();
 		
-		//create the shell file
-		FileWriter fshell = new FileWriter(folder+"/location.sh");
+		   //create the shell file
+		   FileWriter fshell = new FileWriter(folder+"/location.sh");
 		
-		fshell.write(folder+"/evmdd-smc -q"+" < "+folder+"/model.stm");
+		   fshell.write(folder+"/evmdd-smc -q"+" < "+folder+"/model.stm");
 		
-		fshell.close();
+		   fshell.close();
 		
-		    Process p1=Runtime.getRuntime().exec("chmod 777 " + "./location.sh"); 
+		    Process p1 = Runtime.getRuntime().exec("chmod 777 " + "./location.sh"); 
 		   /*Process p1 = Runtime.getRuntime().exec(folder+"/location.sh"); 
 		    InputStream s = p1.getInputStream();
 	        InputStreamReader ss = new InputStreamReader(s);
@@ -364,7 +364,7 @@ public class UserSelectedClassesAnalysis {
 		    	FileWriter fshell = new FileWriter(folder+"/location.sh");
 				fshell.write(folder+"/evmdd-smc -q <  "+folder+"/model.stm");
 				fshell.close();
-				Process p1=Runtime.getRuntime().exec("chmod 777 "+folder+"/location.sh" ); 
+				Process p1 = Runtime.getRuntime().exec("chmod 777 "+folder+"/location.sh" ); 
 				p1.waitFor();
 				
 				//execute the shell file
@@ -418,7 +418,7 @@ public class UserSelectedClassesAnalysis {
 	
 	private static void printMethodMetrics() {
 		
-		System.out.println("The total number of unreachable methods are :"+E_GrarphWriter.getNumberofUnReachableMethods());
+		//System.out.println("The total number of unreachable methods are :"+E_GrarphWriter.getNumberofUnReachableMethods());
 		E_GrarphWriter.setNumberofUnReachableMethods();
 		
 	}
@@ -437,7 +437,7 @@ public class UserSelectedClassesAnalysis {
 		
 	    try {
 	    	ArrayList<String> command = new ArrayList<String>();
-	    	command.add("java /Users/ijazahmed/Documents/workspace/EVMDD_SMC_ModelGenerator/bin/pt/uma/EVMDD_SMC/abc.class");  // this is exe 
+	    	command.add("java/Users/ijazahmed/Documents/workspace/EVMDD_SMC_ModelGenerator/bin/pt/uma/EVMDD_SMC/abc.class");  // this is exe 
 	    	//command.add("/Users/ijazahmed/model.stm"); // this is input to that exe
 	    	ProcessBuilder builder = new ProcessBuilder(command);
 	    	final Process p = builder.start();

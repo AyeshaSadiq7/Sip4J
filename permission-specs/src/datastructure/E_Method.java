@@ -1,8 +1,12 @@
 package datastructure;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
+import org.eclipse.jdt.core.dom.Block;
+import org.eclipse.jdt.core.dom.Expression;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 
 //Set of Declared Methods
@@ -15,14 +19,18 @@ public class E_Method implements Cloneable {
 	private String declClassQName;// declaring class Qualified Name 
 	private boolean isConstr;
 	private String modifier;
+	private List<Expression> st;
+	private List<String> state;
+	
 	private LinkedList<E_MParameter> parameters; // parameters list
 	private LinkedList<E_MRefParameter> refparams;// parameters that represents class fields
-	private LinkedList<E_MStatements> statements;// set of method statements
+	private LinkedList<E_MStatements> s;// set of method statements
 	private LinkedList<E_MRefField> refVariables; // a data structure that stores all the class fields, class objects and parameters accessed inside method
-	private LinkedList<E_MInvokedMethod> subMethods; // Sub methods called inside a method
+	private LinkedList<E_MInvokedMethod> subMethods; // methods called inside a method
 	private LinkedList<E_MLocalVariable> localvariables;// variables declared inside a method
 	private E_Object qualifyingObject; // if any
 	private String methodsignature = "";
+	
 	
 	//private String methodSpecifications;
 	// LinkedList<E_Specification> requires;
@@ -30,14 +38,15 @@ public class E_Method implements Cloneable {
 	// LinkedList<String> concurrentMethods;
 
 	public E_Method() {
-		
 		parameters = new LinkedList<E_MParameter>();
 		subMethods = new LinkedList<E_MInvokedMethod>();
-		statements = new LinkedList<E_MStatements>();
+		s = new LinkedList<E_MStatements>();
+		state = new LinkedList<String>();
 		refVariables = new LinkedList<E_MRefField>();
 		localvariables = new LinkedList<E_MLocalVariable>();
 		refparams = new LinkedList<E_MRefParameter>();
 		qualifyingObject = null;// receiver object
+		
 		isConstr = false;
 		
 	}
@@ -52,7 +61,7 @@ public class E_Method implements Cloneable {
         E_Method method = (E_Method) o;
         return method.identifier.equals(identifier) &&
         		method.getDeclClassQName().equals(declClassQName)
-        		&&method.getMethodSignatures().equals(methodsignature);
+        		&& method.getMethodSignatures().equals(methodsignature);
         }
 
     @Override
@@ -109,7 +118,7 @@ public class E_Method implements Cloneable {
 	}
 
 	public LinkedList<E_MStatements> getStatements() {
-		return statements;
+		return s;
 	}
 
 	public LinkedList<E_MRefParameter> getRefparams() {
@@ -121,7 +130,7 @@ public class E_Method implements Cloneable {
 	}
 
 	public void addStatements(E_MStatements statement) {
-		statements.add(statement);
+		s.add(statement);
 	}
 
 	public LinkedList<E_MInvokedMethod> getSubMethods() {
@@ -189,7 +198,20 @@ public class E_Method implements Cloneable {
 		this.modifier = mod;
 	}
 	
-	
+	public List<Expression> getSt() {
+		return st;
+	}
+	public void addSt(Expression s) {
+		this.st.add(s);
+	}
+	public List<String> getState() {
+		return state;
+	}
+	public void addState(List<String> state) {
+		this.state= state;
+	}
+
+
 
 	/*
 	 * public LinkedList<E_Specification> getRequiresAP_TS(){ return requires; }

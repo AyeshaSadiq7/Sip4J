@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g 2018-11-19 11:42:26
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g 2019-04-08 15:29:33
 
 package uma.SMC;
 
@@ -88,15 +88,15 @@ public class PluralParser extends Parser {
         
 
     public String[] getTokenNames() { return PluralParser.tokenNames; }
-    public String getGrammarFileName() { return "/Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g"; }
+    public String getGrammarFileName() { return "/Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g"; }
 
 
 
     // $ANTLR start "jmlSpecifications"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:88:1: jmlSpecifications : ( jmlClassSpecifications | jmlMethodSpecification );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:88:1: jmlSpecifications : ( jmlClassSpecifications | jmlMethodSpecification );
     public final void jmlSpecifications() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:88:18: ( jmlClassSpecifications | jmlMethodSpecification )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:88:18: ( jmlClassSpecifications | jmlMethodSpecification )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -114,7 +114,7 @@ public class PluralParser extends Parser {
             }
             switch (alt1) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:88:20: jmlClassSpecifications
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:88:20: jmlClassSpecifications
                     {
                     pushFollow(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071);
                     jmlClassSpecifications();
@@ -125,7 +125,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:88:43: jmlMethodSpecification
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:88:43: jmlMethodSpecification
                     {
                     pushFollow(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073);
                     jmlMethodSpecification();
@@ -150,10 +150,10 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlClassSpecifications"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:91:1: jmlClassSpecifications : ( jmlGhostDeclaration | jmlGhostInv );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:91:1: jmlClassSpecifications : ( jmlGhostDeclaration | jmlGhostInv );
     public final void jmlClassSpecifications() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:91:23: ( jmlGhostDeclaration | jmlGhostInv )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:91:23: ( jmlGhostDeclaration | jmlGhostInv )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -171,7 +171,7 @@ public class PluralParser extends Parser {
             }
             switch (alt2) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:91:25: jmlGhostDeclaration
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:91:25: jmlGhostDeclaration
                     {
                     pushFollow(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081);
                     jmlGhostDeclaration();
@@ -182,7 +182,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:91:45: jmlGhostInv
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:91:45: jmlGhostInv
                     {
                     pushFollow(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083);
                     jmlGhostInv();
@@ -207,13 +207,13 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlGhostDeclaration"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:93:1: jmlGhostDeclaration : GHOST INT dim= ID SEMICOLON ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:93:1: jmlGhostDeclaration : GHOST INT dim= ID SEMICOLON ;
     public final void jmlGhostDeclaration() throws RecognitionException {
         Token dim=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:93:20: ( GHOST INT dim= ID SEMICOLON )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:93:22: GHOST INT dim= ID SEMICOLON
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:93:20: ( GHOST INT dim= ID SEMICOLON )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:93:22: GHOST INT dim= ID SEMICOLON
             {
             match(input,GHOST,FOLLOW_GHOST_in_jmlGhostDeclaration1090); 
             match(input,INT,FOLLOW_INT_in_jmlGhostDeclaration1092); 
@@ -238,14 +238,14 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlGhostInv"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:97:1: jmlGhostInv : INVARIANT low= NUMBERS LESSTHANEQUAL ID ANDD ID LESSTHANEQUAL high= NUMBERS SEMICOLON ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:97:1: jmlGhostInv : INVARIANT low= NUMBERS LESSTHANEQUAL ID ANDD ID LESSTHANEQUAL high= NUMBERS SEMICOLON ;
     public final void jmlGhostInv() throws RecognitionException {
         Token low=null;
         Token high=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:97:12: ( INVARIANT low= NUMBERS LESSTHANEQUAL ID ANDD ID LESSTHANEQUAL high= NUMBERS SEMICOLON )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:97:14: INVARIANT low= NUMBERS LESSTHANEQUAL ID ANDD ID LESSTHANEQUAL high= NUMBERS SEMICOLON
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:97:12: ( INVARIANT low= NUMBERS LESSTHANEQUAL ID ANDD ID LESSTHANEQUAL high= NUMBERS SEMICOLON )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:97:14: INVARIANT low= NUMBERS LESSTHANEQUAL ID ANDD ID LESSTHANEQUAL high= NUMBERS SEMICOLON
             {
             match(input,INVARIANT,FOLLOW_INVARIANT_in_jmlGhostInv1106); 
             low=(Token)match(input,NUMBERS,FOLLOW_NUMBERS_in_jmlGhostInv1111); 
@@ -277,15 +277,15 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlMethodSpecification"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:1: jmlMethodSpecification : JMLSTART PUBLIC_BEHAVIOR ( REQUIRES jmlRequires SEMICOLON )? ( jmlAssign )? ( jmlEnsures )? JMLEND ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:1: jmlMethodSpecification : JMLSTART PUBLIC_BEHAVIOR ( REQUIRES jmlRequires SEMICOLON )? ( jmlAssign )? ( jmlEnsures )? JMLEND ;
     public final void jmlMethodSpecification() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:23: ( JMLSTART PUBLIC_BEHAVIOR ( REQUIRES jmlRequires SEMICOLON )? ( jmlAssign )? ( jmlEnsures )? JMLEND )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:25: JMLSTART PUBLIC_BEHAVIOR ( REQUIRES jmlRequires SEMICOLON )? ( jmlAssign )? ( jmlEnsures )? JMLEND
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:23: ( JMLSTART PUBLIC_BEHAVIOR ( REQUIRES jmlRequires SEMICOLON )? ( jmlAssign )? ( jmlEnsures )? JMLEND )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:25: JMLSTART PUBLIC_BEHAVIOR ( REQUIRES jmlRequires SEMICOLON )? ( jmlAssign )? ( jmlEnsures )? JMLEND
             {
             match(input,JMLSTART,FOLLOW_JMLSTART_in_jmlMethodSpecification1136); 
             match(input,PUBLIC_BEHAVIOR,FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138); 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:51: ( REQUIRES jmlRequires SEMICOLON )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:51: ( REQUIRES jmlRequires SEMICOLON )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -294,7 +294,7 @@ public class PluralParser extends Parser {
             }
             switch (alt3) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:52: REQUIRES jmlRequires SEMICOLON
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:52: REQUIRES jmlRequires SEMICOLON
                     {
                     match(input,REQUIRES,FOLLOW_REQUIRES_in_jmlMethodSpecification1142); 
                     pushFollow(FOLLOW_jmlRequires_in_jmlMethodSpecification1144);
@@ -309,7 +309,7 @@ public class PluralParser extends Parser {
 
             }
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:86: ( jmlAssign )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:86: ( jmlAssign )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -318,7 +318,7 @@ public class PluralParser extends Parser {
             }
             switch (alt4) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:87: jmlAssign
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:87: jmlAssign
                     {
                     pushFollow(FOLLOW_jmlAssign_in_jmlMethodSpecification1152);
                     jmlAssign();
@@ -331,7 +331,7 @@ public class PluralParser extends Parser {
 
             }
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:99: ( jmlEnsures )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:99: ( jmlEnsures )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -340,7 +340,7 @@ public class PluralParser extends Parser {
             }
             switch (alt5) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:100: jmlEnsures
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:104:100: jmlEnsures
                     {
                     pushFollow(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157);
                     jmlEnsures();
@@ -370,10 +370,10 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlRequires"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:1: jmlRequires : ( jmlReq | jmlOrReq | jmlLessThanEqualReq );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:1: jmlRequires : ( jmlReq | jmlOrReq | jmlLessThanEqualReq );
     public final void jmlRequires() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:12: ( jmlReq | jmlOrReq | jmlLessThanEqualReq )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:12: ( jmlReq | jmlOrReq | jmlLessThanEqualReq )
             int alt6=3;
             int LA6_0 = input.LA(1);
 
@@ -424,7 +424,7 @@ public class PluralParser extends Parser {
             }
             switch (alt6) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:13: jmlReq
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:13: jmlReq
                     {
                     pushFollow(FOLLOW_jmlReq_in_jmlRequires1167);
                     jmlReq();
@@ -435,7 +435,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:20: jmlOrReq
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:20: jmlOrReq
                     {
                     pushFollow(FOLLOW_jmlOrReq_in_jmlRequires1169);
                     jmlOrReq();
@@ -446,7 +446,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:29: jmlLessThanEqualReq
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:106:29: jmlLessThanEqualReq
                     {
                     pushFollow(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171);
                     jmlLessThanEqualReq();
@@ -471,18 +471,18 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlOrReq"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:1: jmlOrReq : jmlReq ( OR jmlReq )+ ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:1: jmlOrReq : jmlReq ( OR jmlReq )+ ;
     public final void jmlOrReq() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:9: ( jmlReq ( OR jmlReq )+ )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:11: jmlReq ( OR jmlReq )+
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:9: ( jmlReq ( OR jmlReq )+ )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:11: jmlReq ( OR jmlReq )+
             {
             pushFollow(FOLLOW_jmlReq_in_jmlOrReq1178);
             jmlReq();
 
             state._fsp--;
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:18: ( OR jmlReq )+
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:18: ( OR jmlReq )+
             int cnt7=0;
             loop7:
             do {
@@ -496,7 +496,7 @@ public class PluralParser extends Parser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:19: OR jmlReq
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:108:19: OR jmlReq
             	    {
             	    match(input,OR,FOLLOW_OR_in_jmlOrReq1181); 
             	    pushFollow(FOLLOW_jmlReq_in_jmlOrReq1183);
@@ -533,13 +533,13 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlLessThanEqualReq"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:110:1: jmlLessThanEqualReq : ID LESSTHANEQUAL tstate= NUMBERS ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:110:1: jmlLessThanEqualReq : ID LESSTHANEQUAL tstate= NUMBERS ;
     public final void jmlLessThanEqualReq() throws RecognitionException {
         Token tstate=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:110:20: ( ID LESSTHANEQUAL tstate= NUMBERS )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:110:22: ID LESSTHANEQUAL tstate= NUMBERS
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:110:20: ( ID LESSTHANEQUAL tstate= NUMBERS )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:110:22: ID LESSTHANEQUAL tstate= NUMBERS
             {
             match(input,ID,FOLLOW_ID_in_jmlLessThanEqualReq1192); 
             match(input,LESSTHANEQUAL,FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194); 
@@ -568,13 +568,13 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlReq"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:119:1: jmlReq : ID EQUALOPERATOR strState= NUMBERS ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:119:1: jmlReq : ID EQUALOPERATOR strState= NUMBERS ;
     public final void jmlReq() throws RecognitionException {
         Token strState=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:119:7: ( ID EQUALOPERATOR strState= NUMBERS )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:119:9: ID EQUALOPERATOR strState= NUMBERS
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:119:7: ( ID EQUALOPERATOR strState= NUMBERS )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:119:9: ID EQUALOPERATOR strState= NUMBERS
             {
             match(input,ID,FOLLOW_ID_in_jmlReq1207); 
             match(input,EQUALOPERATOR,FOLLOW_EQUALOPERATOR_in_jmlReq1209); 
@@ -599,10 +599,10 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlEnsures"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:124:1: jmlEnsures : ( jmlEns | jmlOldEns );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:124:1: jmlEnsures : ( jmlEns | jmlOldEns );
     public final void jmlEnsures() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:124:11: ( jmlEns | jmlOldEns )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:124:11: ( jmlEns | jmlOldEns )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -650,7 +650,7 @@ public class PluralParser extends Parser {
             }
             switch (alt8) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:124:12: jmlEns
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:124:12: jmlEns
                     {
                     pushFollow(FOLLOW_jmlEns_in_jmlEnsures1221);
                     jmlEns();
@@ -661,7 +661,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:124:19: jmlOldEns
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:124:19: jmlOldEns
                     {
                     pushFollow(FOLLOW_jmlOldEns_in_jmlEnsures1223);
                     jmlOldEns();
@@ -686,14 +686,14 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlOldEns"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:1: jmlOldEns : ENSURES ID EQUALOPERATOR OLD LSBRACKET ID RSBRACKET (ope= PLUSMINUSOPERATOR num= NUMBERS )? SEMICOLON ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:1: jmlOldEns : ENSURES ID EQUALOPERATOR OLD LSBRACKET ID RSBRACKET (ope= PLUSMINUSOPERATOR num= NUMBERS )? SEMICOLON ;
     public final void jmlOldEns() throws RecognitionException {
         Token ope=null;
         Token num=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:10: ( ENSURES ID EQUALOPERATOR OLD LSBRACKET ID RSBRACKET (ope= PLUSMINUSOPERATOR num= NUMBERS )? SEMICOLON )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:11: ENSURES ID EQUALOPERATOR OLD LSBRACKET ID RSBRACKET (ope= PLUSMINUSOPERATOR num= NUMBERS )? SEMICOLON
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:10: ( ENSURES ID EQUALOPERATOR OLD LSBRACKET ID RSBRACKET (ope= PLUSMINUSOPERATOR num= NUMBERS )? SEMICOLON )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:11: ENSURES ID EQUALOPERATOR OLD LSBRACKET ID RSBRACKET (ope= PLUSMINUSOPERATOR num= NUMBERS )? SEMICOLON
             {
             match(input,ENSURES,FOLLOW_ENSURES_in_jmlOldEns1229); 
             match(input,ID,FOLLOW_ID_in_jmlOldEns1231); 
@@ -702,7 +702,7 @@ public class PluralParser extends Parser {
             match(input,LSBRACKET,FOLLOW_LSBRACKET_in_jmlOldEns1237); 
             match(input,ID,FOLLOW_ID_in_jmlOldEns1239); 
             match(input,RSBRACKET,FOLLOW_RSBRACKET_in_jmlOldEns1241); 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:63: (ope= PLUSMINUSOPERATOR num= NUMBERS )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:63: (ope= PLUSMINUSOPERATOR num= NUMBERS )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -711,7 +711,7 @@ public class PluralParser extends Parser {
             }
             switch (alt9) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:64: ope= PLUSMINUSOPERATOR num= NUMBERS
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:126:64: ope= PLUSMINUSOPERATOR num= NUMBERS
                     {
                     ope=(Token)match(input,PLUSMINUSOPERATOR,FOLLOW_PLUSMINUSOPERATOR_in_jmlOldEns1246); 
                     num=(Token)match(input,NUMBERS,FOLLOW_NUMBERS_in_jmlOldEns1250); 
@@ -746,13 +746,13 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlEns"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:136:1: jmlEns : ENSURES ID EQUALOPERATOR strState= NUMBERS SEMICOLON ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:136:1: jmlEns : ENSURES ID EQUALOPERATOR strState= NUMBERS SEMICOLON ;
     public final void jmlEns() throws RecognitionException {
         Token strState=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:136:7: ( ENSURES ID EQUALOPERATOR strState= NUMBERS SEMICOLON )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:136:9: ENSURES ID EQUALOPERATOR strState= NUMBERS SEMICOLON
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:136:7: ( ENSURES ID EQUALOPERATOR strState= NUMBERS SEMICOLON )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:136:9: ENSURES ID EQUALOPERATOR strState= NUMBERS SEMICOLON
             {
             match(input,ENSURES,FOLLOW_ENSURES_in_jmlEns1263); 
             match(input,ID,FOLLOW_ID_in_jmlEns1265); 
@@ -779,16 +779,16 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "jmlAssign"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:1: jmlAssign : ASSIGNABLE (strPerm= '\\\\everything' | strPerm= '\\\\nothing' | strPerm= ID ) SEMICOLON ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:1: jmlAssign : ASSIGNABLE (strPerm= '\\\\everything' | strPerm= '\\\\nothing' | strPerm= ID ) SEMICOLON ;
     public final void jmlAssign() throws RecognitionException {
         Token strPerm=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:10: ( ASSIGNABLE (strPerm= '\\\\everything' | strPerm= '\\\\nothing' | strPerm= ID ) SEMICOLON )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:11: ASSIGNABLE (strPerm= '\\\\everything' | strPerm= '\\\\nothing' | strPerm= ID ) SEMICOLON
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:10: ( ASSIGNABLE (strPerm= '\\\\everything' | strPerm= '\\\\nothing' | strPerm= ID ) SEMICOLON )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:11: ASSIGNABLE (strPerm= '\\\\everything' | strPerm= '\\\\nothing' | strPerm= ID ) SEMICOLON
             {
             match(input,ASSIGNABLE,FOLLOW_ASSIGNABLE_in_jmlAssign1280); 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:22: (strPerm= '\\\\everything' | strPerm= '\\\\nothing' | strPerm= ID )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:22: (strPerm= '\\\\everything' | strPerm= '\\\\nothing' | strPerm= ID )
             int alt10=3;
             switch ( input.LA(1) ) {
             case EVERYTHING:
@@ -815,21 +815,21 @@ public class PluralParser extends Parser {
 
             switch (alt10) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:23: strPerm= '\\\\everything'
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:23: strPerm= '\\\\everything'
                     {
                     strPerm=(Token)match(input,EVERYTHING,FOLLOW_EVERYTHING_in_jmlAssign1285); 
 
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:46: strPerm= '\\\\nothing'
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:46: strPerm= '\\\\nothing'
                     {
                     strPerm=(Token)match(input,NOTHING,FOLLOW_NOTHING_in_jmlAssign1289); 
 
                     }
                     break;
                 case 3 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:66: strPerm= ID
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:141:66: strPerm= ID
                     {
                     strPerm=(Token)match(input,ID,FOLLOW_ID_in_jmlAssign1293); 
 
@@ -865,10 +865,10 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "specifications"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:1: specifications : ( perm | cases | classstates | refine );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:1: specifications : ( perm | cases | classstates | refine );
     public final void specifications() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:15: ( perm | cases | classstates | refine )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:15: ( perm | cases | classstates | refine )
             int alt11=4;
             switch ( input.LA(1) ) {
             case AT_FULL:
@@ -905,7 +905,7 @@ public class PluralParser extends Parser {
 
             switch (alt11) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:17: perm
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:17: perm
                     {
                     pushFollow(FOLLOW_perm_in_specifications1309);
                     perm();
@@ -916,7 +916,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:22: cases
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:22: cases
                     {
                     pushFollow(FOLLOW_cases_in_specifications1311);
                     cases();
@@ -927,7 +927,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:28: classstates
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:28: classstates
                     {
                     pushFollow(FOLLOW_classstates_in_specifications1313);
                     classstates();
@@ -938,7 +938,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:40: refine
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:157:40: refine
                     {
                     pushFollow(FOLLOW_refine_in_specifications1315);
                     refine();
@@ -963,17 +963,17 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "refine"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:1: refine : REFINE LSBRACKET LCBRACKET ( states ) ( PUNCTUATION states )* RCBRACKET RSBRACKET ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:1: refine : REFINE LSBRACKET LCBRACKET ( states ) ( PUNCTUATION states )* RCBRACKET RSBRACKET ;
     public final void refine() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:7: ( REFINE LSBRACKET LCBRACKET ( states ) ( PUNCTUATION states )* RCBRACKET RSBRACKET )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:8: REFINE LSBRACKET LCBRACKET ( states ) ( PUNCTUATION states )* RCBRACKET RSBRACKET
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:7: ( REFINE LSBRACKET LCBRACKET ( states ) ( PUNCTUATION states )* RCBRACKET RSBRACKET )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:8: REFINE LSBRACKET LCBRACKET ( states ) ( PUNCTUATION states )* RCBRACKET RSBRACKET
             {
             match(input,REFINE,FOLLOW_REFINE_in_refine1322); 
             match(input,LSBRACKET,FOLLOW_LSBRACKET_in_refine1324); 
             match(input,LCBRACKET,FOLLOW_LCBRACKET_in_refine1326); 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:35: ( states )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:36: states
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:35: ( states )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:36: states
             {
             pushFollow(FOLLOW_states_in_refine1329);
             states();
@@ -983,7 +983,7 @@ public class PluralParser extends Parser {
 
             }
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:44: ( PUNCTUATION states )*
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:44: ( PUNCTUATION states )*
             loop12:
             do {
                 int alt12=2;
@@ -996,7 +996,7 @@ public class PluralParser extends Parser {
 
                 switch (alt12) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:45: PUNCTUATION states
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:160:45: PUNCTUATION states
             	    {
             	    match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_refine1333); 
             	    pushFollow(FOLLOW_states_in_refine1335);
@@ -1031,11 +1031,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "states"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:1: states : STATES LSBRACKET dimension PUNCTUATION ( value )* RSBRACKET ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:1: states : STATES LSBRACKET dimension PUNCTUATION ( value )* RSBRACKET ;
     public final void states() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:7: ( STATES LSBRACKET dimension PUNCTUATION ( value )* RSBRACKET )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:9: STATES LSBRACKET dimension PUNCTUATION ( value )* RSBRACKET
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:7: ( STATES LSBRACKET dimension PUNCTUATION ( value )* RSBRACKET )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:9: STATES LSBRACKET dimension PUNCTUATION ( value )* RSBRACKET
             {
             match(input,STATES,FOLLOW_STATES_in_states1351); 
             match(input,LSBRACKET,FOLLOW_LSBRACKET_in_states1353); 
@@ -1045,7 +1045,7 @@ public class PluralParser extends Parser {
             state._fsp--;
 
             match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_states1357); 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:48: ( value )*
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:48: ( value )*
             loop13:
             do {
                 int alt13=2;
@@ -1058,7 +1058,7 @@ public class PluralParser extends Parser {
 
                 switch (alt13) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:49: value
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:163:49: value
             	    {
             	    pushFollow(FOLLOW_value_in_states1360);
             	    value();
@@ -1091,13 +1091,13 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "dimension"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:167:1: dimension : DIM EQUAL QUOTE dim= ID QUOTE ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:167:1: dimension : DIM EQUAL QUOTE dim= ID QUOTE ;
     public final void dimension() throws RecognitionException {
         Token dim=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:167:10: ( DIM EQUAL QUOTE dim= ID QUOTE )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:167:12: DIM EQUAL QUOTE dim= ID QUOTE
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:167:10: ( DIM EQUAL QUOTE dim= ID QUOTE )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:167:12: DIM EQUAL QUOTE dim= ID QUOTE
             {
             match(input,DIM,FOLLOW_DIM_in_dimension1373); 
             match(input,EQUAL,FOLLOW_EQUAL_in_dimension1375); 
@@ -1123,11 +1123,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "value"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:1: value : VALUE EQUAL LCBRACKET item ( PUNCTUATION item )* RCBRACKET ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:1: value : VALUE EQUAL LCBRACKET item ( PUNCTUATION item )* RCBRACKET ;
     public final void value() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:6: ( VALUE EQUAL LCBRACKET item ( PUNCTUATION item )* RCBRACKET )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:8: VALUE EQUAL LCBRACKET item ( PUNCTUATION item )* RCBRACKET
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:6: ( VALUE EQUAL LCBRACKET item ( PUNCTUATION item )* RCBRACKET )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:8: VALUE EQUAL LCBRACKET item ( PUNCTUATION item )* RCBRACKET
             {
             match(input,VALUE,FOLLOW_VALUE_in_value1393); 
             match(input,EQUAL,FOLLOW_EQUAL_in_value1395); 
@@ -1137,7 +1137,7 @@ public class PluralParser extends Parser {
 
             state._fsp--;
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:35: ( PUNCTUATION item )*
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:35: ( PUNCTUATION item )*
             loop14:
             do {
                 int alt14=2;
@@ -1150,7 +1150,7 @@ public class PluralParser extends Parser {
 
                 switch (alt14) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:36: PUNCTUATION item
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:172:36: PUNCTUATION item
             	    {
             	    match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_value1402); 
             	    pushFollow(FOLLOW_item_in_value1404);
@@ -1184,13 +1184,13 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "item"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:174:1: item : QUOTE state_name= ID QUOTE ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:174:1: item : QUOTE state_name= ID QUOTE ;
     public final void item() throws RecognitionException {
         Token state_name=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:174:5: ( QUOTE state_name= ID QUOTE )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:174:7: QUOTE state_name= ID QUOTE
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:174:5: ( QUOTE state_name= ID QUOTE )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:174:7: QUOTE state_name= ID QUOTE
             {
             match(input,QUOTE,FOLLOW_QUOTE_in_item1415); 
             state_name=(Token)match(input,ID,FOLLOW_ID_in_item1419); 
@@ -1215,11 +1215,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "classstates"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:1: classstates : start_classstates state ( PUNCTUATION state )* end_classstates ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:1: classstates : start_classstates state ( PUNCTUATION state )* end_classstates ;
     public final void classstates() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:12: ( start_classstates state ( PUNCTUATION state )* end_classstates )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:14: start_classstates state ( PUNCTUATION state )* end_classstates
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:12: ( start_classstates state ( PUNCTUATION state )* end_classstates )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:14: start_classstates state ( PUNCTUATION state )* end_classstates
             {
             pushFollow(FOLLOW_start_classstates_in_classstates1432);
             start_classstates();
@@ -1231,7 +1231,7 @@ public class PluralParser extends Parser {
 
             state._fsp--;
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:38: ( PUNCTUATION state )*
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:38: ( PUNCTUATION state )*
             loop15:
             do {
                 int alt15=2;
@@ -1244,7 +1244,7 @@ public class PluralParser extends Parser {
 
                 switch (alt15) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:39: PUNCTUATION state
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:181:39: PUNCTUATION state
             	    {
             	    match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_classstates1437); 
             	    pushFollow(FOLLOW_state_in_classstates1439);
@@ -1282,11 +1282,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "start_classstates"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:184:1: start_classstates : CLASS_STATES LSBRACKET LCBRACKET ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:184:1: start_classstates : CLASS_STATES LSBRACKET LCBRACKET ;
     public final void start_classstates() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:184:18: ( CLASS_STATES LSBRACKET LCBRACKET )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:184:19: CLASS_STATES LSBRACKET LCBRACKET
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:184:18: ( CLASS_STATES LSBRACKET LCBRACKET )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:184:19: CLASS_STATES LSBRACKET LCBRACKET
             {
             match(input,CLASS_STATES,FOLLOW_CLASS_STATES_in_start_classstates1450); 
             match(input,LSBRACKET,FOLLOW_LSBRACKET_in_start_classstates1452); 
@@ -1307,11 +1307,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "end_classstates"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:187:1: end_classstates : RCBRACKET RSBRACKET ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:187:1: end_classstates : RCBRACKET RSBRACKET ;
     public final void end_classstates() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:187:16: ( RCBRACKET RSBRACKET )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:187:17: RCBRACKET RSBRACKET
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:187:16: ( RCBRACKET RSBRACKET )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:187:17: RCBRACKET RSBRACKET
             {
             match(input,RCBRACKET,FOLLOW_RCBRACKET_in_end_classstates1461); 
             match(input,RSBRACKET,FOLLOW_RSBRACKET_in_end_classstates1463); 
@@ -1331,13 +1331,13 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "state"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:1: state : STATE LSBRACKET NAME EQUAL QUOTE state_name= ID QUOTE ( PUNCTUATION invariant )* RSBRACKET ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:1: state : STATE LSBRACKET NAME EQUAL QUOTE state_name= ID QUOTE ( PUNCTUATION invariant )* RSBRACKET ;
     public final void state() throws RecognitionException {
         Token state_name=null;
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:6: ( STATE LSBRACKET NAME EQUAL QUOTE state_name= ID QUOTE ( PUNCTUATION invariant )* RSBRACKET )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:8: STATE LSBRACKET NAME EQUAL QUOTE state_name= ID QUOTE ( PUNCTUATION invariant )* RSBRACKET
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:6: ( STATE LSBRACKET NAME EQUAL QUOTE state_name= ID QUOTE ( PUNCTUATION invariant )* RSBRACKET )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:8: STATE LSBRACKET NAME EQUAL QUOTE state_name= ID QUOTE ( PUNCTUATION invariant )* RSBRACKET
             {
             match(input,STATE,FOLLOW_STATE_in_state1471); 
             match(input,LSBRACKET,FOLLOW_LSBRACKET_in_state1473); 
@@ -1347,7 +1347,7 @@ public class PluralParser extends Parser {
             state_name=(Token)match(input,ID,FOLLOW_ID_in_state1483); 
             match(input,QUOTE,FOLLOW_QUOTE_in_state1485); 
              EVMDD_SMC_Generator.addState((state_name!=null?state_name.getText():null));
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:112: ( PUNCTUATION invariant )*
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:112: ( PUNCTUATION invariant )*
             loop16:
             do {
                 int alt16=2;
@@ -1360,7 +1360,7 @@ public class PluralParser extends Parser {
 
                 switch (alt16) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:113: PUNCTUATION invariant
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:190:113: PUNCTUATION invariant
             	    {
             	    match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_state1490); 
             	    pushFollow(FOLLOW_invariant_in_state1492);
@@ -1397,16 +1397,16 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "invariant"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:1: invariant : INV EQUAL QUOTE ( condition ( AND condition )* )? QUOTE ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:1: invariant : INV EQUAL QUOTE ( condition ( AND condition )* )? QUOTE ;
     public final void invariant() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:10: ( INV EQUAL QUOTE ( condition ( AND condition )* )? QUOTE )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:11: INV EQUAL QUOTE ( condition ( AND condition )* )? QUOTE
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:10: ( INV EQUAL QUOTE ( condition ( AND condition )* )? QUOTE )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:11: INV EQUAL QUOTE ( condition ( AND condition )* )? QUOTE
             {
             match(input,INV,FOLLOW_INV_in_invariant1591); 
             match(input,EQUAL,FOLLOW_EQUAL_in_invariant1593); 
             match(input,QUOTE,FOLLOW_QUOTE_in_invariant1595); 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:27: ( condition ( AND condition )* )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:27: ( condition ( AND condition )* )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -1415,14 +1415,14 @@ public class PluralParser extends Parser {
             }
             switch (alt18) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:28: condition ( AND condition )*
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:28: condition ( AND condition )*
                     {
                     pushFollow(FOLLOW_condition_in_invariant1598);
                     condition();
 
                     state._fsp--;
 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:38: ( AND condition )*
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:38: ( AND condition )*
                     loop17:
                     do {
                         int alt17=2;
@@ -1435,7 +1435,7 @@ public class PluralParser extends Parser {
 
                         switch (alt17) {
                     	case 1 :
-                    	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:39: AND condition
+                    	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:195:39: AND condition
                     	    {
                     	    match(input,AND,FOLLOW_AND_in_invariant1601); 
                     	    pushFollow(FOLLOW_condition_in_invariant1603);
@@ -1475,7 +1475,7 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "condition"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:198:1: condition : (var= ID op= OPERATOR val= ID | ap= accesspermission LSBRACKET var= ( THIS | ID ) RSBRACKET ( IN st= ID )? );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:198:1: condition : (var= ID op= OPERATOR val= ID | ap= accesspermission LSBRACKET var= ( THIS | ID ) RSBRACKET ( IN st= ID )? );
     public final void condition() throws RecognitionException {
         Token var=null;
         Token op=null;
@@ -1485,7 +1485,7 @@ public class PluralParser extends Parser {
 
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:198:11: (var= ID op= OPERATOR val= ID | ap= accesspermission LSBRACKET var= ( THIS | ID ) RSBRACKET ( IN st= ID )? )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:198:11: (var= ID op= OPERATOR val= ID | ap= accesspermission LSBRACKET var= ( THIS | ID ) RSBRACKET ( IN st= ID )? )
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -1503,7 +1503,7 @@ public class PluralParser extends Parser {
             }
             switch (alt20) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:198:13: var= ID op= OPERATOR val= ID
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:198:13: var= ID op= OPERATOR val= ID
                     {
                     var=(Token)match(input,ID,FOLLOW_ID_in_condition1620); 
                     op=(Token)match(input,OPERATOR,FOLLOW_OPERATOR_in_condition1624); 
@@ -1518,7 +1518,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:204:13: ap= accesspermission LSBRACKET var= ( THIS | ID ) RSBRACKET ( IN st= ID )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:204:13: ap= accesspermission LSBRACKET var= ( THIS | ID ) RSBRACKET ( IN st= ID )?
                     {
                     pushFollow(FOLLOW_accesspermission_in_condition1646);
                     ap=accesspermission();
@@ -1537,7 +1537,7 @@ public class PluralParser extends Parser {
                     }
 
                     match(input,RSBRACKET,FOLLOW_RSBRACKET_in_condition1658); 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:204:67: ( IN st= ID )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:204:67: ( IN st= ID )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -1546,7 +1546,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt19) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:204:68: IN st= ID
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:204:68: IN st= ID
                             {
                             match(input,IN,FOLLOW_IN_in_condition1661); 
                             st=(Token)match(input,ID,FOLLOW_ID_in_condition1665); 
@@ -1582,11 +1582,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "cases"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:1: cases : CASES LSBRACKET LCBRACKET perm ( other perm )* RCBRACKET RSBRACKET ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:1: cases : CASES LSBRACKET LCBRACKET perm ( other perm )* RCBRACKET RSBRACKET ;
     public final void cases() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:6: ( CASES LSBRACKET LCBRACKET perm ( other perm )* RCBRACKET RSBRACKET )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:7: CASES LSBRACKET LCBRACKET perm ( other perm )* RCBRACKET RSBRACKET
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:6: ( CASES LSBRACKET LCBRACKET perm ( other perm )* RCBRACKET RSBRACKET )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:7: CASES LSBRACKET LCBRACKET perm ( other perm )* RCBRACKET RSBRACKET
             {
             match(input,CASES,FOLLOW_CASES_in_cases1676); 
             match(input,LSBRACKET,FOLLOW_LSBRACKET_in_cases1678); 
@@ -1596,7 +1596,7 @@ public class PluralParser extends Parser {
 
             state._fsp--;
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:38: ( other perm )*
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:38: ( other perm )*
             loop21:
             do {
                 int alt21=2;
@@ -1609,7 +1609,7 @@ public class PluralParser extends Parser {
 
                 switch (alt21) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:39: other perm
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:214:39: other perm
             	    {
             	    pushFollow(FOLLOW_other_in_cases1685);
             	    other();
@@ -1648,11 +1648,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "other"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:217:1: other : PUNCTUATION ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:217:1: other : PUNCTUATION ;
     public final void other() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:217:6: ( PUNCTUATION )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:217:8: PUNCTUATION
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:217:6: ( PUNCTUATION )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:217:8: PUNCTUATION
             {
             match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_other1701); 
             EVMDD_SMC_Generator.addCase();
@@ -1672,10 +1672,10 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "perm"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:220:1: perm : ( PERM LSBRACKET requires_ensures_clause RSBRACKET | attype );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:220:1: perm : ( PERM LSBRACKET requires_ensures_clause RSBRACKET | attype );
     public final void perm() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:220:5: ( PERM LSBRACKET requires_ensures_clause RSBRACKET | attype )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:220:5: ( PERM LSBRACKET requires_ensures_clause RSBRACKET | attype )
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -1693,7 +1693,7 @@ public class PluralParser extends Parser {
             }
             switch (alt22) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:220:7: PERM LSBRACKET requires_ensures_clause RSBRACKET
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:220:7: PERM LSBRACKET requires_ensures_clause RSBRACKET
                     {
                     match(input,PERM,FOLLOW_PERM_in_perm1712); 
                     match(input,LSBRACKET,FOLLOW_LSBRACKET_in_perm1714); 
@@ -1707,7 +1707,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:221:7: attype
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:221:7: attype
                     {
                     pushFollow(FOLLOW_attype_in_perm1727);
                     attype();
@@ -1732,7 +1732,7 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "attype"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:1: attype : ap= at_ap_permission ( LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )? )? ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:1: attype : ap= at_ap_permission ( LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )? )? ;
     public final void attype() throws RecognitionException {
         PluralParser.at_ap_permission_return ap = null;
 
@@ -1742,15 +1742,15 @@ public class PluralParser extends Parser {
 
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:7: (ap= at_ap_permission ( LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )? )? )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:8: ap= at_ap_permission ( LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )? )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:7: (ap= at_ap_permission ( LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )? )? )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:8: ap= at_ap_permission ( LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )? )?
             {
             pushFollow(FOLLOW_at_ap_permission_in_attype1735);
             ap=at_ap_permission();
 
             state._fsp--;
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:28: ( LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )? )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:28: ( LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )? )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
@@ -1759,10 +1759,10 @@ public class PluralParser extends Parser {
             }
             switch (alt27) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:29: LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:29: LSBRACKET ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )? ( PUNCTUATION )? ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )? ( PUNCTUATION usevalue )?
                     {
                     match(input,LSBRACKET,FOLLOW_LSBRACKET_in_attype1738); 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:39: ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:39: ( REQUIRES EQUAL QUOTE restate= typestate QUOTE )?
                     int alt23=2;
                     int LA23_0 = input.LA(1);
 
@@ -1771,7 +1771,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt23) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:40: REQUIRES EQUAL QUOTE restate= typestate QUOTE
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:40: REQUIRES EQUAL QUOTE restate= typestate QUOTE
                             {
                             match(input,REQUIRES,FOLLOW_REQUIRES_in_attype1741); 
                             match(input,EQUAL,FOLLOW_EQUAL_in_attype1743); 
@@ -1788,7 +1788,7 @@ public class PluralParser extends Parser {
 
                     }
 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:87: ( PUNCTUATION )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:87: ( PUNCTUATION )?
                     int alt24=2;
                     int LA24_0 = input.LA(1);
 
@@ -1801,7 +1801,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt24) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:88: PUNCTUATION
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:88: PUNCTUATION
                             {
                             match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_attype1756); 
 
@@ -1810,7 +1810,7 @@ public class PluralParser extends Parser {
 
                     }
 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:102: ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:102: ( ENSURES EQUAL QUOTE enstate= typestate QUOTE )?
                     int alt25=2;
                     int LA25_0 = input.LA(1);
 
@@ -1819,7 +1819,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt25) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:103: ENSURES EQUAL QUOTE enstate= typestate QUOTE
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:103: ENSURES EQUAL QUOTE enstate= typestate QUOTE
                             {
                             match(input,ENSURES,FOLLOW_ENSURES_in_attype1761); 
                             match(input,EQUAL,FOLLOW_EQUAL_in_attype1763); 
@@ -1836,7 +1836,7 @@ public class PluralParser extends Parser {
 
                     }
 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:149: ( PUNCTUATION usevalue )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:149: ( PUNCTUATION usevalue )?
                     int alt26=2;
                     int LA26_0 = input.LA(1);
 
@@ -1849,7 +1849,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt26) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:150: PUNCTUATION usevalue
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:223:150: PUNCTUATION usevalue
                             {
                             match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_attype1776); 
                             pushFollow(FOLLOW_usevalue_in_attype1778);
@@ -1900,10 +1900,10 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "usevalue"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:240:1: usevalue : ( USE EQUAL USEFIELDS | VALUE EQUAL QUOTE ID QUOTE );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:240:1: usevalue : ( USE EQUAL USEFIELDS | VALUE EQUAL QUOTE ID QUOTE );
     public final void usevalue() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:240:9: ( USE EQUAL USEFIELDS | VALUE EQUAL QUOTE ID QUOTE )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:240:9: ( USE EQUAL USEFIELDS | VALUE EQUAL QUOTE ID QUOTE )
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -1921,7 +1921,7 @@ public class PluralParser extends Parser {
             }
             switch (alt28) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:240:11: USE EQUAL USEFIELDS
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:240:11: USE EQUAL USEFIELDS
                     {
                     match(input,USE,FOLLOW_USE_in_usevalue1792); 
                     match(input,EQUAL,FOLLOW_EQUAL_in_usevalue1794); 
@@ -1930,7 +1930,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:241:11: VALUE EQUAL QUOTE ID QUOTE
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:241:11: VALUE EQUAL QUOTE ID QUOTE
                     {
                     match(input,VALUE,FOLLOW_VALUE_in_usevalue1809); 
                     match(input,EQUAL,FOLLOW_EQUAL_in_usevalue1811); 
@@ -1955,13 +1955,13 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "requires_ensures_clause"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:1: requires_ensures_clause : ( requires_clause )? ( PUNCTUATION )? ( ensures_clause )? ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:1: requires_ensures_clause : ( requires_clause )? ( PUNCTUATION )? ( ensures_clause )? ;
     public final void requires_ensures_clause() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:24: ( ( requires_clause )? ( PUNCTUATION )? ( ensures_clause )? )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:26: ( requires_clause )? ( PUNCTUATION )? ( ensures_clause )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:24: ( ( requires_clause )? ( PUNCTUATION )? ( ensures_clause )? )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:26: ( requires_clause )? ( PUNCTUATION )? ( ensures_clause )?
             {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:26: ( requires_clause )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:26: ( requires_clause )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -1970,7 +1970,7 @@ public class PluralParser extends Parser {
             }
             switch (alt29) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:27: requires_clause
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:27: requires_clause
                     {
                     pushFollow(FOLLOW_requires_clause_in_requires_ensures_clause1831);
                     requires_clause();
@@ -1983,7 +1983,7 @@ public class PluralParser extends Parser {
 
             }
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:45: ( PUNCTUATION )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:45: ( PUNCTUATION )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -1992,7 +1992,7 @@ public class PluralParser extends Parser {
             }
             switch (alt30) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:46: PUNCTUATION
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:46: PUNCTUATION
                     {
                     match(input,PUNCTUATION,FOLLOW_PUNCTUATION_in_requires_ensures_clause1836); 
 
@@ -2001,7 +2001,7 @@ public class PluralParser extends Parser {
 
             }
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:60: ( ensures_clause )?
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:60: ( ensures_clause )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -2010,7 +2010,7 @@ public class PluralParser extends Parser {
             }
             switch (alt31) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:61: ensures_clause
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:245:61: ensures_clause
                     {
                     pushFollow(FOLLOW_ensures_clause_in_requires_ensures_clause1841);
                     ensures_clause();
@@ -2039,11 +2039,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "requires_clause"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:1: requires_clause : REQUIRES EQUAL QUOTE re_accesspermission_typestates ( AND re_accesspermission_typestates )* QUOTE ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:1: requires_clause : REQUIRES EQUAL QUOTE re_accesspermission_typestates ( AND re_accesspermission_typestates )* QUOTE ;
     public final void requires_clause() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:17: ( REQUIRES EQUAL QUOTE re_accesspermission_typestates ( AND re_accesspermission_typestates )* QUOTE )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:19: REQUIRES EQUAL QUOTE re_accesspermission_typestates ( AND re_accesspermission_typestates )* QUOTE
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:17: ( REQUIRES EQUAL QUOTE re_accesspermission_typestates ( AND re_accesspermission_typestates )* QUOTE )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:19: REQUIRES EQUAL QUOTE re_accesspermission_typestates ( AND re_accesspermission_typestates )* QUOTE
             {
             match(input,REQUIRES,FOLLOW_REQUIRES_in_requires_clause1852); 
             match(input,EQUAL,FOLLOW_EQUAL_in_requires_clause1854); 
@@ -2053,7 +2053,7 @@ public class PluralParser extends Parser {
 
             state._fsp--;
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:71: ( AND re_accesspermission_typestates )*
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:71: ( AND re_accesspermission_typestates )*
             loop32:
             do {
                 int alt32=2;
@@ -2066,7 +2066,7 @@ public class PluralParser extends Parser {
 
                 switch (alt32) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:72: AND re_accesspermission_typestates
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:248:72: AND re_accesspermission_typestates
             	    {
             	    match(input,AND,FOLLOW_AND_in_requires_clause1861); 
             	    pushFollow(FOLLOW_re_accesspermission_typestates_in_requires_clause1863);
@@ -2100,11 +2100,11 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "ensures_clause"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:1: ensures_clause : ENSURES EQUAL QUOTE en_accesspermission_typestates ( AND en_accesspermission_typestates )* QUOTE ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:1: ensures_clause : ENSURES EQUAL QUOTE en_accesspermission_typestates ( AND en_accesspermission_typestates )* QUOTE ;
     public final void ensures_clause() throws RecognitionException {
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:15: ( ENSURES EQUAL QUOTE en_accesspermission_typestates ( AND en_accesspermission_typestates )* QUOTE )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:17: ENSURES EQUAL QUOTE en_accesspermission_typestates ( AND en_accesspermission_typestates )* QUOTE
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:15: ( ENSURES EQUAL QUOTE en_accesspermission_typestates ( AND en_accesspermission_typestates )* QUOTE )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:17: ENSURES EQUAL QUOTE en_accesspermission_typestates ( AND en_accesspermission_typestates )* QUOTE
             {
             match(input,ENSURES,FOLLOW_ENSURES_in_ensures_clause1875); 
             match(input,EQUAL,FOLLOW_EQUAL_in_ensures_clause1877); 
@@ -2114,7 +2114,7 @@ public class PluralParser extends Parser {
 
             state._fsp--;
 
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:68: ( AND en_accesspermission_typestates )*
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:68: ( AND en_accesspermission_typestates )*
             loop33:
             do {
                 int alt33=2;
@@ -2127,7 +2127,7 @@ public class PluralParser extends Parser {
 
                 switch (alt33) {
             	case 1 :
-            	    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:69: AND en_accesspermission_typestates
+            	    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:251:69: AND en_accesspermission_typestates
             	    {
             	    match(input,AND,FOLLOW_AND_in_ensures_clause1884); 
             	    pushFollow(FOLLOW_en_accesspermission_typestates_in_ensures_clause1886);
@@ -2161,7 +2161,7 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "re_accesspermission_typestates"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:1: re_accesspermission_typestates : (ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )? | para= PARAM OPERATOR ID );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:1: re_accesspermission_typestates : (ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )? | para= PARAM OPERATOR ID );
     public final void re_accesspermission_typestates() throws RecognitionException {
         Token para=null;
         PluralParser.accesspermission_return ap = null;
@@ -2170,7 +2170,7 @@ public class PluralParser extends Parser {
 
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:32: (ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )? | para= PARAM OPERATOR ID )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:32: (ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )? | para= PARAM OPERATOR ID )
             int alt36=3;
             int LA36_0 = input.LA(1);
 
@@ -2211,7 +2211,7 @@ public class PluralParser extends Parser {
             }
             switch (alt36) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:34: ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:34: ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )?
                     {
                     pushFollow(FOLLOW_accesspermission_in_re_accesspermission_typestates1901);
                     ap=accesspermission();
@@ -2221,7 +2221,7 @@ public class PluralParser extends Parser {
                     match(input,LSBRACKET,FOLLOW_LSBRACKET_in_re_accesspermission_typestates1903); 
                     match(input,THIS,FOLLOW_THIS_in_re_accesspermission_typestates1905); 
                     match(input,RSBRACKET,FOLLOW_RSBRACKET_in_re_accesspermission_typestates1907); 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:79: ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:79: ( IN st= typestate )?
                     int alt34=2;
                     int LA34_0 = input.LA(1);
 
@@ -2230,7 +2230,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt34) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:80: IN st= typestate
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:254:80: IN st= typestate
                             {
                             match(input,IN,FOLLOW_IN_in_re_accesspermission_typestates1910); 
                             pushFollow(FOLLOW_typestate_in_re_accesspermission_typestates1914);
@@ -2254,7 +2254,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:260:33: ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:260:33: ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )?
                     {
                     pushFollow(FOLLOW_accesspermission_in_re_accesspermission_typestates1954);
                     ap=accesspermission();
@@ -2264,7 +2264,7 @@ public class PluralParser extends Parser {
                     match(input,LSBRACKET,FOLLOW_LSBRACKET_in_re_accesspermission_typestates1956); 
                     para=(Token)match(input,PARAM,FOLLOW_PARAM_in_re_accesspermission_typestates1960); 
                     match(input,RSBRACKET,FOLLOW_RSBRACKET_in_re_accesspermission_typestates1962); 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:260:84: ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:260:84: ( IN st= typestate )?
                     int alt35=2;
                     int LA35_0 = input.LA(1);
 
@@ -2273,7 +2273,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt35) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:260:85: IN st= typestate
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:260:85: IN st= typestate
                             {
                             match(input,IN,FOLLOW_IN_in_re_accesspermission_typestates1965); 
                             pushFollow(FOLLOW_typestate_in_re_accesspermission_typestates1969);
@@ -2299,7 +2299,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:268:34: para= PARAM OPERATOR ID
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:268:34: para= PARAM OPERATOR ID
                     {
                     para=(Token)match(input,PARAM,FOLLOW_PARAM_in_re_accesspermission_typestates2011); 
                     match(input,OPERATOR,FOLLOW_OPERATOR_in_re_accesspermission_typestates2013); 
@@ -2322,7 +2322,7 @@ public class PluralParser extends Parser {
 
 
     // $ANTLR start "en_accesspermission_typestates"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:1: en_accesspermission_typestates : (ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET RESULT RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )? | para= PARAM OPERATOR ID );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:1: en_accesspermission_typestates : (ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET RESULT RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )? | para= PARAM OPERATOR ID );
     public final void en_accesspermission_typestates() throws RecognitionException {
         Token para=null;
         PluralParser.accesspermission_return ap = null;
@@ -2331,7 +2331,7 @@ public class PluralParser extends Parser {
 
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:32: (ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET RESULT RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )? | para= PARAM OPERATOR ID )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:32: (ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET RESULT RSBRACKET ( IN st= typestate )? | ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )? | para= PARAM OPERATOR ID )
             int alt40=4;
             int LA40_0 = input.LA(1);
 
@@ -2381,7 +2381,7 @@ public class PluralParser extends Parser {
             }
             switch (alt40) {
                 case 1 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:34: ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:34: ap= accesspermission LSBRACKET THIS RSBRACKET ( IN st= typestate )?
                     {
                     pushFollow(FOLLOW_accesspermission_in_en_accesspermission_typestates2146);
                     ap=accesspermission();
@@ -2391,7 +2391,7 @@ public class PluralParser extends Parser {
                     match(input,LSBRACKET,FOLLOW_LSBRACKET_in_en_accesspermission_typestates2148); 
                     match(input,THIS,FOLLOW_THIS_in_en_accesspermission_typestates2150); 
                     match(input,RSBRACKET,FOLLOW_RSBRACKET_in_en_accesspermission_typestates2152); 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:79: ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:79: ( IN st= typestate )?
                     int alt37=2;
                     int LA37_0 = input.LA(1);
 
@@ -2400,7 +2400,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt37) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:80: IN st= typestate
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:271:80: IN st= typestate
                             {
                             match(input,IN,FOLLOW_IN_in_en_accesspermission_typestates2155); 
                             pushFollow(FOLLOW_typestate_in_en_accesspermission_typestates2159);
@@ -2424,7 +2424,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:277:33: ap= accesspermission LSBRACKET RESULT RSBRACKET ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:277:33: ap= accesspermission LSBRACKET RESULT RSBRACKET ( IN st= typestate )?
                     {
                     pushFollow(FOLLOW_accesspermission_in_en_accesspermission_typestates2199);
                     ap=accesspermission();
@@ -2434,7 +2434,7 @@ public class PluralParser extends Parser {
                     match(input,LSBRACKET,FOLLOW_LSBRACKET_in_en_accesspermission_typestates2201); 
                     match(input,RESULT,FOLLOW_RESULT_in_en_accesspermission_typestates2203); 
                     match(input,RSBRACKET,FOLLOW_RSBRACKET_in_en_accesspermission_typestates2205); 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:277:80: ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:277:80: ( IN st= typestate )?
                     int alt38=2;
                     int LA38_0 = input.LA(1);
 
@@ -2443,7 +2443,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt38) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:277:81: IN st= typestate
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:277:81: IN st= typestate
                             {
                             match(input,IN,FOLLOW_IN_in_en_accesspermission_typestates2208); 
                             pushFollow(FOLLOW_typestate_in_en_accesspermission_typestates2212);
@@ -2467,7 +2467,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:283:33: ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:283:33: ap= accesspermission LSBRACKET para= PARAM RSBRACKET ( IN st= typestate )?
                     {
                     pushFollow(FOLLOW_accesspermission_in_en_accesspermission_typestates2252);
                     ap=accesspermission();
@@ -2477,7 +2477,7 @@ public class PluralParser extends Parser {
                     match(input,LSBRACKET,FOLLOW_LSBRACKET_in_en_accesspermission_typestates2254); 
                     para=(Token)match(input,PARAM,FOLLOW_PARAM_in_en_accesspermission_typestates2258); 
                     match(input,RSBRACKET,FOLLOW_RSBRACKET_in_en_accesspermission_typestates2260); 
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:283:84: ( IN st= typestate )?
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:283:84: ( IN st= typestate )?
                     int alt39=2;
                     int LA39_0 = input.LA(1);
 
@@ -2486,7 +2486,7 @@ public class PluralParser extends Parser {
                     }
                     switch (alt39) {
                         case 1 :
-                            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:283:85: IN st= typestate
+                            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:283:85: IN st= typestate
                             {
                             match(input,IN,FOLLOW_IN_in_en_accesspermission_typestates2263); 
                             pushFollow(FOLLOW_typestate_in_en_accesspermission_typestates2267);
@@ -2512,7 +2512,7 @@ public class PluralParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:291:34: para= PARAM OPERATOR ID
+                    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:291:34: para= PARAM OPERATOR ID
                     {
                     para=(Token)match(input,PARAM,FOLLOW_PARAM_in_en_accesspermission_typestates2309); 
                     match(input,OPERATOR,FOLLOW_OPERATOR_in_en_accesspermission_typestates2311); 
@@ -2537,14 +2537,14 @@ public class PluralParser extends Parser {
     };
 
     // $ANTLR start "typestate"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:294:1: typestate : ID ;
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:294:1: typestate : ID ;
     public final PluralParser.typestate_return typestate() throws RecognitionException {
         PluralParser.typestate_return retval = new PluralParser.typestate_return();
         retval.start = input.LT(1);
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:294:10: ( ID )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:294:12: ID
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:294:10: ( ID )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:294:12: ID
             {
             match(input,ID,FOLLOW_ID_in_typestate2373); 
 
@@ -2567,14 +2567,14 @@ public class PluralParser extends Parser {
     };
 
     // $ANTLR start "at_ap_permission"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:297:1: at_ap_permission : ( AT_UNIQUE | AT_FULL | AT_SHARE | AT_PURE | AT_IMMUTABLE );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:297:1: at_ap_permission : ( AT_UNIQUE | AT_FULL | AT_SHARE | AT_PURE | AT_IMMUTABLE );
     public final PluralParser.at_ap_permission_return at_ap_permission() throws RecognitionException {
         PluralParser.at_ap_permission_return retval = new PluralParser.at_ap_permission_return();
         retval.start = input.LT(1);
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:297:19: ( AT_UNIQUE | AT_FULL | AT_SHARE | AT_PURE | AT_IMMUTABLE )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:297:19: ( AT_UNIQUE | AT_FULL | AT_SHARE | AT_PURE | AT_IMMUTABLE )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:
             {
             if ( (input.LA(1)>=AT_FULL && input.LA(1)<=AT_UNIQUE) ) {
                 input.consume();
@@ -2605,14 +2605,14 @@ public class PluralParser extends Parser {
     };
 
     // $ANTLR start "accesspermission"
-    // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:305:1: accesspermission : ( UNIQUE | FULL | SHARE | PURE | IMMUTABLE | NONE );
+    // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:305:1: accesspermission : ( UNIQUE | FULL | SHARE | PURE | IMMUTABLE | NONE );
     public final PluralParser.accesspermission_return accesspermission() throws RecognitionException {
         PluralParser.accesspermission_return retval = new PluralParser.accesspermission_return();
         retval.start = input.LT(1);
 
         try {
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:305:17: ( UNIQUE | FULL | SHARE | PURE | IMMUTABLE | NONE )
-            // /Users/ayeshasadiq/Documents/workspace/permission-specs/pulse/uma/Plural/grammar/Plural.g:
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:305:17: ( UNIQUE | FULL | SHARE | PURE | IMMUTABLE | NONE )
+            // /Users/ayeshasadiq/Documents/sip4j/permission-specs/pulse/uma/Plural/grammar/Plural.g:
             {
             if ( (input.LA(1)>=FULL && input.LA(1)<=NONE) ) {
                 input.consume();

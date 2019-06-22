@@ -1,0 +1,33 @@
+public static void callModelCheckerThroughCommandLine(){
+		    try {
+		    	E_OutputLatex.reset();
+		    	FileWriter fshell = new FileWriter("location.sh");
+				fshell.write("./evmdd-smc -q < model.stm");
+				fshell.close();
+				Process p1=Runtime.getRuntime().exec("chmod 777 location.sh" ); 
+				p1.waitFor();
+				
+				//execute the shell file
+		    	ArrayList<String> command = new ArrayList<String>();
+		    	//command.add("chmod 777 " + folder+"/location.sh");
+		    	//command.add("/Users/ijazahmed/Sites/location.sh");  // this is exe 
+		    	command.add("./location.sh"); 
+		    	ProcessBuilder builder = new ProcessBuilder(command);
+		    	final Process p = builder.start();
+		    	
+		    //	System.err.println("Please move the evmdd-smc executeable into folder: "+folder+ " ,if not moved before\n");
+		        InputStream is = p.getInputStream();
+	            InputStreamReader isr = new InputStreamReader(is);
+	            BufferedReader br = new BufferedReader(isr);
+		        String line;
+		        while ((line = br.readLine()) != null) {
+		        	System.out.println(line);
+		        	E_OutputLatex.setText(line);
+		        
+		      //  System.out.println("End of callModelCheckerThroughCommandLine()");
+		        CreatePdfSummary_CommandLine(starttime, endtime);   
+		    }
+		    catch (Exception err) {
+		      err.printStackTrace();
+		    }
+		  }

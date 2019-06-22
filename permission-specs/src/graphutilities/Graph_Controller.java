@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -114,9 +115,11 @@ public class Graph_Controller {
 		
 		File file = Parser_Utilities.createPulseFile();
 		
+		
 		int classCounter = 0;
 		
-		int methodcount=0;
+		int methodcount = 0;
+
 		
 		for(E_Class _class: eclass){
 		
@@ -124,10 +127,17 @@ public class Graph_Controller {
 	
 			Graph_Construction.constructGraph(_class,_methds);
 	
-			//LinkedList<String> sipOutput = Graph_Utilities.generatePulsePermissions(classCounter);
+		//	LinkedList<String> sipOutput = Graph_Utilities.generatePulsePermissions(classCounter);
+			
 			LinkedList<String> sipOutput = Graph_Utilities.generateObjectPermissions(classCounter,methodcount);
 			
 			Parser_Utilities.writePulseSpecifications(file, sipOutput);
+			
+			//File anno_file = Parser_Utilities.createAnnotationFile();
+		
+			//LinkedList<String> annotOutput = Graph_Utilities.generateObjectAnnotations(classCounter,methodcount);
+			
+			//Parser_Utilities.writePulseSpecifications(anno_file, annotOutput);
 			
 			classCounter++;
 			
@@ -181,4 +191,17 @@ public static LinkedList<E_MRefField> fetchsubMethodFields(E_MInvokedMethod im){
 	}
 	return _invmref;
 }
+
+public static String getGraphBody(E_MethodGraph graph){
+	
+	List<String> list = graph.getMethodBody();
+	
+	Object[] array = list.toArray(); 
+	
+	System.out.println(Arrays.toString(array));
+	
+	return Arrays.toString(array).replace("[", "").replace("]", "").replace(',', ' ').trim();
+	
+}
+
 }

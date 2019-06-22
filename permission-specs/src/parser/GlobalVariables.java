@@ -12,6 +12,9 @@ public class GlobalVariables {
 	public static final String FINAL = "final";
 	public static final String PROTECTED = "protected";
 	public static final String NONE = "";
-	
+	public static final String JGFrun = "JGFrun";
 
+	public static void test(){
+		System.out.println("");
+	}
 }

@@ -337,6 +337,7 @@ public class Data_Controller {
 						&& _fields.get(i).getType().equals(fType)
 						&& _fields.get(i).getDeclaringClass().equals(declarClass)){
 						_field = _fields.get(i);
+						break;
 						
 					}
 				}
@@ -357,7 +358,12 @@ public class Data_Controller {
 		LinkedList<E_MLocalVariable> _vars = new LinkedList<E_MLocalVariable>();
 
 		for(E_Method m: _methods){
-			if(m.getLocalVar()!=null){
+			System.out.println("method name ="+m.getName());
+			_var = searchMLocalVariable(m, fName, fType, declMethod);
+			if(_var != null){
+				break;
+			}
+			/*if(m.getLocalVar()!=null){
 				_vars = m.getLocalVar();
 					for (int i = 0; i < _vars.size(); i++) {
 						if (_vars.get(i).getName().equals(fName)
@@ -369,13 +375,13 @@ public class Data_Controller {
 						}
 					}
 
-				}			
+				}	*/		
 		}
 							
 					
 		return  _var;
 	}
-	public static E_MLocalVariable searchLocalVariable(String fName, String fType, String declType){
+	public static E_MLocalVariable searchLocalVariable(String fName, String fType, String declMethod){
 
 		E_Method _method = null;
 
@@ -389,7 +395,10 @@ public class Data_Controller {
 		
 		if(_methods != null){
 			for(E_Method m :_methods){
-				_var = searchMLocalVariable(m, fName, fType, declType);
+				 _var = searchMLocalVariable(m, fName, fType, declMethod);
+				 if(_var != null){
+					 break;
+				 }
 						/*if(m.getLocalVar() != null ){
 							_vars = m.getLocalVar();
 							if(_vars!=null){
@@ -447,6 +456,7 @@ public class Data_Controller {
 					&& data.getType().equals(fType)
 					&& data.getDeclaringClass().equals(declarType)){
 				     refField = data;
+				     break;
 				  }
 			}
 		}
@@ -466,7 +476,9 @@ public class Data_Controller {
 				if (list.get(i).getName().equals(fName)
 					&& list.get(i).getType().equals(fType)
 					&& list.get(i).getDeclMethod().getName().equals(declarmethod)){
+					
 				variable = list.get(i);
+				break;
 			}
 		   }
 		}
@@ -683,7 +695,8 @@ public class Data_Controller {
 		LinkedList<E_Method> _methds = fetchAllMethods();
 		E_Method method = null;
 		for (E_Method m:_methds){
-			if(sourceMethod.getName().equals(m.getName()) && sourceMethod.getDeclClassQName().equals(m.getDeclClassQName())){
+			if(sourceMethod.getName().equals(m.getName()) 
+					&& sourceMethod.getDeclClassQName().equals(m.getDeclClassQName())){
 				method = m;
 			}
 		}
@@ -752,7 +765,9 @@ public static E_Method searchConstMethod(E_Class init_class){
 	if (mDecl != null) {
 		IMethodBinding binding = (IMethodBinding) mDecl.getName()
 				.resolveBinding();
-		method = Data_Controller.searchMethod(binding);
+			if(binding!=null){
+				method = Data_Controller.searchMethod(binding);
+			}
 	}
 	return method;
 		
@@ -766,11 +781,12 @@ public static E_Method searchConstMethod(E_Class init_class){
 	  if(_methds != null){
 		 for (E_Method m:_methds){
 			// if(m.equals(o))
-			if(bind.getName().toString().equals(m.getName()) 
-					&& bind.getDeclaringClass().getQualifiedName().toString()
-					.equals(m.getDeclClassQName())){
-				
+			       if(bind.getName().toString().equals(m.getName().toString()) 
+					&& bind.getDeclaringClass().getQualifiedName().toString().equals(m.getDeclClassQName()) 
+					){
+					
 				method = m;
+				break;
 			}
 		}
 	}
@@ -804,17 +820,26 @@ return _class;
 		
 		E_Class _class = null;
 	
-		if(classes!=null){
+		if(classes != null && bind != null){
 			for (E_Class c : classes){
-				if(bind.getName().toString().equals(c.getName())
-						&& c.getClassQName().equals(bind.getTypeDeclaration().getQualifiedName())){
-					_class = c;
-				}
+					if(bind.getName().toString().equals(c.getName())
+							&& c.getClassQName().equals(bind.getTypeDeclaration().getQualifiedName().toString())){
+						_class = c;
+						break;
+					}
+					if(c.getName().equals("Anonymous") ){
+						if(bind.getDeclaringClass() != null){
+							 if(c.getClassQName().equals(bind.getDeclaringClass().getQualifiedName().toString())){
+								   _class = c;
+								   break;
+							 }
+							}
+					}
 			}
 		}
 	return _class;
 	
-	}
+	}	
    public static E_MInvokedMethod searchInvokedMethod(E_Method method,IMethodBinding bind){
 		
 		LinkedList<E_MInvokedMethod> _methds = method.getSubMethods();
@@ -853,9 +878,8 @@ return _class;
 						if(r.getName().equals(_field.getName()) 
 								&& r.getType().equals(_field.getType())&& 
 								r.getDeclaringClass().equals(_field.getDeclaringClass())){
-							
-							  aliases = r.getAliases();
 							  
+							aliases = r.getAliases();
 							  break;
 						}
 					}
@@ -957,7 +981,7 @@ public static LinkedList<E_MRefAlias> fetchAliasesOfParams(E_MRefParameter param
 			
 			LinkedList<E_MRefAlias>  aliases = l.getAliases();
 								
-			if(aliases !=null){
+			if(aliases != null){
 									
 				for(E_MRefAlias a:aliases){
 		
@@ -1010,7 +1034,7 @@ public static LinkedList<E_MRefField> fetchFieldAliases(LinkedList<E_MRefAlias> 
 		
 		LinkedList<E_MRefField> fAliases = new LinkedList<E_MRefField>();
 	
-		if(aliases!=null && aliases.isEmpty() == false){
+		if(aliases != null && aliases.isEmpty() == false){
 
 			for(E_MRefAlias a : aliases){
 				
@@ -1026,7 +1050,6 @@ public static LinkedList<E_MRefField> fetchFieldAliases(LinkedList<E_MRefAlias> 
 						
 						    fieldAliases.add(r);
 						     
-						   
 						    	LinkedList<E_MRefAlias> rAliases  = Data_Controller.fetchAliasesOfRefField(r);
 						    	
 						    	if(rAliases!=null && rAliases.isEmpty() == false){

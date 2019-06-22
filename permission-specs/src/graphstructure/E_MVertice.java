@@ -13,13 +13,15 @@ public class E_MVertice {
 	
 	private E_MethodGraph refMethod;
 	
-	private String qualifiedName;
+	private String declClass;
 	
 	private String mOperation;
 	
 	private String cOperation;
 	
 	private String aOperation;
+	
+	private boolean isRetField = false;
 	
 	private boolean isField = false;
 	
@@ -73,11 +75,11 @@ public class E_MVertice {
 	public void setPost_permissions(String post_permissions) {
 		this.post_permissions = post_permissions;
 	}
-	public String getQualifiedName() {
-		return qualifiedName;
+	public String getDeclClass() {
+		return declClass;
 	}
-	public void setQualifiedName(String qualifiedName) {
-		this.qualifiedName = qualifiedName;
+	public void setDeclClass(String qualifiedName) {
+		this.declClass = qualifiedName;
 	}
 	public String getVType() {
 		return vType;
@@ -111,6 +113,12 @@ public class E_MVertice {
 	}
 	public String getaOperation() {
 		return aOperation;
+	}
+	public boolean isRetField() {
+		return isRetField;
+	}
+	public void setRetField(boolean isRetField) {
+		this.isRetField = isRetField;
 	}
 	public void setaOperation(String aOperation) {
 		this.aOperation = aOperation;

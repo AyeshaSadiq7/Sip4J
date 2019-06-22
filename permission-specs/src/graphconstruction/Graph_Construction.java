@@ -23,6 +23,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 
+import org.eclipse.jdt.core.dom.Expression;
 import org.jgraph.JGraph;
 import org.jgrapht.ext.JGraphModelAdapter;
 import org.jgrapht.graph.ClassBasedEdgeFactory;
@@ -52,7 +53,7 @@ public class Graph_Construction{
 		 	    E_ClassGraphs.setClassSignatures("class "+_class.getName()+" {");
 		 	   
 			   for(E_Method m : _methds ){
-				 	 	
+				 	 
 				    _methodgraph = Graph_Construction.createMethodGraph(m);
 					
 					cgraph.addMethodgraphs(_methodgraph);
@@ -87,11 +88,14 @@ public class Graph_Construction{
 		
 		  if(!m.getName().equals(null)){
 			     
-			  	   _mrefs = m.getRefVariable();
+			  	    _mrefs = m.getRefVariable();
+			  	
 			        // construct graph
 			        _methodgraph.setMgraphName(m.getName());
 			        
-			       _methodgraph.setMRetType(m.getReturnType());
+			        _methodgraph.setDeclClass(m.getDeclaringClass());
+			         
+			        _methodgraph.setMRetType(m.getReturnType());
 			        
 			        _methodgraph.setMethodSignatures(m.getMethodSignatures());
 			        
@@ -102,6 +106,10 @@ public class Graph_Construction{
 			        	_methodgraph.addParameters(p);
 			        }
 			        // set foo vertex
+			        if(m.getState() != null && m.getState().isEmpty() == false){
+			        	_methodgraph.setMethodBody(m.getState());
+			        }
+			        
 			        E_MVertice mObj = new E_MVertice();
 					
 			        mObj.setVName("foo");
@@ -130,10 +138,12 @@ public class Graph_Construction{
 						     E_MVertice obj = null;
 					
 							 obj  = new E_MVertice();
-							 
+							
 					 	     obj.setVName(var.getName().toString());
 					 	     
 					 	     obj.setVType(var.getType().toString());
+					 	     
+					 	     obj.setDeclClass(var.getDeclaringClass().toString());
 					 	     
 					 	     obj.setmOperation(var.getMOperation());
 					 	     
@@ -151,6 +161,8 @@ public class Graph_Construction{
 					 	     
 					 	     obj.setRefMethod(_methodgraph);
 					 	     
+					 	     obj.setRetField(var.isRetFiel());
+					 	     
 					 	     obj.setMethod(false);
 					 	     
 					 	     obj.setContext(false);
@@ -163,9 +175,8 @@ public class Graph_Construction{
 										
 										obj.setIncomingEdges(inEdge);
 									}	
-									else if(obj.getmOperation().equalsIgnoreCase("r"))
-									{
-									
+									else if(obj.getmOperation().equalsIgnoreCase("r")){
+										
 										LabeledEdge outEdge = new LabeledEdge(obj,mObj,obj.getmOperation());
 										
 										obj.setOutgoingEdges(outEdge);

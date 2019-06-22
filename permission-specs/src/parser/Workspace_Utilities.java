@@ -19,9 +19,7 @@
  */
 package parser;
 
-import graphutilities.Graph_Controller;
-import graphutilities.Graph_Utilities;
-
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -33,19 +31,13 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.ProgressMonitor;
-
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaModel;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IParent;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
@@ -54,7 +46,6 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
-import org.eclipse.jface.resource.ResourceManager;
 
 /**
  * A collection of methods used to extract useful data from the workspace. These
@@ -349,6 +340,15 @@ public class Workspace_Utilities {
 		 * state
 		 */null);
 	}
+	public static ASTNode getASTNodeFromMethod(
+			Method m) {
+		ASTParser parser = ASTParser.newParser(AST.JLS4);
+		parser.setResolveBindings(true);
+		return parser.createAST(/*
+		 * passing in monitor messes up previous monitor
+		 * state
+		 */null);
+	}
 	public static IProject[]  getWorkspaceProjects(){ // added by ayesha for pulse
 
 	IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
@@ -357,6 +357,7 @@ public class Workspace_Utilities {
 	
 		// Get all projects in the workspace
 		if (root == null) {
+			System.out.println(""+root.getName().toString());
 			System.out.println("No workspace root");
 			return null;
 		}

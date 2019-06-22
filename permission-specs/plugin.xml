@@ -24,7 +24,7 @@
          
          <objectContribution id="PlugIn.GAPCompUnit" objectClass="org.eclipse.jdt.core.ICompilationUnit">
 
-			<menu label="CONCUR" id="PlugIn.menu.GAPCompUnit">
+			<menu label="Sip4J" id="PlugIn.menu.GAPCompUnit">
 
 				<separator name="PlugIn.separator.GAPCompUnit"> </separator>
 	
@@ -47,7 +47,7 @@
             objectClass="org.eclipse.jdt.core.IPackageFragment">
          <menu
                id="PlugIn.menu.GAPPackage"
-               label="CONCUR">
+               label="Sip4J">
             <separator
                   name="PlugIn.separator.GAPPackage">
             </separator>
@@ -90,7 +90,7 @@
             objectClass="org.eclipse.jdt.core.IPackageFragmentRoot">
          <menu
                id="PlugIn.menu.GAPPackageRoot"
-               label="CONCUR">
+               label="Sip4J">
             <separator
                   name="PlugIn.separator.GAPPackageRoot">
             </separator>
@@ -133,7 +133,7 @@
             objectClass="org.eclipse.jdt.core.IJavaProject">
          <menu
                id="PlugIn.menu.GAPProject"
-               label="CONCUR">
+               label="Sip4J">
             <separator
                   name="PlugIn.separator.GAPProject">
             </separator>

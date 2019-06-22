@@ -58,7 +58,6 @@ import org.eclipse.jdt.core.dom.TypeDeclaration;
 
 import com.sun.org.apache.xml.internal.serialize.Method;
 
-
  public class AST_Visitor extends ASTVisitor {
 
 	public AST_Visitor() {
@@ -75,152 +74,139 @@ import com.sun.org.apache.xml.internal.serialize.Method;
 	// create new package
 	@Override
 	public boolean visit(PackageDeclaration node) {
-		
 	  E_Package pack = Data_Generator.getPackage();
-	  
-	  pack.setName(node.getName().toString());
-				 
+	  pack.setName(node.getName().toString());			 
 	  return super.visit(node);
 	}
-
+	@Override
+	public boolean visit(AnonymousClassDeclaration node) {
+		return super.visit(node);
+	}
 	// create class or interface
 	@Override
 	public boolean visit(TypeDeclaration node) {
 		
 		//create new class
-		//ITypeBinding classBind = node.resolveBinding().getTypeDeclaration();
+		E_Class _class = null;
+		if(node.resolveBinding() != null && node.isInterface() == false ){
+			_class = AST_Parser.createNewClass(node.resolveBinding());
+			// add class to a package
+			AST_Parser.addPackageClass(Data_Generator.getPackage(),_class);//c
+			E_Object obj = new E_Object();
+			E_Method constructor = AST_Parser.createDefaultConstructor(node,obj);//C*c
+			AST_Parser.addClassMethod(_class, constructor);
+			AST_Parser.addPackageClass(Data_Generator.getPackage(),_class);
+			// fetch main method and add initalized field of the class in it 
 			
-	//	if(node.resolveBinding().getName().toString().equals("CallAppDemo")){
-		
-		E_Class _class = AST_Parser.createNewClass(node.resolveBinding());
-		
-		// add class to a package
-		AST_Parser.addPackageClass(Data_Generator.getPackage(),_class);
-		
-		//Data_Generator.getPackage().getClasses().addLast(_class);
-		E_Object obj = new E_Object();
-		
-		E_Method constructor = AST_Parser.createDefaultConstructor(node,obj);
+			/*E_Class _mainClass = null;
 	
-		AST_Parser.addClassMethod(_class, constructor);
-		
-		AST_Parser.addPackageClass(Data_Generator.getPackage(),_class);
-		
-		// fetch main method and add initalized field of the class in it 
-		
-		/*E_Class _mainClass = null;
-
-		MethodDeclaration mainDecl = null;
-
-		TypeDeclaration mainClass = null;
-		
-		E_Method mainMethod = null;*/
-		
-		/*HashMap<TypeDeclaration, MethodDeclaration> mainMap = AST_Parser.getMainDeclarationFromProject(node);
+			MethodDeclaration mainDecl = null;
 	
-		if(mainMap!=null && mainMap.isEmpty() == false){
+			TypeDeclaration mainClass = null;
 			
-			Set mapSet = (Set) mainMap.entrySet();
+			E_Method mainMethod = null;*/
 			
-			Iterator mapIterator = mapSet.iterator();
-			
-			while (mapIterator.hasNext()) {
-	            Map.Entry mapEntry = (Map.Entry) mapIterator.next();
-	            // getKey Method of HashMap access a key of map
-	            mainClass = (TypeDeclaration) mapEntry.getKey();
-	            //getValue method returns corresponding key's value
-	            mainDecl = (MethodDeclaration) mapEntry.getValue();
-	            //System.out.println("Key : " + mainClass.getName().toString() + "= Value : " + mainDecl.getName());
-			}
-		}
-		else{
+			/*HashMap<TypeDeclaration, MethodDeclaration> mainMap = AST_Parser.getMainDeclarationFromProject(node);
 		
-			List<ASTNode> children = AST_Parser.getChildren(node);
-		
-			for (ASTNode child: children) {
+			if(mainMap!=null && mainMap.isEmpty() == false){
 				
-				if (child.getNodeType() == ASTNode.METHOD_DECLARATION){
-					
-					MethodDeclaration md = (MethodDeclaration) child;
-					
-					IMethodBinding tmb = md.resolveBinding();
-					
-					if (AST_Parser.ifUserDefinedMethod(tmb)){
-			        	  
-		          	  if(tmb!=null && tmb.getName().equals("main")){
-    		    		mainClass = node;
-        	    		mainDecl = md;
-			        	break;
-			           }
-					}
-		         }
-		        }
-		}
-		if(mainDecl!=null){
-		
-			E_Method m = Data_Controller.searchMethod(mainDecl);
+				Set mapSet = (Set) mainMap.entrySet();
+				
+				Iterator mapIterator = mapSet.iterator();
+				
+				while (mapIterator.hasNext()) {
+		            Map.Entry mapEntry = (Map.Entry) mapIterator.next();
+		            // getKey Method of HashMap access a key of map
+		            mainClass = (TypeDeclaration) mapEntry.getKey();
+		            //getValue method returns corresponding key's value
+		            mainDecl = (MethodDeclaration) mapEntry.getValue();
+		            //System.out.println("Key : " + mainClass.getName().toString() + "= Value : " + mainDecl.getName());
+				}
+			}
+			else{
 			
-			if(m!=null){ 
-					  
-					if(m.getQualifyingObject().equals(obj)){
-						mainMethod = m;
+				List<ASTNode> children = AST_Parser.getChildren(node);
+			
+				for (ASTNode child: children) {
+					
+					if (child.getNodeType() == ASTNode.METHOD_DECLARATION){
+						
+						MethodDeclaration md = (MethodDeclaration) child;
+						
+						IMethodBinding tmb = md.resolveBinding();
+						
+						if (AST_Parser.ifUserDefinedMethod(tmb)){
+				        	  
+			          	  if(tmb!=null && tmb.getName().equals("main")){
+	    		    		mainClass = node;
+	        	    		mainDecl = md;
+				        	break;
+				           }
+						}
+			         }
+			        }
+			}
+			if(mainDecl!=null){
+			
+				E_Method m = Data_Controller.searchMethod(mainDecl);
+				
+				if(m!=null){ 
+						  
+						if(m.getQualifyingObject().equals(obj)){
+							mainMethod = m;
+					  }
+					 else{
+						 mainMethod = m;
+						 mainMethod.setQualifyingObject(obj);
+					 }	
+						  
 				  }
 				 else{
-					 mainMethod = m;
-					 mainMethod.setQualifyingObject(obj);
-				 }	
-					  
-			  }
-			 else{
-				 mainMethod =  AST_Parser.createNewMethod(mainDecl,obj);	
-			  }
-		}*/
-
-		// get Class fields
-		FieldDeclaration[] fields = node.getFields();
-		
-		// create a Field data structure and add field in a class
-		AST_Parser.addClassFields(_class,fields,constructor);
-		
-		/*if(mainClass!=null){
-
-			_mainClass = AST_Parser.createNewClass(mainClass.resolveBinding());
+					 mainMethod =  AST_Parser.createNewMethod(mainDecl,obj);	
+				  }
+			}*/
+	
+			// get Class fields
+			FieldDeclaration[] fields = node.getFields();
 			
-			if(_mainClass!=null){
-				//Data_Generator.getPackage().getClasses().addLast(_mainClass);
-				AST_Parser.addPackageClass(Data_Generator.getPackage(),_mainClass);
-				AST_Parser.addClassMethod(_mainClass, mainMethod);
-			}
-		}*/
-		
-		//fetch all method invocations in a class
-		  
-		List<MethodInvocation> invokedMethods = AST_Parser.getMethodInvokations(node);
-		
-		 if(!(invokedMethods.isEmpty())){
-			 for(MethodInvocation inv:invokedMethods){ 
-				 //System.out.println("Method inv = "+inv.getName()+" for method"+node.getName());
-				 AST_Parser.addMethodInvocationExp(inv);
-				 
+			// create a Field data structure and add field in a class
+			AST_Parser.addClassFields(_class,fields,constructor);
+			
+			/*if(mainClass!=null){
+	
+				_mainClass = AST_Parser.createNewClass(mainClass.resolveBinding());
+				
+				if(_mainClass!=null){
+					//Data_Generator.getPackage().getClasses().addLast(_mainClass);
+					AST_Parser.addPackageClass(Data_Generator.getPackage(),_mainClass);
+					AST_Parser.addClassMethod(_mainClass, mainMethod);
+				}
+			}*/
+			
+			//fetch all method invocations in a class
+			  
+			List<MethodInvocation> invokedMethods = AST_Parser.getMethodInvokations(node);
+			
+			 if(!(invokedMethods.isEmpty())){
+				 for(MethodInvocation inv:invokedMethods){ 
+					 //System.out.println("Method inv = "+inv.getName()+" for method"+node.getName());
+					 AST_Parser.addMethodInvocationExp(inv);
+					 
+				 }
 			 }
 		 }
-		 //}
 		return super.visit(node);
 	}
 	@Override
 	public boolean visit(MethodDeclaration node) {
-		
 		//System.out.println("In method = "+node.getName().toString());
-		
 		E_Object obj = new E_Object();
 		
-	    //obj = AST_Parser.getQualifyingObject(node);
-	   
-		if(node.resolveBinding()!=null && node.getBody() != null){
-		
-			AST_Parser.addMethodData(node,obj);
+		if(node.resolveBinding() != null && node.getBody() != null){
+	
+			AST_Parser.addMethodData(node, obj);
+   
 		}
-	//}
 	return super.visit(node);
 		    
 	}

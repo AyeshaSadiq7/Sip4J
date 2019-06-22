@@ -38,7 +38,7 @@ public class E_MRefParameter {
 		declMethod = d_Method;
 		expType = eType;
 		this.isRetFiel = retExp;
-		declaringClass = declClass;
+		this.declaringClass = declClass;
 		aliases = new LinkedList<E_MRefAlias>();
 		fields = new LinkedList<E_MRefField>();
 		this.qualifyingObject = obj;

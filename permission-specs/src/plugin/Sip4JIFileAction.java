@@ -28,7 +28,8 @@ public class Sip4JIFileAction implements IObjectActionDelegate {
 
 	// Step 1 get compilation units
 	public void run(IAction action) {
-		System.out.println(action.toString());
+		System.out.println("Start times");
+		
 		long start = System.nanoTime();// do -nothin
 		//System.out.println("Run Action: " + action.getId());
 		/*
@@ -66,24 +67,17 @@ public class Sip4JIFileAction implements IObjectActionDelegate {
 			final List<ICompilationUnit> compUnits = reanalyzeList;
 
 			int count = 0;
-
-			for (ICompilationUnit cunit : compUnits) {
-				System.out.println("Compilation Unit Names = "+ cunit.getElementName().toString());
-				count++;
-			}
 			// Step 2 : analyzeCompUnits (compUnits, ftestType);
 			try {
-				analyzeCompUnits(compUnits);
+				analyzeCompUnits(compUnits, start);
 			} catch (IOException | JavaModelException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			long end = System.nanoTime();
+			/*long end = System.nanoTime();
 			long elapsedTime = end - start;
 			double seconds = (double)elapsedTime / 1000000000.0;
-			System.out.println("Seconds Time = "+seconds);
-			
-		
+			System.out.println("Seconds Time = "+seconds);*/
 		}
 
 	}
@@ -94,15 +88,15 @@ public class Sip4JIFileAction implements IObjectActionDelegate {
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 
 	}
-	public void analyzeCompUnits(List<ICompilationUnit> compUnits) throws IOException, JavaModelException {
+	public void analyzeCompUnits(List<ICompilationUnit> compUnits,long startTime) throws IOException, JavaModelException {
 
 		final List<ICompilationUnit> cus = compUnits;
 
 		UserSelectedClasses_Analysis UAnalysis = new UserSelectedClasses_Analysis();
 
-		UAnalysis.visitCompilationUnits(cus);
+		UAnalysis.visitCompilationUnits(cus, startTime);
 		
-				System.out.println("//////////////////////////////////////////////////////");
+		System.out.println("//////////////////////////////////////////////////////");
 		
 
 

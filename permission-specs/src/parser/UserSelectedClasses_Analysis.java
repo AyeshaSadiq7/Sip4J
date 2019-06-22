@@ -3,11 +3,21 @@ package parser;
 import graphutilities.Graph_Controller;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Member;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -15,21 +25,28 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.IMethodBinding;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.MethodInvocation;
+import org.eclipse.jdt.core.dom.TypeDeclaration;
 
+import parser.MyClassLoader;
 import datautilities.Data_Generator;
-import parser.AST_Parser;
+
 import uma.SMC.UserSelectedClassesAnalysis;
 
 public class UserSelectedClasses_Analysis {
 
 	static int testType;
 
-	public void visitCompilationUnits(List<ICompilationUnit> compilationUnitList)
+	public void visitCompilationUnits(List<ICompilationUnit> compilationUnitList, long startTime)
 			throws IOException, JavaModelException {
 
+		//System.out.println("Visit compilation units");
 		try {
-
+				//MyClassLoader.getAnnotatedCompilationUnits();
 			// UserSelectedClassesAnalysis.testType = testType;
 
 			Data_Generator.createNewPackage(); // creating new package -> pkg =
@@ -65,26 +82,35 @@ public class UserSelectedClasses_Analysis {
 		}
 
 		AST_Parser.extractContextInformation();
+		System.out.println("meta-data extraction is done");
 		
 		Graph_Controller.createGraph();
-	
-		System.out.println("First stage is done");
-	    IJavaElement javaElement = UserSelectedClasses_Analysis.getPulseCompilationUnit();
-	    System.out.println("Second stage is done");
-	    
+		System.out.println("Graph Construction and permission inference is done");
+	   
+		IJavaElement javaElement = UserSelectedClasses_Analysis.getPulseCompilationUnit();
+	   // getAnnotationsCompilationUnit
+	    ////////////////////////////////////
+	    long end = System.nanoTime();
+		long elapsedTime = end - startTime;
+		double seconds = (double)elapsedTime / 1000000000.0;
+		System.out.println("Seconds Time = "+seconds);
+		////////////////////////////////////////////////
+	    System.out.println("Pulse processing starts here");
 	    UserSelectedClasses_Analysis.analyzePulseCompilationUnits(javaElement,0);
 	    System.out.println("Third stage is done");
+	    //MyClassLoader.getAnnotatedCompilationUnits();
 		
 	}
 
 	// get the root AST node for a particular compilation unit
-	private CompilationUnit getCompilationUnit(ICompilationUnit cunit) {
+	public static CompilationUnit getCompilationUnit(ICompilationUnit cunit) {
 		CompilationUnit compilationUnit = (CompilationUnit) Workspace_Utilities
 				.getASTNodeFromCompilationUnit(cunit);
 		return compilationUnit;
 	}
 
 	// get compilation unit from selected file
+	@SuppressWarnings("unused")
 	private CompilationUnit getCompilationUnit(String prog) {
 		ASTParser parser = ASTParser.newParser(3);
 		parser.setSource(prog.toCharArray());
@@ -157,6 +183,5 @@ public class UserSelectedClasses_Analysis {
 		return javaElement;
 		
 	}
-
-
+   
 }

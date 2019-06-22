@@ -8,12 +8,12 @@ public class E_Class {
 
 	private String className;
 	private String modifier;
-	private static String classQName; // qualifyng name
+	private String classQName =""; // qualifyng name
 	private LinkedList<E_Field> fields; // class fields
 	private LinkedList<E_Method> methods;// list of declared methods
 	private LinkedList<E_InvokedMethod> invokMethods;// invoked methods
 	
-	//stores super classof this class
+	//stores super class of this class
 	E_Class superClass;//super class
 	
 	//maintain index of this class
@@ -29,7 +29,6 @@ public class E_Class {
 		invokMethods = new LinkedList<E_InvokedMethod>();
 		objectList = new LinkedList<E_Object>();
 		superClass = null;
-		classQName = "";
 		createClassIndex();
 	}
 	public void setSuperClass(E_Class sClass) {
