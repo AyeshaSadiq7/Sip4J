@@ -1,0 +1,39 @@
+package workin_example;
+
+
+import antlrtests.client.MyObject;
+import edu.cmu.cs.plural.annot.*;
+@ClassStates({
+
+	
+	@State(name="A")
+})
+
+
+public class CTest {
+	
+	@Perm(ensures="unique(this) in A")
+	public CTest(){
+		
+	}
+	@Perm(requires="pure(this) in A", ensures="pure(this) in A")
+	public void m1(){
+		
+	}
+	@Perm(requires="pure(#0) in A * pure(this) in A", ensures="pure(#0) in A * pure (this) in A")
+	public void m2(MyObject o1){
+		
+	}
+
+	@Perm(requires="full(this) in A", ensures="full(this) in A")
+	public void m3(){
+		
+	}
+	@Perm(requires="full(this) in A", ensures="full(this) in A")
+	public void m4(){
+	}
+	
+	@Perm(requires="unique(this) in A", ensures="unique(this) in A")
+	public void m5(){
+	}
+}

@@ -1,0 +1,27 @@
+package outputs;
+import edu.cmu.cs.plural.annot.*;
+
+@ClassStates({@State(name = "alive")})
+class Fibonacci {
+@Perm(ensures="unique(this) in alive")
+Fibonacci() {   }
+
+@Perm(requires="immutable(this) in alive",
+ensures="immutable(this) in alive")
+  Integer computeFibonacci(Integer num) {
+ return null;
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  void main(String[] args) {
+ 
+} 
+@Perm(requires="immutable(this) in alive",
+ensures="immutable(this) in alive")
+  void display(Integer num) {
+ 
+} 
+
+}ENDOFCLASS
+

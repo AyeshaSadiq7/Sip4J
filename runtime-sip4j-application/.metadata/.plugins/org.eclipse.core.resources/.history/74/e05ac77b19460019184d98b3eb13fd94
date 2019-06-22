@@ -1,0 +1,93 @@
+package field_accesses;
+
+
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.junit.Test;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+import org.junit.runner.RunWith;
+
+class ReadOnlyTest{
+    
+	@Test
+	public void testSimpleName() {
+		fail("Not yet implemented");
+		assertTrue("message", testSimpleName());
+	}
+
+	@Test
+	public void testThisExp() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testQualifiedName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLocalAccess() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReturnValue() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSuperFieldAccess() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSuperMethodCall() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReturnField() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReturnParam() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReturnLocal() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLMCallP() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMethodCallF() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLMCallF() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testParentReadOnly() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFieldAccess() {
+		fail("Not yet implemented");
+	}
+
+}*/

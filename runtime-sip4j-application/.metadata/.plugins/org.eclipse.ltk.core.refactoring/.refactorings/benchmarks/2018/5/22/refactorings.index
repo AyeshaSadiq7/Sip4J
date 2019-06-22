@@ -1,0 +1,31 @@
+1527565638158	Delete element
+1527638162665	Copy package
+1527638208888	Rename method 'get_dataDirname'
+1527638218980	Rename method 'get_dataFilename'
+1527638227949	Rename method 'get_nTimeStepsMC'
+1527638235707	Rename method 'get_results'
+1527638243035	Rename method 'get_nRunsMC'
+1527638262398	Rename method 'set_dataDirname'
+1527638305806	Rename method 'set_nTimeStepsMC'
+1527638315672	Rename method 'set_nRunsMC'
+1527638324285	Rename method 'set_results'
+1527638333868	Rename method 'set_dataFilename'
+1527638343011	Rename method 'set_tasks'
+1527638357217	Rename method 'get_tasks'
+1527638875793	Rename method 'get_expectedReturnRate'
+1527638888685	Rename method 'get_fluctuations'
+1527638895671	Rename method 'get_nTimeSteps'
+1527639175873	Rename method 'get_pathStartValue'
+1527639250693	Rename method 'get_pathValue'
+1527639414852	Rename method 'get_returnDefinition'
+1527639423961	Rename method 'get_volatility'
+1527640237986	Rename method 'set_expectedReturnRate'
+1527640259639	Rename method 'set_fluctuations'
+1527640269148	Rename method 'set_nTimeSteps'
+1527640284882	Rename method 'set_pathStartValue'
+1527640294598	Rename method 'set_pathValue'
+1527640303257	Rename method 'set_returnDefinition'
+1527640313949	Rename method 'set_volatility'
+1527644910947	Delete element
+1527644917707	Delete element
+1527728746179	Delete element

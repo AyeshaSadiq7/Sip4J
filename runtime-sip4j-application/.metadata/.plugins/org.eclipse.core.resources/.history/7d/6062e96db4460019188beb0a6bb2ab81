@@ -1,0 +1,19 @@
+package java_annotations;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.cmu.cs.plural.annot.Perm;
+
+public class AnnotationExample{
+
+	public static void main(String[] args) {
+	
+	}
+	@MethodInfo(comments = "@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive")
+	public String computeFibonacci() {
+		return "Overriden toString method";
+	}
+
+}

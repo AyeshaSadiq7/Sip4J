@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: pulse
+Bundle-SymbolicName: pulse
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: pulse.jar,
+ lib/antlr-3.3-complete.jar

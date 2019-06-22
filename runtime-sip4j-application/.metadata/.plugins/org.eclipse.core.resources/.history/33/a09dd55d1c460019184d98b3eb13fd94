@@ -1,0 +1,16 @@
+package outputs;
+
+import static org.junit.Assert.*;
+import pulseTest.java;
+import org.junit.*;
+
+public class Test {
+
+	@Test
+	public void test() {
+		pulse
+		fail("Not yet implemented");
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package antlrtests.client;
+
+public class MyObject {
+		
+	public static Integer a = 100;
+	
+	public static int testA(){
+			return 0;
+		}
+}

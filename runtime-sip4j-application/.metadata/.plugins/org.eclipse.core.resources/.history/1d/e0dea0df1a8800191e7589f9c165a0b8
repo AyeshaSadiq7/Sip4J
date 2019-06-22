@@ -1,0 +1,34 @@
+package outputs;
+import edu.cmu.cs.plural.annot.*;
+
+@ClassStates({@State(name = "alive")})
+class Fibonacci {
+@Perm(ensures="unique(this) in alive")
+Fibonacci() {   }
+
+@Perm(requires="immutable(this) in alive",
+ensures="immutable(this) in alive")
+  Integer computeFibonacci(Integer num) {
+if (num <= 1) {
+  return num;
+}
+ else return computeFibonacci(num - 1) + computeFibonacci(num); 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  void main(String[] args) {
+long start=System.nanoTime();
+  Fibonacci.computeFibonacci(Fibonacci.number);
+  Fibonacci.display(Fibonacci.number);
+  long elapsedTime=System.nanoTime() - start;
+  double ms=(double)elapsedTime / 1000000.0;
+  System.out.println(" Milli Seconds Time = " + ms); 
+} 
+@Perm(requires="immutable(this) in alive",
+ensures="immutable(this) in alive")
+  void display(Integer num) {
+System.out.println("The Fibonacci of Number =  " + num + " is = "); 
+} 
+
+}ENDOFCLASS
+

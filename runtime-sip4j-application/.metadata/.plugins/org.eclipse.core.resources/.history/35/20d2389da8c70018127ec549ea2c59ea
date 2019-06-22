@@ -1,0 +1,9 @@
+package workin_example;
+
+public class MyObject {
+		
+	Integer a = 100;
+	int testA(){
+			return 0;
+		}
+}

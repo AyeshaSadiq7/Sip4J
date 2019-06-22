@@ -1,0 +1,24 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="aeminium.fibonacci.SeqFibonacci"><rhs name\="aeminium.fibonacci.SeqFibonacci"/></lhs><lhs name\="workin_example.TaskData"><rhs name\="workin_example.TaskData"/></lhs><lhs name\="aeminium.health.SeqHealth"><rhs name\="aeminium.health.SeqHealth"/></lhs><lhs name\="workin_example.CopyOfCTest"><rhs name\="workin_example.CopyOfCTest"/></lhs><lhs name\="aeminium.fibonacci.Fibonacci"><rhs name\="aeminium.fibonacci.Fibonacci"/></lhs><lhs name\="aeminium.fibonacci.TestFibo"><rhs name\="aeminium.fibonacci.TestFibo"/></lhs><lhs name\="java.lang.Number"><rhs name\="java.lang.Integer"/></lhs></history>
+content_assist_number_of_computers=18
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.ui.editor.tab.width=
+org.eclipse.jdt.ui.exception.name=e
+org.eclipse.jdt.ui.formatterprofiles.version=12
+org.eclipse.jdt.ui.gettersetter.use.is=true
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+org.eclipse.jdt.ui.overrideannotation=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.templates_migrated=true
+org.eclipse.jface.textfont=1|Monaco|11.0|0|COCOA|1|;
+proposalOrderMigrated=true
+sourceHoverBackgroundColor=250,251,197
+spelling_locale_initialized=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

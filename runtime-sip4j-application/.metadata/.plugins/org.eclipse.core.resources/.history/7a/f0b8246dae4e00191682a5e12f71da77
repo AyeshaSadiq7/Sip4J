@@ -1,0 +1,81 @@
+package working_examples;
+
+public class ArrayCollection1 {
+
+	public Integer[] coll; 
+
+	 public void createColl(Integer[] coll) { 
+	 coll = new Integer[10];
+	 for(int i = 0; i < getSize(coll); i++)
+	    coll[i] = (int)(Math.random() * 10);
+	 }
+	 public void printColl(Integer[] coll) { 
+	  for(int i = 0; i < getSize(coll); i++)
+	     System.out.println(" "+coll[i]);
+	 }
+	 public  void incrColl(Integer [] coll) { 
+	  for (int i = 0; i < getSize(this.coll); i++)
+	  { this.coll[i] = this.coll[i] + i; }
+	  for (int j = 0; j < getSize(coll); j++)
+	  { coll[j] = coll[j] + j; }
+	 }
+	 public static int getSize(Integer[] coll) { 
+	  return coll.length;
+	 }
+	 public static boolean isSorted(Integer[] coll) { 
+	 boolean flag = false;
+	 for (int i = 0; i < getSize(coll)-1; i++){ 
+	    if(coll[i] > coll[i+1])
+	     flag = true;
+	    else 
+	     flag = false;
+	  }
+	  return flag;
+	 }
+	 public static Integer findMax(Integer[] coll) {
+	  Integer max;
+	  max = coll[0];
+	  for (int i = 1; i < getSize(coll); i++){ 
+		  if(coll[i] > max)
+		  	max = coll[i];
+	  }
+	  return max;
+	  }
+	 public void computeStat(Integer[] coll){ }
+	  System.out.println("Array Size = "+this.getSize(coll));
+	  System.out.println("Array Sorted = "+isSorted(coll));
+	  System.out.println("Array Max = "+findMax(coll));
+	 }
+	 public static void tidyupColls(ArrayCollection1 obj1, A obj2){
+	    obj1.coll = null;
+	    obj2.coll = null;
+	 }
+	 public static void main(String[] args) {
+	  ArrayCollection1 obj1 = new ArrayCollection1();
+	  A obj2 = new A();
+	  B obj3 = new B();
+	  obj1.createColl(obj1.coll);
+	  obj1.createColl(obj2.coll);
+	  obj2.foo(obj2.w,obj2.z);
+	  obj1.computeStat(obj2.coll);
+	  obj1.computeStat(obj1.coll);
+	  obj1.incrColl(obj2.coll);
+	  obj1.tidyupColls(obj1, obj2);
+	 }
+}
+class B {	
+	  Integer data = 100;
+	}
+	class A{
+	 public Integer[] coll;
+	 public B x,y,z,w;  
+	 
+	 B foo(B p1, B p2){
+	  x = p1;
+	  B t = x;
+	  y = t;
+	  x.data = 10;
+	  System.out.println("z.data = "+p2.data+"x.data = "+t.data);
+	  return y;
+	 }
+	}

@@ -1,0 +1,82 @@
+package java_annotations;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import org.junit.Assert;
+import org.junit.Test;
+
+
+
+public class TestAnnotations {
+
+	    @Test
+	    public void testMethodAnnotations() throws SecurityException, NoSuchMethodException {
+	    	
+	    	Class resourceClass = AnnotationExample.class;
+	    	
+	    	Class[] classes = resourceClass.getDeclaredClasses();
+	    	
+	    	int safeApproxmiations = 0;
+	    	
+	    	int independentmethods = 0;
+	    	
+	    	//for (Class c : classes){
+		        
+		    	//Method[] methods = c.getDeclaredMethods();
+		    	
+		    	//System.out.println("class = "+c.getName());
+	    		
+	    		Method[] methods = resourceClass.getDeclaredMethods();
+		    	
+		    	for (Method m : methods){
+		    		try {
+		            	Assert.assertNotNull("Method :"+m.getName() + " does not have any permission annotations",
+		            			m.isAnnotationPresent(java_annotations.Permissions.class));
+		            	
+		            	if(!m.isAnnotationPresent(java_annotations.Permissions.class)){
+		            		independentmethods ++;
+		            	}
+			    		if(m.getName().toString().equals("Fibonacci")){
+			        		Annotation[] anno = m.getDeclaredAnnotations();
+			        		//System.out.println("Hello g Annotation in Method '" + m + "' : " + anno[0]);
+							Assert.assertEquals("Permissions are either not correct or safe permissions are generateds", "@java_annotations.Permissions(perms=@Perm(ensures=unique(this) in alive)", anno[0].toString());
+						}
+			            if(m.getName().toString().equals("computeFibonacci")){
+			        		Annotation[] anno = m.getDeclaredAnnotations();
+			        		//System.out.println("Hello g Annotation in Method '" + m + "' : " + anno[0]);
+							Assert.assertEquals("Permissions for method "+ m.getName().toString()+" are either not correct or safe permissions are generateds", "@java_annotations.Permissions(perms=@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive)", anno[0].toString());
+						}
+			            if(m.getName().toString().equals("display")){
+			        		Annotation[] anno = m.getDeclaredAnnotations();
+			        		//System.out.println("Hello g Annotation in Method '" + m + "' : " + anno[0]);
+							Assert.assertEquals("Permissions are either not correct or safe permissions are generateds", "@java_annotations.Permissions(perms=@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive)", anno[0].toString());
+						}
+			        	if(m.getName().toString().equals("main")){
+			        		Annotation[] anno = m.getDeclaredAnnotations();
+			        		//System.out.println("Hello g Annotation in Method '" + m + "' : " + anno[0]);
+							Assert.assertEquals("Permissions are either not correct or safe permissions are generateds", "@java_annotations.Permissions(perms=@Perm(requires=unique(this) in alive,ensures=unique(this) in alive)", anno[0].toString());
+			        	}
+			        	if(m.getName().toString().equals("compute")){
+			        		Annotation[] anno = m.getDeclaredAnnotations();
+			        		System.out.println("I am in Sequential Integral Method '" + m + "' : " + anno[0]);
+							Assert.assertEquals("Permissions are either not correct or safe permissions are generateds", "@java_annotations.Permissions(perms=@Perm(requires=full(this) in alive * pure(#0) in alive * pure(#1) in alive,ensures=full(this) in alive * pure(#0) in alive * pure(#1) in alive)", anno[0].toString());
+						}
+			        	
+			            /*for (Annotation anno : m.getDeclaredAnnotations()) {
+							System.out.println("Hello g Annotation in Method '" + m + "' : " + anno);
+							Assert.assertEquals("Permissions are either not correct or safe permissions are generateds", "@java_annotations.Permissions(perms=@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive)", anno.toString());		
+			            }*/
+		    		}catch (AssertionError error) {
+		            // Output expected AssertionErrors.
+		            safeApproxmiations ++;
+		            continue;
+		    		} 
+		    		System.out.println("Total number of safe approximation = "+safeApproxmiations);
+		    		System.out.println("Total number of independent methods = "+independentmethods);
+		    	}
+		
+	     //}
+	    public static void main(String[] args) throws SecurityException, NoSuchMethodException{
+	    	TestAnnotations obj = new TestAnnotations();
+	    	obj.testMethodAnnotations();
+	    }
+}

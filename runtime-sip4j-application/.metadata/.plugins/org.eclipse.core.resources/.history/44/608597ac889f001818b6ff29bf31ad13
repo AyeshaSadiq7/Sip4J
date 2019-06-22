@@ -1,0 +1,16 @@
+package test;
+
+public class B {
+	int a;
+}
+public class A{
+	B x,y,z;
+	
+	public Object foo(){
+		x = w;
+		Object t = x;
+		y = t;
+		z.a = 15;
+		System.out.println(""+x.a+w.a+t.a);
+	}
+}

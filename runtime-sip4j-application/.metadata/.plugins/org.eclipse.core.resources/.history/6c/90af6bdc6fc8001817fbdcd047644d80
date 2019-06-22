@@ -1,0 +1,14 @@
+package antlrtests.client;
+
+import antlrtests.CopyOfCTest;
+
+public class MyObject {
+		
+	public Integer a = 100;
+	
+	public int testA(){
+		CopyOfCTest.m4();	
+		return 0;
+			
+		}
+}

@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Plural Plug-in
+Bundle-SymbolicName: edu.cmu.cs.plural;singleton:=true
+Bundle-Version: 1.1.4
+Bundle-Activator: edu.cmu.cs.plural.main.PluralPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.core,
+ org.eclipse.ui.console,
+ org.eclipse.core.resources,
+ org.eclipse.jface.text,
+ edu.cmu.cs.crystal,
+ org.junit4,
+ org.eclipse.jdt.ui;bundle-version="3.4.1"
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: edu.cmu.cs.plural/,
+ antlr-3.0.1/lib/antlr-runtime-3.0.1.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: 
+ edu.cmu.cs.plural.perm,
+ edu.cmu.cs.plural.perm.parser,
+ org.antlr.runtime,
+ org.antlr.runtime.debug,
+ org.antlr.runtime.misc,
+ org.antlr.runtime.tree
+Eclipse-RegisterBuddy: edu.cmu.cs.crystal
+Import-Package: 
+ org.eclipse.debug.core.model

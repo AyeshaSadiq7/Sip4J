@@ -1,0 +1,10 @@
+Apple
+word
+ball
+pencil
+eraser
+ant
+call
+void
+college
+hello

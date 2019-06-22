@@ -1,0 +1,188 @@
+Jul 29, 2008 2:22:26 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on ArrayIterator.java
+Jul 29, 2008 2:22:29 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it2 carries no suitable permission
+Jul 29, 2008 2:22:29 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it2.next()
+Jul 29, 2008 2:22:29 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it2 must be in state available but is in [alive]
+Jul 29, 2008 2:22:29 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it2.next()
+Jul 29, 2008 2:22:29 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: [param.it2] returns no suitable permissions for post-condition
+Jul 29, 2008 2:22:29 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: return it1.next().concat(it2.next());
+
+Jul 29, 2008 2:22:29 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it must be in state available but is in [end]
+Jul 29, 2008 2:22:29 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it.next()
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: no suitable permission for assignment to strings[0]
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: strings[0]
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it yields no suitable permission for surrounding call
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it yields no suitable permission for surrounding call
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it carries no suitable permission
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it.next()
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it must be in state available but is in [alive]
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it.next()
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it carries no suitable permission
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it.dispose()
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it carries no suitable permission
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it.hasNext()
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it carries no suitable permission
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it.dispose()
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: no suitable permission for assignment to strings[0]
+Jul 29, 2008 2:22:30 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: strings[0]
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on BufferedStream.java
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: Refined state unknown: opeFn
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: @States(value={"empty","filled"},refined="opeFn") public class BufferedStream extends StreamProtocol {
+}
+
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on FractionTest.java
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: [this] returns no suitable permissions for post-condition
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: {
+  test();
+}
+
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: [this] returns no suitable permissions for post-condition
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: {
+  consumeRoot();
+}
+
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on ModifyingIterator.java
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: Return value must be in state alive but is in []
+Jul 29, 2008 2:22:31 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: return Arrays.asList(new String[]{"hello","world"});
+
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it must be in state retrieved but is in [alive]
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: it.remove()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on StreamProtocol.java
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s carries no suitable permission
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.read()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s must be in state open but is in [alive]
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.read()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: [param.s] returns no suitable permissions for post-condition
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: {
+  System.out.println(s.read());
+}
+
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s carries no suitable permission
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.available()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s must be in state open but is in [alive]
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.available()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s yields no suitable permission for surrounding call
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s carries no suitable permission
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.close()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s must be in state open but is in [alive]
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.close()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s carries no suitable permission
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.read()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s must be in state open but is in [closed]
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.read()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s carries no suitable permission
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.read()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s must be in state open but is in [closed]
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: s.read()
+Jul 29, 2008 2:22:32 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on Chat.java
+Jul 29, 2008 2:22:37 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on RequestGenerator.java
+Jul 29, 2008 2:22:38 PM edu.cmu.cs.plural.track.FractionalAnalysis$FractionalChecker endVisit
+WARNING: Bottom encountered before return: return;
+
+Jul 29, 2008 2:22:38 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on SplittingPure.java
+Jul 29, 2008 2:22:38 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: this carries no suitable permission
+Jul 29, 2008 2:22:38 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: close()
+Jul 29, 2008 2:22:38 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: [this] returns no suitable permissions for post-condition
+Jul 29, 2008 2:22:38 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: {
+  close();
+}
+
+Jul 29, 2008 2:22:38 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on CasesTest.java
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal runAnalysesOnMultiUnit
+INFO: Running Crystal on SpecInheritanceTest.java
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: Ambiguous protocol annotations inherited from types I, J
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: public void ambiguous(){
+}
+
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: this carries no suitable permission
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: needsB()
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: this must be in state b but is in [a]
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: needsB()
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: [this] returns no suitable permissions for post-condition
+Jul 29, 2008 2:22:47 PM edu.cmu.cs.crystal.Crystal reportUserProblem
+INFO: {
+  needsB();
+}
+

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/501/trunk/Plural/src/edu/cmu/cs/plural/concrete
+END
+VariablePredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/312/trunk/Plural/src/edu/cmu/cs/plural/concrete/VariablePredicate.java
+END
+ImplicationResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/414/trunk/Plural/src/edu/cmu/cs/plural/concrete/ImplicationResult.java
+END
+Implication.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/414/trunk/Plural/src/edu/cmu/cs/plural/concrete/Implication.java
+END
+StateImplication.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/501/trunk/Plural/src/edu/cmu/cs/plural/concrete/StateImplication.java
+END
+NullPredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/221/trunk/Plural/src/edu/cmu/cs/plural/concrete/NullPredicate.java
+END
+ConcreteAnnotationUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/364/trunk/Plural/src/edu/cmu/cs/plural/concrete/ConcreteAnnotationUtils.java
+END
+BooleanPredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/221/trunk/Plural/src/edu/cmu/cs/plural/concrete/BooleanPredicate.java
+END
+Predicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/concrete/Predicate.java
+END
+StatePredicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/221/trunk/Plural/src/edu/cmu/cs/plural/concrete/StatePredicate.java
+END
+DynamicStateLogic.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/414/trunk/Plural/src/edu/cmu/cs/plural/concrete/DynamicStateLogic.java
+END
+NullImplication.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/414/trunk/Plural/src/edu/cmu/cs/plural/concrete/NullImplication.java
+END
+PluralParseError.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/45/trunk/Plural/src/edu/cmu/cs/plural/concrete/PluralParseError.java
+END

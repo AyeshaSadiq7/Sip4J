@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="aeminium.fibonacci.SeqFibonacci"/>
+<fullyQualifiedTypeName name="workin_example.TaskData"/>
+<fullyQualifiedTypeName name="aeminium.fft.SeqFFT"/>
+<fullyQualifiedTypeName name="aeminium.health.SeqHealth"/>
+<fullyQualifiedTypeName name="aeminium.health.Village"/>
+<fullyQualifiedTypeName name="workin_example.CopyOfCTest"/>
+<fullyQualifiedTypeName name="antlrtests.CopyOfCTest"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
+<fullyQualifiedTypeName name="aeminium.fft.FFTUtility"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="net.sourceforge.pmd.lang.java.ast.jdkversiontests.java10.LocalVariableTypeInferenceVarAsAnnotationName.var"/>
+<fullyQualifiedTypeName name="aeminium.fibonacci.TestFibo"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="aeminium.fibonacci.Fibonacci"/>
+<fullyQualifiedTypeName name="aeminium.blackscholes.StdRandom"/>
+<fullyQualifiedTypeName name="edu.cmu.cs.crystal.util.Triple"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fieldaccess.ReadOnlyExp"/>
+<fullyQualifiedTypeName name="java.lang.annotation.Annotation"/>
+<fullyQualifiedTypeName name="outputs.TestClass"/>
+<fullyQualifiedTypeName name="org.eclipse.core.resources.ResourcesPlugin"/>
+<fullyQualifiedTypeName name="edu.cmu.cs.plural.annot.ClassStates"/>
+<fullyQualifiedTypeName name="edu.cmu.cs.plural.annot.State"/>
+</qualifiedTypeNameHistroy>

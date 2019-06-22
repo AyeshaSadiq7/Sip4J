@@ -1,0 +1,53 @@
+package field_assignments;
+
+import java.util.Random;
+
+
+public class NewObjectAssignments extends ParentAddressAssignment{
+	
+		public Integer[] coll = new Integer[5];
+		public Integer[] e = new Integer[]{6,7,8,9,10};
+		
+		public void fieldAssign() {
+			this.coll = e; 
+		}
+		public Integer[] paramAssign(Integer[] p) {
+			this.coll = p; 
+			return null;
+		}
+		public void localAssign() {
+			Integer[] localarray = e;
+			localarray[0] = 89;
+			display(localarray);
+		}
+		public void MC1() {
+			this.coll = super.fieldAccess();
+		}
+		public void MC2() {
+			this.coll = paramAssign(e);
+		}
+		
+		public void display(Integer[] p) {
+			 System.out.println(" "+p[0]);
+		}
+	}
+class ParentNewObject{
+	
+	public static Integer[] a = new Integer[]{1,2,3,4,5};
+	
+	Integer[] fieldAccess(){
+		return a;
+	}
+
+}
+class TestNewObject{
+	public static void main(String[] args){
+		NewObjectAssignments obj = new NewObjectAssignments();
+		obj.fieldAssign();
+		obj.localAssign();
+		obj.display(obj.coll);
+	}
+}
+
+
+	

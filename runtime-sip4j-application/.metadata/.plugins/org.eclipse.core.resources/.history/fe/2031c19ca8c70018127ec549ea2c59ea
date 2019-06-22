@@ -1,0 +1,11 @@
+package workin_example;
+
+public class MyObject {
+		Integer a = 100;
+		public MyObject(){
+			
+		}
+		int testA(){
+			return 0;
+		}
+}

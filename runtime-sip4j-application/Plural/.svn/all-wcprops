@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/501/trunk/Plural
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/3/trunk/Plural/COPYING
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3/trunk/Plural/build.properties
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/18/trunk/Plural/README
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/438/trunk/Plural/plugin.xml
+END
+regex-copyright-notice.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/217/trunk/Plural/regex-copyright-notice.txt
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/318/trunk/Plural/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/114/trunk/Plural/.project
+END
+java-copyright-notice.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/217/trunk/Plural/java-copyright-notice.txt
+END
+copyright-notice.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/217/trunk/Plural/copyright-notice.txt
+END

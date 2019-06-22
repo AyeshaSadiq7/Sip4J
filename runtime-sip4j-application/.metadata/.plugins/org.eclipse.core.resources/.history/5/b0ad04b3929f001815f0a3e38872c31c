@@ -1,0 +1,31 @@
+package test;
+
+public class B {
+	
+	int a = 100;
+}
+
+class A{
+	
+	B x,y,z,w;
+	
+	public B foo(int a, B z){
+		//x = w;
+		//B t = x;
+		//y =  t;
+		a = 15;
+		System.out.println(""+w.a+z.a+t.a);
+		return y;
+		
+	}
+}
+
+class Client{
+	
+	public static void main(String[] arg){
+		
+		A a = new A();
+		B b = new B();
+		a.foo(,a.w);
+	}
+}

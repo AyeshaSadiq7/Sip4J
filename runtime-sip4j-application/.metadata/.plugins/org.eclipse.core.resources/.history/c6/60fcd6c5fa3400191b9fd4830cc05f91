@@ -1,0 +1,113 @@
+package aeminium.blackscholes;
+
+import aeminium.blackscholes.MersenneTwisterFast;
+
+public final class StdRandom {
+
+	private static MersenneTwisterFast1 random; // pseudo-random number generator
+	
+	private static long seed; // pseudo-random number generator seed
+	
+
+	// static initializer
+	static {
+		// this is how the seed was set in Java 1.4
+		seed = System.currentTimeMillis();
+		random = new MersenneTwisterFast1();
+	}
+
+	// don't instantiate
+	private StdRandom() {
+	}
+
+	/**
+	 * Set the seed of the psedurandom number generator.
+	 */
+	public static void setSeed(long s) {
+		seed = s;
+		random = new MersenneTwisterFast();
+	}
+
+	/**
+	 * Get the seed of the psedurandom number generator.
+	 */
+	public static long getSeed() {
+		return seed;
+	}
+
+	/**
+	 * Return real number uniformly in [0, 1).
+	 */
+	public static double uniformO1() {
+		return random.nextDouble();
+	}
+	/**
+	 * Unit test.
+	 */
+	public static void main(String[] args) {
+		int N = Integer.parseInt(args[0]);
+		if (args.length == 2) 
+			StdRandom.setSeed(Long.parseLong(args[1]));
+		double[] t = { .5, .3, .1, .1 };
+
+		//StdOut.println("seed = " + StdRandom.getSeed());
+		//uniformO2(100);
+		uniformO1();
+			//StdOut.printf("%2d ", uniformO2(100));
+			//StdOut.printf("%8.5f ", uniform(10.0, 99.0));
+			//StdOut.printf("%5b ", bernoulliO1(.5));
+			//StdOut.printf("%7.5f ", gaussianO2(9.0, .2));
+			//StdOut.printf("%2d ", discrete(t));
+			//StdOut.println();
+		
+	
+			//StdOut.print(s + " ");
+		//StdOut.println();
+	}
+
+}
+
+class MersenneTwisterFast1{
+private static final long serialVersionUID = -8219700664442619525L; // locked
+	// as of
+	// Version
+	// 15
+
+// Period parameters
+private static final int N = 1000000;
+private static final int M = 397;
+private static final int MATRIX_A = 0x9908b0df; // private static final *
+// constant vector a
+private static final int UPPER_MASK = 0x80000000; // most significant w-r
+// bits
+private static final int LOWER_MASK = 0x7fffffff; // least significant r
+// bits
+
+// Tempering parameters
+private static final int TEMPERING_MASK_B = 0x9d2c5680;
+private static final int TEMPERING_MASK_C = 0xefc60000;
+
+private int mt[]; // the array for the state vector
+private int mti; // mti==N+1 means mt[N] is not initialized
+private int mag01[];
+
+// a good initial seed (of int size, though stored in a long)
+// private static final long GOOD_SEED = 4357;
+
+private double __nextNextGaussian;
+private boolean __haveNextNextGaussian;
+	public final double nextDouble() {
+		int y;
+		int z;
+
+		if (mti >= N) // generate N words at one time
+		{
+			
+
+			mti = 0;
+		}
+
+		return 0.0;
+		
+
+}

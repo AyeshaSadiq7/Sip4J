@@ -1,0 +1,16 @@
+package antlrtests.client;
+
+import antlrtests.CopyOfCTest;
+import crypt.IDEATest;
+public class MyObject {
+		
+	public Integer a = 100;
+	
+	public int testA(){
+		CopyOfCTest.m4();	
+		TestIDEA obj = new TestIDEA();
+		obj.Do();
+		return 0;
+			
+		}
+}

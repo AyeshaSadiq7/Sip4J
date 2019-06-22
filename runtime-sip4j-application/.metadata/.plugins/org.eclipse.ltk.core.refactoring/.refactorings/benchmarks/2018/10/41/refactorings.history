@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;antlrtests.client.MyObject.java&apos; to &apos;MySecondObject.java&apos;&#x0A;- Original project: &apos;jomp&apos;&#x0A;- Original element: &apos;antlrtests.client.MyObject.java&apos;&#x0A;- Renamed element: &apos;antlrtests.client.MySecondObject.java&apos;" description="Rename compilation unit &apos;MyObject.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;antlrtests.client{MyObject.java" name="MySecondObject.java" references="false" stamp="1538888704608" version="1.0"/>
+</session>

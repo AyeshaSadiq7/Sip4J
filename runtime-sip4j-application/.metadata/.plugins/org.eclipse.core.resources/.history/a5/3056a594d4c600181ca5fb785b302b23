@@ -1,0 +1,50 @@
+package outputs;
+import edu.cmu.cs.plural.annot.*;
+
+@ClassStates({@State(name = "alive")})
+class AntlrHarness {
+@Perm(ensures="unique(this) in alive")
+AntlrHarness() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+public void postIteration(String size) { 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class Benchmark {
+@Perm(ensures="unique(this) in alive")
+Benchmark() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ void deleteTree(File tree) { 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class TeePrintStream {
+@Perm(ensures="unique(this) in alive")
+TeePrintStream() {   }
+
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class Main {
+@Perm(ensures="unique(this) in alive")
+Main() {   }
+
+@Perm(requires="none(this) in alive",
+ensures="unique(this) in alive")
+ void main(String args[]) { 
+} 
+
+}ENDOFCLASS
+

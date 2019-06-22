@@ -1,0 +1,87 @@
+package workin_example;
+
+public class BoxColl{
+
+    public Integer[] coll;
+    
+    public Integer[] e;
+   
+    // @none(coll) -> @unique(coll) // Context-RW
+  public BoxColl(int size) {// no parameter is map as size is not a class field
+      coll = new Integer[size]; // Apply(<G-New-Obj>, <ref-var>) where <ref-var> = coll
+      e  = new Integer[size];
+    }
+    // @share(coll) -> @share(coll) // Context-RW
+    public void initColl(){//The proposed technique maps the formal parameter with the actual parameter i.e. coll
+    	int i = 0; // Apply (L-Initialization, <local-var>) where i = <local-var>
+    	for(;i < coll.length; i++) //Apply(G-Read-Only, <ref-var>) where <ref-var> = coll AND Apply(L-Val-Flow, <local-var>) where i = <local-var>
+        coll[i] = (int)(Math.random()*10); // Apply(G-Val-Flow, <ref-var>) where <ref-var> = coll
+    }
+    // @pure(coll) -> @pure(coll)          // Context-RW
+    public void displayColl(Integer[] coll) {//The proposed technique maps the formal parameter with the actual parameter i.e. coll
+      int i = 0; // Apply(L-Initialization, <local-var>) where i = <local-var>
+      for(;i < coll.length; i++) { // Apply(G-Read-Only, <ref-var>) where <ref-var> = coll AND Apply(L-Val-Flow, <local-var>) where i = <local-var>
+         System.out.println(" "+coll[i]); // Apply(G-Read-Only, <ref-var>) where <ref-var> = coll
+      }
+    }
+	
+   public void displayE() {
+        // The proposed technique maps the formal parameter with the actual parameter i.e. coll
+         //e = new Integer [coll.length];//Apply(G-New-Obj, <ref-var>) where <ref-var> = e
+         System.out.println(e);
+     }
+   public void incrE(Integer[] e) {
+   	int i = 0;
+     	for (; i < e.length; i++) // Apply (L-Read-Only, <local-ref-var>) where temp = <local-ref-var> AND Apply(L-Val-Flow, <local-var>) where i = <local-var>
+   		e[i] = i*2; //Apply(L-Val-Flow, <local-ref-var>) where temp = <local-ref-var>;
+   }
+  // @pure(coll), @none(e) -> @pure(coll),@unique(e)           // Context-RW
+   public void initE() {
+    // The proposed technique maps the formal parameter with the actual parameter i.e. coll
+     e = coll; //Apply(G-Addr-Flow, <ref-var>) where <ref-var> = e 
+   }
+   /* 
+   // @share(coll) -> @share(coll) // Context-RW
+    public void copyColl() { // The proposed technique maps the formal parameter with the actual parameter i.e. coll
+       Integer[] temp;// Apply(<L-Decl>, <local-ref-var>)
+       temp = coll;  //Apply (L-Addr-Flow, <local-ref-var>) where temp = <local-ref-var>;
+       int i = 0; // Apply (L-Initialization, <local-var>) where i = <local-var>
+    	for (; i < temp.length; i++) // Apply (L-Read-Only, <local-ref-var>) where temp = <local-ref-var> AND Apply(L-Val-Flow, <local-var>) where i = <local-var>
+    		temp[i] = temp[i]+i; //Apply(L-Val-Flow, <local-ref-var>) where temp = <local-ref-var>;
+    }*/
+    // @unique(coll) -> @unique(coll) // Context-RW
+     public void tidyupColl() {
+	      coll = null; // Apply(<G-Null-Addr-Flow>, <ref-var>) where <ref-var> = coll
+	      e = null; //Apply(<G-Null-Addr-Flow>, <ref-var>) where <ref-var> = e
+	 }
+     public static void main(String[] args) { // Apply method call rules according to context
+	      BoxColl box = new BoxColl(10);//Apply(<LR-New-Obj>, <local-ref-var>) where <local-ref-var> = coll
+	      box.initColl(); //Apply (MethodCall<post-perm>, <ref-var>) where <ref-var> = coll;
+	      box.displayColl(box.coll); //Apply (MethodCall<post-perm>, <ref-var>) where <ref-var> = coll;
+	      box.displayE(); //Apply (MethodCall<post-perm>, <ref-var>) where <ref-var> = coll;
+	      /*box.incrE(box.e); //Apply (MethodCall<post-perm>, <ref-var>) where <ref-var> = coll;
+	      box.copyColl(); //Apply (MethodCall<post-perm>, <ref-var>) where <ref-var> = coll;
+	      box.tidyupColl(); //Apply (MethodCall<post-perm>, <ref-var>) where <ref-var> = coll;*/
+	   }
+   
+   
+}
+
+/*Class Name = BoxCollection
+Method Name = main
+Ref-Var= coll, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= e, Pre-Permissions=none, Post Permissions=unique
+Method Name = createColl
+Ref-Var= coll, Pre-Permissions=none, Post Permissions=unique
+Method Name = initializeColl
+Ref-Var= coll, Pre-Permissions=share, Post Permissions=share
+Method Name = printColl
+Ref-Var= coll, Pre-Permissions=pure, Post Permissions=pure
+Method Name = copyColl
+Ref-Var= coll, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= e, Pre-Permissions=none, Post Permissions=unique
+Method Name = incrColl
+Ref-Var= coll, Pre-Permissions=share, Post Permissions=share
+Method Name = tidyupColl
+Ref-Var= coll, Pre-Permissions=unique, Post Permissions=unique
+Ref-Var= e, Pre-Permissions=unique, Post Permissions=unique*/

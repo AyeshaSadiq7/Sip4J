@@ -1,0 +1,7 @@
+1553564148428	Rename method 'eliminateVariable'
+1553653491475	Rename method 'createConstraint'
+1553683991839	Rename method 'mutableCopy'
+1553823368484	Rename method 'makeEquivalent'
+1553823491470	Rename method 'areEquivalent'
+1553823697108	Rename method 'makeZero'
+1553824832351	Rename method 'createSum'

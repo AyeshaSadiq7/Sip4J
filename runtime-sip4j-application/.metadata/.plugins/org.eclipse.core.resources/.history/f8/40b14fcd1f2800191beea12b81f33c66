@@ -1,0 +1,22 @@
+package working_examples;
+
+
+public class MTTS {
+
+ private TaskData data ;
+ 
+
+ public void setData (TaskData d){
+   data = d;
+ }
+ public TaskData getData (){
+ return data ;
+ }
+ public void execute (TaskData d){
+	 data  = d;
+  }
+ public TaskData getTaskStatus (){
+	 return data;
+  }
+}
+

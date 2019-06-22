@@ -1,0 +1,67 @@
+package field_accesses;
+
+public class ReadOnly extends ParentReadOnly{
+
+	public Integer[] coll = new Integer[10];
+	
+	public void simpleName() {
+		System.out.println("field access"+coll[0]);
+	}
+	public void thisExp() {
+	   System.out.println("field access"+this.coll[0]);
+	}
+	public void qualifiedName(ReadOnly obj) {
+		System.out.println("field access"+obj.coll[0]);
+	}
+	public void localAccess() {
+		Integer[] localref = coll;//aliasing
+		System.out.println("field access"+localref[0]);
+	}
+	public int returnValue(Integer[] coll) {
+		  lMCallP(coll);
+		  return coll.length;
+	}
+	public void superFieldAccess() {
+		System.out.println(super.a);//access a
+	}
+	public void superMethodCall() {
+		super.fieldAccess();// return a
+	}
+	public Integer[] returnField() {// return address
+		  return coll;
+	}
+	public Integer[] returnParam(Integer[] coll) {//local parameter is not mapped with coll
+		coll[0] = 90; 
+		return coll;
+	}
+	public Integer[] returnLocal() {
+		Integer[] localref2 = coll;//aliasing
+		return localref2;
+	}
+	public int lMCallP(Integer[] coll) {
+		  return coll.hashCode();
+	}
+	/*public void lMCallL(Integer[] coll) {//does not work with parameter and local reference
+		Integer[] localref2 = coll;//aliasing  
+		localref2.hashCode();
+	}*/
+	public int methodCallF() {
+		return returnValue(coll); 
+	}
+	public int lMCallF(){
+		return coll.hashCode();
+	}
+	
+}
+class ParentReadOnly{
+	
+	public Integer a;
+	
+	ParentReadOnly(){
+		a = 10;
+	}
+	Integer fieldAccess(){
+		return a;
+	}
+	
+}

@@ -1,0 +1,22 @@
+package java_annotations;
+import edu.cmu.cs.plural.annot.*;
+
+@ClassStates({@State(name = "alive")})
+class Test {
+@Perm(ensures="unique(this) in alive")
+Test() {   }
+
+@Permissions(perms="@Perm(requires=full(this) in alive * pure(#0) in alive * pure(#1) in alive,ensures=full(this) in alive * pure(#0) in alive * pure(#1) in alive")
+public String compute() { 
+ } 
+@Permissions(perms="@Perm(requires=unique(this) in alive,ensures=unique(this) in alive")
+public String main() { 
+ } 
+@Permissions(perms="@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive")
+public String display() { 
+ } 
+@Permissions(perms="@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive")
+public String f() { 
+ } 
+
+}

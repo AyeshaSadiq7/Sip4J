@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util
+END
+Box.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/Box.java
+END
+Option.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/Option.java
+END
+ExtendedIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/ExtendedIterator.java
+END
+Pair.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/Pair.java
+END
+Utilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/Utilities.java
+END
+ConsList.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/ConsList.java
+END
+Freezable.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/Freezable.java
+END
+CollectionMethods.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/CollectionMethods.java
+END
+Triple.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/Triple.java
+END
+Lambda.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/Lambda.java
+END
+Lambda2.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/Lambda2.java
+END
+SimpleMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/155/branches/crystal33legacy/src/edu/cmu/cs/crystal/util/SimpleMap.java
+END

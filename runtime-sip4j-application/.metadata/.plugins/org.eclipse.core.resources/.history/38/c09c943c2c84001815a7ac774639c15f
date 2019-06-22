@@ -1,0 +1,211 @@
+package aeminium.fft;
+//Aeminium benchmark
+
+import java.util.Random;
+
+public class SeqFFT {
+	
+	private static Complex[] x;
+	
+	private static Complex tempx;
+	
+	public static Complex[] sequentialFFT(Complex[] x) {
+	
+		int N = x.length;
+		// base case
+		if (N == 1) 
+			return new Complex[]{x[0]};
+		// radix 2 Cooley-Tukey FFT
+		if (N % 2 != 0) {
+			throw new RuntimeException("N is not a power of 2");
+		}
+		// fft of even terms
+		Complex[] even = new Complex[N / 2];
+		for (int k = 0; k < N / 2; k++) {
+			even[k] = x[2 * k];
+		}
+		Complex[] q = sequentialFFT(even);
+		// fft of odd terms
+		Complex[] odd = even; // reuse the array
+		for (int k = 0; k < N / 2; k++) {
+			odd[k] = x[2 * k + 1];
+		}
+		Complex[] r = sequentialFFT(odd);
+		// combine
+		Complex[] y = new Complex[N];
+		for (int k = 0; k < N / 2; k++) {
+			double kth = -2 * k * Math.PI / N;
+			Complex wk = new Complex(Math.cos(kth), Math.sin(kth));
+			y[k] = q[k].plus(wk.times(r[k]));
+			y[k + N / 2] = q[k].minus(wk.times(r[k]));
+		}
+		return y;
+	}
+	public static void main(String[] args) { 
+	 
+	    long start = System.nanoTime();// do-nothing
+	  
+	    int size = FFTUtility.DEFAULT_SIZE;
+	   
+	    //FFTUtility.createRandomComplexArray(x, size, new Random(1L));
+
+	    SeqFFT.sequentialFFT(x); // 
+        
+	    //FFTUtility.show(x, "Result");
+      
+        long end = System.nanoTime();//do-nothing
+    	
+        long elapsedTime = end - start;//do-nothing
+    	
+    	double seconds = (double)elapsedTime / 1000000.0;//do-nothing
+    	
+    	System.out.println(" Milli Seconds Time = "+seconds);//do-nothing
+    }
+}
+
+/*
+
+Class Name = Complex
+Method Name = main
+Ref-Var= b.re, Pre-Permissions=none, Post Permissions=none
+Ref-Var= b.im, Pre-Permissions=none, Post Permissions=none
+Ref-Var= a.re, Pre-Permissions=none, Post Permissions=none
+Ref-Var= a.im, Pre-Permissions=none, Post Permissions=none
+Ref-Var= fft.FFTUtility.DEFAULT_SIZE, Pre-Permissions=none, Post Permissions=unique
+Method Name = Complex
+Ref-Var= fft.Complex.re, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= fft.Complex.im, Pre-Permissions=none, Post Permissions=unique
+Method Name = plus
+Ref-Var= b.re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= b.im, Pre-Permissions=pure, Post Permissions=pure
+Method Name = minus
+Ref-Var= a.re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= a.im, Pre-Permissions=pure, Post Permissions=pure
+Method Name = times
+Ref-Var= a.re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= a.im, Pre-Permissions=pure, Post Permissions=pure
+Method Name = sin
+Ref-Var= fft.Complex.re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= fft.Complex.im, Pre-Permissions=pure, Post Permissions=pure
+Method Name = cos
+Ref-Var= fft.Complex.re, Pre-Permissions=share, Post Permissions=share
+Ref-Var= fft.Complex.im, Pre-Permissions=pure, Post Permissions=pure
+
+//////////////////////////////////////////////////////
+
+Class Name = Complex
+Method Name = main
+none double b.re >> none double b.re
+none double b.im >> none double b.im
+none double a.re >> none double a.re
+none double a.im >> none double a.im
+none int fft.FFTUtility.DEFAULT_SIZE >> unique int fft.FFTUtility.DEFAULT_SIZE
+Method Name = Complex
+none double fft.Complex.re >> unique double fft.Complex.re
+none double fft.Complex.im >> unique double fft.Complex.im
+Method Name = plus
+pure double b.re >> pure double b.re
+pure double b.im >> pure double b.im
+Method Name = minus
+pure double a.re >> pure double a.re
+pure double a.im >> pure double a.im
+Method Name = times
+pure double a.re >> pure double a.re
+pure double a.im >> pure double a.im
+Method Name = sin
+pure double fft.Complex.re >> pure double fft.Complex.re
+pure double fft.Complex.im >> pure double fft.Complex.im
+Method Name = cos
+share double fft.Complex.re >> share double fft.Complex.re
+pure double fft.Complex.im >> pure double fft.Complex.im
+
+//////////////////////////////////////////////////////
+Class Name = Complex
+Method Name = main
+@Perm(requires="none(b.re) * none(b.im) * none(a.re) * none(a.im) * none(fft.FFTUtility.DEFAULT_SIZE) in ALIVE", ensures= "none(b.re) * none(b.im) * none(a.re) * none(a.im) * unique(fft.FFTUtility.DEFAULT_SIZE) in ALIVE")
+Method Name = Complex
+@Perm(requires="none(fft.Complex.re) * none(fft.Complex.im) in ALIVE", ensures= "unique(fft.Complex.re) * unique(fft.Complex.im) in ALIVE")
+Method Name = plus
+@Perm(requires="pure(b.re) * pure(b.im) in ALIVE", ensures= "pure(b.re) * pure(b.im) in ALIVE")
+Method Name = minus
+@Perm(requires="pure(a.re) * pure(a.im) in ALIVE", ensures= "pure(a.re) * pure(a.im) in ALIVE")
+Method Name = times
+@Perm(requires="pure(a.re) * pure(a.im) in ALIVE", ensures= "pure(a.re) * pure(a.im) in ALIVE")
+Method Name = sin
+@Perm(requires="pure(fft.Complex.re) * pure(fft.Complex.im) in ALIVE", ensures= "pure(fft.Complex.re) * pure(fft.Complex.im) in ALIVE")
+Method Name = cos
+@Perm(requires="share(fft.Complex.re) * pure(fft.Complex.im) in ALIVE", ensures= "share(fft.Complex.re) * pure(fft.Complex.im) in ALIVE")
+
+//////////////////////////////////////////////////////
+Class Name = FFTUtility
+Method Name = FFTUtility
+Method Name = createRandomComplexArray
+Ref-Var= fft.SeqFFT.x, Pre-Permissions=none, Post Permissions=unique
+Method Name = show
+Ref-Var= fft.SeqFFT.x, Pre-Permissions=pure, Post Permissions=pure
+
+//////////////////////////////////////////////////////
+
+Class Name = FFTUtility
+Method Name = FFTUtility
+Method Name = createRandomComplexArray
+none fft.Complex[] fft.SeqFFT.x >> unique fft.Complex[] fft.SeqFFT.x
+Method Name = show
+pure fft.Complex[] fft.SeqFFT.x >> pure fft.Complex[] fft.SeqFFT.x
+
+//////////////////////////////////////////////////////
+Class Name = FFTUtility
+Method Name = FFTUtility
+@Perm(requires=" in ALIVE", ensures= " in ALIVE")
+Method Name = createRandomComplexArray
+@Perm(requires="none(fft.SeqFFT.x) in ALIVE", ensures= "unique(fft.SeqFFT.x) in ALIVE")
+Method Name = show
+@Perm(requires="pure(fft.SeqFFT.x) in ALIVE", ensures= "pure(fft.SeqFFT.x) in ALIVE")
+
+//////////////////////////////////////////////////////
+Class Name = SeqFFT
+Method Name = SeqFFT
+Method Name = sequentialFFT
+Ref-Var= fft.SeqFFT.x, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= b.re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= b.im, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= a.re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= a.im, Pre-Permissions=pure, Post Permissions=pure
+Method Name = main
+Ref-Var= fft.FFTUtility.DEFAULT_SIZE, Pre-Permissions=none, Post Permissions=none
+Ref-Var= fft.FFTUtility.x, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= fft.SeqFFT.x, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= b.re, Pre-Permissions=none, Post Permissions=none
+Ref-Var= b.im, Pre-Permissions=none, Post Permissions=none
+Ref-Var= a.re, Pre-Permissions=none, Post Permissions=none
+Ref-Var= a.im, Pre-Permissions=none, Post Permissions=none
+
+//////////////////////////////////////////////////////
+
+Class Name = SeqFFT
+Method Name = SeqFFT
+Method Name = sequentialFFT
+pure fft.Complex[] fft.SeqFFT.x >> pure fft.Complex[] fft.SeqFFT.x
+pure double b.re >> pure double b.re
+pure double b.im >> pure double b.im
+pure double a.re >> pure double a.re
+pure double a.im >> pure double a.im
+Method Name = main
+none int fft.FFTUtility.DEFAULT_SIZE >> none int fft.FFTUtility.DEFAULT_SIZE
+none fft.Complex[] fft.FFTUtility.x >> unique fft.Complex[] fft.FFTUtility.x
+none fft.Complex[] fft.SeqFFT.x >> unique fft.Complex[] fft.SeqFFT.x
+none double b.re >> none double b.re
+none double b.im >> none double b.im
+none double a.re >> none double a.re
+none double a.im >> none double a.im
+
+//////////////////////////////////////////////////////
+Class Name = SeqFFT
+Method Name = SeqFFT
+@Perm(requires=" in ALIVE", ensures= " in ALIVE")
+Method Name = sequentialFFT
+@Perm(requires="pure(fft.SeqFFT.x) * pure(b.re) * pure(b.im) * pure(a.re) * pure(a.im) in ALIVE", ensures= "pure(fft.SeqFFT.x) * pure(b.re) * pure(b.im) * pure(a.re) * pure(a.im) in ALIVE")
+Method Name = main
+@Perm(requires="none(fft.FFTUtility.DEFAULT_SIZE) * none(fft.FFTUtility.x) * none(fft.SeqFFT.x) * none(b.re) * none(b.im) * none(a.re) * none(a.im) in ALIVE", ensures= "none(fft.FFTUtility.DEFAULT_SIZE) * unique(fft.FFTUtility.x) * unique(fft.SeqFFT.x) * none(b.re) * none(b.im) * none(a.re) * none(a.im) in ALIVE")
+
+//////////////////////////////////////////////////////*/

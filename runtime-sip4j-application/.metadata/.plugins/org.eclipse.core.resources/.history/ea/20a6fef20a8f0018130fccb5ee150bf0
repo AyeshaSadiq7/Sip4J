@@ -1,0 +1,54 @@
+package aeminium.health;
+
+
+
+public class SeqHealth {
+	
+	public static Village village = null;
+	
+	
+	public static void main(String[] arg){
+      
+		int size = Health.sim_time; // do nothing
+		
+		/*if (args.length > 0) {
+			size = Integer.parseInt(args[0]);
+		}*/
+		//allocate village
+
+		//full(this) * pure(0) -> full(village)
+		
+		village = SeqHealth.ClientTest(village);
+		
+		Village.displayVillageData(village);//pure(village)
+	
+			
+		for (int i=0; i<size; i++) { // do nothing
+			simVillage(village);// unique(village)
+		}
+	}
+	
+	public static Village ClientTest(Village village) {
+		
+		village = new Village();
+		
+		village = Health.allocateVillage(Health.sim_level, 0, null);// sim_level, village id, Village object
+	
+		//utility.start = System.nanoTime();// do nothing
+		//System.out.println("start "+utility.start);//  do nothing 
+		
+		 //utility.end = System.nanoTime();// do nothing
+		 //double last = (((utility.end - utility.start) * 1.0) / utility.NPS);// do nothing
+		// System.out.println("elapsed "+last);// do nothing
+		return village;
+	}
+	
+//Unique(village), Immutable(Health.sim_convalescence_time), Immutable(Health.sim_convalescence_p), Immutable(Health.sim_realloc_p),  Immutable(Health.sim_level), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time)  
+// ->  Unique(village), Immutable(Health.sim_convalescence_time), Immutable(Health.sim_convalescence_p), Immutable(Health.sim_realloc_p),  Immutable(Health.sim_level), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time)  
+	protected static void simVillage(Village village) {
+		for (Village child : village.children) {
+			simVillage(child);
+		}
+		village.tick();
+	}
+}

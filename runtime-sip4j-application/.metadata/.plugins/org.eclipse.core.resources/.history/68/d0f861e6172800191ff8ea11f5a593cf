@@ -1,0 +1,23 @@
+package net.sourceforge.pmd.lang.java.ast.jdkversiontests.java10;
+
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+import net.sourceforge.pmd.lang.java.ast.jdkversiontests.java10.LocalVariableTypeInferenceVarAsAnnotationName.var;
+
+public class LocalVariableTypeInference {
+
+    public void aMethod() {
+        ArrayList<String> list = new ArrayList<String>();  // infers ArrayList<String>
+        Stream<String> stream = list.stream();          // infers Stream<String>
+    }
+
+    public void asMethodParameter() {
+        var s = "Java 10";
+        print(s);
+    }
+
+    private void print(String text) {
+        System.out.println(text);
+    }
+}

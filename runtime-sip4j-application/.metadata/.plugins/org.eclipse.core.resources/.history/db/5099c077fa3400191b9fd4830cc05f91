@@ -1,0 +1,68 @@
+package aeminium.blackscholes;
+
+import aeminium.blackscholes.MersenneTwisterFast;
+
+public final class StdRandom {
+
+	private static MersenneTwisterFast random; // pseudo-random number generator
+	
+	private static long seed; // pseudo-random number generator seed
+
+	// static initializer
+	static {
+		// this is how the seed was set in Java 1.4
+		seed = System.currentTimeMillis();
+		random = new MersenneTwisterFast(seed);
+	}
+
+	// don't instantiate
+	private StdRandom() {
+	}
+
+	/**
+	 * Set the seed of the psedurandom number generator.
+	 */
+	public static void setSeed(long s) {
+		seed = s;
+		random = new MersenneTwisterFast(seed);
+	}
+
+	/**
+	 * Get the seed of the psedurandom number generator.
+	 */
+	public static long getSeed() {
+		return seed;
+	}
+
+	/**
+	 * Return real number uniformly in [0, 1).
+	 */
+	public static double uniformO1() {
+		return random.nextDouble();
+	}
+
+		/**
+	 * Unit test.
+	 */
+	public static void main(String[] args) {
+		int N = Integer.parseInt(args[0]);
+		if (args.length == 2) 
+			StdRandom.setSeed(Long.parseLong(args[1]));
+		double[] t = { .5, .3, .1, .1 };
+
+		//StdOut.println("seed = " + StdRandom.getSeed());
+		//uniformO2(100);
+		uniformO1();
+			//StdOut.printf("%2d ", uniformO2(100));
+			//StdOut.printf("%8.5f ", uniform(10.0, 99.0));
+			//StdOut.printf("%5b ", bernoulliO1(.5));
+			//StdOut.printf("%7.5f ", gaussianO2(9.0, .2));
+			//StdOut.printf("%2d ", discrete(t));
+			//StdOut.println();
+		
+	
+			//StdOut.print(s + " ");
+		//StdOut.println();
+	}
+
+}

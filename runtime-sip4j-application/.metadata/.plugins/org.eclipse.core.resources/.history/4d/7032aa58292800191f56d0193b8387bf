@@ -1,0 +1,8 @@
+package resources.net.sourceforge.pmd.cpd.badandgood;
+
+public class GoodFile {
+	int abc
+    public void foo() {
+        int abc = 1;
+    }
+}

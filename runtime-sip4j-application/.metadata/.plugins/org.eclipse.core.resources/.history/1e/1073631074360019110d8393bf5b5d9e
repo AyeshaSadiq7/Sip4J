@@ -1,0 +1,613 @@
+/**************************************************************************
+ *                                                                         *
+ *             Java Grande Forum Benchmark Suite - Version 2.0             *
+ *                                                                         *
+ *                            produced by                                  *
+ *                                                                         *
+ *                  Java Grande Benchmarking Project                       *
+ *                                                                         *
+ *                                at                                       *
+ *                                                                         *
+ *                Edinburgh Parallel Computing Centre                      *
+ *                                                                         *
+ *                email: epcc-javagrande@epcc.ed.ac.uk                     *
+ *                                                                         *
+ *      adapted from SciMark 2.0, author Roldan Pozo (pozo@cam.nist.gov)   *
+ *                                                                         *
+ *      This version copyright (c) The University of Edinburgh, 1999.      *
+ *                         All rights reserved.                            *
+ *                                                                         *
+ **************************************************************************/
+
+package jomp.sor; 
+
+import jomp.jgfutil.JGFInstrumentor;
+import jomp.jgfutil.*; 
+
+public class SOR
+{
+
+  public static double Gtotal = 0.0;
+
+  
+  /*Method Name = SORrun
+  Vertex Name = JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+  Vertex Name = Gtotal, Post Permissions = share, Pre-Permissions =share
+  Vertex Name = timers, Post Permissions = immutable, Pre-Permissions =immutable
+  Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+  Vertex Name = name, Post Permissions = immutable, Pre-Permissions =immutable
+  Vertex Name = start_time, Post Permissions = share, Pre-Permissions =share
+  Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+  Vertex Name = calls, Post Permissions = immutable, Pre-Permissions =immutable*/
+  public static final void SORrun(double omega, double G[][], int num_iterations)
+  {
+    int M = G.length;
+    int N = G[0].length;
+
+    double omega_over_four = omega * 0.25;
+    double one_minus_omega = 1.0 - omega;
+
+
+    // update interior points
+    int Mm1 = M-1;
+    int Nm1 = N-1;
+
+    //JGFInstrumentor.startTimer("Section2:SOR:Kernel"); 
+
+    for (int p=1; p<(2*num_iterations+1); p++)
+    {
+      //omp parallel for
+      for (int i=1; i<M; i++)
+      {
+	if ((i%2) == (p%2)) {	// ODD OR EVEN RUN
+	  double [] Gi = G[i];
+	  double [] Gim1 = G[i-1];
+
+	  if(i == 1) {			// i == 1
+	    double [] Gip1 = G[i+1];
+
+	    for (int j=1; j<Nm1; j=j+2){
+	      Gi[j] = omega_over_four * (Gim1[j] + Gip1[j] + Gi[j-1] + Gi[j+1]) + one_minus_omega * Gi[j];
+
+	    }
+	  } else if (i == Mm1) {	// i == Mm1
+
+	    double [] Gim2 = G[i-2];
+
+	    for (int j=1; j<Nm1; j=j+2){
+	      if((j+1) != Nm1) {
+		Gim1[j+1] = omega_over_four * (Gim2[j+1] + Gi[j+1] + Gim1[j]
+		    + Gim1[j+2]) + one_minus_omega * Gim1[j+1];
+	      }
+	    }
+
+	  } else {			// general case
+
+	    double [] Gip1 = G[i+1];
+	    double [] Gim2 = G[i-2];
+
+	    for (int j=1; j<Nm1; j=j+2){
+	      Gi[j] = omega_over_four * (Gim1[j] + Gip1[j] + Gi[j-1]
+		  + Gi[j+1]) + one_minus_omega * Gi[j];
+
+	      if((j+1) != Nm1) {
+		Gim1[j+1]=omega_over_four * (Gim2[j+1] + Gi[j+1] + Gim1[j]
+		    + Gim1[j+2]) + one_minus_omega * Gim1[j+1];
+	      }
+	    }
+	  }
+	} // if (odd/even) 
+      }	// inner (i)
+
+    }	// outer (p)
+
+
+    //JGFInstrumentor.stopTimer("Section2:SOR:Kernel");
+
+    for (int i=1; i<Nm1; i++) {
+      for (int j=1; j<Nm1; j++) {
+    	  Gtotal += G[i][j];
+      }
+    }               
+
+  }
+}
+
+
+/*Class Name = JGFSORBench
+Class Name = JGFSORBenchSizeB
+Method Name = main
+Vertex Name = datasizes, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JACOBI_NUM_ITER, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = RANDOM_SEED, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = timers, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = calls, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = opcount, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = on, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = Gtotal, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = start_time, Post Permissions = unique, Pre-Permissions =none
+Method Name = JGFsetsize
+Vertex Name = size, Post Permissions = share, Pre-Permissions =share
+Method Name = JGFinitialise
+Method Name = JGFkernel
+Vertex Name = datasizes, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = size, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = R, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = Gtotal, Post Permissions = share, Pre-Permissions =share
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = start_time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+Method Name = RandomMatrix
+Vertex Name = R, Post Permissions = share, Pre-Permissions =share
+Method Name = SORrun
+Vertex Name = JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = Gtotal, Post Permissions = share, Pre-Permissions =share
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = start_time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+Method Name = startTimer
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = start_time, Post Permissions = share, Pre-Permissions =share
+Method Name = start
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = start_time, Post Permissions = share, Pre-Permissions =share
+Method Name = stopTimer
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = start_time, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+Method Name = stop
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = start_time, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+Method Name = JGFvalidate
+Vertex Name = Gtotal, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = size, Post Permissions = pure, Pre-Permissions =pure
+Method Name = JGFtidyup
+Method Name = JGFrun
+Vertex Name = JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opname, Post Permissions = share, Pre-Permissions =share
+Vertex Name = size, Post Permissions = share, Pre-Permissions =share
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opcount, Post Permissions = share, Pre-Permissions =share
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = datasizes, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = R, Post Permissions = share, Pre-Permissions =share
+Vertex Name = Gtotal, Post Permissions = share, Pre-Permissions =share
+Vertex Name = start_time, Post Permissions = share, Pre-Permissions =share
+Method Name = addTimer
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opname, Post Permissions = share, Pre-Permissions =share
+Vertex Name = size, Post Permissions = share, Pre-Permissions =share
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opcount, Post Permissions = share, Pre-Permissions =share
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Method Name = JGFTimer
+Vertex Name = name, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opname, Post Permissions = share, Pre-Permissions =share
+Vertex Name = size, Post Permissions = share, Pre-Permissions =share
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opcount, Post Permissions = share, Pre-Permissions =share
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Method Name = reset
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opcount, Post Permissions = share, Pre-Permissions =share
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Method Name = addOpsToTimer
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opcount, Post Permissions = share, Pre-Permissions =share
+Method Name = addops
+Vertex Name = opcount, Post Permissions = share, Pre-Permissions =share
+Method Name = printTimer
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = opname, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = time, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = size, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = opcount, Post Permissions = pure, Pre-Permissions =pure
+Method Name = print
+Vertex Name = opname, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = time, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = size, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = opcount, Post Permissions = pure, Pre-Permissions =pure
+Method Name = perf
+Vertex Name = opcount, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = time, Post Permissions = pure, Pre-Permissions =pure
+Class Name = JGFSORBenchSizeB
+Class Name = JGFSORBenchSizeB
+Method Name = main
+Vertex Name = datasizes, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JACOBI_NUM_ITER, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = RANDOM_SEED, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = timers, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = calls, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = opcount, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = on, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = Gtotal, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = start_time, Post Permissions = unique, Pre-Permissions =none
+Method Name = printHeader
+Class Name = SOR
+Class Name = JGFSORBenchSizeB
+Method Name = main
+Vertex Name = datasizes, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JACOBI_NUM_ITER, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = RANDOM_SEED, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = timers, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = calls, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = opcount, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = on, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = Gtotal, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = start_time, Post Permissions = unique, Pre-Permissions =none
+Method Name = SORrun
+Vertex Name = JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = Gtotal, Post Permissions = share, Pre-Permissions =share
+Vertex Name = timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = start_time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = calls, Post Permissions = share, Pre-Permissions =share
+///////////////////////////////////////////////////////////////////////
+ * 
+Class Name = JGFSORBench
+Class Name = JGFSORBenchSizeB
+Method Name = main
+Vertex Name = JGFSORBench.datasizes, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.JACOBI_NUM_ITER, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.RANDOM_SEED, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.JACOBI_NUM_ITER, Post Permissions = none, Pre-Permissions =none
+Vertex Name = JGFInstrumentor.timers, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.calls, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opcount, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.on, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.datasizes, Post Permissions = none, Pre-Permissions =none
+Vertex Name = sor.R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.Gtotal, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.start_time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = SOR.Gtotal, Post Permissions = unique, Pre-Permissions =none
+Method Name = JGFsetsize
+Vertex Name = sor.size, Post Permissions = share, Pre-Permissions =share
+Method Name = JGFinitialise
+Method Name = JGFkernel
+Vertex Name = sor.datasizes, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = sor.size, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = sor.R, Post Permissions = share, Pre-Permissions =share
+Vertex Name = sor.JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = sor.Gtotal, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.start_time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+Method Name = RandomMatrix
+Vertex Name = sor.R, Post Permissions = share, Pre-Permissions =share
+Method Name = SORrun
+Vertex Name = sor.JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = sor.Gtotal, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.start_time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+Method Name = startTimer
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.start_time, Post Permissions = share, Pre-Permissions =share
+Method Name = start
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.start_time, Post Permissions = share, Pre-Permissions =share
+Method Name = stopTimer
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.start_time, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+Method Name = stop
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.start_time, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+Method Name = JGFvalidate
+Vertex Name = sor.Gtotal, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = sor.size, Post Permissions = pure, Pre-Permissions =pure
+Method Name = JGFtidyup
+Method Name = JGFrun
+Vertex Name = sor.JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.opcount, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = sor.size, Post Permissions = share, Pre-Permissions =share
+Vertex Name = sor.datasizes, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = sor.R, Post Permissions = share, Pre-Permissions =share
+Vertex Name = sor.Gtotal, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.start_time, Post Permissions = share, Pre-Permissions =share
+Method Name = addTimer
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.opcount, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Method Name = JGFTimer
+Vertex Name = JGFTimer.name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.opcount, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Method Name = reset
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.opcount, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Method Name = addOpsToTimer
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.opcount, Post Permissions = share, Pre-Permissions =share
+Method Name = addops
+Vertex Name = JGFTimer.opcount, Post Permissions = share, Pre-Permissions =share
+Method Name = printTimer
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.opname, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.time, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.size, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.opcount, Post Permissions = pure, Pre-Permissions =pure
+Method Name = print
+Vertex Name = JGFTimer.opname, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.time, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.size, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.opcount, Post Permissions = pure, Pre-Permissions =pure
+Method Name = perf
+Vertex Name = JGFTimer.opcount, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.time, Post Permissions = pure, Pre-Permissions =pure
+Class Name = JGFSORBenchSizeB
+Class Name = JGFSORBenchSizeB
+Method Name = main
+Vertex Name = JGFSORBench.datasizes, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.JACOBI_NUM_ITER, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.RANDOM_SEED, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.JACOBI_NUM_ITER, Post Permissions = none, Pre-Permissions =none
+Vertex Name = JGFInstrumentor.timers, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.calls, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opcount, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.on, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.datasizes, Post Permissions = none, Pre-Permissions =none
+Vertex Name = sor.R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.Gtotal, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.start_time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = SOR.Gtotal, Post Permissions = unique, Pre-Permissions =none
+Method Name = printHeader
+Class Name = SOR
+Class Name = JGFSORBenchSizeB
+Method Name = main
+Vertex Name = JGFSORBench.datasizes, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.JACOBI_NUM_ITER, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.RANDOM_SEED, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFSORBench.R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.JACOBI_NUM_ITER, Post Permissions = none, Pre-Permissions =none
+Vertex Name = JGFInstrumentor.timers, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.name, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opname, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.calls, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.opcount, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.on, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.size, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.datasizes, Post Permissions = none, Pre-Permissions =none
+Vertex Name = sor.R, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = sor.Gtotal, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = JGFTimer.start_time, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = SOR.Gtotal, Post Permissions = unique, Pre-Permissions =none
+Method Name = SORrun
+Vertex Name = sor.JACOBI_NUM_ITER, Post Permissions = immutable, Pre-Permissions =immutable
+Vertex Name = sor.Gtotal, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFInstrumentor.timers, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.on, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.name, Post Permissions = pure, Pre-Permissions =pure
+Vertex Name = JGFTimer.start_time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.time, Post Permissions = share, Pre-Permissions =share
+Vertex Name = JGFTimer.calls, Post Permissions = share, Pre-Permissions =share
+ //////////////////////////////////////////////////////////////////////////////
+  * 
+  * Class Name = JGFSeriesBenchSizeB
+Method Name = main
+Ref-Var= series.SeriesTest.datasizes, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= se.size, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= se.array_rows, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= se.datasizes, Pre-Permissions=none, Post Permissions=none
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+Method Name = JGFsetsize
+Ref-Var= se.size, Pre-Permissions=share, Post Permissions=share
+Method Name = JGFinitialise
+Ref-Var= se.array_rows, Pre-Permissions=share, Post Permissions=share
+Ref-Var= se.datasizes, Pre-Permissions=immutable, Post Permissions=immutable
+Ref-Var= se.size, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+Method Name = buildTestData
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= se.array_rows, Pre-Permissions=pure, Post Permissions=pure
+Method Name = JGFkernel
+Ref-Var= se.TestArray, Pre-Permissions=share, Post Permissions=share
+Ref-Var= se.array_rows, Pre-Permissions=pure, Post Permissions=pure
+Method Name = Do
+Ref-Var= se.TestArray, Pre-Permissions=share, Post Permissions=share
+Ref-Var= se.array_rows, Pre-Permissions=pure, Post Permissions=pure
+Method Name = TrapezoidIntegrate
+Method Name = thefunction
+Method Name = JGFvalidate
+Ref-Var= se.TestArray, Pre-Permissions=pure, Post Permissions=pure
+Method Name = JGFtidyup
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+Method Name = freeTestData
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+Method Name = JGFrun
+Ref-Var= se.size, Pre-Permissions=share, Post Permissions=share
+Ref-Var= se.array_rows, Pre-Permissions=share, Post Permissions=share
+Ref-Var= se.datasizes, Pre-Permissions=immutable, Post Permissions=immutable
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+Class Name = SeriesTest
+Method Name = buildTestData
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= se.array_rows, Pre-Permissions=pure, Post Permissions=pure
+Method Name = Do
+Ref-Var= se.TestArray, Pre-Permissions=share, Post Permissions=share
+Ref-Var= se.array_rows, Pre-Permissions=pure, Post Permissions=pure
+Method Name = TrapezoidIntegrate
+Method Name = thefunction
+Method Name = freeTestData
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+Method Name = main
+Ref-Var= series.SeriesTest.datasizes, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= se.size, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= se.array_rows, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= se.datasizes, Pre-Permissions=none, Post Permissions=none
+Ref-Var= se.TestArray, Pre-Permissions=none, Post Permissions=unique
+Method Name = printHeader
+
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+ Milli Seconds Time = 810.092321
+Compilation Unit Names = JGFSORBench.java
+Compilation Unit Names = JGFSORBenchSizeB.java
+Compilation Unit Names = SOR.java
+Class Name = JGFSORBench
+
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+Class Name = JGFSORBenchSizeB
+Method Name = main
+Ref-Var= sor.SOR.datasizes, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= sor.SOR.JACOBI_NUM_ITER, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= sor.SOR.RANDOM_SEED, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= sor.SOR.R, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= sor.size, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= sor.datasizes, Pre-Permissions=none, Post Permissions=none
+Ref-Var= sor.R, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= sor.JACOBI_NUM_ITER, Pre-Permissions=none, Post Permissions=none
+Ref-Var= sor.Gtotal, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= sor.SOR.Gtotal, Pre-Permissions=none, Post Permissions=unique
+Method Name = JGFsetsize
+Ref-Var= sor.size, Pre-Permissions=share, Post Permissions=share
+Method Name = JGFinitialise
+Method Name = JGFkernel
+Ref-Var= sor.datasizes, Pre-Permissions=immutable, Post Permissions=immutable
+Ref-Var= sor.size, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= sor.R, Pre-Permissions=share, Post Permissions=share
+Ref-Var= sor.JACOBI_NUM_ITER, Pre-Permissions=immutable, Post Permissions=immutable
+Ref-Var= sor.Gtotal, Pre-Permissions=share, Post Permissions=share
+Method Name = RandomMatrix
+Ref-Var= sor.R, Pre-Permissions=share, Post Permissions=share
+Method Name = SORrun
+Ref-Var= sor.JACOBI_NUM_ITER, Pre-Permissions=immutable, Post Permissions=immutable
+Ref-Var= sor.Gtotal, Pre-Permissions=share, Post Permissions=share
+Method Name = JGFvalidate
+Ref-Var= sor.Gtotal, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= sor.size, Pre-Permissions=pure, Post Permissions=pure
+Method Name = JGFtidyup
+Method Name = JGFrun
+Ref-Var= sor.size, Pre-Permissions=share, Post Permissions=share
+Ref-Var= sor.datasizes, Pre-Permissions=immutable, Post Permissions=immutable
+Ref-Var= sor.R, Pre-Permissions=share, Post Permissions=share
+Ref-Var= sor.JACOBI_NUM_ITER, Pre-Permissions=immutable, Post Permissions=immutable
+Ref-Var= sor.Gtotal, Pre-Permissions=share, Post Permissions=share
+Method Name = printHeader
+
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+Class Name = SOR
+Method Name = SORrun
+Ref-Var= sor.JACOBI_NUM_ITER, Pre-Permissions=immutable, Post Permissions=immutable
+Ref-Var= sor.Gtotal, Pre-Permissions=share, Post Permissions=share
+
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+ Milli Seconds Time = 529.52892
+  */

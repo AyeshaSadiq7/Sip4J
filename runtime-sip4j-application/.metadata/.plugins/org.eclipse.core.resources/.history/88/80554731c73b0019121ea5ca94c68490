@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.7"?>
+<!--
+    Copyright (C) 2007, 2008 Carnegie Mellon University and others.
+
+    This file is part of Plural.
+
+    Plural is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License version 2 as 
+    published by the Free Software Foundation.
+
+    Plural is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Plural; if not, see <http://www.gnu.org/licenses>.
+
+    Linking Plural statically or dynamically with other modules is
+    making a combined work based on Plural. Thus, the terms and
+    conditions of the GNU General Public License cover the whole
+    combination.
+
+    In addition, as a special exception, the copyright holders of Plural
+    give you permission to combine Plural with free software programs or
+    libraries that are released under the GNU LGPL and with code
+    included in the standard release of Eclipse under the Eclipse Public
+    License (or modified versions of such code, with unchanged license).
+    You may copy and distribute such a system following the terms of the
+    GNU GPL for Plural and the licenses of the other code concerned.
+
+    Note that people who make modified versions of Plural are not
+    obligated to grant this special exception for their modified
+    versions; it is their choice whether to do so. The GNU General
+    Public License gives permission to release a modified version
+    without this exception; this exception also makes it possible to
+    release a modified version which carries forward this exception.
+-->
+<plugin>
+   <extension
+         point="edu.cmu.cs.crystal.CrystalAnalysis">
+      <analysis
+            class="edu.cmu.cs.plural.states.PluralAnnotationAnalysis"
+            name="Annotation checker">
+      </analysis>
+      
+      <analysis
+            class="edu.cmu.cs.plural.track.PermissionAnalysis"
+            name="Permission Analysis">
+      </analysis>
+      <analysis
+            class="edu.cmu.cs.plural.track.AliasUnawarePermissionAnalysis"
+            name="Regression Permission Analysis"/>
+            -->
+      <analysis
+            class="edu.cmu.cs.plural.track.EffectChecker"
+            name="Effect checker">
+      </analysis>
+      <analysis
+            class="edu.cmu.cs.plural.track.FractionalAnalysis"
+            name="Fractional Analysis">
+      </analysis>
+      
+      <analysis
+            class="edu.cmu.cs.plural.concurrent.nimby.NIMBYChecker"
+            name="Not In My Back Yard!"/>
+      <analysis
+            class="edu.cmu.cs.plural.concurrent.syncorswim.SyncChecker"
+            name="Sync Checker"/>
+      <analysis
+      		class="edu.cmu.cs.plural.concurrent.syncorswim.SyncOrSwim"
+      		name="Sync or Swim"/>
+      <analysis
+            class="edu.cmu.cs.plural.polymorphic.internal.PolyInternalChecker"
+            name="Polymorphism Internal Checker">
+      </analysis>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="Plural"
+            name="Plural">
+      </category>
+      <view
+            category="Plural"
+            class="edu.cmu.cs.plural.errors.history.HistoryView"
+            id="Plural.historyPrinter"
+            name="Plural History Printer"
+            restorable="true">
+      </view>
+      <view
+            category="Plural"
+            class="edu.cmu.cs.plural.errors.ContextView"
+            id="Plural.contextViewer"
+            name="Plural Context Viewer"
+            restorable="true">
+      </view>
+      <view
+            category="Plural"
+            class="plural.views.SampleView"
+            icon="icons/sample.gif"
+            id="plural.views.SampleView"
+            name="Sample View">
+      </view>
+      <view
+            category="Plural"
+            class="plural.views.SampleView"
+            icon="icons/sample.gif"
+            id="plural.views.SampleView"
+            name="Sample View">
+      </view>
+   </extension>
+   <extension
+         point="edu.cmu.cs.crystal.CrystalAnnotation">
+      <customAnnotation
+            name="User-provided permission annotations"
+            parserClass="edu.cmu.cs.plural.track.CrystalPermissionAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Unique"
+               name="Unique">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Full"
+               name="Full">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Share"
+               name="Share">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Imm"
+               name="Immutable">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Pure"
+               name="Pure">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Class-Wide State Declarations"
+            parserClass="edu.cmu.cs.plural.states.annowrappers.ClassStateDeclAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ClassStates"
+               name="ClassStates">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Single State Declaration"
+            parserClass="edu.cmu.cs.plural.states.annowrappers.StateDeclAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.State"
+               name="State">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Parsed Method Permission Annotation"
+            parserClass="edu.cmu.cs.plural.perm.parser.PermAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Perm"
+               name="Perm">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Method result annotations"
+            parserClass="edu.cmu.cs.plural.perm.ResultAnnotationImpl">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ResultUnique"
+               name="Unique result">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ResultFull"
+               name="Full result">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ResultShare"
+               name="Share result">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ResultImm"
+               name="Immutable result">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ResultPure"
+               name="Pure result">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="State indicators"
+            parserClass="edu.cmu.cs.plural.track.IndicatesAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.TrueIndicates"
+               name="True indicator">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.FalseIndicates"
+               name="False indicator">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="State Mapping Annotation"
+            parserClass="edu.cmu.cs.plural.states.InStateMappingAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.In"
+               name="In">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Force pack annotation"
+            parserClass="edu.cmu.cs.plural.states.annowrappers.ForcePackAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ForcePack"
+               name="ForcePack"
+               parseFromMeta="false">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Declare polymorphic permission"
+            parserClass="edu.cmu.cs.plural.polymorphic.internal.PolyVarDeclAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Exact"
+               name="Exact"
+               parseFromMeta="false">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Similar"
+               name="Similar"
+               parseFromMeta="false">
+         </sourceAnnotation>
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Symmetric"
+               name="Symmetric"
+               parseFromMeta="false">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Polymorphic Variable Use"
+            parserClass="edu.cmu.cs.plural.polymorphic.internal.PolyVarUseAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.PolyVar"
+               name="PolyVar"
+               parseFromMeta="false">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Polymorphic Permission returned from method"
+            parserClass="edu.cmu.cs.plural.polymorphic.internal.PolyVarReturnedAnnotation">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ResultPolyVar"
+               name="ResultPolyVar"
+               parseFromMeta="false">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Application to polymorphic reference"
+            parserClass="edu.cmu.cs.plural.polymorphic.instantiation.ApplyAnnotationWrapper">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.Apply"
+               name="Apply"
+               parseFromMeta="false">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Application to polymorphic supertype"
+            parserClass="edu.cmu.cs.plural.polymorphic.instantiation.ApplySuperAnnotationWrapper">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ApplyToSuper"
+               name="ApplyToSuper"
+               parseFromMeta="false">
+         </sourceAnnotation>
+      </customAnnotation>
+      <customAnnotation
+            name="Application to polymorphic return type"
+            parserClass="edu.cmu.cs.plural.polymorphic.instantiation.ResultApplyAnnotationWrapper">
+         <sourceAnnotation
+               annotationClass="edu.cmu.cs.plural.annot.ResultApply"
+               name="ResultApply"
+               parseFromMeta="false">
+         </sourceAnnotation>
+      </customAnnotation>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="plural.views.SampleView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+      </perspectiveExtension>
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="plural.views.SampleView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>

@@ -1,0 +1,25 @@
+package jomp.montecarlo2;
+
+public class test {
+
+	Integer a =10;
+	public void setA(){
+		a = 1000;
+	}
+	public void createObject(){
+		a = 100000;
+		a = new Integer(300);
+	}
+	public void readA(){
+		System.out.println("a = "+a);
+	}
+
+	public static void main(String[] arg){
+		test obj = new test();
+		obj.setA();
+		obj.createObject(){
+		obj.readA();
+		
+	}
+}
+

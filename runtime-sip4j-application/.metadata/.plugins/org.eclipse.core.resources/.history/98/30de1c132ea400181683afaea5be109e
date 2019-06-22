@@ -1,0 +1,1966 @@
+package outputs;
+import edu.cmu.cs.plural.annot.*;
+
+@ClassStates({@State(name = "Alive")})
+
+class Activator {
+Activator() {   }
+
+@Perm(requires="none(PLUGIN_ID) * none(plugin) in Alive", 
+ ensures= "unique(this) * unique(this) in Alive")
+public  Activator() { 
+ return null;
+} 
+@Perm(requires="pure(plugin) in Alive", 
+ ensures= "pure(this) in Alive")
+public void start(BundleContext context) { 
+} 
+@Perm(requires="unique(plugin) in Alive", 
+ ensures= "none(this) in Alive")
+public void stop(BundleContext context) { 
+} 
+@Perm(requires="pure(plugin) in Alive", 
+ ensures= "pure(this) in Alive")
+ Activator getDefault() { 
+ return null;
+} 
+@Perm(requires="none(PLUGIN_ID) in Alive", 
+ ensures= "none(this) in Alive")
+ ImageDescriptor getImageDescriptor(String path) { 
+ return null;
+} 
+
+}
+
+class SampleAction {
+SampleAction() {   }
+
+@Perm(requires="none(window) in Alive", 
+ ensures= "unique(this) in Alive")
+public  SampleAction() { 
+ return null;
+} 
+@Perm(requires="full(window) in Alive", 
+ ensures= "full(this) in Alive")
+public void run(IAction action) { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public void selectionChanged(IAction action, ISelection selection) { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public void dispose() { 
+} 
+@Perm(requires="full(window) in Alive", 
+ ensures= "full(this) in Alive")
+public void init(IWorkbenchWindow window) { 
+} 
+
+}
+
+class JMLAnnotatedJavaClass {
+JMLAnnotatedJavaClass() {   }
+
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public  JMLAnnotatedJavaClass() { 
+ return null;
+} 
+@Perm(requires="pure(GHOST) * pure(INVARIANT) * pure(JMLSTART) * pure(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071) * pure(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(requires) * unique(ensures) * pure(invLowValue) * pure(invHighValue) * unique(perm) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * none(this) * pure(this) * pure(this) * none(this) in Alive")
+public String translateJMLAnnotationsToPlural(String JProgram) { 
+ return null;
+} 
+@Perm(requires="pure(GHOST) * pure(INVARIANT) * pure(JMLSTART) * pure(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071) * pure(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(requires) * full(ensures) * pure(invLowValue) * pure(invHighValue) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) in Alive")
+private String translateClassSpecifications(String JProgram) { 
+ return null;
+} 
+@Perm(requires="pure(GHOST) * pure(INVARIANT) * pure(JMLSTART) * pure(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071) * pure(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(requires) * full(ensures) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) in Alive")
+private void parseAndStoreJMLAnnotation(String JMLAnnotation) { 
+} 
+@Perm(requires="pure(GHOST) * pure(INVARIANT) * pure(JMLSTART) * pure(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071) * pure(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * unique(ensures) * unique(perm) * full(requires) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * none(this) * none(this) * full(this) in Alive")
+private String translateMethodSpecification(String JProgram) { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public String readFileAsString(String filePath) { 
+ return null;
+} 
+
+}
+
+class PluralParser {
+PluralParser() {   }
+
+@Perm(requires="pure(GHOST) * pure(INVARIANT) * pure(JMLSTART) * pure(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071) * pure(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(requires) * full(ensures) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) in Alive")
+ void jmlSpecifications() { 
+} 
+@Perm(requires="pure(GHOST) * pure(INVARIANT) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) in Alive")
+ void jmlClassSpecifications() { 
+} 
+@Perm(requires="pure(GHOST) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) in Alive")
+ void jmlGhostDeclaration() { 
+} 
+@Perm(requires="pure(JMLSTART) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(ID) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(requires) * full(ensures) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) in Alive")
+ void jmlMethodSpecification() { 
+} 
+@Perm(requires="pure(ID) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(SEMICOLON) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * full(requires) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void jmlRequires() { 
+} 
+@Perm(requires="pure(ID) * pure(FOLLOW_ID_in_jmlReq1207) * pure(EQUALOPERATOR) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(NUMBERS) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * full(requires) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void jmlReq() { 
+} 
+@Perm(requires="pure(ID) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(LESSTHANEQUAL) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(NUMBERS) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * full(requires) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void jmlLessThanEqualReq() { 
+} 
+@Perm(requires="pure(ENSURES) * pure(ID) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(ensures) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void jmlEnsures() { 
+} 
+@Perm(requires="pure(ENSURES) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(ID) * pure(FOLLOW_ID_in_jmlEns1265) * pure(EQUALOPERATOR) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(NUMBERS) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(ensures) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void jmlEns() { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public  PluralParser(TokenStream input) { 
+ return null;
+} 
+@Perm(requires="none(tokenNames) in Alive", 
+ ensures= "none(this) in Alive")
+public String[] getTokenNames() { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public String getGrammarFileName() { 
+ return null;
+} 
+@Perm(requires="pure(ENSURES) * none(FOLLOW_ENSURES_in_jmlOldEns1229) * pure(ID) * none(FOLLOW_ID_in_jmlOldEns1231) * pure(EQUALOPERATOR) * none(FOLLOW_EQUALOPERATOR_in_jmlOldEns1233) * pure(OLD) * none(FOLLOW_OLD_in_jmlOldEns1235) * pure(LSBRACKET) * none(FOLLOW_LSBRACKET_in_jmlOldEns1237) * none(FOLLOW_ID_in_jmlOldEns1239) * pure(RSBRACKET) * none(FOLLOW_RSBRACKET_in_jmlOldEns1241) * none(PLUSMINUSOPERATOR) * none(FOLLOW_PLUSMINUSOPERATOR_in_jmlOldEns1246) * pure(NUMBERS) * none(FOLLOW_NUMBERS_in_jmlOldEns1250) * pure(SEMICOLON) * none(FOLLOW_SEMICOLON_in_jmlOldEns1254) * full(ensures) in Alive", 
+ ensures= "pure(this) * none(this) * pure(this) * none(this) * pure(this) * none(this) * pure(this) * none(this) * pure(this) * none(this) * none(this) * pure(this) * none(this) * none(this) * none(this) * pure(this) * none(this) * pure(this) * none(this) * full(this) in Alive")
+ void jmlOldEns() { 
+} 
+@Perm(requires="pure(AT_FULL) * none(AT_PURE) * none(AT_IMMUTABLE) * none(AT_SHARE) * pure(AT_UNIQUE) * pure(PERM) * none(CASES) * pure(CLASS_STATES) * pure(REFINE) * none(FOLLOW_perm_in_specifications1309) * none(FOLLOW_cases_in_specifications1311) * none(FOLLOW_classstates_in_specifications1313) * none(FOLLOW_refine_in_specifications1315) * pure(FOLLOW_PERM_in_perm1712) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_perm1714) * pure(FOLLOW_requires_ensures_clause_in_perm1716) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_perm1718) * pure(FOLLOW_attype_in_perm1727) * pure(REQUIRES) * pure(FOLLOW_requires_clause_in_requires_ensures_clause1831) * pure(PUNCTUATION) * pure(FOLLOW_PUNCTUATION_in_requires_ensures_clause1836) * pure(ENSURES) * pure(FOLLOW_ensures_clause_in_requires_ensures_clause1841) * pure(FOLLOW_REQUIRES_in_requires_clause1852) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_requires_clause1854) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_requires_clause1856) * pure(FOLLOW_re_accesspermission_typestates_in_requires_clause1858) * pure(AND) * pure(FOLLOW_AND_in_requires_clause1861) * pure(FOLLOW_re_accesspermission_typestates_in_requires_clause1863) * pure(FOLLOW_QUOTE_in_requires_clause1867) * pure(FULL) * pure(NONE) * pure(PARAM) * pure(THIS) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1901) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1903) * pure(FOLLOW_THIS_in_re_accesspermission_typestates1905) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1907) * pure(IN) * pure(FOLLOW_IN_in_re_accesspermission_typestates1910) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1914) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1954) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1956) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates1960) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1962) * pure(FOLLOW_IN_in_re_accesspermission_typestates1965) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1969) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates2011) * pure(OPERATOR) * pure(FOLLOW_OPERATOR_in_re_accesspermission_typestates2013) * pure(ID) * pure(FOLLOW_ID_in_re_accesspermission_typestates2015) * pure(FOLLOW_ID_in_typestate2373) * pure(pkg) * pure(classes) * pure(methods) * pure(requires) * unique(_class) * full(ap) * full(ts) * full(fieldName) * pure(parameters) * pure(FOLLOW_at_ap_permission_in_attype1735) * pure(FOLLOW_LSBRACKET_in_attype1738) * pure(FOLLOW_REQUIRES_in_attype1741) * pure(FOLLOW_EQUAL_in_attype1743) * pure(FOLLOW_QUOTE_in_attype1745) * pure(FOLLOW_typestate_in_attype1749) * pure(FOLLOW_QUOTE_in_attype1751) * pure(EOF) * pure(RCBRACKET) * pure(FOLLOW_PUNCTUATION_in_attype1756) * pure(FOLLOW_ENSURES_in_attype1761) * pure(FOLLOW_EQUAL_in_attype1763) * pure(FOLLOW_QUOTE_in_attype1765) * pure(FOLLOW_typestate_in_attype1769) * pure(FOLLOW_QUOTE_in_attype1771) * pure(USE) * pure(VALUE) * pure(FOLLOW_PUNCTUATION_in_attype1776) * pure(FOLLOW_usevalue_in_attype1778) * pure(FOLLOW_USE_in_usevalue1792) * pure(FOLLOW_EQUAL_in_usevalue1794) * pure(USEFIELDS) * pure(FOLLOW_USEFIELDS_in_usevalue1796) * pure(FOLLOW_VALUE_in_usevalue1809) * pure(FOLLOW_EQUAL_in_usevalue1811) * pure(FOLLOW_QUOTE_in_usevalue1813) * pure(FOLLOW_ID_in_usevalue1815) * pure(FOLLOW_QUOTE_in_usevalue1817) * pure(ensures) * pure(FOLLOW_start_classstates_in_classstates1432) * pure(FOLLOW_state_in_classstates1434) * pure(FOLLOW_PUNCTUATION_in_classstates1437) * pure(FOLLOW_state_in_classstates1439) * pure(FOLLOW_end_classstates_in_classstates1443) * pure(FOLLOW_CLASS_STATES_in_start_classstates1450) * pure(FOLLOW_LSBRACKET_in_start_classstates1452) * pure(LCBRACKET) * pure(FOLLOW_LCBRACKET_in_start_classstates1454) * pure(STATE) * pure(FOLLOW_STATE_in_state1471) * pure(FOLLOW_LSBRACKET_in_state1473) * pure(NAME) * pure(FOLLOW_NAME_in_state1475) * pure(FOLLOW_EQUAL_in_state1477) * pure(FOLLOW_QUOTE_in_state1479) * pure(FOLLOW_ID_in_state1483) * pure(FOLLOW_QUOTE_in_state1485) * pure(FOLLOW_PUNCTUATION_in_state1490) * pure(FOLLOW_invariant_in_state1492) * pure(FOLLOW_RSBRACKET_in_state1496) * none(name) * none(reachable) * full(invariants) * full(boolInvariants) * full(reachableStates) * full(states) * full(reachability_state) * pure(FOLLOW_RCBRACKET_in_end_classstates1461) * pure(FOLLOW_RSBRACKET_in_end_classstates1463) * pure(FOLLOW_REFINE_in_refine1322) * pure(FOLLOW_LSBRACKET_in_refine1324) * pure(FOLLOW_LCBRACKET_in_refine1326) * pure(FOLLOW_states_in_refine1329) * pure(FOLLOW_PUNCTUATION_in_refine1333) * pure(FOLLOW_states_in_refine1335) * pure(FOLLOW_RCBRACKET_in_refine1340) * pure(FOLLOW_RSBRACKET_in_refine1342) * pure(STATES) * pure(FOLLOW_STATES_in_states1351) * pure(FOLLOW_LSBRACKET_in_states1353) * pure(FOLLOW_dimension_in_states1355) * pure(FOLLOW_PUNCTUATION_in_states1357) * pure(FOLLOW_value_in_states1360) * pure(FOLLOW_RSBRACKET_in_states1364) * pure(DIM) * pure(FOLLOW_DIM_in_dimension1373) * pure(FOLLOW_EQUAL_in_dimension1375) * pure(FOLLOW_QUOTE_in_dimension1377) * pure(FOLLOW_ID_in_dimension1381) * pure(FOLLOW_QUOTE_in_dimension1383) * pure(fullModel) * none(dimensionName) * full(values) * pure(dimesnions) * full(dimensions) in Alive", 
+ ensures= "pure(this) * none(this) * none(this) * none(this) * pure(this) * pure(this) * none(this) * pure(this) * pure(this) * none(this) * none(this) * none(this) * none(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * none(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * unique(this) * full(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * full(this) * pure(this) * full(this) in Alive")
+ void specifications() { 
+} 
+@Perm(requires="pure(PERM) * pure(AT_FULL) * pure(AT_UNIQUE) * pure(FOLLOW_PERM_in_perm1712) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_perm1714) * pure(FOLLOW_requires_ensures_clause_in_perm1716) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_perm1718) * pure(FOLLOW_attype_in_perm1727) * pure(REQUIRES) * pure(FOLLOW_requires_clause_in_requires_ensures_clause1831) * pure(PUNCTUATION) * pure(FOLLOW_PUNCTUATION_in_requires_ensures_clause1836) * pure(ENSURES) * pure(FOLLOW_ensures_clause_in_requires_ensures_clause1841) * pure(FOLLOW_REQUIRES_in_requires_clause1852) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_requires_clause1854) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_requires_clause1856) * pure(FOLLOW_re_accesspermission_typestates_in_requires_clause1858) * pure(AND) * pure(FOLLOW_AND_in_requires_clause1861) * pure(FOLLOW_re_accesspermission_typestates_in_requires_clause1863) * pure(FOLLOW_QUOTE_in_requires_clause1867) * pure(FULL) * pure(NONE) * pure(PARAM) * pure(THIS) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1901) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1903) * pure(FOLLOW_THIS_in_re_accesspermission_typestates1905) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1907) * pure(IN) * pure(FOLLOW_IN_in_re_accesspermission_typestates1910) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1914) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1954) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1956) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates1960) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1962) * pure(FOLLOW_IN_in_re_accesspermission_typestates1965) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1969) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates2011) * pure(OPERATOR) * pure(FOLLOW_OPERATOR_in_re_accesspermission_typestates2013) * pure(ID) * pure(FOLLOW_ID_in_re_accesspermission_typestates2015) * pure(FOLLOW_ID_in_typestate2373) * pure(pkg) * pure(classes) * pure(methods) * pure(requires) * unique(_class) * full(ap) * full(ts) * full(fieldName) * pure(parameters) * pure(FOLLOW_at_ap_permission_in_attype1735) * pure(FOLLOW_LSBRACKET_in_attype1738) * pure(FOLLOW_REQUIRES_in_attype1741) * pure(FOLLOW_EQUAL_in_attype1743) * pure(FOLLOW_QUOTE_in_attype1745) * pure(FOLLOW_typestate_in_attype1749) * pure(FOLLOW_QUOTE_in_attype1751) * pure(EOF) * pure(RCBRACKET) * pure(FOLLOW_PUNCTUATION_in_attype1756) * pure(FOLLOW_ENSURES_in_attype1761) * pure(FOLLOW_EQUAL_in_attype1763) * pure(FOLLOW_QUOTE_in_attype1765) * pure(FOLLOW_typestate_in_attype1769) * pure(FOLLOW_QUOTE_in_attype1771) * pure(USE) * pure(VALUE) * pure(FOLLOW_PUNCTUATION_in_attype1776) * pure(FOLLOW_usevalue_in_attype1778) * pure(FOLLOW_USE_in_usevalue1792) * pure(FOLLOW_EQUAL_in_usevalue1794) * pure(USEFIELDS) * pure(FOLLOW_USEFIELDS_in_usevalue1796) * pure(FOLLOW_VALUE_in_usevalue1809) * pure(FOLLOW_EQUAL_in_usevalue1811) * pure(FOLLOW_QUOTE_in_usevalue1813) * pure(FOLLOW_ID_in_usevalue1815) * pure(FOLLOW_QUOTE_in_usevalue1817) * pure(ensures) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * none(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void perm() { 
+} 
+@Perm(requires="pure(REQUIRES) * pure(FOLLOW_requires_clause_in_requires_ensures_clause1831) * pure(PUNCTUATION) * pure(FOLLOW_PUNCTUATION_in_requires_ensures_clause1836) * pure(ENSURES) * pure(FOLLOW_ensures_clause_in_requires_ensures_clause1841) * pure(FOLLOW_REQUIRES_in_requires_clause1852) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_requires_clause1854) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_requires_clause1856) * pure(FOLLOW_re_accesspermission_typestates_in_requires_clause1858) * pure(AND) * pure(FOLLOW_AND_in_requires_clause1861) * pure(FOLLOW_re_accesspermission_typestates_in_requires_clause1863) * pure(FOLLOW_QUOTE_in_requires_clause1867) * pure(FULL) * pure(NONE) * pure(LSBRACKET) * pure(PARAM) * pure(THIS) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1901) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1903) * pure(FOLLOW_THIS_in_re_accesspermission_typestates1905) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1907) * pure(IN) * pure(FOLLOW_IN_in_re_accesspermission_typestates1910) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1914) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1954) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1956) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates1960) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1962) * pure(FOLLOW_IN_in_re_accesspermission_typestates1965) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1969) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates2011) * pure(OPERATOR) * pure(FOLLOW_OPERATOR_in_re_accesspermission_typestates2013) * pure(ID) * pure(FOLLOW_ID_in_re_accesspermission_typestates2015) * pure(FOLLOW_ID_in_typestate2373) * pure(pkg) * pure(classes) * pure(methods) * pure(requires) * unique(_class) * full(ap) * full(ts) * full(fieldName) * pure(parameters) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * none(this) * full(this) * full(this) * full(this) * pure(this) in Alive")
+ void requiresensuresClause() { 
+} 
+@Perm(requires="pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_requires_clause1852) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_requires_clause1854) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_requires_clause1856) * pure(FOLLOW_re_accesspermission_typestates_in_requires_clause1858) * pure(AND) * pure(FOLLOW_AND_in_requires_clause1861) * pure(FOLLOW_re_accesspermission_typestates_in_requires_clause1863) * pure(FOLLOW_QUOTE_in_requires_clause1867) * pure(FULL) * pure(NONE) * pure(LSBRACKET) * pure(PARAM) * pure(THIS) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1901) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1903) * pure(FOLLOW_THIS_in_re_accesspermission_typestates1905) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1907) * pure(IN) * pure(FOLLOW_IN_in_re_accesspermission_typestates1910) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1914) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1954) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1956) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates1960) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1962) * pure(FOLLOW_IN_in_re_accesspermission_typestates1965) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1969) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates2011) * pure(OPERATOR) * pure(FOLLOW_OPERATOR_in_re_accesspermission_typestates2013) * pure(ID) * pure(FOLLOW_ID_in_re_accesspermission_typestates2015) * pure(FOLLOW_ID_in_typestate2373) * pure(pkg) * pure(classes) * pure(methods) * pure(requires) * unique(_class) * full(ap) * full(ts) * full(fieldName) * pure(parameters) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * none(this) * full(this) * full(this) * full(this) * pure(this) in Alive")
+ void requiresClause() { 
+} 
+@Perm(requires="pure(FULL) * pure(NONE) * pure(LSBRACKET) * pure(PARAM) * pure(THIS) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1901) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1903) * pure(FOLLOW_THIS_in_re_accesspermission_typestates1905) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1907) * pure(IN) * pure(FOLLOW_IN_in_re_accesspermission_typestates1910) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1914) * pure(FOLLOW_accesspermission_in_re_accesspermission_typestates1954) * pure(FOLLOW_LSBRACKET_in_re_accesspermission_typestates1956) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates1960) * pure(FOLLOW_RSBRACKET_in_re_accesspermission_typestates1962) * pure(FOLLOW_IN_in_re_accesspermission_typestates1965) * pure(FOLLOW_typestate_in_re_accesspermission_typestates1969) * pure(FOLLOW_PARAM_in_re_accesspermission_typestates2011) * pure(OPERATOR) * pure(FOLLOW_OPERATOR_in_re_accesspermission_typestates2013) * pure(ID) * pure(FOLLOW_ID_in_re_accesspermission_typestates2015) * pure(FOLLOW_ID_in_typestate2373) * pure(pkg) * pure(classes) * pure(methods) * pure(requires) * unique(_class) * full(ap) * full(ts) * full(fieldName) * pure(parameters) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * none(this) * full(this) * full(this) * full(this) * pure(this) in Alive")
+ void reaccesspermissionTypestates() { 
+} 
+@Perm(requires="pure(FULL) * pure(NONE) in Alive", 
+ ensures= "pure(this) * pure(this) in Alive")
+ AccesspermissionReturn accesspermission() { 
+ return null;
+} 
+@Perm(requires="pure(ID) * pure(FOLLOW_ID_in_typestate2373) in Alive", 
+ ensures= "pure(this) * pure(this) in Alive")
+ TypestateReturn typestate() { 
+ return null;
+} 
+@Perm(requires="pure(FOLLOW_at_ap_permission_in_attype1735) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_attype1738) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_attype1741) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_attype1743) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_attype1745) * pure(FOLLOW_typestate_in_attype1749) * pure(FOLLOW_QUOTE_in_attype1751) * pure(PUNCTUATION) * pure(EOF) * pure(ENSURES) * pure(RCBRACKET) * pure(FOLLOW_PUNCTUATION_in_attype1756) * pure(FOLLOW_ENSURES_in_attype1761) * pure(FOLLOW_EQUAL_in_attype1763) * pure(FOLLOW_QUOTE_in_attype1765) * pure(FOLLOW_typestate_in_attype1769) * pure(FOLLOW_QUOTE_in_attype1771) * pure(USE) * pure(VALUE) * pure(FOLLOW_PUNCTUATION_in_attype1776) * pure(FOLLOW_usevalue_in_attype1778) * pure(AT_FULL) * pure(AT_UNIQUE) * pure(ID) * pure(FOLLOW_ID_in_typestate2373) * pure(FOLLOW_USE_in_usevalue1792) * pure(FOLLOW_EQUAL_in_usevalue1794) * pure(USEFIELDS) * pure(FOLLOW_USEFIELDS_in_usevalue1796) * pure(FOLLOW_VALUE_in_usevalue1809) * pure(FOLLOW_EQUAL_in_usevalue1811) * pure(FOLLOW_QUOTE_in_usevalue1813) * pure(FOLLOW_ID_in_usevalue1815) * pure(FOLLOW_QUOTE_in_usevalue1817) * pure(pkg) * unique(_class) * pure(classes) * pure(methods) * pure(ensures) * full(ap) * full(ts) * full(fieldName) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * none(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) in Alive")
+ void attype() { 
+} 
+@Perm(requires="pure(AT_FULL) * pure(AT_UNIQUE) in Alive", 
+ ensures= "pure(this) * pure(this) in Alive")
+ AtApPermissionReturn atappermission() { 
+ return null;
+} 
+@Perm(requires="pure(USE) * pure(VALUE) * pure(FOLLOW_USE_in_usevalue1792) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_usevalue1794) * pure(USEFIELDS) * pure(FOLLOW_USEFIELDS_in_usevalue1796) * pure(FOLLOW_VALUE_in_usevalue1809) * pure(FOLLOW_EQUAL_in_usevalue1811) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_usevalue1813) * pure(ID) * pure(FOLLOW_ID_in_usevalue1815) * pure(FOLLOW_QUOTE_in_usevalue1817) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void usevalue() { 
+} 
+@Perm(requires="pure(FOLLOW_start_classstates_in_classstates1432) * pure(FOLLOW_state_in_classstates1434) * pure(PUNCTUATION) * pure(FOLLOW_PUNCTUATION_in_classstates1437) * pure(FOLLOW_state_in_classstates1439) * pure(FOLLOW_end_classstates_in_classstates1443) * pure(CLASS_STATES) * pure(FOLLOW_CLASS_STATES_in_start_classstates1450) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_start_classstates1452) * pure(LCBRACKET) * pure(FOLLOW_LCBRACKET_in_start_classstates1454) * pure(STATE) * pure(FOLLOW_STATE_in_state1471) * pure(FOLLOW_LSBRACKET_in_state1473) * pure(NAME) * pure(FOLLOW_NAME_in_state1475) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_state1477) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_state1479) * pure(ID) * pure(FOLLOW_ID_in_state1483) * pure(FOLLOW_QUOTE_in_state1485) * pure(FOLLOW_PUNCTUATION_in_state1490) * pure(FOLLOW_invariant_in_state1492) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_state1496) * pure(pkg) * pure(classes) * none(name) * none(reachable) * full(invariants) * full(boolInvariants) * full(reachableStates) * full(states) * full(reachability_state) * pure(RCBRACKET) * pure(FOLLOW_RCBRACKET_in_end_classstates1461) * pure(FOLLOW_RSBRACKET_in_end_classstates1463) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * unique(this) * full(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void classstates() { 
+} 
+@Perm(requires="pure(CLASS_STATES) * pure(FOLLOW_CLASS_STATES_in_start_classstates1450) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_start_classstates1452) * pure(LCBRACKET) * pure(FOLLOW_LCBRACKET_in_start_classstates1454) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void startClassstates() { 
+} 
+@Perm(requires="pure(STATE) * pure(FOLLOW_STATE_in_state1471) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_state1473) * pure(NAME) * pure(FOLLOW_NAME_in_state1475) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_state1477) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_state1479) * pure(ID) * pure(FOLLOW_ID_in_state1483) * pure(FOLLOW_QUOTE_in_state1485) * pure(PUNCTUATION) * pure(FOLLOW_PUNCTUATION_in_state1490) * pure(FOLLOW_invariant_in_state1492) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_state1496) * pure(pkg) * pure(classes) * none(name) * none(reachable) * full(invariants) * full(boolInvariants) * full(reachableStates) * full(states) * full(reachability_state) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * unique(this) * full(this) * full(this) * full(this) * full(this) * full(this) in Alive")
+ void state() { 
+} 
+@Perm(requires="pure(RCBRACKET) * pure(FOLLOW_RCBRACKET_in_end_classstates1461) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_end_classstates1463) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void endclassstates() { 
+} 
+@Perm(requires="pure(REFINE) * pure(FOLLOW_REFINE_in_refine1322) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_refine1324) * pure(LCBRACKET) * pure(FOLLOW_LCBRACKET_in_refine1326) * pure(FOLLOW_states_in_refine1329) * pure(PUNCTUATION) * pure(FOLLOW_PUNCTUATION_in_refine1333) * pure(FOLLOW_states_in_refine1335) * pure(RCBRACKET) * pure(FOLLOW_RCBRACKET_in_refine1340) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_refine1342) * pure(STATES) * pure(FOLLOW_STATES_in_states1351) * pure(FOLLOW_LSBRACKET_in_states1353) * pure(FOLLOW_dimension_in_states1355) * pure(FOLLOW_PUNCTUATION_in_states1357) * pure(VALUE) * pure(FOLLOW_value_in_states1360) * pure(FOLLOW_RSBRACKET_in_states1364) * pure(DIM) * pure(FOLLOW_DIM_in_dimension1373) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_dimension1375) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_dimension1377) * pure(ID) * pure(FOLLOW_ID_in_dimension1381) * pure(FOLLOW_QUOTE_in_dimension1383) * pure(pkg) * pure(fullModel) * pure(classes) * none(dimensionName) * full(values) * pure(dimesnions) * full(dimensions) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * full(this) * pure(this) * full(this) in Alive")
+ void refine() { 
+} 
+@Perm(requires="pure(STATES) * pure(FOLLOW_STATES_in_states1351) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_states1353) * pure(FOLLOW_dimension_in_states1355) * pure(PUNCTUATION) * pure(FOLLOW_PUNCTUATION_in_states1357) * pure(VALUE) * pure(FOLLOW_value_in_states1360) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_states1364) * pure(DIM) * pure(FOLLOW_DIM_in_dimension1373) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_dimension1375) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_dimension1377) * pure(ID) * pure(FOLLOW_ID_in_dimension1381) * pure(FOLLOW_QUOTE_in_dimension1383) * pure(pkg) * pure(fullModel) * pure(classes) * none(dimensionName) * full(values) * pure(dimesnions) * full(dimensions) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * full(this) * pure(this) * full(this) in Alive")
+ void states() { 
+} 
+@Perm(requires="pure(DIM) * pure(FOLLOW_DIM_in_dimension1373) * pure(EQUAL) * pure(FOLLOW_EQUAL_in_dimension1375) * pure(QUOTE) * pure(FOLLOW_QUOTE_in_dimension1377) * pure(ID) * pure(FOLLOW_ID_in_dimension1381) * pure(FOLLOW_QUOTE_in_dimension1383) * pure(pkg) * pure(fullModel) * pure(classes) * none(dimensionName) * full(values) * pure(dimesnions) * full(dimensions) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * full(this) * pure(this) * full(this) in Alive")
+ void dimension() { 
+} 
+@Perm(requires="pure(QUOTE) * none(FOLLOW_QUOTE_in_item1415) * pure(ID) * none(FOLLOW_ID_in_item1419) * none(FOLLOW_QUOTE_in_item1421) * pure(pkg) * pure(classes) * none(name) * none(reachable) * full(invariants) * full(boolInvariants) * full(reachableStates) * full(states) * full(reachability_state) in Alive", 
+ ensures= "pure(this) * none(this) * pure(this) * none(this) * none(this) * pure(this) * pure(this) * unique(this) * unique(this) * full(this) * full(this) * full(this) * full(this) * full(this) in Alive")
+ void item() { 
+} 
+@Perm(requires="none(INV) * none(FOLLOW_INV_in_invariant1591) * pure(EQUAL) * none(FOLLOW_EQUAL_in_invariant1593) * pure(QUOTE) * none(FOLLOW_QUOTE_in_invariant1595) * pure(FULL) * pure(NONE) * pure(ID) * none(FOLLOW_condition_in_invariant1598) * pure(AND) * none(FOLLOW_AND_in_invariant1601) * none(FOLLOW_condition_in_invariant1603) * none(FOLLOW_QUOTE_in_invariant1609) * pure(FOLLOW_ID_in_condition1620) * pure(OPERATOR) * pure(FOLLOW_OPERATOR_in_condition1624) * pure(FOLLOW_ID_in_condition1628) * pure(FOLLOW_accesspermission_in_condition1646) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_condition1648) * pure(THIS) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_condition1658) * pure(IN) * pure(FOLLOW_IN_in_condition1661) * pure(FOLLOW_ID_in_condition1665) * pure(pkg) * pure(invaraints) * pure(fullModel) * pure(states) * pure(classes) * none(ap) * none(variable) * none(stateName) * full(invariants) in Alive", 
+ ensures= "none(this) * none(this) * pure(this) * none(this) * pure(this) * none(this) * pure(this) * pure(this) * pure(this) * none(this) * pure(this) * none(this) * none(this) * none(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * unique(this) * unique(this) * full(this) in Alive")
+ void invariant() { 
+} 
+@Perm(requires="pure(ID) * pure(FULL) * pure(NONE) * pure(FOLLOW_ID_in_condition1620) * pure(OPERATOR) * pure(FOLLOW_OPERATOR_in_condition1624) * pure(FOLLOW_ID_in_condition1628) * pure(FOLLOW_accesspermission_in_condition1646) * pure(LSBRACKET) * pure(FOLLOW_LSBRACKET_in_condition1648) * pure(THIS) * pure(RSBRACKET) * pure(FOLLOW_RSBRACKET_in_condition1658) * pure(IN) * pure(FOLLOW_IN_in_condition1661) * pure(FOLLOW_ID_in_condition1665) * pure(pkg) * pure(invaraints) * pure(fullModel) * pure(states) * pure(classes) * none(ap) * none(variable) * none(stateName) * full(invariants) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * unique(this) * unique(this) * full(this) in Alive")
+ void condition() { 
+} 
+@Perm(requires="pure(PUNCTUATION) * none(FOLLOW_PUNCTUATION_in_other1701) in Alive", 
+ ensures= "pure(this) * none(this) in Alive")
+ void other() { 
+} 
+
+}
+
+class EJmlSpecification {
+EJmlSpecification() {   }
+
+@Perm(requires="full(ghostList) * full(ghostName) in Alive", 
+ ensures= "full(this) * full(this) in Alive")
+ void setDimensionName(String str) { 
+} 
+@Perm(requires="full(ensures) in Alive", 
+ ensures= "full(this) in Alive")
+ void setEnsures(String str) { 
+} 
+@Perm(requires="full(perm) in Alive", 
+ ensures= "full(this) in Alive")
+ void setPerm(String str) { 
+} 
+@Perm(requires="full(requires) in Alive", 
+ ensures= "full(this) in Alive")
+ void addRequires(String str) { 
+} 
+@Perm(requires="unique(ensures) * unique(perm) * full(requires) in Alive", 
+ ensures= "none(this) * none(this) * full(this) in Alive")
+ void reset() { 
+} 
+@Perm(requires="full(ghostList) * pure(ghostName) * pure(invLowValue) * pure(invHighValue) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ String JmlClassSpec2PluralClassSpec() { 
+ return null;
+} 
+@Perm(requires="pure(perm) * full(ensures) * pure(TS) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) in Alive")
+ String noRequires() { 
+ return null;
+} 
+@Perm(requires="pure(perm) in Alive", 
+ ensures= "pure(this) in Alive")
+ String getPerm() { 
+ return null;
+} 
+@Perm(requires="full(ensures) * pure(TS) in Alive", 
+ ensures= "full(this) * pure(this) in Alive")
+ String determineEnsures(String req) { 
+ return null;
+} 
+@Perm(requires="pure(TS) * full(requires) * full(ensures) * pure(perm) in Alive", 
+ ensures= "pure(this) * full(this) * full(this) * pure(this) in Alive")
+ String oneRequires() { 
+ return null;
+} 
+@Perm(requires="pure(requires) * pure(TS) * full(ensures) * pure(perm) in Alive", 
+ ensures= "pure(this) * pure(this) * full(this) * pure(this) in Alive")
+ String moreRequires() { 
+ return null;
+} 
+
+}
+
+class EGhost {
+EGhost() {   }
+
+@Perm(requires="full(ghostName) in Alive", 
+ ensures= "full(this) in Alive")
+public void setDimensionName(String str) { 
+} 
+@Perm(requires="full(invLowValue) * full(invHighValue) in Alive", 
+ ensures= "full(this) * full(this) in Alive")
+public void setDimensionValues(int low, int high) { 
+} 
+@Perm(requires="pure(ghostName) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getDimensionName() { 
+ return null;
+} 
+@Perm(requires="pure(invLowValue) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getLowValueofInv() { 
+ return 0;
+} 
+@Perm(requires="pure(invHighValue) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getHighValueofInv() { 
+ return 0;
+} 
+
+}
+
+class Time {
+Time() {   }
+
+@Perm(requires="none(hour) * none(minute) * none(second) * none(msecond) * none(str) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) * unique(this) * unique(this) in Alive")
+public  Time() { 
+ return null;
+} 
+@Perm(requires="full(str) * pure(hour) * pure(minute) * pure(second) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) in Alive")
+public String toString() { 
+ return null;
+} 
+
+}
+
+class FileReader {
+FileReader() {   }
+
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public  FileReader() { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+ String readFile(String pathname) { 
+ return null;
+} 
+
+}
+
+class UserSelectedClassesAnalysis {
+UserSelectedClassesAnalysis() {   }
+
+@Perm(requires="none(starttime) * none(endtime) * none(dot) * none(testType) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) * unique(this) in Alive")
+public  UserSelectedClassesAnalysis() { 
+ return null;
+} 
+@Perm(requires="full(testType) * none(pkg) * full(classes) * pure(sinkStates) * pure(GHOST) * pure(INVARIANT) * pure(JMLSTART) * pure(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071) * pure(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(requires) * unique(ensures) * pure(invLowValue) * pure(invHighValue) * unique(perm) * none(plural) * full(K) in Alive", 
+ ensures= "full(this) * unique(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * none(this) * pure(this) * pure(this) * none(this) * unique(this) * full(this) in Alive")
+ void analyzeFromCommandLine(LinkedList<String> inputFiles, String strType, String strK) { 
+} 
+@Perm(requires="full(testType) * full(starttime) * none(pkg) * full(classes) * full(sinkStates) * pure(GHOST) * pure(INVARIANT) * pure(JMLSTART) * pure(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071) * pure(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(requires) * unique(ensures) * pure(invLowValue) * pure(invHighValue) * unique(perm) * full(className) * full(hour) * full(minute) * full(second) * full(msecond) * full(str) * full(endtime) * pure(transitions) * pure(reachability_state) * full(reachable) * pure(name) * pure(states) * none(latex) * full(bRequires) * full(bSTM) * full(bconcurrency) * pure(_prj) * pure(bSinkStates) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(methods) * pure(requiresSatisfiability) * full(m_Class) * full(caseHandling) * full(methodName) * full(name) * pure(ensures) * none(plural) * full(K) * full(sTestType) * full(pkg) * full(reachableStates) * full(unreachableMethod) * pure(stateIndex) * full(identifier) in Alive", 
+ ensures= "full(this) * full(this) * unique(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * none(this) * pure(this) * pure(this) * none(this) * full(this) * full(this) * full(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * unique(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * unique(this) * full(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * full(this) in Alive")
+public void analyzeFromPlugin(List<ICompilationUnit> compilationUnitList, int test) { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+private CompilationUnit getCompilationUnit(ICompilationUnit cunit) { 
+ return null;
+} 
+@Perm(requires="pure(testType) * full(endtime) * pure(starttime) * full(className) * pure(transitions) * pure(reachability_state) * full(reachable) * pure(name) * pure(states) * full(hour) * full(minute) * full(second) * full(msecond) * full(str) * none(latex) * full(bRequires) * full(bSTM) * full(bconcurrency) * pure(_prj) * pure(bSinkStates) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(classes) * pure(methods) * pure(requiresSatisfiability) * full(reachableStates) * full(pkg) * full(unreachableMethod) * pure(stateIndex) * full(identifier) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * full(this) * full(this) * unique(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * pure(this) * full(this) in Alive")
+ void callModelCheckerThroughCommandLine() { 
+} 
+@Perm(requires="full(hour) * full(minute) * full(second) * full(msecond) * full(str) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * full(this) * full(this) in Alive")
+ Time getTime() { 
+ return null;
+} 
+@Perm(requires="pure(starttime) * pure(endtime) * none(latex) * full(bRequires) * full(bSTM) * full(bconcurrency) * pure(_prj) * pure(bSinkStates) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(classes) * full(className) * pure(methods) * pure(states) * pure(requiresSatisfiability) * pure(name) * pure(stateIndex) * full(identifier) in Alive", 
+ ensures= "pure(#0) * pure(#1) * unique(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void CreatePdfSummary_CommandLine(Time starttime2, Time endtime2) { 
+} 
+@Perm(requires="pure(testType) * full(endtime) * pure(starttime) * full(msecond) * full(_prj) * full(bSTM) * pure(classes) * full(className) * pure(states) * pure(name) * full(reachable) * full(reachableStates) * full(bSinkStates) * pure(transitions) * pure(reachability_state) * full(hour) * full(minute) * full(second) * full(str) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) * full(this) * full(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * full(this) in Alive")
+ void callModelCheckerThroughPlugin() { 
+} 
+@Perm(requires="pure(starttime) * pure(endtime) in Alive", 
+ ensures= "pure(#0) * pure(#1) in Alive")
+ void createPdfSummaryPlugin(Time starttime2, Time endtime2) { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+ void makePdfCommandLine() { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+ void makePdfPlugin() { 
+} 
+@Perm(requires="full(unreachableMethod) in Alive", 
+ ensures= "full(this) in Alive")
+ void printMethodMetrics() { 
+} 
+
+}
+
+class EVMDDSMCGenerator {
+EVMDDSMCGenerator() {   }
+
+@Perm(requires="none(pkg) * full(classes) * full(sinkStates) in Alive", 
+ ensures= "unique(this) * full(this) * full(this) in Alive")
+ void reset() { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+  EVMDDSMCGenerator() { 
+ return null;
+} 
+@Perm(requires="full(pkg) in Alive", 
+ ensures= "full(this) in Alive")
+ EPackage getPkgObject() { 
+ return null;
+} 
+@Perm(requires="pure(pkg) * pure(classes) * pure(methods) * full(name) * full(className) * pure(ensures) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) in Alive")
+ String modifyConstructorSpecifications(String prog) { 
+ return null;
+} 
+@Perm(requires="pure(pkg) * pure(classes) * none(name) * none(reachable) * full(invariants) * full(boolInvariants) * full(reachableStates) * full(states) * full(reachability_state) in Alive", 
+ ensures= "pure(this) * pure(this) * unique(this) * unique(this) * full(this) * full(this) * full(this) * full(this) * full(this) in Alive")
+ void addState(String stateName) { 
+} 
+@Perm(requires="pure(pkg) * pure(classes) * pure(methods) * pure(requires) * unique(_class) * full(ap) * full(ts) * full(fieldName) * pure(parameters) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * none(this) * full(this) * full(this) * full(this) * pure(this) in Alive")
+ void addRequiresParam_AP_TS(String ap, String ts, String argumentNumber) { 
+} 
+@Perm(requires="pure(pkg) * pure(classes) * pure(methods) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) in Alive")
+ void addEnsuresParamAPTS(String ap, String ts, String argumentNumber) { 
+} 
+@Perm(requires="pure(pkg) * pure(invaraints) * pure(fullModel) * pure(states) * pure(classes) * none(ap) * none(variable) * none(stateName) * full(invariants) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * unique(this) * unique(this) * unique(this) * full(this) in Alive")
+ void addStateInvariant(String accessPermission, String variable, String state) { 
+} 
+@Perm(requires="pure(pkg) * pure(fullModel) * pure(classes) * none(dimensionName) * full(values) * pure(dimesnions) * full(dimensions) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * unique(this) * full(this) * pure(this) * full(this) in Alive")
+ void addDimension(String name) { 
+} 
+@Perm(requires="pure(pkg) * unique(_class) * pure(classes) * pure(methods) * pure(ensures) * full(ap) * full(ts) * full(fieldName) in Alive", 
+ ensures= "pure(this) * none(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) in Alive")
+ void addEnsuresAPTS(String ap, String ts) { 
+} 
+
+}
+
+class EPackage {
+EPackage() {   }
+
+@Perm(requires="none(classes) * none(sinkStates) * none(pkgName) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) in Alive")
+public  EPackage() { 
+ return null;
+} 
+@Perm(requires="pure(classes) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EClass> getClasses() { 
+ return null;
+} 
+@Perm(requires="full(pkgName) in Alive", 
+ ensures= "full(this) in Alive")
+public void setName(String str) { 
+} 
+@Perm(requires="full(pkgName) in Alive", 
+ ensures= "full(this) in Alive")
+public String getName() { 
+ return null;
+} 
+@Perm(requires="pure(classes) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getTotalStates() { 
+ return 0;
+} 
+@Perm(requires="full(sinkStates) in Alive", 
+ ensures= "full(this) in Alive")
+public void setSinkStates(String sinkStates) { 
+} 
+@Perm(requires="pure(sinkStates) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getSinkStates() { 
+ return null;
+} 
+
+}
+
+class EGeneratedPluralSpecification {
+EGeneratedPluralSpecification() {   }
+
+@Perm(requires="none(plural) in Alive", 
+ ensures= "unique(this) in Alive")
+ void createFromCommandLine(String prog, String className) { 
+} 
+@Perm(requires="none(plural) in Alive", 
+ ensures= "unique(this) in Alive")
+ void createFromPlugin(String prog, String className) { 
+} 
+
+}
+
+class ESMCModel {
+ESMCModel() {   }
+
+@Perm(requires="full(K) in Alive", 
+ ensures= "full(this) in Alive")
+ void setK(int k) { 
+} 
+@Perm(requires="full(out) * pure(pkg) * pure(classes) * pure(ap) * full(className) * pure(fields) * pure(objectIndex) * pure(modifier) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void declarationsAndinitilizations() { 
+} 
+@Perm(requires="full(out) * pure(ap) * full(className) * pure(fields) * pure(objectIndex) * pure(modifier) in Alive", 
+ ensures= "full(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void initialize(LinkedList<EClass> _listClasses) { 
+} 
+@Perm(requires="pure(ap) in Alive", 
+ ensures= "pure(this) in Alive")
+ String comment(String str) { 
+ return null;
+} 
+@Perm(requires="full(out) * pure(tab) * pure(UNDEF) * pure(POST) * pure(PURE) * pure(pkg) * pure(classes) * full(className) * pure(ap) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) in Alive")
+ void modelAlias(String className, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="pure(pkg) * pure(classes) * full(className) in Alive", 
+ ensures= "pure(this) * pure(this) * full(this) in Alive")
+ boolean isClassExist(String className) { 
+ return 0;
+} 
+@Perm(requires="full(out) * pure(K) * pure(pkg) * full(ap) * pure(classes) * full(className) * pure(methods) * full(currentobjectIndex) * pure(tab) * full(name) * pure(superClass) * pure(POST) * pure(_class) * pure(objectIndex) * full(ts) * pure(states) * pure(name) * pure(stateIndex) * pure(invariants) * pure(classType) * pure(stateName) * pure(boolInvariants) * pure(variable) * pure(classIndex) * pure(requires) * pure(PRE) * pure(ensures) * pure(fields) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void Transitions() { 
+} 
+@Perm(requires="full(out) * full(ap) * pure(methods) * full(currentobjectIndex) * pure(tab) * full(className) * full(name) * pure(K) * pure(superClass) * pure(POST) * pure(_class) * pure(objectIndex) * full(ts) * pure(pkg) * pure(classes) * pure(states) * pure(name) * pure(stateIndex) * pure(invariants) * pure(classType) * pure(stateName) * pure(boolInvariants) * pure(variable) * pure(classIndex) * pure(requires) * pure(PRE) * pure(ensures) * pure(fields) in Alive", 
+ ensures= "full(this) * full(this) * pure(this) * full(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void createInstanceInModel(EClass _class, String name, int objectIndex, int J) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(PRE) * full(className) * pure(ap) * full(name) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * full(this) in Alive")
+ void modelPrimePCandMethod(EClass _class, EMethod _method, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(currentobjectIndex) * full(out) * pure(tab) * full(className) * full(name) * pure(K) * pure(superClass) * pure(POST) * pure(_class) * pure(objectIndex) * full(ts) * pure(pkg) * full(ap) * pure(classes) * pure(states) * pure(name) * pure(stateIndex) * pure(invariants) * pure(classType) * pure(stateName) * pure(boolInvariants) * pure(variable) * pure(classIndex) * pure(requires) * pure(PRE) * pure(ensures) * pure(fields) in Alive", 
+ ensures= "full(this) * full(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void startMethod(EClass _class, EMethod _method, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(K) * full(className) * pure(superClass) * pure(objectIndex) * pure(fields) * pure(pkg) * pure(classes) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelPCConstructor(EClass _class, Integer objectIndex, Integer refIndex, EClass _currentClass) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(K) * full(className) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) in Alive")
+ void modelap(EClass _class, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(POST) * full(className) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) in Alive")
+ void modelPCMethod(EClass _class, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="pure(pkg) * pure(requires) * pure(classes) * full(className) * full(out) * pure(tab) * pure(ap) * pure(states) * pure(name) * pure(stateIndex) * pure(K) * pure(invariants) * pure(classType) * pure(stateName) * pure(boolInvariants) * pure(variable) * full(ts) * full(name) * pure(classIndex) * pure(objectIndex) * pure(fields) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void startAPTSPARAM(EMethod _method, Integer J) { 
+} 
+@Perm(requires="pure(pkg) * pure(classes) * full(className) * full(out) * pure(tab) * pure(K) * full(ap) * pure(states) * pure(name) * pure(invariants) * pure(classType) * pure(objectIndex) * pure(stateName) * full(ts) * full(name) * pure(fields) in Alive", 
+ ensures= "pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) in Alive")
+ void startPrimeTSPARAM(EMethod method, Integer refIndex) { 
+} 
+@Perm(requires="pure(pkg) * full(out) * pure(superClass) * pure(classes) * full(className) * full(ap) * pure(tab) * pure(K) * pure(states) * pure(name) * pure(invariants) * pure(classType) * pure(objectIndex) * pure(stateName) * pure(fields) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelPrimeConstructor(EClass _class, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="pure(pkg) * full(out) * pure(tab) * pure(superClass) * pure(classes) * full(className) * pure(ap) * pure(classIndex) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) in Alive")
+ void modelInheritance(EClass _class, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(ap) * full(out) * pure(pkg) * pure(states) * pure(name) * pure(invariants) * pure(classType) * pure(objectIndex) * pure(tab) * pure(K) * pure(classes) * pure(stateName) * pure(fields) in Alive", 
+ ensures= "full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelPrimeAPStateInvariants(EClass _class, Integer refIndex, String stateName) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(K) * full(ap) * full(className) * pure(pkg) * pure(states) * pure(name) * pure(invariants) * pure(classType) * pure(objectIndex) * pure(classes) * pure(stateName) * pure(fields) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void starPrimeAP(String ap, EClass _class, Integer objectIndex, Integer refIndex, String stateName) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(K) * pure(ap) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelPrimeAP(String ap, String className, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="pure(ap) in Alive", 
+ ensures= "pure(this) in Alive")
+ int getAPId(String ap) { 
+ return 0;
+} 
+@Perm(requires="full(out) * pure(tab) * pure(PRE) * full(className) * pure(ap) * full(name) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * full(this) in Alive")
+ void modelEndPCMethod(EClass _class, EMethod _method, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * full(className) * full(name) * pure(PRE) * pure(ap) * pure(superClass) * pure(objectIndex) * pure(POST) * pure(_class) * full(ts) * pure(pkg) * pure(states) * pure(name) * pure(stateIndex) * pure(classes) * pure(K) * pure(invariants) * pure(classType) * pure(stateName) * pure(boolInvariants) * pure(variable) * pure(ensures) * pure(classIndex) * pure(fields) * pure(values) in Alive", 
+ ensures= "full(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void endMethod(EClass _class, EMethod _method, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(PRE) * full(className) * pure(ap) * full(name) * pure(superClass) * pure(objectIndex) * pure(fields) * pure(pkg) * pure(classes) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelEndPCConstructor(EClass _class, EMethod _method, Integer objectIndex, Integer refIndex, EClass _currentClass) { 
+} 
+@Perm(requires="pure(pkg) * full(out) * pure(superClass) * pure(classes) * full(className) * pure(ap) * pure(tab) * pure(states) * pure(name) * pure(stateIndex) * pure(K) * pure(invariants) * pure(classType) * pure(objectIndex) * pure(stateName) * pure(boolInvariants) * pure(variable) * pure(classIndex) * pure(fields) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelendConstructor(EClass _class, EMethod _method, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(states) * pure(name) * pure(boolInvariants) * pure(ap) * pure(variable) * full(className) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void updateBoolStateInvariants(EClass _class, String methodName, String stateName, Integer objectIndex) { 
+} 
+@Perm(requires="pure(pkg) * full(out) * pure(tab) * pure(states) * pure(name) * pure(stateIndex) * pure(classes) * full(className) * pure(ap) * pure(K) * pure(invariants) * pure(classType) * pure(objectIndex) * pure(stateName) * pure(boolInvariants) * pure(variable) * pure(classIndex) * pure(fields) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void endPrimeAPTS(EClass _class, String methodName, String ap, String stateName, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="pure(pkg) * pure(classes) * full(className) * full(out) * pure(tab) * pure(states) * pure(name) * pure(stateIndex) * pure(ap) * pure(K) * pure(invariants) * pure(classType) * pure(objectIndex) * pure(stateName) * pure(boolInvariants) * pure(variable) * full(name) * full(ts) * pure(classIndex) * pure(fields) in Alive", 
+ ensures= "pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) in Alive")
+ void endPrimeAPTSPARAM(EMethod method, Integer refIndex) { 
+} 
+@Perm(requires="pure(pkg) * full(out) * pure(tab) * pure(states) * pure(name) * pure(stateIndex) * pure(classes) * full(className) * pure(ap) * pure(classIndex) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) in Alive")
+ void updateState(String methodName, String state, EClass _class, Integer objectIndex) { 
+} 
+@Perm(requires="full(out) * pure(pkg) * pure(states) * pure(name) * pure(invariants) * pure(classType) * pure(ap) * pure(objectIndex) * pure(classes) * pure(tab) * pure(stateIndex) * full(className) * pure(stateName) * pure(K) * pure(classIndex) * pure(fields) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void updateStateInvariants(EClass _class, String methodName, String stateName, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(states) * pure(name) * pure(boolInvariants) * pure(ap) * pure(variable) * full(className) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void modelBoolStateInvariants(EClass _class, Integer objectIndex, String stateName) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(pkg) * full(className) * pure(ap) * pure(classes) * pure(states) * pure(name) * pure(stateIndex) * pure(K) * pure(invariants) * pure(classType) * pure(stateName) * pure(boolInvariants) * pure(variable) * pure(classIndex) * pure(objectIndex) * pure(fields) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void startAPTS(EClass _class, EMethod _method, String ap, String stateName, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(pkg) * full(className) * pure(ap) * pure(classes) * pure(states) * pure(name) * pure(stateIndex) * pure(classIndex) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelState(EClass _class, Integer objectIndex, EMethod _method, String stateName) { 
+} 
+@Perm(requires="full(out) * pure(pkg) * pure(states) * pure(name) * pure(invariants) * pure(classType) * pure(ap) * pure(tab) * full(className) * pure(classes) * pure(stateIndex) * pure(stateName) * pure(K) * pure(objectIndex) * pure(classIndex) * pure(fields) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelStateInvariants(EClass _class, int refIndex, EMethod _method, String stateName) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(PRE) * full(countMR) * pure(ap) * full(className) * pure(methods) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) in Alive")
+ void methodsReachability(EClass _class, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(K) * full(className) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) in Alive")
+ void modelAP(EClass _class, Integer objectIndex, Integer refIndex, String ap) { 
+} 
+@Perm(requires="pure(objectIndex) * pure(fields) in Alive", 
+ ensures= "pure(this) * pure(this) in Alive")
+ int getObjectIndex(EClass _class, String variable) { 
+ return 0;
+} 
+@Perm(requires="full(out) * pure(tab) * pure(K) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) in Alive")
+ void updateTokens(String ap, String className, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(PRE) * full(className) * pure(ap) * full(name) * pure(superClass) * pure(objectIndex) * pure(POST) * pure(fields) * pure(pkg) * pure(classes) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void modelPrimePCConstructor(EClass _class, EMethod _method, Integer objectIndex, Integer refIndex, EClass _currentClass) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(POST) * full(className) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) in Alive")
+ void modelPrimePC(EClass _class, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(NUM_AP) * pure(methods) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void defineKVariables(String className, int objectIndex, EClass _class, int K) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(K) * pure(states) * pure(variablesOfBoolInvariants) * pure(NUM_AP) * pure(methods) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void defineVariables(String className, int objectIndex, EClass _class, int modifier) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(POST) * pure(UNDEF) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void initilizeKVariables(String className, int objectIndex, int K) { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(UNDEF) * pure(K) * pure(variablesOfBoolInvariants) * pure(POST) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void initilizeVariables(String className, int objectIndex, EClass _class, int modifier) { 
+} 
+@Perm(requires="pure(K) * pure(pkg) * full(out) * pure(classes) * pure(tab) * pure(UNDEF) * pure(POST) * pure(PURE) * full(className) * pure(ap) * pure(fields) * pure(modifier) * pure(objectIndex) in Alive", 
+ ensures= "pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void createAlias() { 
+} 
+@Perm(requires="pure(ap) in Alive", 
+ ensures= "pure(this) in Alive")
+ boolean isPrivateAndIndexEqualToZero(int refIndex, EField _field) { 
+ return 0;
+} 
+@Perm(requires="pure(pkg) * pure(classes) * full(className) in Alive", 
+ ensures= "pure(this) * pure(this) * full(this) in Alive")
+ EClass getClass(String className) { 
+ return null;
+} 
+@Perm(requires="pure(values) in Alive", 
+ ensures= "pure(this) in Alive")
+ int getDimensionIndex(EClass _class, String ts) { 
+ return 0;
+} 
+@Perm(requires="pure(pkg) * pure(classes) * pure(dimensions) * pure(superClass) * pure(fields) * full(className) * full(classIndex) * pure(classIndex) * full(numberOfObjects) * pure(states) * pure(methods) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) in Alive")
+ void addIndexes() { 
+} 
+@Perm(requires="pure(dimensions) in Alive", 
+ ensures= "pure(this) in Alive")
+ void createDimensionsObject(EClass _class) { 
+} 
+@Perm(requires="full(name) * full(className) * full(type) * full(modifier) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * full(this) in Alive")
+ void createDimensionAsField(EClass _class, EDim _dim, int count) { 
+} 
+@Perm(requires="full(name) * pure(superClass) * full(className) * full(type) * full(modifier) * pure(pkg) * pure(classes) * pure(methods) * pure(identifier) * full(ap) * full(ts) * pure(ensures) in Alive", 
+ ensures= "full(this) * pure(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) in Alive")
+ void createParentAsField(EClass _class, EClass _currentClass) { 
+} 
+@Perm(requires="pure(superClass) * pure(pkg) * pure(classes) * full(className) * full(name) * full(type) * full(modifier) * pure(methods) * pure(identifier) * full(ap) * full(ts) * pure(ensures) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) in Alive")
+ void createParentObject(EClass _class) { 
+} 
+@Perm(requires="pure(fields) * full(classType) in Alive", 
+ ensures= "pure(this) * full(this) in Alive")
+ void setInvariantVariableType(EClass _class, EInvariant inv) { 
+} 
+@Perm(requires="pure(pkg) * pure(states) * pure(invariants) * pure(fields) * full(classType) * pure(classes) * full(className) * pure(name) * pure(stateName) * pure(stateIndex) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void addInvariantStateIndex(EClass _class) { 
+} 
+@Perm(requires="full(countMR) * full(countSTM) * full(out) * pure(pkg) * pure(sTestType) * pure(K) * pure(classes) * pure(tab) * pure(PRE) * pure(ap) * full(className) * pure(methods) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) in Alive")
+ void Spec() { 
+} 
+@Perm(requires="full(out) * pure(tab) * pure(PRE) * pure(methods) * full(className) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void concurrentMethods(EClass _class, Integer objectIndex, Integer refIndex) { 
+} 
+@Perm(requires="full(out) * pure(tab) * full(countSTM) * pure(states) * full(className) * pure(name) * pure(stateIndex) in Alive", 
+ ensures= "full(this) * pure(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) in Alive")
+ void statesAdjancyMatrix(EClass _class, Integer objectIndex) { 
+} 
+@Perm(requires="full(K) * full(sTestType) * full(pkg) in Alive", 
+ ensures= "full(this) * full(this) * full(this) in Alive")
+ void generateSMCmodelPlugin(EPackage _pkg, int testType) { 
+} 
+
+}
+
+class WorkspaceUtilities {
+WorkspaceUtilities() {   }
+
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+ ASTNode getASTNodeFromCompilationUnit(ICompilationUnit compUnit) { 
+ return null;
+} 
+@Perm(requires="full(log) in Alive", 
+ ensures= "full(this) in Alive")
+ List<ICompilationUnit> scanForCompilationUnits() { 
+ return null;
+} 
+@Perm(requires="full(log) in Alive", 
+ ensures= "full(this) in Alive")
+ List<ICompilationUnit> collectCompilationUnits(IJavaElement javaElement) { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+ Map<ICompilationUnit,ASTNode> parseCompilationUnits(List<ICompilationUnit> compilationUnits) { 
+ return null;
+} 
+@Perm(requires="full(methodList) in Alive", 
+ ensures= "full(this) in Alive")
+ List<MethodDeclaration> scanForMethodDeclarations(Map<ICompilationUnit,ASTNode> compilationUnitToASTNode) { 
+ return null;
+} 
+@Perm(requires="full(methodList) in Alive", 
+ ensures= "full(this) in Alive")
+ List<MethodDeclaration> scanForMethodDeclarationsFromAST(ASTNode node) { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+ String getWorkspaceRelativeName(IJavaElement element) { 
+ return null;
+} 
+
+}
+
+class EClass {
+EClass() {   }
+
+@Perm(requires="full(className) in Alive", 
+ ensures= "full(this) in Alive")
+public String getName() { 
+ return null;
+} 
+@Perm(requires="pure(transitions) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<String> getTransitions() { 
+ return null;
+} 
+@Perm(requires="pure(reachability_state) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EState> getReachableStates() { 
+ return null;
+} 
+@Perm(requires="pure(states) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EState> getStates() { 
+ return null;
+} 
+@Perm(requires="pure(methods) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EMethod> getMethods() { 
+ return null;
+} 
+@Perm(requires="pure(superClass) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getSuperClassName() { 
+ return null;
+} 
+@Perm(requires="pure(states) * pure(name) * pure(stateIndex) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) in Alive")
+public int findStateIndex(String st) { 
+ return 0;
+} 
+@Perm(requires="pure(classIndex) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getIndex() { 
+ return 0;
+} 
+@Perm(requires="pure(fields) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EField> getFields() { 
+ return null;
+} 
+@Perm(requires="pure(variablesOfBoolInvariants) in Alive", 
+ ensures= "pure(this) in Alive")
+public ArrayList<String> getVariablesofBooleanInvariants() { 
+ return null;
+} 
+@Perm(requires="pure(dimensions) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EDim> getDimensions() { 
+ return null;
+} 
+@Perm(requires="full(numberOfObjects) in Alive", 
+ ensures= "full(this) in Alive")
+public void createObject() { 
+} 
+@Perm(requires="pure(methods) * full(className) * pure(identifier) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) in Alive")
+public EMethod getConstructor() { 
+ return null;
+} 
+@Perm(requires="none(fields) * none(methods) * none(states) * none(transitions) * none(reachability_state) * unique(superClass) * none(numberOfObjects) * none(variablesOfBoolInvariants) * none(dimensions) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * none(this) * unique(this) * unique(this) * unique(this) in Alive")
+public  EClass() { 
+ return null;
+} 
+@Perm(requires="full(superClass) in Alive", 
+ ensures= "full(this) in Alive")
+public void setSuperClassName(String str) { 
+} 
+@Perm(requires="full(states) in Alive", 
+ ensures= "full(this) in Alive")
+public int getTotalStates() { 
+ return 0;
+} 
+@Perm(requires="pure(reachability_state) * pure(reachable) in Alive", 
+ ensures= "pure(this) * pure(this) in Alive")
+public int getTotalReachableStates() { 
+ return 0;
+} 
+@Perm(requires="full(methods) in Alive", 
+ ensures= "full(this) in Alive")
+public void addMethod(EMethod method) { 
+} 
+@Perm(requires="full(fields) in Alive", 
+ ensures= "full(this) in Alive")
+public void addField(EField field) { 
+} 
+@Perm(requires="full(states) * full(reachability_state) in Alive", 
+ ensures= "full(this) * full(this) in Alive")
+public void addState(EState state) { 
+} 
+@Perm(requires="pure(numberOfObjects) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getLastObjectIndex() { 
+ return 0;
+} 
+@Perm(requires="full(dimensions) in Alive", 
+ ensures= "full(this) in Alive")
+public void addDimension(EDim dim) { 
+} 
+@Perm(requires="full(dimensions) in Alive", 
+ ensures= "full(this) in Alive")
+public boolean hasMoreThanOneDimension() { 
+ return 0;
+} 
+@Perm(requires="none(ClassStates) in Alive", 
+ ensures= "none(this) in Alive")
+public void addClassStatesSpecifications(String annotation) { 
+} 
+
+}
+
+class EGrarphWriter {
+EGrarphWriter() {   }
+
+@Perm(requires="full(className) * pure(transitions) * pure(reachability_state) * full(reachable) * pure(name) * pure(classes) * full(reachableStates) * full(pkg) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * full(this) * full(this) in Alive")
+ void addTrnsitions(String str) { 
+} 
+@Perm(requires="full(className) * pure(states) * pure(name) * pure(transitions) * pure(classes) * full(pkg) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void createGraph() { 
+} 
+@Perm(requires="full(unreachableMethod) in Alive", 
+ ensures= "full(this) in Alive")
+ void setNumberofUnReachableMethods() { 
+} 
+@Perm(requires="pure(unreachableMethod) in Alive", 
+ ensures= "pure(this) in Alive")
+ int getNumberofUnReachableMethods() { 
+ return 0;
+} 
+
+}
+
+class EState {
+EState() {   }
+
+@Perm(requires="pure(reachable) in Alive", 
+ ensures= "pure(this) in Alive")
+public int isReachable() { 
+ return 0;
+} 
+@Perm(requires="pure(name) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getName() { 
+ return null;
+} 
+@Perm(requires="full(reachable) * full(reachableStates) in Alive", 
+ ensures= "full(this) * full(this) in Alive")
+public void setReachability(int value) { 
+} 
+@Perm(requires="pure(invariants) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EInvariant> getInvariants() { 
+ return null;
+} 
+@Perm(requires="pure(stateIndex) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getStateIndex() { 
+ return 0;
+} 
+@Perm(requires="pure(boolInvariants) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EBoolInvariant> getBoolInvariants() { 
+ return null;
+} 
+@Perm(requires="none(name) * none(reachable) * none(invariants) * none(boolInvariants) * none(reachableStates) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) * unique(this) * unique(this) in Alive")
+public  EState(String name, int flag) { 
+ return null;
+} 
+@Perm(requires="full(invariants) in Alive", 
+ ensures= "full(this) in Alive")
+public void addInvariant(EInvariant inv) { 
+} 
+@Perm(requires="full(boolInvariants) in Alive", 
+ ensures= "full(this) in Alive")
+public void addBoolInvariant(EBoolInvariant inv) { 
+} 
+@Perm(requires="full(stateIndex) in Alive", 
+ ensures= "full(this) in Alive")
+public void setIndex(int stateIndex) { 
+} 
+@Perm(requires="full(reachableStates) * full(name) in Alive", 
+ ensures= "full(this) * full(this) in Alive")
+public Boolean isReachableState(String str) { 
+ return null;
+} 
+
+}
+
+class EOutputLatex {
+EOutputLatex() {   }
+
+@Perm(requires="none(latex) * full(bRequires) * full(bSTM) * full(bconcurrency) * pure(_prj) * pure(bSinkStates) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(classes) * full(className) * pure(methods) * pure(states) * pure(requiresSatisfiability) * pure(name) * pure(stateIndex) * full(identifier) in Alive", 
+ ensures= "unique(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void create_CommandLine() { 
+} 
+@Perm(requires="full(latex) in Alive", 
+ ensures= "full(this) in Alive")
+ void addUsePackages() { 
+} 
+@Perm(requires="full(bRequires) * full(bSTM) * full(bconcurrency) * full(latex) * pure(_prj) * pure(bSinkStates) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(classes) * full(className) * pure(methods) * pure(states) * pure(requiresSatisfiability) * pure(name) * pure(stateIndex) * full(identifier) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void writeToLatex() { 
+} 
+@Perm(requires="full(latex) * pure(bSinkStates) * pure(_prj) * pure(beginSideWay) * pure(endSideWay) * pure(bRequires) * pure(bSTM) * pure(bconcurrency) * pure(endOfRow) * pure(hLine) * pure(classes) * full(className) * pure(methods) * pure(states) * pure(requiresSatisfiability) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void WriteSummary() { 
+} 
+@Perm(requires="full(latex) * pure(beginSideWay) * pure(endSideWay) * pure(bRequires) * pure(bSTM) * pure(bconcurrency) * pure(endOfRow) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void addSummaryTableHeaders() { 
+} 
+@Perm(requires="pure(_prj) * full(latex) * pure(bRequires) * pure(bSTM) * pure(bconcurrency) * pure(endOfRow) * pure(hLine) * pure(classes) * full(className) * pure(methods) * pure(states) * pure(requiresSatisfiability) in Alive", 
+ ensures= "pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void addSummaryTableRows() { 
+} 
+@Perm(requires="full(latex) * pure(states) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(name) * pure(stateIndex) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void writeStateTransitionMatrix(EClass _class) { 
+} 
+@Perm(requires="full(latex) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(states) * pure(name) * pure(stateIndex) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void addSTMColumnsHeaders(EClass _class) { 
+} 
+@Perm(requires="full(latex) * pure(methods) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * full(identifier) * pure(hLine) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) in Alive")
+ void writeMethodConcurrencyMatrix(EClass _class) { 
+} 
+@Perm(requires="full(latex) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(methods) * full(identifier) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void addConcurrencyMatrixHeaders(EClass _class) { 
+} 
+@Perm(requires="full(latex) * pure(endOfRow) in Alive", 
+ ensures= "full(this) * pure(this) in Alive")
+ void writeAbbervations() { 
+} 
+@Perm(requires="full(_prj) * full(bSTM) * pure(classes) * full(className) * pure(states) * pure(name) * full(reachable) * full(reachableStates) * full(bSinkStates) * pure(pkg) in Alive", 
+ ensures= "full(this) * full(this) * pure(this) * full(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * pure(this) in Alive")
+ void setText(String str) { 
+} 
+@Perm(requires="full(bSTM) * pure(_prj) * pure(classes) * full(className) * pure(states) * pure(name) * full(reachable) * full(reachableStates) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * full(this) * full(this) in Alive")
+ void parseTransitions(String str) { 
+} 
+@Perm(requires="full(bSinkStates) * pure(_prj) in Alive", 
+ ensures= "full(this) * pure(this) in Alive")
+ void parseSinkStates(String str) { 
+} 
+@Perm(requires="none(latex) * full(bRequires) * full(bSTM) * full(bconcurrency) * pure(_prj) * pure(bSinkStates) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(classes) * full(className) * pure(methods) * pure(states) * pure(requiresSatisfiability) * pure(name) * pure(stateIndex) in Alive", 
+ ensures= "unique(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void create_Plugin() { 
+} 
+@Perm(requires="full(latex) * pure(endOfRow) * pure(hLine) * pure(methods) * full(identifier) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * full(this) in Alive")
+ void addConcurrencyMatrixRows(EClass _class) { 
+} 
+@Perm(requires="full(identifier) in Alive", 
+ ensures= "full(this) in Alive")
+ String getConcurrencyValue(EMethod _method, EMethod __method) { 
+ return null;
+} 
+@Perm(requires="full(latex) * pure(bSinkStates) * pure(bRequires) * pure(bSTM) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) in Alive")
+ void addSummaryTableColumns() { 
+} 
+@Perm(requires="full(latex) * pure(states) * pure(stateIndex) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) in Alive")
+ void addSTMNumberofColumns(EClass _class) { 
+} 
+@Perm(requires="pure(name) in Alive", 
+ ensures= "pure(this) in Alive")
+ String getStateReachabilityValue(EState _state, EState __state) { 
+ return null;
+} 
+@Perm(requires="pure(_prj) * pure(classes) * full(className) * pure(methods) * full(identifier) in Alive", 
+ ensures= "pure(this) * pure(this) * full(this) * pure(this) * full(this) in Alive")
+ EMethod getMethod(String className, String methodName) { 
+ return null;
+} 
+
+}
+
+class EMethod {
+EMethod() {   }
+
+@Perm(requires="pure(requiresSatisfiability) in Alive", 
+ ensures= "pure(this) in Alive")
+public boolean getRequiresClauseSatisfiability() { 
+ return 0;
+} 
+@Perm(requires="full(returnType) in Alive", 
+ ensures= "full(this) in Alive")
+public void setReturnType(String str) { 
+} 
+@Perm(requires="full(identifier) in Alive", 
+ ensures= "full(this) in Alive")
+public void setIdentifier(String str) { 
+} 
+@Perm(requires="full(name) in Alive", 
+ ensures= "full(this) in Alive")
+public String getName() { 
+ return null;
+} 
+@Perm(requires="pure(ensures) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<ESpecification> getEnsuresAPTS() { 
+ return null;
+} 
+@Perm(requires="full(identifier) in Alive", 
+ ensures= "full(this) in Alive")
+public String getIdentifier() { 
+ return null;
+} 
+@Perm(requires="none(requires) * none(ensures) * none(parameters) * none(concurrentMethods) * none(case_Number) * none(methodIndex) * none(requiresSatisfiability) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) in Alive")
+public  EMethod() { 
+ return null;
+} 
+@Perm(requires="full(JMLPermission) in Alive", 
+ ensures= "full(this) in Alive")
+public void setJMLPermission(String Permission) { 
+} 
+@Perm(requires="full(JMLPermission) in Alive", 
+ ensures= "full(this) in Alive")
+public String getJMLPermission() { 
+ return null;
+} 
+@Perm(requires="pure(case_Number) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getCaseNumber() { 
+ return 0;
+} 
+@Perm(requires="full(case_Number) in Alive", 
+ ensures= "full(this) in Alive")
+public void setCaseNumber(int x) { 
+} 
+@Perm(requires="full(name) in Alive", 
+ ensures= "full(this) in Alive")
+public void setName(String str) { 
+} 
+@Perm(requires="full(returnType) in Alive", 
+ ensures= "full(this) in Alive")
+public String getReturnType() { 
+ return null;
+} 
+@Perm(requires="full(parameters) in Alive", 
+ ensures= "full(this) in Alive")
+public void addParameter(EParameter parameter) { 
+} 
+@Perm(requires="pure(requires) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<ESpecification> getRequiresAPTS() { 
+ return null;
+} 
+@Perm(requires="pure(parameters) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<EParameter> getParameters() { 
+ return null;
+} 
+@Perm(requires="full(methodIndex) in Alive", 
+ ensures= "full(this) in Alive")
+public void setIndex(int methodIndex) { 
+} 
+@Perm(requires="pure(methodIndex) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getIndex() { 
+ return 0;
+} 
+@Perm(requires="full(requiresSatisfiability) in Alive", 
+ ensures= "full(this) in Alive")
+public void setRequiresClauseSatisfiability(Boolean flag) { 
+} 
+@Perm(requires="full(concurrentMethods) in Alive", 
+ ensures= "full(this) in Alive")
+public void setConcurrentMethod(String toMethod) { 
+} 
+@Perm(requires="full(concurrentMethods) in Alive", 
+ ensures= "full(this) in Alive")
+public boolean isConcurrentMethod(String str) { 
+ return 0;
+} 
+@Perm(requires="none(methodSpecifications) in Alive", 
+ ensures= "unique(this) in Alive")
+public void addSpecifications(String annotation) { 
+} 
+
+}
+
+class SMCVisitor {
+SMCVisitor() {   }
+
+@Perm(requires="none(m_Class) * none(caseHandling) * none(methodName) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) in Alive")
+public  SMCVisitor() { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public void preVisit(ASTNode node) { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public void postVisit(ASTNode node) { 
+} 
+@Perm(requires="full(methodName) * pure(inheritance) * pure(fullModel) * full(name) * full(type) * full(modifier) * pure(classes) * full(returnType) * full(identifier) * full(caseHandling) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * pure(this) * full(this) * full(this) * full(this) in Alive")
+public boolean visit(PackageDeclaration node) { 
+ return 0;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public void endVisit(PackageDeclaration node) { 
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+private void callParser(String annotation) { 
+} 
+
+}
+
+class PulseSettings {
+PulseSettings() {   }
+
+@Perm(requires="pure(inheritance) in Alive", 
+ ensures= "pure(this) in Alive")
+ int getInheritance() { 
+ return 0;
+} 
+@Perm(requires="pure(fullModel) in Alive", 
+ ensures= "pure(this) in Alive")
+ int getFullModel() { 
+ return 0;
+} 
+@Perm(requires="pure(invaraints) in Alive", 
+ ensures= "pure(this) in Alive")
+ int getInvariants() { 
+ return 0;
+} 
+@Perm(requires="full(invaraints) in Alive", 
+ ensures= "full(this) in Alive")
+ void setInvariants(int x) { 
+} 
+@Perm(requires="full(aliasPerObject) in Alive", 
+ ensures= "full(this) in Alive")
+ void setAliasPerObject(int x) { 
+} 
+@Perm(requires="full(fullModel) in Alive", 
+ ensures= "full(this) in Alive")
+ void setFullModel(int x) { 
+} 
+@Perm(requires="full(dimesnions) in Alive", 
+ ensures= "full(this) in Alive")
+ void setDimensions(int x) { 
+} 
+@Perm(requires="full(inheritance) in Alive", 
+ ensures= "full(this) in Alive")
+ void setInheritance(int x) { 
+} 
+@Perm(requires="pure(aliasPerObject) in Alive", 
+ ensures= "pure(this) in Alive")
+ int getAliasPerObject() { 
+ return 0;
+} 
+@Perm(requires="pure(dimesnions) in Alive", 
+ ensures= "pure(this) in Alive")
+ int getDimensions() { 
+ return 0;
+} 
+
+}
+
+class EField {
+EField() {   }
+
+@Perm(requires="full(name) in Alive", 
+ ensures= "full(this) in Alive")
+public void setName(String str) { 
+} 
+@Perm(requires="full(type) in Alive", 
+ ensures= "full(this) in Alive")
+public void setType(String str) { 
+} 
+@Perm(requires="full(modifier) in Alive", 
+ ensures= "full(this) in Alive")
+public void setModifier(int mod) { 
+} 
+@Perm(requires="pure(objectIndex) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getObjectIndex() { 
+ return 0;
+} 
+@Perm(requires="pure(modifier) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getModifier() { 
+ return 0;
+} 
+@Perm(requires="full(classIndex) in Alive", 
+ ensures= "full(this) in Alive")
+public void setClassIndex(int classIndex) { 
+} 
+@Perm(requires="none(classIndex) in Alive", 
+ ensures= "unique(this) in Alive")
+public  EField() { 
+ return null;
+} 
+@Perm(requires="full(name) in Alive", 
+ ensures= "full(this) in Alive")
+public String getName() { 
+ return null;
+} 
+@Perm(requires="full(type) in Alive", 
+ ensures= "full(this) in Alive")
+public String getType() { 
+ return null;
+} 
+@Perm(requires="full(objectIndex) in Alive", 
+ ensures= "full(this) in Alive")
+public void setObjectIndex(int objectIndex) { 
+} 
+@Perm(requires="pure(classIndex) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getClassIndex() { 
+ return 0;
+} 
+
+}
+
+class ESpecification {
+ESpecification() {   }
+
+@Perm(requires="pure(_class) in Alive", 
+ ensures= "pure(this) in Alive")
+public EClass getParentClass() { 
+ return null;
+} 
+@Perm(requires="full(ts) in Alive", 
+ ensures= "full(this) in Alive")
+public String getTS() { 
+ return null;
+} 
+@Perm(requires="full(ap) in Alive", 
+ ensures= "full(this) in Alive")
+public String getAP() { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public Object clone() { 
+ return null;
+} 
+@Perm(requires="unique(_class) in Alive", 
+ ensures= "none(this) in Alive")
+public  ESpecification() { 
+ return null;
+} 
+@Perm(requires="full(ap) * full(ts) * full(_class) * full(fieldName) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * full(this) in Alive")
+public void setAPTS(String ap, String ts) { 
+} 
+@Perm(requires="full(ap) in Alive", 
+ ensures= "full(this) in Alive")
+public void setAP(String ap) { 
+} 
+@Perm(requires="pure(fieldName) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getFieldName() { 
+ return null;
+} 
+
+}
+
+class EParameter {
+EParameter() {   }
+
+@Perm(requires="pure(requires) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<ESpecification> getRequiresAPTS() { 
+ return null;
+} 
+@Perm(requires="none(requires) * none(ensures) * none(name) * none(type) * none(position) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) * unique(this) * unique(this) in Alive")
+public  EParameter(String name, String type, int position) { 
+ return null;
+} 
+@Perm(requires="full(position) in Alive", 
+ ensures= "full(this) in Alive")
+public void setNumber(int n) { 
+} 
+@Perm(requires="pure(position) in Alive", 
+ ensures= "pure(this) in Alive")
+public int getNumber() { 
+ return 0;
+} 
+@Perm(requires="full(name) in Alive", 
+ ensures= "full(this) in Alive")
+public void setName(String str) { 
+} 
+@Perm(requires="full(type) in Alive", 
+ ensures= "full(this) in Alive")
+public void setType(String str) { 
+} 
+@Perm(requires="pure(type) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getType() { 
+ return null;
+} 
+@Perm(requires="full(name) in Alive", 
+ ensures= "full(this) in Alive")
+public String getName() { 
+ return null;
+} 
+@Perm(requires="pure(ensures) in Alive", 
+ ensures= "pure(this) in Alive")
+public LinkedList<ESpecification> getEnsuresAPTS() { 
+ return null;
+} 
+
+}
+
+class EInvariant {
+EInvariant() {   }
+
+@Perm(requires="pure(classType) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getVariableType() { 
+ return null;
+} 
+@Perm(requires="pure(stateName) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getStateName() { 
+ return null;
+} 
+@Perm(requires="full(classType) in Alive", 
+ ensures= "full(this) in Alive")
+public void setVariableType(String type) { 
+}  
+@Perm(requires="none(ap) * none(variable) * none(stateName) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) in Alive")
+public  EInvariant(String accessPermission, String var, String st) { 
+ return null;
+} 
+@Perm(requires="full(ap) in Alive", 
+ ensures= "full(this) in Alive")
+public void setAP(String str) { 
+} 
+@Perm(requires="full(variable) in Alive", 
+ ensures= "full(this) in Alive")
+public void setVariable(String str) { 
+} 
+@Perm(requires="full(stateName) in Alive", 
+ ensures= "full(this) in Alive")
+public void setState(String str) { 
+} 
+@Perm(requires="pure(ap) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getAP() { 
+ return null;
+} 
+@Perm(requires="pure(variable) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getVariable() { 
+ return null;
+} 
+@Perm(requires="pure(classType) * pure(stateName) * pure(classes) * full(className) * pure(states) * pure(name) * pure(invariants) in Alive", 
+ ensures= "pure(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * pure(this) in Alive")
+public LinkedList<EInvariant> getStateInvariants(EPackage _pkg) { 
+ return null;
+} 
+
+}
+
+class EBoolInvariant {
+EBoolInvariant() {   }
+
+@Perm(requires="pure(variable) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getVariable() { 
+ return null;
+} 
+@Perm(requires="none(variable) * none(value) in Alive", 
+ ensures= "unique(this) * unique(this) in Alive")
+public  EBoolInvariant(String variable, String value) { 
+ return null;
+} 
+@Perm(requires="pure(value) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getValue() { 
+ return null;
+} 
+
+}
+
+class EDim {
+EDim() {   }
+
+@Perm(requires="pure(values) in Alive", 
+ ensures= "pure(this) in Alive")
+public ArrayList<String> getValues() { 
+ return null;
+} 
+@Perm(requires="none(dimensionName) * none(values) in Alive", 
+ ensures= "unique(this) * unique(this) in Alive")
+public  EDim(String name) { 
+ return null;
+} 
+@Perm(requires="full(dimensionName) in Alive", 
+ ensures= "full(this) in Alive")
+public void setName(String str) { 
+} 
+@Perm(requires="pure(dimensionName) in Alive", 
+ ensures= "pure(this) in Alive")
+public String getName(String str) { 
+ return null;
+} 
+@Perm(requires="full(values) in Alive", 
+ ensures= "full(this) in Alive")
+public void addValue(String str) { 
+} 
+
+}
+
+class specificationStruct {
+specificationStruct() {   }
+
+@Perm(requires="none(requires) * none(ensures) * none(signature) * none(accessPermission) * none(typeState) * none(methodName) * none(className) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) in Alive")
+public  specificationStruct() { 
+ return null;
+} 
+
+}
+
+class Clause {
+Clause() {   }
+
+@Perm(requires="none(accessPermission) * none(typeState) in Alive", 
+ ensures= "unique(this) * unique(this) in Alive")
+public  Clause() { 
+ return null;
+} 
+
+}
+
+class Signature {
+Signature() {   }
+
+@Perm(requires="none(methodName) * none(className) in Alive", 
+ ensures= "unique(this) * unique(this) in Alive")
+public  Signature() { 
+ return null;
+} 
+
+}
+
+class MethodFindVisitor {
+MethodFindVisitor() {   }
+
+@Perm(requires="none(methodList) in Alive", 
+ ensures= "unique(this) in Alive")
+public  MethodFindVisitor() { 
+ return null;
+} 
+}
+
+class GAPHandler {
+GAPHandler() {   }
+
+@Perm(requires="full(invaraints) * full(aliasPerObject) * full(fullModel) * full(dimesnions) * full(inheritance) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * full(this) * full(this) in Alive")
+public Object execute(ExecutionEvent event) { 
+ return null;
+} 
+@Perm(requires="full(invaraints) * full(aliasPerObject) * full(fullModel) * full(dimesnions) * full(inheritance) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * full(this) * full(this) in Alive")
+private void extractSettings(ExecutionEvent event) { 
+} 
+}
+
+class GAPIFileAction {
+GAPIFileAction() {   }
+
+@Perm(requires="none(selection) * none(log) in Alive", 
+ ensures= "unique(this) * unique(this) in Alive")
+public  GAPIFileAction() { 
+ return null;
+} 
+@Perm(requires="full(selection) * full(starttime) * full(endtime) * full(dot) * full(testType) * full(log) * none(pkg) * full(classes) * full(sinkStates) * pure(GHOST) * pure(INVARIANT) * pure(JMLSTART) * pure(FOLLOW_jmlClassSpecifications_in_jmlSpecifications1071) * pure(FOLLOW_jmlMethodSpecification_in_jmlSpecifications1073) * pure(FOLLOW_jmlGhostDeclaration_in_jmlClassSpecifications1081) * pure(FOLLOW_jmlGhostInv_in_jmlClassSpecifications1083) * pure(FOLLOW_GHOST_in_jmlGhostDeclaration1090) * pure(INT) * pure(FOLLOW_INT_in_jmlGhostDeclaration1092) * pure(ID) * pure(FOLLOW_ID_in_jmlGhostDeclaration1096) * pure(SEMICOLON) * pure(FOLLOW_SEMICOLON_in_jmlGhostDeclaration1098) * full(ghostList) * full(ghostName) * pure(FOLLOW_JMLSTART_in_jmlMethodSpecification1136) * pure(PUBLIC_BEHAVIOR) * pure(FOLLOW_PUBLIC_BEHAVIOR_in_jmlMethodSpecification1138) * pure(REQUIRES) * pure(FOLLOW_REQUIRES_in_jmlMethodSpecification1142) * pure(FOLLOW_jmlRequires_in_jmlMethodSpecification1144) * pure(FOLLOW_SEMICOLON_in_jmlMethodSpecification1147) * pure(ASSIGNABLE) * pure(FOLLOW_jmlAssign_in_jmlMethodSpecification1152) * pure(ENSURES) * pure(FOLLOW_jmlEnsures_in_jmlMethodSpecification1157) * pure(JMLEND) * pure(FOLLOW_JMLEND_in_jmlMethodSpecification1161) * pure(EQUALOPERATOR) * pure(NUMBERS) * pure(OR) * pure(LESSTHANEQUAL) * pure(FOLLOW_jmlReq_in_jmlRequires1167) * pure(FOLLOW_jmlOrReq_in_jmlRequires1169) * pure(FOLLOW_jmlLessThanEqualReq_in_jmlRequires1171) * pure(FOLLOW_ID_in_jmlReq1207) * pure(FOLLOW_EQUALOPERATOR_in_jmlReq1209) * pure(FOLLOW_NUMBERS_in_jmlReq1213) * pure(FOLLOW_ID_in_jmlLessThanEqualReq1192) * pure(FOLLOW_LESSTHANEQUAL_in_jmlLessThanEqualReq1194) * pure(FOLLOW_NUMBERS_in_jmlLessThanEqualReq1198) * pure(OLD) * pure(FOLLOW_jmlEns_in_jmlEnsures1221) * pure(FOLLOW_jmlOldEns_in_jmlEnsures1223) * pure(FOLLOW_ENSURES_in_jmlEns1263) * pure(FOLLOW_ID_in_jmlEns1265) * pure(FOLLOW_EQUALOPERATOR_in_jmlEns1267) * pure(FOLLOW_NUMBERS_in_jmlEns1271) * pure(FOLLOW_SEMICOLON_in_jmlEns1273) * full(requires) * unique(ensures) * pure(invLowValue) * pure(invHighValue) * unique(perm) * full(className) * full(hour) * full(minute) * full(second) * full(msecond) * full(str) * pure(transitions) * pure(reachability_state) * full(reachable) * pure(name) * pure(states) * none(latex) * full(bRequires) * full(bSTM) * full(bconcurrency) * pure(_prj) * pure(bSinkStates) * pure(beginSideWay) * pure(endSideWay) * pure(endOfRow) * pure(hLine) * pure(methods) * pure(requiresSatisfiability) * full(m_Class) * full(caseHandling) * full(methodName) * full(name) * pure(ensures) * none(plural) * full(K) * full(sTestType) * full(pkg) * full(reachableStates) * full(unreachableMethod) * pure(stateIndex) * full(identifier) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * full(this) * full(this) * full(this) * unique(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * none(this) * pure(this) * pure(this) * none(this) * full(this) * full(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * full(this) * pure(this) * pure(this) * unique(this) * full(this) * full(this) * full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * unique(this) * full(this) * full(this) * full(this) * full(this) * full(this) * pure(this) * full(this) in Alive")
+public void run(IAction action) { 
+} 
+}
+
+class  {
+() {   }
+
+@Perm(requires="full(starttime) * full(endtime) * full(dot) * full(testType) in Alive", 
+ ensures= "full(this) * full(this) * full(this) * full(this) in Alive")
+protected IStatus run(IProgressMonitor monitor) { 
+ return null;
+} 
+
+}
+
+class Main {
+Main() {   }
+
+@Perm(requires="none(inputFiles) in Alive", 
+ ensures= "unique(this) in Alive")
+public  Main() { 
+ return null;
+} 
+@Perm(requires="none(inputFiles) in Alive", 
+ ensures= "unique(this) in Alive")
+ void main(String[] args) { 
+} 
+@Perm(requires="full(inputFiles) in Alive", 
+ ensures= "full(this) in Alive")
+ void seprateJavaFile(String str) { 
+} 
+}
+
+class EAPTypeState {
+EAPTypeState() {   }
+
+@Perm(requires="none(ap) * none(ts) in Alive", 
+ ensures= "unique(this) * unique(this) in Alive")
+public  EAPTypeState() { 
+ return null;
+} 
+@Perm(requires="full(ap) in Alive", 
+ ensures= "full(this) in Alive")
+public void setAP(String str) { 
+} 
+@Perm(requires="full(ap) in Alive", 
+ ensures= "full(this) in Alive")
+public String getAP(String str) { 
+ return null;
+} 
+@Perm(requires="full(ts) in Alive", 
+ ensures= "full(this) in Alive")
+public void setTS(String str) { 
+} 
+@Perm(requires="full(ts) in Alive", 
+ ensures= "full(this) in Alive")
+public String getTS() { 
+ return null;
+} 
+
+}
+
+class TypestateReturn {
+TypestateReturn() {   }
+
+}
+
+class AtApPermissionReturn {
+AtApPermissionReturn() {   }
+
+}
+
+class AccesspermissionReturn {
+AccesspermissionReturn() {   }
+
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public  AccesspermissionReturn() { 
+ return null;
+} 
+
+}
+
+class PluralLexer {
+PluralLexer() {   }
+
+@Perm(requires="none(PUNCTUATION) * none(CASES) * none(PARAM) * none(EQUALOPERATOR) * none(EVERYTHING) * none(IMMUTABLE) * none(PUBLIC_BEHAVIOR) * none(JMLEND) * none(AND) * none(ID) * none(EOF) * none(USEFIELDS) * none(STATES) * none(ENSURES) * none(QUOTE) * none(PURE) * none(AT_UNIQUE) * none(NAME) * none(GREATER) * none(FULL) * none(IN) * none(RSBRACKET) * none(EQUAL) * none(LCBRACKET) * none(LESS) * none(THIS) * none(REFINE) * none(NOTHING) * none(SHARE) * none(LESSTHANEQUAL) * none(AT_IMMUTABLE) * none(RCBRACKET) * none(CLASS_STATES) * none(AT_PURE) * none(NUMBERS) * none(ASSIGNABLE) * none(AT_FULL) * none(UNIQUE) * none(STATE) * none(GHOST) * none(INV) * none(OPERATOR) * none(INVARIANT) * none(OLD) * none(RESULT) * none(SEMICOLON) * none(INT) * none(VALUE) * none(JMLSTART) * none(PLUSMINUSOPERATOR) * none(LSBRACKET) * none(WS) * none(REQUIRES) * none(NONE) * none(OR) * none(DIM) * none(AT_SHARE) * none(USE) * none(ANDD) * none(PERM) * none(GREATERTHANEQUAL) * none(dfa7) * none(DFA7_eotS) * none(DFA7_eofS) * none(DFA7_minS) * none(DFA7_maxS) * none(DFA7_acceptS) * none(DFA7_specialS) * none(DFA7_transitionS) * none(DFA7_eot) * none(DFA7_eof) * none(DFA7_min) * none(DFA7_max) * none(DFA7_accept) * none(DFA7_special) * none(DFA7_transition) in Alive", 
+ ensures= "unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) * unique(this) in Alive")
+public  PluralLexer() { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public String getGrammarFileName() { 
+ return null;
+} 
+@Perm(requires="pure(AT_FULL) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mATFULL() { 
+} 
+@Perm(requires="pure(AT_PURE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mATPURE() { 
+} 
+@Perm(requires="pure(AT_IMMUTABLE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mATIMMUTABLE() { 
+} 
+@Perm(requires="pure(AT_SHARE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mATSHARE() { 
+} 
+@Perm(requires="pure(AT_UNIQUE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mATUNIQUE() { 
+} 
+@Perm(requires="pure(PUBLIC_BEHAVIOR) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mPUBLICBEHAVIOR() { 
+} 
+@Perm(requires="pure(FULL) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mFULL() { 
+} 
+@Perm(requires="pure(PURE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mPURE() { 
+} 
+@Perm(requires="pure(IMMUTABLE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mIMMUTABLE() { 
+} 
+@Perm(requires="pure(SHARE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mSHARE() { 
+} 
+@Perm(requires="pure(UNIQUE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mUNIQUE() { 
+} 
+@Perm(requires="pure(NONE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mNONE() { 
+} 
+@Perm(requires="pure(LSBRACKET) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mLSBRACKET() { 
+} 
+@Perm(requires="pure(RSBRACKET) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mRSBRACKET() { 
+} 
+@Perm(requires="pure(PERM) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mPERM() { 
+} 
+@Perm(requires="pure(EQUAL) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mEQUAL() { 
+} 
+@Perm(requires="pure(EQUALOPERATOR) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mEQUALOPERATOR() { 
+} 
+@Perm(requires="pure(IN) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mIN() { 
+} 
+@Perm(requires="pure(THIS) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mTHIS() { 
+} 
+@Perm(requires="pure(RESULT) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mRESULT() { 
+} 
+@Perm(requires="pure(PARAM) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mPARAM() { 
+} 
+@Perm(requires="pure(REQUIRES) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mREQUIRES() { 
+} 
+@Perm(requires="pure(ENSURES) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mENSURES() { 
+} 
+@Perm(requires="pure(QUOTE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mQUOTE() { 
+} 
+@Perm(requires="pure(AND) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mAND() { 
+} 
+@Perm(requires="pure(USE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mUSE() { 
+} 
+@Perm(requires="pure(USEFIELDS) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mUSEFIELDS() { 
+} 
+@Perm(requires="pure(PUNCTUATION) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mPUNCTUATION() { 
+} 
+@Perm(requires="pure(CASES) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mCASES() { 
+} 
+@Perm(requires="pure(LCBRACKET) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mLCBRACKET() { 
+} 
+@Perm(requires="pure(RCBRACKET) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mRCBRACKET() { 
+} 
+@Perm(requires="pure(CLASS_STATES) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mCLASSSTATES() { 
+} 
+@Perm(requires="pure(REFINE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mREFINE() { 
+} 
+@Perm(requires="pure(VALUE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mVALUE() { 
+} 
+@Perm(requires="pure(STATE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mSTATE() { 
+} 
+@Perm(requires="pure(STATES) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mSTATES() { 
+} 
+@Perm(requires="pure(DIM) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mDIM() { 
+} 
+@Perm(requires="pure(NAME) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mNAME() { 
+} 
+@Perm(requires="pure(INV) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mINV() { 
+} 
+@Perm(requires="pure(OPERATOR) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mOPERATOR() { 
+} 
+@Perm(requires="pure(SEMICOLON) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mSEMICOLON() { 
+} 
+@Perm(requires="pure(LESS) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mLESS() { 
+} 
+@Perm(requires="pure(LESSTHANEQUAL) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mLESSTHANEQUAL() { 
+} 
+@Perm(requires="pure(GREATER) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mGREATER() { 
+} 
+@Perm(requires="pure(GREATERTHANEQUAL) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mGREATERTHANEQUAL() { 
+} 
+@Perm(requires="pure(ANDD) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mANDD() { 
+} 
+@Perm(requires="pure(OR) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mOR() { 
+} 
+@Perm(requires="pure(JMLSTART) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mJMLSTART() { 
+} 
+@Perm(requires="pure(JMLEND) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mJMLEND() { 
+} 
+@Perm(requires="pure(PLUSMINUSOPERATOR) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mPLUSMINUSOPERATOR() { 
+} 
+@Perm(requires="pure(ASSIGNABLE) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mASSIGNABLE() { 
+} 
+@Perm(requires="pure(NOTHING) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mNOTHING() { 
+} 
+@Perm(requires="pure(EVERYTHING) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mEVERYTHING() { 
+} 
+@Perm(requires="pure(GHOST) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mGHOST() { 
+} 
+@Perm(requires="pure(INT) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mINT() { 
+} 
+@Perm(requires="pure(INVARIANT) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mINVARIANT() { 
+} 
+@Perm(requires="pure(OLD) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mOLD() { 
+} 
+@Perm(requires="pure(ID) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mID() { 
+} 
+@Perm(requires="pure(NUMBERS) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mNUMBERS() { 
+} 
+@Perm(requires="pure(WS) in Alive", 
+ ensures= "pure(this) in Alive")
+ void mWS() { 
+} 
+@Perm(requires="full(dfa7) * pure(AT_FULL) * pure(AT_PURE) * pure(AT_IMMUTABLE) * pure(AT_SHARE) * pure(AT_UNIQUE) * pure(PUBLIC_BEHAVIOR) * pure(FULL) * pure(PURE) * pure(IMMUTABLE) * pure(SHARE) * pure(UNIQUE) * pure(NONE) * pure(LSBRACKET) * pure(RSBRACKET) * pure(PERM) * pure(EQUAL) * pure(EQUALOPERATOR) * pure(IN) * pure(THIS) * pure(RESULT) * pure(PARAM) * pure(REQUIRES) * pure(ENSURES) * pure(QUOTE) * pure(AND) * pure(USE) * pure(USEFIELDS) * pure(PUNCTUATION) * pure(CASES) * pure(LCBRACKET) * pure(RCBRACKET) * pure(CLASS_STATES) * pure(REFINE) * pure(VALUE) * pure(STATE) * pure(STATES) * pure(DIM) * pure(NAME) * pure(INV) * pure(OPERATOR) * pure(SEMICOLON) * pure(LESS) * pure(LESSTHANEQUAL) * pure(GREATER) * pure(GREATERTHANEQUAL) * pure(ANDD) * pure(OR) * pure(JMLSTART) * pure(JMLEND) * pure(PLUSMINUSOPERATOR) * pure(ASSIGNABLE) * pure(NOTHING) * pure(EVERYTHING) * pure(GHOST) * pure(INT) * pure(INVARIANT) * pure(OLD) * pure(ID) * pure(NUMBERS) * pure(WS) in Alive", 
+ ensures= "full(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) * pure(this) in Alive")
+public void mTokens() { 
+} 
+
+}
+
+class DFA7 {
+DFA7() {   }
+
+@Perm(requires="none(DFA7_eot) * none(DFA7_eof) * none(DFA7_min) * none(DFA7_max) * none(DFA7_accept) * none(DFA7_special) * none(DFA7_transition) in Alive", 
+ ensures= "none(this) * none(this) * none(this) * none(this) * none(this) * none(this) * none(this) in Alive")
+public  DFA7() { 
+ return null;
+} 
+@Perm(requires=" in Alive", 
+ ensures= " in Alive")
+public String getDescription() { 
+ return null;
+} 
+
+}

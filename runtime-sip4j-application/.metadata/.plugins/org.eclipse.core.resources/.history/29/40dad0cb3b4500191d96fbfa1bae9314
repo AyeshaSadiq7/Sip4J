@@ -1,0 +1,52 @@
+package field_accesses;
+
+public class ReadOnly extends ParentReadOnly{
+
+	public Integer[] coll = new Integer[10];
+	
+	public void simpleName() {
+		System.out.println(" "+coll[0]);
+	}
+	public void thisExp() {
+	   System.out.println(" "+this.coll[0]);
+	}
+	public void qualifiedName(ReadOnly obj) {
+		System.out.println(" "+obj.coll[0]);
+	}
+	public int returnValue(Integer[] coll) {
+	  return coll.length;
+    }
+	public Integer[] returnField() {
+		  return coll;
+	}
+	public Integer[] returnParam(Integer[] coll) {
+		  return coll;
+	}
+	public Integer[] returnLocal() {
+		//Integer[] localvar = new Integer[10];
+		Integer[] localref = coll;
+		returnParam(localref);
+		return localref;
+	}
+	public int methodCall() {
+		return returnValue(coll); 
+	}
+	public void superFieldAccess() {
+		System.out.println(super.a);
+	}
+	public void superMethodCall() {
+		super.fieldAccess();
+	}
+}
+class ParentReadOnly{
+	
+	public Integer a;
+	
+	ParentReadOnly(){
+		a = 10;
+	}
+	Integer fieldAccess(){
+		return a;
+	}
+	
+}

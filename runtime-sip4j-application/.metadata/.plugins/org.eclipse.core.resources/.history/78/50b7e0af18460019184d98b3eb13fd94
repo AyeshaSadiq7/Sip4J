@@ -1,0 +1,122 @@
+package field_accesses;
+
+
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.junit.Test;
+import org.junit.runners.Parameterized;
+import org.junit.runner.RunWith;
+@RunWith(Parameterized.class)
+
+public class ParameterizedTestUsingFields {
+	// fields used together with @Parameter must be public
+    @Parameterized.Parameter(0)
+    public int m1;
+    @Parameterized.Parameter(1)
+    public int m2;
+    @Parameterized.Parameter(2)
+    public int result;
+    
+ // creates the test data
+    @Parameterized.Parameters(name = "{index}: Test with m1={0}, m2 ={1}, result is:{2} ")
+    public static Collection<Object[]> data() {
+        Object[][] data = new Object[][]{{1, 2, 2}, {5, 3, 15}, {121, 4, 484}};
+        return Arrays.asList(data);
+    }
+    
+    @Test
+    public void MultiplyTest() {
+        ToTestClass tester = new ToTestClass();
+        assertEquals("Result", result, tester.multiply(m1, m2));
+    }
+    
+ // class to be tested
+    private class ToTestClass {
+        public int multiply(int i, int j) {
+            return i * j;
+        }
+    }
+}
+/*    
+    
+	@Test
+	public void testSimpleName() {
+		fail("Not yet implemented");
+		assertTrue("message", testSimpleName());
+	}
+
+	@Test
+	public void testThisExp() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testQualifiedName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLocalAccess() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReturnValue() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSuperFieldAccess() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSuperMethodCall() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReturnField() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReturnParam() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testReturnLocal() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLMCallP() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMethodCallF() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testLMCallF() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testParentReadOnly() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testFieldAccess() {
+		fail("Not yet implemented");
+	}
+
+}*/

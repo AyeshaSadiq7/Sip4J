@@ -1,0 +1,41 @@
+package java_annotations;
+import edu.cmu.cs.plural.annot.*;
+@ClassStates({@State(name = "alive")})
+
+public class AnnotationExample{
+@Permissions(perms = "@Perm(ensures=unique(this) in alive")
+public void Fibonacci() {   }
+
+@Permissions(perms="@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive")	
+public String computeFibonacci() { 
+ return null;
+} 
+@Permissions(perms="@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive")
+public void display() { 
+}
+public void display2() { 
+}
+@Permissions(perms="@Perm(requires=unique(this) in alive,ensures=unique(this) in alive")
+public static void main() { 
+} 
+
+}
+public class Integral{
+@Permissions(perms = "@Perm(ensures=unique(this) in alive")
+public void Fibonacci() {   }
+
+@Permissions(perms="@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive")	
+public String computeFibonacci() { 
+ return null;
+} 
+@Permissions(perms="@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive")
+public void display() { 
+}
+public void display2() { 
+}
+@Permissions(perms="@Perm(requires=unique(this) in alive,ensures=unique(this) in alive")
+public static void main() { 
+} 
+
+}
+

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/486/trunk/Plural/src/edu/cmu/cs/plural/fractions
+END
+FractionFunction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/404/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionFunction.java
+END
+ImpossibleConstraint.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/ImpossibleConstraint.java
+END
+VariableFraction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/177/trunk/Plural/src/edu/cmu/cs/plural/fractions/VariableFraction.java
+END
+FractionTermVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionTermVisitor.java
+END
+FractionalPermissions.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/327/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionalPermissions.java
+END
+AbstractFractionalPermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/92/trunk/Plural/src/edu/cmu/cs/plural/fractions/AbstractFractionalPermission.java
+END
+PermissionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/418/trunk/Plural/src/edu/cmu/cs/plural/fractions/PermissionFactory.java
+END
+FractionVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionVisitor.java
+END
+VirtualFramePermissionSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/486/trunk/Plural/src/edu/cmu/cs/plural/fractions/VirtualFramePermissionSet.java
+END
+NamedFractionMapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/284/trunk/Plural/src/edu/cmu/cs/plural/fractions/NamedFractionMapping.java
+END
+FractionSum.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionSum.java
+END
+FractionConstraintVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionConstraintVisitor.java
+END
+ObjectPermissionSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/260/trunk/Plural/src/edu/cmu/cs/plural/fractions/ObjectPermissionSet.java
+END
+FractionalPermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/465/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionalPermission.java
+END
+AbstractFractionalPermissionSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/153/trunk/Plural/src/edu/cmu/cs/plural/fractions/AbstractFractionalPermissionSet.java
+END
+FractionTerm.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/177/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionTerm.java
+END
+FractionConstraints.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/414/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionConstraints.java
+END
+FractionAssignment.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/414/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionAssignment.java
+END
+AbstractFractionTermVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/AbstractFractionTermVisitor.java
+END
+FractionRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/465/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionRelation.java
+END
+PermissionSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/312/trunk/Plural/src/edu/cmu/cs/plural/fractions/PermissionSet.java
+END
+ZeroFraction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/ZeroFraction.java
+END
+Fraction.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/Fraction.java
+END
+PermissionSetFromAnnotations.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/150/trunk/Plural/src/edu/cmu/cs/plural/fractions/PermissionSetFromAnnotations.java
+END
+PermissionFromAnnotation.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/402/trunk/Plural/src/edu/cmu/cs/plural/fractions/PermissionFromAnnotation.java
+END
+OneFraction.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/OneFraction.java
+END
+NamedFraction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/177/trunk/Plural/src/edu/cmu/cs/plural/fractions/NamedFraction.java
+END
+FractionConstraint.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/18/trunk/Plural/src/edu/cmu/cs/plural/fractions/FractionConstraint.java
+END

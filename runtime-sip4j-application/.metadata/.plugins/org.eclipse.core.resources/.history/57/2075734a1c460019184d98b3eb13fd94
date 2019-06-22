@@ -1,0 +1,81 @@
+package outputs;
+import edu.cmu.cs.plural.annot.*;
+@ClassStates({@State(name = "alive")})
+public class ValueAssignments {
+@Perm(ensures="unique(this) in alive")
+ValueAssignments() {   }
+
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+public void simpleName() { 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+public void thisExp() { 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+public void qualifiedName(ValueAssignments obj) { 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+public void localAssignment() { 
+} 
+@Perm(requires="full(this) in alive * pure(#0) in alive",
+ensures="full(this) in alive * pure(#0) in alive")
+public void superMethodCall(Integer a) { 
+} 
+@Perm(requires="full(this) in alive * pure(#0) in alive",
+ensures="full(this) in alive * pure(#0) in alive")
+public void paramAssign(Integer[] e) { 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+public void MC() { 
+} 
+@Perm(requires="pure(this) in alive * pure(#0) in alive",
+ensures="pure(this) in alive * pure(#0) in alive")
+public int returnValue(Integer[] coll) { 
+ return 0;
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+public void LMC() { 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+public void superFieldAssignment() { 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+public void display() { 
+} 
+
+}
+@ClassStates({@State(name = "alive")})
+
+class ParentAssignment {
+@Perm(ensures="unique(this) in alive")
+ParentAssignment() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ Integer fieldAccess() { 
+ return null;
+} 
+
+}
+
+@ClassStates({@State(name = "alive")})
+
+class Test {
+@Perm(ensures="unique(this) in alive")
+Test() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ void main(String[] args) { 
+} 
+
+}
+

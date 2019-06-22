@@ -1,0 +1,8 @@
+package resources.net.sourceforge.pmd.cpd.badandgood;
+
+public class BadFile {
+    public void foo() {
+        // this is a bad character � it's U+FFFD REPLACEMENT CHARACTER
+        int abc = 1;
+    }
+}

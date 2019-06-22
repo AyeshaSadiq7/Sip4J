@@ -1,0 +1,8 @@
+package workin_example;
+
+public class MyObject {
+
+		public MyObject(){
+			
+		}
+}

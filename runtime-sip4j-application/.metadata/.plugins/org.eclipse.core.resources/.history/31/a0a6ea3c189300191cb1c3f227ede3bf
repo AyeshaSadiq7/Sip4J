@@ -1,0 +1,23 @@
+package working_examples;
+
+class ObjectClass{
+	 public static Integer[] array2 = new Integer[10]; 
+	 public static demoClient x,y,z,w; 
+	 public static void manipulateObjects(demoClient p1, demoClient p2){
+	    x = w;
+	    demoClient t = x;
+	    y = t;
+	    x.data = 10;
+	    System.out.println("z.data = "+p1.data+"x.data = "+t.data);
+	 }
+	 public static void readObjects(demoClient p1, demoClient p2){
+		    System.out.println("z.data = "+p1.data+"x.data = "+t.data);
+		 }
+	}
+	public class demoClient{	
+		 Integer data = 100;
+		 public static void main(String[] args) {
+		 ObjectClass.manipulateObjects(ObjectClass.w,ObjectClass.z);
+		 ObjectClass.readObjects(ObjectClass.w,ObjectClass.z);
+		}
+	}

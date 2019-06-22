@@ -1,0 +1,160 @@
+package aeminium.blackscholes;
+
+import aeminium.blackscholes.MersenneTwisterFast;
+
+public final class StdRandom {
+
+	private static MersenneTwisterFast random; // pseudo-random number generator
+	
+	private static long seed; // pseudo-random number generator seed
+	
+
+	// static initializer
+	static {
+		// this is how the seed was set in Java 1.4
+		seed = System.currentTimeMillis();
+		random = new MersenneTwisterFast(seed);
+	}
+
+	// don't instantiate
+	private StdRandom() {
+	}
+
+	/**
+	 * Set the seed of the psedurandom number generator.
+	 */
+	public static void setSeed(long s) {
+		seed = s;
+		random = new MersenneTwisterFast(seed);
+	}
+
+	/**
+	 * Get the seed of the psedurandom number generator.
+	 */
+	public static long getSeed() {
+		return seed;
+	}
+
+	/**
+	 * Return real number uniformly in [0, 1).
+	 */
+	public static double uniformO1() {
+		return random.nextDouble();
+	}
+	/**
+	 * Unit test.
+	 */
+	public static void main(String[] args) {
+		int N = Integer.parseInt(args[0]);
+		if (args.length == 2) 
+			StdRandom.setSeed(Long.parseLong(args[1]));
+		double[] t = { .5, .3, .1, .1 };
+
+		//StdOut.println("seed = " + StdRandom.getSeed());
+		//uniformO2(100);
+		uniformO1();
+			//StdOut.printf("%2d ", uniformO2(100));
+			//StdOut.printf("%8.5f ", uniform(10.0, 99.0));
+			//StdOut.printf("%5b ", bernoulliO1(.5));
+			//StdOut.printf("%7.5f ", gaussianO2(9.0, .2));
+			//StdOut.printf("%2d ", discrete(t));
+			//StdOut.println();
+		
+	
+			//StdOut.print(s + " ");
+		//StdOut.println();
+	}
+
+}
+}
+
+class MersenneTwisterFast{
+private static final long serialVersionUID = -8219700664442619525L; // locked
+	// as of
+	// Version
+	// 15
+
+// Period parameters
+private static final int N = 1000000;
+private static final int M = 397;
+private static final int MATRIX_A = 0x9908b0df; // private static final *
+// constant vector a
+private static final int UPPER_MASK = 0x80000000; // most significant w-r
+// bits
+private static final int LOWER_MASK = 0x7fffffff; // least significant r
+// bits
+
+// Tempering parameters
+private static final int TEMPERING_MASK_B = 0x9d2c5680;
+private static final int TEMPERING_MASK_C = 0xefc60000;
+
+private int mt[]; // the array for the state vector
+private int mti; // mti==N+1 means mt[N] is not initialized
+private int mag01[];
+
+// a good initial seed (of int size, though stored in a long)
+// private static final long GOOD_SEED = 4357;
+
+private double __nextNextGaussian;
+private boolean __haveNextNextGaussian;
+	public final double nextDouble() {
+		int y;
+		int z;
+
+		if (mti >= N) // generate N words at one time
+		{
+			int kk;
+			final int[] mt = this.mt; // locals are slightly faster
+			final int[] mag01 = this.mag01; // locals are slightly faster
+
+			for (kk = 0; kk < N - M; kk++) {
+				y = (mt[kk] & UPPERMASK) | (mt[kk + 1] & LOWERMASK);
+				mt[kk] = mt[kk + M] ^ (y >>> 1) ^ mag01[y & 0x1];
+			}
+			for (; kk < N - 1; kk++) {
+				y = (mt[kk] & UPPERMASK) | (mt[kk + 1] & LOWERMASK);
+				mt[kk] = mt[kk + (M - N)] ^ (y >>> 1) ^ mag01[y & 0x1];
+			}
+			y = (mt[N - 1] & UPPERMASK) | (mt[0] & LOWERMASK);
+			mt[N - 1] = mt[M - 1] ^ (y >>> 1) ^ mag01[y & 0x1];
+
+			mti = 0;
+		}
+
+		y = mt[mti++];
+		y ^= y >>> 11; // TEMPERING_SHIFT_U(y)
+		y ^= (y << 7) & TEMPERINGMASKB; // TEMPERING_SHIFT_S(y)
+		y ^= (y << 15) & TEMPERINGMASKC; // TEMPERING_SHIFT_T(y)
+		y ^= (y >>> 18); // TEMPERING_SHIFT_L(y)
+
+		if (mti >= N) // generate N words at one time
+		{
+			int kk;
+			final int[] mt = this.mt; // locals are slightly faster
+			final int[] mag01 = this.mag01; // locals are slightly faster
+
+			for (kk = 0; kk < N - M; kk++) {
+				z = (mt[kk] & UPPERMASK) | (mt[kk + 1] & LOWERMASK);
+				mt[kk] = mt[kk + M] ^ (z >>> 1) ^ mag01[z & 0x1];
+			}
+			for (; kk < N - 1; kk++) {
+				z = (mt[kk] & UPPERMASK) | (mt[kk + 1] & LOWERMASK);
+				mt[kk] = mt[kk + (M - N)] ^ (z >>> 1) ^ mag01[z & 0x1];
+			}
+			z = (mt[N - 1] & UPPERMASK) | (mt[0] & LOWERMASK);
+			mt[N - 1] = mt[M - 1] ^ (z >>> 1) ^ mag01[z & 0x1];
+
+			mti = 0;
+		}
+
+		z = mt[mti++];
+		z ^= z >>> 11; // TEMPERING_SHIFT_U(z)
+		z ^= (z << 7) & TEMPERINGMASKB; // TEMPERING_SHIFT_S(z)
+		z ^= (z << 15) & TEMPERINGMASKC; // TEMPERING_SHIFT_T(z)
+		z ^= (z >>> 18); // TEMPERING_SHIFT_L(z)
+
+		/* derived from nextDouble documentation in jdk 1.2 docs, see top */
+		return ((((long) (y >>> 6)) << 27) + (z >>> 5)) / (double) (1L << 53);
+	}
+
+}

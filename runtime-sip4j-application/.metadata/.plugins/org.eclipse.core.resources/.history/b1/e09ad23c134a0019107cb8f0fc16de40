@@ -1,0 +1,171 @@
+package parser;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Member;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
+
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.dom.AST;
+import org.eclipse.jdt.core.dom.ASTNode;
+import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.ASTVisitor;
+import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.TypeDeclaration;
+import parser.UserSelectedClasses_Analysis;
+import annotations.Fibonacci;
+import java_annotations.AnnotationExample;
+
+public class MyClassLoader extends ClassLoader{
+
+	
+    public MyClassLoader(ClassLoader parent) {
+        super(parent);
+    }
+
+    public static List<ICompilationUnit> getAnnotatedCompilationUnits() {
+    	
+    	List<ICompilationUnit> comUnits = null;
+    	/*Member[] mbrs = null;
+    	
+    	Class<?> c = null;
+    	
+		try {
+			c = Class.forName("java_annotations.AnnotationExample");
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		mbrs = c.getDeclaredMethods();
+    	 
+		for (Member mbr : mbrs) {
+			System.out.printf("  %s%n", ((Method)mbr).toGenericString());
+		}
+		*/
+		
+	   IProject[] projects = Workspace_Utilities.getWorkspaceProjects();
+		
+	   IJavaElement javaElement = null;
+				
+		IProject annProj = Parser_Utilities.getAnnotationProject(projects);
+		
+		if(annProj != null){
+			javaElement = JavaCore.create(annProj);
+			
+		}
+		if (javaElement == null) {
+		  System.out.println("No Java Model in workspace");
+		}
+		/*IFolder destination = annProj.getFolder("src/java_annotations");
+		
+		String folder = destination.getLocation().toString();
+		
+		final String path = folder+"/AnnotationExample.java";
+	    //create the pulse output file*/
+
+		else{
+			comUnits = Workspace_Utilities.collectCompilationUnits(javaElement);
+
+		
+				/*for (ICompilationUnit cunit : comUnits) {
+		
+					  CompilationUnit cu = null;
+		
+					   cu = UserSelectedClasses_Analysis.getCompilationUnit(cunit);
+					   
+					   System.out.println(cu.getJavaElement().getElementName());
+					   
+					   if(cu.getJavaElement().getElementName().equals("AnnotationExample.java")){
+						   
+						  cu.accept(new ASTVisitor(){ 
+				          @Override 
+				          public boolean visit(TypeDeclaration node) { 
+				        	
+				           System.out.println("class name = "+node.getName().toString());
+				        		
+				        	Member[] mbrs = null;
+				        	 
+							Class<?> c = node.getName().toString().getClass();
+							
+							try {
+								c = Class.forName("java_annotations."+node.getName().toString());
+							} catch (ClassNotFoundException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							
+							mbrs = c.getDeclaredMethods();
+				        	 
+							for (Member mbr : mbrs) {
+								System.out.printf("  %s%n", ((Method)mbr).toGenericString());
+							}
+				        	
+				           return super.visit(node); 
+				        }; 
+				  }); 
+			}
+		 } */
+		}
+		return comUnits;
+}
+
+
+    public Class loadClass(String name) throws ClassNotFoundException {
+        if(!"annotations.TestAnns".equals(name))
+                return super.loadClass(name);
+
+        try {
+            String url = "file:C:/data/projects/tutorials/web/WEB-INF/" +
+                            "classes/reflection/MyObject.class";
+            URL myUrl = new URL(url);
+            URLConnection connection = myUrl.openConnection();
+            InputStream input = connection.getInputStream();
+            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+            int data = input.read();
+
+            while(data != -1){
+                buffer.write(data);
+                data = input.read();
+            }
+
+            input.close();
+
+            byte[] classData = buffer.toByteArray();
+
+            return defineClass("reflection.MyObject",
+                    classData, 0, classData.length);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    /*public static void main(String[] args) throws
+    ClassNotFoundException,
+    IllegalAccessException,
+    InstantiationException {
+    	//getAnnotationsCompilationUnit();
+   // ClassLoader parentClassLoader = MyClassLoader.class.getClassLoader();
+   // MyClassLoader classLoader = new MyClassLoader(parentClassLoader);
+   // Class myObjectClass = classLoader.loadClass("reflection.MyObject");
+    //create new class loader so classes can be reloaded.
+    //classLoader = new MyClassLoader(parentClassLoader);
+    //myObjectClass = classLoader.loadClass("reflection.MyObject");
+    
+}*/
+
+}

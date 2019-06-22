@@ -1,0 +1,38 @@
+package aeminium.fibonacci;
+
+public class Fibonacci{
+	
+  public Integer number;
+  
+  Fibonacci(){
+	  number = 30;
+  }
+  public Integer computeFibonacci(Integer num) {
+	
+	if (num <= 1) {// Read-Only rule applied on n
+	  return num; // Read-Only rule applied here
+    }
+	else 
+    	return computeFibonacci(num-1) + computeFibonacci(num); // Recursive method call (Immutable-M-Call()) rule applied
+ }
+  public  void display(Integer num){  
+	System.out.println("The Fibonacci of Number =  " +num+" is = ");
+  }
+  public static void main(String[] args) {
+        
+	   long start = System.nanoTime(); //library function (do -nothing)
+	   
+	   Fibonacci obj = new Fibonacci();
+   		
+    	obj.computeFibonacci(obj.number);//MethodCall(<Immutable>, number)
+    	
+    	obj.display(obj.number);// // MethodCall(<Immutable>, number)
+    	
+    	long elapsedTime = System.nanoTime()-start;//library function (do -nothing)
+    	
+    	double ms = (double) elapsedTime / 1000000.0;//library function (do -nothing)
+    	
+    	System.out.println(" Milli Seconds Time = "+ms);//library function (do -nothing)
+    }
+
+}

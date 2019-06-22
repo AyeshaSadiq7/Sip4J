@@ -1,0 +1,45 @@
+package aeminium.fibonacci;
+
+public class Fibonacci{
+	
+	public static Integer number;
+	
+	Fibonacci(){
+		
+		number = 10;
+	}
+	//Immutable(num) -> Immutable(num)
+	public static Integer computeFibonacci() {
+		
+		if (number <= 1) {// Read-Only rule applied on n
+			 return number; // Read-Only rule applied here
+        }
+		return number;
+		//else 
+        	//return computeFibonacci(number-1) + computeFibonacci(number-2); // Immutable-M-Call(number)
+    }
+	//Immutable(num) -> Immutable(num)
+	public static void display(){  
+		
+		System.out.println("The Fibonacci of Number =  " +number+" is = ");
+		
+	}
+}
+
+class clientTest{
+	//none(number) -> unique(number)
+	public static void main(String[] args) {
+	        
+	    	long start = System.nanoTime(); //library function (do -nothing)
+	    		
+	    	Fibonacci.computeFibonacci(Fibonacci.number);//MethodCall(<Immutable>, number)
+	    	
+	    	Fibonacci.display(Fibonacci.number);// // MethodCall(<Immutable>, number)
+	    	
+	    	long elapsedTime = System.nanoTime()-start;//library function (do -nothing)
+	    	
+	    	double ms = (double) elapsedTime / 1000000.0;//library function (do -nothing)
+	    	
+	    	System.out.println(" Milli Seconds Time = "+ms);//library function (do -nothing)
+	    }
+}

@@ -1,0 +1,11 @@
+@ClassStates({@State(name = "alive")})
+
+class AnnotationDatabase {
+@Perm(ensures="unique(this) in alive")
+AnnotationDatabase() {   }
+
+@Permissions(perms="@Perm(requires=full(this) in alive,ensures=full(this) in alive")
+public void register() { 
+ } 
+
+}

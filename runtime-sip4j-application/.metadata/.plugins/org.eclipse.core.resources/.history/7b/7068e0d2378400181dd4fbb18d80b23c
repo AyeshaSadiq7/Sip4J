@@ -1,0 +1,167 @@
+package aeminium.mergesort;
+import java.util.Random;
+
+public class MergeSort {
+
+	public final static int DEFAULT_SIZE = 1000000;
+	
+	public static long[] original;
+	
+	private long[] helper;
+	
+	private int number;
+
+	//none(original) -> unique(original)// ContextR & CRW	
+	public static void createColl(int n){
+		original = new long[n];
+		//return original;
+	}
+	//Full(original) -> Full(original) // CR
+	//Share(original) -> Share(original) // CRW
+	public static long[] InitializeColl(long[] original, int size) {
+		Random r = new Random();
+		r.setSeed(1234567890);
+		for (int i = 0; i < size; i++) {
+			original[i] = r.nextLong();
+		}
+		return original;
+	}
+	
+	//Immutable(original) -> Immutable(original) // CR
+	//Pure(original) -> Pure(original) // CRW
+	public static void displayArray(long[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(""+arr[i]);
+		}
+	}
+//	Full(original), none(helper), immutable(number) -> Full(original), Unique(helper), Immutable(number) // CR
+//	Share(original), none(helper), Pure(number) -> Share(original), Unique(helper), Pure(number) // CR
+	public void sort(long[] values) {
+		//this.numbers = values;
+		number = values.length;
+		this.helper = new long[number];
+		mergesort(0, number-1);
+	}
+	//Immutable(number), Full(helper), Full(original)-> //Immutable(number), Full(helper), Full(original) //CR
+	//Pure(number), Share(helper), Share(original)-> //Pure(number), Share(helper), Share(original) //CRW
+	private void mergesort(int low, int high) {
+		// Check if low is smaller then high, if not then the array is sorted
+		if (low < high) {
+			// Get the index of the element which is in the middle
+			int middle = low + (high - low) / 2;
+			// Sort the left side of the array
+			mergesort(low, middle);
+			// Sort the right side of the array
+			mergesort(middle + 1, high);
+			// Combine them both
+			merge(low, middle, high);
+		}
+	}
+	//Immutable(number), Full(helper), Full(original)-> //Immutable(number), Full(helper), Full(original) //CR
+	//Pure(number), Share(helper), Share(original)-> //Pure(number), Share(helper), Share(original) //CRW
+	private void merge(int low, int middle, int high) {
+		// Copy both parts into the helper array
+		for (int i = low; i <= high; i++) {
+			//helper[i] = numbers[i];
+			helper[i] = original[i];
+		}
+		int i = low;
+		int j = middle + 1;
+		int k = low;
+		// Copy the smallest values from either the left or the right side back
+		// to the original array
+		while (i <= middle && j <= high) {
+			if (helper[i] <= helper[j]) {
+				//numbers[k] = helper[i];
+				original[k] = helper[i];
+				i++;
+			} else {
+				//numbers[k] = helper[j];
+				original[k] = helper[j];
+				j++;
+			}
+			k++;
+		}
+		// Copy the rest of the left side of the array into the target array
+		while (i <= middle) {
+			//numbers[k] = helper[i];
+			original[k] = helper[i];
+			k++;
+			i++;
+		}
+	}
+	//none(original), none(helper),none(number) -> Unique(original), Unique(helper),Unique(number)
+	public static void main(String[] args) {
+		long start = System.nanoTime();
+		MergeSort sorter = new MergeSort();
+		MergeSort.createColl(DEFAULT_SIZE);
+		//MergeSort.InitializeColl(original,DEFAULT_SIZE);
+		sorter.sort(original);
+		//MergeSort.displayArray(original);
+		long end = System.nanoTime();
+    	long elapsedTime = end - start;
+    	double ms = (double)elapsedTime / 1000000.0;
+    	System.out.println(" Milli Seconds Time = "+ms);
+	}
+}
+
+/*
+ -5197880843569031643
+-455857754086099036
+-1009835137506199904
+2760636605756985376
+-1824155662461692906
+4518992736225145867
+-8963186996212760330
+3015204577362510986
+-7742738610918953084
+8004217737854698935
+7685817615627686380
+865562189400100566
+-8272166368955537510
+-8554565356223690293
+5467397544107330504
+*/
+/*
+ -5197880843569031643
+-455857754086099036
+-1009835137506199904
+2760636605756985376
+-1824155662461692906
+4518992736225145867
+-8963186996212760330
+3015204577362510986
+-7742738610918953084
+8004217737854698935
+7685817615627686380
+865562189400100566
+-8272166368955537510
+-8554565356223690293
+5467397544107330504
+ * */
+
+/*
+Class Name = MergeSort_Perm
+Method Name = createColl
+Vertex Name = original, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = DEFAULT_SIZE, Post Permissions = immutable, Pre-Permissions =immutable
+Method Name = InitializeColl
+Vertex Name = original, Post Permissions = share, Pre-Permissions =share
+Vertex Name = DEFAULT_SIZE, Post Permissions = immutable, Pre-Permissions =immutable
+Method Name = displayArray
+Vertex Name = original, Post Permissions = pure, Pre-Permissions =pure
+Method Name = sort
+Vertex Name = number, Post Permissions = share, Pre-Permissions =share
+Vertex Name = helper, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = original, Post Permissions = share, Pre-Permissions =share
+Method Name = mergesort
+Vertex Name = helper, Post Permissions = share, Pre-Permissions =share
+Vertex Name = original, Post Permissions = share, Pre-Permissions =share
+Method Name = merge
+Vertex Name = helper, Post Permissions = share, Pre-Permissions =share
+Vertex Name = original, Post Permissions = share, Pre-Permissions =share
+Method Name = main
+Vertex Name = DEFAULT_SIZE, Post Permissions = none, Pre-Permissions =none
+Vertex Name = original, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = number, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = helper, Post Permissions = unique, Pre-Permissions =none*/

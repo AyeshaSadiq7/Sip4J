@@ -1,0 +1,1434 @@
+package outputs;
+import edu.cmu.cs.plural.annot.*;
+
+@ClassStates({@State(name = "alive")})
+class JGFMonteCarloBenchSizeA {
+@Perm(ensures="unique(this) in alive")
+JGFMonteCarloBenchSizeA() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  void main(String argv[]) {
+JGFMonteCarloBench mc=new JGFMonteCarloBench();
+  mc.JGFrun(0); 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class JGFMonteCarloBench {
+@Perm(ensures="unique(this) in alive")
+JGFMonteCarloBench() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void JGFrun(int size) {
+JGFsetsize(size);
+  JGFinitialise();
+  JGFapplication();
+  JGFvalidate();
+  JGFtidyup(); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void JGFsetsize(int size) {
+this.size=size; 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void JGFinitialise() {
+initialise(); 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void JGFapplication() {
+presults();
+  runiters(); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void JGFvalidate() {
+System.out.println("" + AppDemo.JGFavgExpectedReturnRateMC + size);
+  double refval={-0.0333976656762814 -0.03215796752868655};
+  double dev=Math.abs(AppDemo.JGFavgExpectedReturnRateMC - refvalsize);
+  if (dev > 1.0e-12) {
+  System.out.println("Validation failed");
+  System.out.println(" expectedReturnRate= " + AppDemo.JGFavgExpectedReturnRateMC + "  "+ dev+ "  "+ size);
+} 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void JGFtidyup() {
+datasizes=null;
+  System.gc(); 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class CallAppDemo {
+@Perm(ensures="unique(this) in alive")
+CallAppDemo() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void initialise() {
+input0=1000;
+  input1=datasizessize;
+  String dirName="Data";
+  String filename="hitData";
+  ap=new AppDemo(dirName filename (input0) (input1));
+  ap.initSerial(); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void presults() {
+ap.processSerial(); 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void runiters() {
+ap.runSerial(); 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class AppDemo {
+@Perm(ensures="unique(this) in alive")
+AppDemo() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void initSerial() {
+try {
+  RatePath rateP=new RatePath(dataDirname dataFilename);
+  rateP.dbgDumpFields();
+  ReturnPath returnP=rateP.getReturnCompounded();
+  returnP.estimatePath();
+  returnP.dbgDumpFields();
+  double expectedReturnRate=returnP.getexpectedReturnRate();
+  double volatility=returnP.getvolatility();
+  initAllTasks=new ToInitAllTasks(returnP nTimeStepsMC pathStartValue);
+  String slaveClassName="MonteCarlo.PriceStock";
+  initTasks(nRunsMC);
+}
+ catch (DemoException demoEx) {
+  dbgPrintln(demoEx.toString());
+  System.exit(-1);
+} 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ private void initTasks(int nRunsMC) {
+tasks=new Vector(nRunsMC);
+  for (int i=0; i < nRunsMC; i++) {
+  String header="MC run " + String.valueOf(i);
+  ToTask task=new ToTask(header (long)i * 11);
+  tasks.addElement((Object)task);
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void processSerial() {
+try {
+  processResults();
+}
+ catch (DemoException demoEx) {
+  dbgPrintln(demoEx.toString());
+  System.exit(-1);
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ private void processResults() {
+double avgExpectedReturnRateMC=0.0;
+  double avgVolatilityMC=0.0;
+  double runAvgExpectedReturnRateMC=0.0;
+  double runAvgVolatilityMC=0.0;
+  ToResult returnMC;
+  if (nRunsMC != results.size()) {
+  errPrintln("Fatal: TaskRunner managed to finish with no all the results gathered in!");
+  System.exit(-1);
+}
+  for (int i=0; i < nRunsMC; i++) {
+  returnMC=(ToResult)results.elementAt(i);
+  avgExpectedReturnRateMC+=returnMC.getexpectedReturnRate();
+  avgVolatilityMC+=returnMC.getvolatility();
+  runAvgExpectedReturnRateMC=avgExpectedReturnRateMC / ((double)(i + 1));
+  runAvgVolatilityMC=avgVolatilityMC / ((double)(i + 1));
+}
+  avgExpectedReturnRateMC/=nRunsMC;
+  avgVolatilityMC/=nRunsMC;
+  JGFavgExpectedReturnRateMC=avgExpectedReturnRateMC; 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void runSerial() {
+results=new Vector(nRunsMC);
+  PriceStock ps;
+  for (int iRun=0; iRun < nRunsMC; iRun++) {
+  ps=new PriceStock();
+  ps.setInitAllTasks(initAllTasks);
+  ps.setTask(tasks.elementAt(iRun));
+  ps.run();
+{
+    results.addElement(ps.getResult());
+  }
+} 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getdataDirname() {
+return this.dataDirname; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setdataDirname(String dataDirname) {
+this.dataDirname=dataDirname; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getdataFilename() {
+return (this.dataFilename); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setdataFilename(String dataFilename) {
+this.dataFilename=dataFilename; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnTimeStepsMC() {
+return (this.nTimeStepsMC); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setnTimeStepsMC(int nTimeStepsMC) {
+this.nTimeStepsMC=nTimeStepsMC; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnRunsMC() {
+return (this.nRunsMC); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setnRunsMC(int nRunsMC) {
+this.nRunsMC=nRunsMC; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public Vector gettasks() {
+return this.tasks; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void settasks(Vector tasks) {
+this.tasks=tasks; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public Vector getresults() {
+return this.results; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setresults(Vector results) {
+this.results=results; 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class Universal {
+@Perm(ensures="unique(this) in alive")
+Universal() {   }
+
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setprompt(String prompt) {
+this.prompt=prompt; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setDEBUG(boolean DEBUG) {
+this.DEBUG=DEBUG; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void dbgPrintln(String s) {
+if (DEBUG || UNIVERSAL_DEBUG) {
+  System.out.println("DBG " + prompt + s);
+} 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void errPrintln(String s) {
+System.err.println(prompt + s); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public boolean getDEBUG() {
+return (this.DEBUG); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public boolean getUNIVERSALDEBUG() {
+return (this.UNIVERSAL_DEBUG); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setUNIVERSALDEBUG(boolean UNIVERSAL_DEBUG) {
+this.UNIVERSAL_DEBUG=UNIVERSAL_DEBUG; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getprompt() {
+return (this.prompt); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void dbgPrint(String s) {
+if (DEBUG || UNIVERSAL_DEBUG) {
+  System.out.print("DBG " + prompt + s);
+} 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void errPrint(String s) {
+System.err.print(prompt + s); 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class PathId {
+@Perm(ensures="unique(this) in alive")
+PathId() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void dbgDumpFields() {
+dbgPrintln("name=" + this.name);
+  dbgPrintln("startDate=" + this.startDate);
+  dbgPrintln("endDate=" + this.endDate);
+  dbgPrintln("dTime=" + this.dTime); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void copyInstanceVariables(PathId obj) {
+this.name=obj.getname();
+  this.startDate=obj.getstartDate();
+  this.endDate=obj.getendDate();
+  this.dTime=obj.getdTime(); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getdTime() {
+if (this.dTime == Double.NaN) throw new DemoException("Variable dTime is undefined!");
+  return (this.dTime); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getname() {
+if (this.name == null) throw new DemoException("Variable name is undefined!");
+  return this.name; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getstartDate() {
+if (this.startDate == 0) throw new DemoException("Variable startDate is undefined!");
+  return (this.startDate); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getendDate() {
+if (this.endDate == 0) throw new DemoException("Variable endDate is undefined!");
+  return (this.endDate); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setname(String name) {
+this.name=name; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setstartDate(int startDate) {
+this.startDate=startDate; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setendDate(int endDate) {
+this.endDate=endDate; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setdTime(double dTime) {
+this.dTime=dTime; 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class RatePath {
+@Perm(ensures="unique(this) in alive")
+RatePath() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public ReturnPath getReturnCompounded() {
+if (pathValue == null || nAcceptedPathValue == 0) {
+  throw new DemoException("The Rate Path has not been defined!");
+}
+  double returnPathValue=new doublenAcceptedPathValue;
+  returnPathValue0=0.0;
+  try {
+  for (int i=1; i < nAcceptedPathValue; i++) {
+    returnPathValuei=Math.log(pathValuei / pathValuei - 1);
+  }
+}
+ catch (ArithmeticException aex) {
+  throw new DemoException("Error in getReturnLogarithm:" + aex.toString());
+}
+  ReturnPath rPath=new ReturnPath(returnPathValue nAcceptedPathValue ReturnPath.COMPOUNDED);
+  rPath.copyInstanceVariables(this);
+  rPath.estimatePath();
+  return (rPath); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public ReturnPath getReturnNonCompounded() {
+if (pathValue == null || nAcceptedPathValue == 0) {
+  throw new DemoException("The Rate Path has not been defined!");
+}
+  double returnPathValue=new doublenAcceptedPathValue;
+  returnPathValue0=0.0;
+  try {
+  for (int i=1; i < nAcceptedPathValue; i++) {
+    returnPathValuei=(pathValuei - pathValuei - 1) / pathValuei;
+  }
+}
+ catch (ArithmeticException aex) {
+  throw new DemoException("Error in getReturnPercentage:" + aex.toString());
+}
+  ReturnPath rPath=new ReturnPath(returnPathValue nAcceptedPathValue ReturnPath.NONCOMPOUNDED);
+  rPath.copyInstanceVariables(this);
+  rPath.estimatePath();
+  return rPath; 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ private void readRatesFile(String dirName, String filename) {
+java.io.File ratesFile=new File(dirName filename);
+  java.io.BufferedReader in;
+  if (!ratesFile.canRead()) {
+  throw new DemoException("Cannot read the file " + ratesFile.toString());
+}
+  try {
+  in=new BufferedReader(new FileReader(ratesFile));
+}
+ catch (FileNotFoundException fnfex) {
+  throw new DemoException(fnfex.toString());
+}
+  int iLine=0  initNlines=100  nLines=0;
+  String aLine;
+  java.util.Vector allLines=new Vector(initNlines);
+  try {
+  while ((aLine=in.readLine()) != null) {
+    iLine++;
+    allLines.addElement(aLine);
+  }
+}
+ catch (IOException ioex) {
+  throw new DemoException("Problem reading data from the file " + ioex.toString());
+}
+  nLines=iLine;
+  this.pathValue=new doublenLines;
+  this.pathDate=new intnLines;
+  nAcceptedPathValue=0;
+  iLine=0;
+  nAcceptedPathValue=iLine;
+  setname(ratesFile.getName());
+  setstartDate(pathDate0);
+  setendDate(pathDatenAcceptedPathValue - 1);
+  setdTime((double)(1.0 / 365.0)); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getEndPathValue() {
+return (getPathValue(pathValue.length - 1)); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getPathValue(int index) {
+return (pathValueindex); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void incpathValue(double[] operandPath) {
+if (pathValue.length != operandPath.length) throw new DemoException("The path to update has a different size to the path to update with!");
+  for (int i=0; i < pathValue.length; i++) pathValuei+=operandPathi; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getpathValue() {
+if (this.pathValue == null) throw new DemoException("Variable pathValue is undefined!");
+  return (this.pathValue); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setpathValue(double[] pathValue) {
+this.pathValue=pathValue; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int[] getpathDate() {
+if (this.pathDate == null) throw new DemoException("Variable pathDate is undefined!");
+  return (this.pathDate); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setpathDate(int[] pathDate) {
+this.pathDate=pathDate; 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class ReturnPath {
+@Perm(ensures="unique(this) in alive")
+ReturnPath() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void estimatePath() {
+computeMean();
+  computeVariance();
+  computeExpectedReturnRate();
+  computeVolatility(); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeMean() {
+if (this.nPathValue == 0) throw new DemoException("Variable nPathValue is undefined!");
+  this.mean=0.0;
+  for (int i=1; i < nPathValue; i++) {
+  mean+=pathValuei;
+}
+  this.mean/=((double)(nPathValue - 1.0)); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeVariance() {
+if (this.mean == Double.NaN || this.nPathValue == 0) throw new DemoException("Variable mean and/or nPathValue are undefined!");
+  this.variance=0.0;
+  for (int i=1; i < nPathValue; i++) {
+  variance+=(pathValuei - mean) * (pathValuei - mean);
+}
+  this.variance/=((double)(nPathValue - 1.0)); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeExpectedReturnRate() {
+this.expectedReturnRate=mean / getdTime() + 0.5 * volatility2; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeVolatility() {
+if (this.variance == Double.NaN) throw new DemoException("Variable variance is not defined!");
+  this.volatility2=variance / getdTime();
+  this.volatility=Math.sqrt(volatility2); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void dbgDumpFields() {
+super.dbgDumpFields();
+  dbgPrintln("nPathValue=" + this.nPathValue);
+  dbgPrintln("expectedReturnRate=" + this.expectedReturnRate);
+  dbgPrintln("volatility=" + this.volatility);
+  dbgPrintln("volatility2=" + this.volatility2);
+  dbgPrintln("mean=" + this.mean);
+  dbgPrintln("variance=" + this.variance); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getexpectedReturnRate() {
+if (this.expectedReturnRate == Double.NaN) throw new DemoException("Variable expectedReturnRate is undefined!");
+  return (this.expectedReturnRate); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility() {
+if (this.volatility == Double.NaN) throw new DemoException("Variable volatility is undefined!");
+  return (this.volatility); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getreturnDefinition() {
+if (this.returnDefinition == 0) throw new DemoException("Variable returnDefinition is undefined!");
+  return (this.returnDefinition); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility2() {
+if (this.volatility2 == Double.NaN) throw new DemoException("Variable volatility2 is undefined!");
+  return (this.volatility2); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getpathValue() {
+if (this.pathValue == null) throw new DemoException("Variable pathValue is undefined!");
+  return pathValue; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setpathValue(double[] pathValue) {
+this.pathValue=pathValue; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnPathValue() {
+if (this.nPathValue == 0) throw new DemoException("Variable nPathValue is undefined!");
+  return (this.nPathValue); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setnPathValue(int nPathValue) {
+this.nPathValue=nPathValue; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setreturnDefinition(int returnDefinition) {
+this.returnDefinition=returnDefinition; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setexpectedReturnRate(double expectedReturnRate) {
+this.expectedReturnRate=expectedReturnRate; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setvolatility(double volatility) {
+this.volatility=volatility; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setvolatility2(double volatility2) {
+this.volatility2=volatility2; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getmean() {
+if (this.mean == Double.NaN) throw new DemoException("Variable mean is undefined!");
+  return (this.mean); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setmean(double mean) {
+this.mean=mean; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvariance() {
+if (this.variance == Double.NaN) throw new DemoException("Variable variance is undefined!");
+  return (this.variance); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setvariance(double variance) {
+this.variance=variance; 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class MonteCarloPath {
+@Perm(ensures="unique(this) in alive")
+MonteCarloPath() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ private void copyInstanceVariables(ReturnPath obj) {
+setname(obj.getname());
+  setstartDate(obj.getstartDate());
+  setendDate(obj.getendDate());
+  setdTime(obj.getdTime());
+  this.returnDefinition=obj.getreturnDefinition();
+  this.expectedReturnRate=obj.getexpectedReturnRate();
+  this.volatility=obj.getvolatility(); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setreturnDefinition(int returnDefinition) {
+this.returnDefinition=returnDefinition; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setexpectedReturnRate(double expectedReturnRate) {
+this.expectedReturnRate=expectedReturnRate; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setvolatility(double volatility) {
+this.volatility=volatility; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setnTimeSteps(int nTimeSteps) {
+this.nTimeSteps=nTimeSteps; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setpathStartValue(double pathStartValue) {
+this.pathStartValue=pathStartValue; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setpathValue(double[] pathValue) {
+this.pathValue=pathValue; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setfluctuations(double[] fluctuations) {
+this.fluctuations=fluctuations; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeFluctuationsGaussian(long randomSeed) {
+if (nTimeSteps > fluctuations.length) throw new DemoException("Number of timesteps requested is greater than the allocated array!");
+  Random rnd;
+  if (randomSeed == -1) {
+  rnd=new Random();
+}
+ else {
+  rnd=new Random(randomSeed);
+}
+  double mean=(expectedReturnRate - 0.5 * volatility * volatility) * getdTime();
+  double sd=volatility * Math.sqrt(getdTime());
+  double gauss  meanGauss=0.0  variance=0.0;
+  for (int i=0; i < nTimeSteps; i++) {
+  gauss=rnd.nextGaussian();
+  meanGauss+=gauss;
+  variance+=(gauss * gauss);
+  fluctuationsi=mean + sd * gauss;
+}
+  meanGauss/=(double)nTimeSteps;
+  variance/=(double)nTimeSteps; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computePathValue(double startValue) {
+pathValue0=startValue;
+  if (returnDefinition == ReturnPath.COMPOUNDED || returnDefinition == ReturnPath.NONCOMPOUNDED) {
+  for (int i=1; i < nTimeSteps; i++) {
+    pathValuei=pathValuei - 1 * Math.exp(fluctuationsi);
+  }
+}
+ else {
+  throw new DemoException("Unknown or undefined update method.");
+} 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getpathValue() {
+if (this.pathValue == null) throw new DemoException("Variable pathValue is undefined!");
+  return (this.pathValue); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnTimeSteps() {
+if (this.nTimeSteps == 0) throw new DemoException("Variable nTimeSteps is undefined!");
+  return (this.nTimeSteps); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getfluctuations() {
+if (this.fluctuations == null) throw new DemoException("Variable fluctuations is undefined!");
+  return (this.fluctuations); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getreturnDefinition() {
+if (this.returnDefinition == 0) throw new DemoException("Variable returnDefinition is undefined!");
+  return (this.returnDefinition); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getexpectedReturnRate() {
+if (this.expectedReturnRate == Double.NaN) throw new DemoException("Variable expectedReturnRate is undefined!");
+  return (this.expectedReturnRate); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility() {
+if (this.volatility == Double.NaN) throw new DemoException("Variable volatility is undefined!");
+  return (this.volatility); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getpathStartValue() {
+if (this.pathStartValue == Double.NaN) throw new DemoException("Variable pathStartValue is undefined!");
+  return (this.pathStartValue); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void writeFile(String dirName, String filename) {
+try {
+  java.io.File ratesFile=new File(dirName filename);
+  if (ratesFile.exists() && !ratesFile.canWrite())   throw new DemoException("Cannot write to specified filename!");
+  java.io.PrintWriter out=new PrintWriter(new BufferedWriter(new FileWriter(ratesFile)));
+  for (int i=0; i < nTimeSteps; i++) {
+    out.print("19990101 ");
+    for (int j=1; j < DATUMFIELD; j++) {
+      out.print("0.0000 ");
+    }
+    out.print(pathValuei + " ");
+    out.println("0.0000 0.0000");
+  }
+  out.close();
+}
+ catch (java.io.IOException ioex) {
+  throw new DemoException(ioex.toString());
+} 
+} 
+
+ public RatePath getRatePath() {
+return new RatePath(this); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeFluctuationsGaussianOverload() {
+computeFluctuationsGaussian((long)-1); 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class ToInitAllTasks {
+@Perm(ensures="unique(this) in alive")
+ToInitAllTasks() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getname() {
+return (this.name); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getstartDate() {
+return (this.startDate); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getendDate() {
+return (this.endDate); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getdTime() {
+return (this.dTime); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getreturnDefinition() {
+return (this.returnDefinition); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getexpectedReturnRate() {
+return (this.expectedReturnRate); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility() {
+return (this.volatility); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnTimeSteps() {
+return (this.nTimeSteps); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getpathStartValue() {
+return (this.pathStartValue); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getheader() {
+return (this.header); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setheader(String header) {
+this.header=header; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setname(String name) {
+this.name=name; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setstartDate(int startDate) {
+this.startDate=startDate; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setendDate(int endDate) {
+this.endDate=endDate; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setDTime(double dTime) {
+this.dTime=dTime; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setReturnDefinition(int returnDefinition) {
+this.returnDefinition=returnDefinition; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setExpectedReturnRate(double expectedReturnRate) {
+this.expectedReturnRate=expectedReturnRate; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setVolatility(double volatility) {
+this.volatility=volatility; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setnTimeSteps(int nTimeSteps) {
+this.nTimeSteps=nTimeSteps; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setpathStartValue(double pathStartValue) {
+this.pathStartValue=pathStartValue; 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class ToResult {
+@Perm(ensures="unique(this) in alive")
+ToResult() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getexpectedReturnRate() {
+return (this.expectedReturnRate); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility() {
+return (this.volatility); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String toString() {
+return (header); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getheader() {
+return (this.header); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setheader(String header) {
+this.header=header; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setexpectedReturnRate(double expectedReturnRate) {
+this.expectedReturnRate=expectedReturnRate; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setvolatility(double volatility) {
+this.volatility=volatility; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getVolatility2() {
+return (this.volatility2); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setvolatility2(double volatility2) {
+this.volatility2=volatility2; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getfinalStockPrice() {
+return (this.finalStockPrice); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setfinalStockPrice(double finalStockPrice) {
+this.finalStockPrice=finalStockPrice; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getpathValue() {
+return (this.pathValue); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setpathValue(double[] pathValue) {
+this.pathValue=pathValue; 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class PriceStock {
+@Perm(ensures="unique(this) in alive")
+PriceStock() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setInitAllTasks(Object obj) {
+ToInitAllTasks initAllTasks=(ToInitAllTasks)obj;
+  mcPath.setname(initAllTasks.getname());
+  mcPath.setstartDate(initAllTasks.getstartDate());
+  mcPath.setendDate(initAllTasks.getendDate());
+  mcPath.setdTime(initAllTasks.getdTime());
+  mcPath.setreturnDefinition(initAllTasks.getreturnDefinition());
+  mcPath.setexpectedReturnRate(initAllTasks.getexpectedReturnRate());
+  mcPath.setvolatility(initAllTasks.getvolatility());
+  int nTimeSteps=initAllTasks.getnTimeSteps();
+  mcPath.setnTimeSteps(nTimeSteps);
+  this.pathStartValue=initAllTasks.getpathStartValue();
+  mcPath.setpathStartValue(pathStartValue);
+  mcPath.setpathValue(new doublenTimeSteps);
+  mcPath.setfluctuations(new doublenTimeSteps); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setTask(Object obj) {
+ToTask task=(ToTask)obj;
+  this.taskHeader=task.getheader();
+  this.randomSeed=task.getrandomSeed(); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void run() {
+try {
+  mcPath.computeFluctuationsGaussian(randomSeed);
+  mcPath.computePathValue(pathStartValue);
+  RatePath rateP=new RatePath(mcPath);
+  ReturnPath returnP=rateP.getReturnCompounded();
+  returnP.estimatePath();
+  expectedReturnRate=returnP.getexpectedReturnRate();
+  volatility=returnP.getvolatility();
+  volatility2=returnP.getvolatility2();
+  finalStockPrice=rateP.getEndPathValue();
+  pathValue=mcPath.getpathValue();
+}
+ catch (DemoException demoEx) {
+  errPrintln(demoEx.toString());
+} 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public Object getResult() {
+String resultHeader="Result of task with Header=" + taskHeader + ": randomSeed="+ randomSeed+ ": pathStartValue="+ pathStartValue;
+  ToResult res=new ToResult(resultHeader expectedReturnRate volatility volatility2 finalStockPrice pathValue);
+  return (Object)res; 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class ToTask {
+@Perm(ensures="unique(this) in alive")
+ToTask() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getheader() {
+return (this.header); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public long getrandomSeed() {
+return (this.randomSeed); 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setheader(String header) {
+this.header=header; 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setrandomSeed(long randomSeed) {
+this.randomSeed=randomSeed; 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class DemoException {
+@Perm(ensures="unique(this) in alive")
+DemoException() {   }
+
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class JGFInstrumentor {
+@Perm(ensures="unique(this) in alive")
+JGFInstrumentor() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void addTimer(String name) {
+if (timers.containsKey(name)) {
+  System.out.println("JGFInstrumentor.addTimer: warning -  timer " + name + " already exists");
+}
+ else {
+  timers.put(name new JGFTimer(name));
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void startTimer(String name) {
+if (timers.containsKey(name)) {
+  ((JGFTimer)timers.get(name)).start();
+}
+ else {
+  System.out.println("JGFInstrumentor.startTimer: failed -  timer " + name + " does not exist");
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void stopTimer(String name) {
+if (timers.containsKey(name)) {
+  ((JGFTimer)timers.get(name)).stop();
+}
+ else {
+  System.out.println("JGFInstrumentor.stopTimer: failed -  timer " + name + " does not exist");
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void addOpsToTimer(String name, double count) {
+if (timers.containsKey(name)) {
+  ((JGFTimer)timers.get(name)).addops(count);
+}
+ else {
+  System.out.println("JGFInstrumentor.addOpsToTimer: failed -  timer " + name + " does not exist");
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  double readTimer(String name) {
+double time;
+  if (timers.containsKey(name)) {
+  time=((JGFTimer)timers.get(name)).time;
+}
+ else {
+  System.out.println("JGFInstrumentor.readTimer: failed -  timer " + name + " does not exist");
+  time=0.0;
+}
+  return time; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void resetTimer(String name) {
+if (timers.containsKey(name)) {
+  ((JGFTimer)timers.get(name)).reset();
+}
+ else {
+  System.out.println("JGFInstrumentor.resetTimer: failed -  timer " + name + " does not exist");
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void printTimer(String name) {
+if (timers.containsKey(name)) {
+  ((JGFTimer)timers.get(name)).print();
+}
+ else {
+  System.out.println("JGFInstrumentor.printTimer: failed -  timer " + name + " does not exist");
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void printperfTimer(String name) {
+if (timers.containsKey(name)) {
+  ((JGFTimer)timers.get(name)).printperf();
+}
+ else {
+  System.out.println("JGFInstrumentor.printTimer: failed -  timer " + name + " does not exist");
+} 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void storeData(String name, Object obj) {
+data.put(name obj); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void retrieveData(String name, Object obj) {
+obj=data.get(name); 
+} 
+
+  void printHeader(int section, int size) {
+String header  base;
+  header="";
+  base="Java Grande Forum Benchmark Suite - Version 2.0 - Section ";
+  switch (section) {
+case 1:
+  header=base + "1";
+break;
+case 2:
+switch (size) {
+case 0:
+header=base + "2 - Size A";
+break;
+case 1:
+header=base + "2 - Size B";
+break;
+case 2:
+header=base + "2 - Size C";
+break;
+}
+break;
+case 3:
+switch (size) {
+case 0:
+header=base + "3 - Size A";
+break;
+case 1:
+header=base + "3 - Size B";
+break;
+}
+break;
+}
+  System.out.println(header);
+  System.out.println(""); 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  void main(String argv[]) {
+Object obj=new Object();
+  JGFInstrumentor.storeData("hi" obj);
+  JGFInstrumentor.startTimer("start"); 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class JGFTimer {
+@Perm(ensures="unique(this) in alive")
+JGFTimer() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void start() {
+if (on) System.out.println("Warning timer " + name + " was already turned on");
+  on=true;
+  start_time=System.currentTimeMillis(); 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void stop() {
+time+=(double)(System.currentTimeMillis() - start_time) / 1000.;
+  if (!on) System.out.println("Warning timer " + name + " wasn't turned on");
+  calls++;
+  on=false; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void addops(double count) {
+opcount+=count; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void reset() {
+time=0.0;
+  calls=0;
+  opcount=0;
+  on=false; 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void print() {
+if (opname.equals("")) {
+  System.out.println(name + "   " + time+ " (s)");
+}
+ else {
+switch (size) {
+case 0:
+    System.out.println(name + ":SizeA" + "\t"+ time+ " (s) \t "+ (float)this.perf()+ "\t"+ " ("+ opname+ "/s)");
+  break;
+case 1:
+System.out.println(name + ":SizeB" + "\t"+ time+ " (s) \t "+ (float)this.perf()+ "\t"+ " ("+ opname+ "/s)");
+break;
+case 2:
+System.out.println(name + ":SizeC" + "\t"+ time+ " (s) \t "+ (float)this.perf()+ "\t"+ " ("+ opname+ "/s)");
+break;
+default :
+System.out.println(name + "\t" + time+ " (s) \t "+ (float)this.perf()+ "\t"+ " ("+ opname+ "/s)");
+break;
+}
+} 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double perf() {
+return opcount / time; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void printperf() {
+String name;
+  name=this.name;
+  while (name.length() < 40) name=name + " ";
+  System.out.println(name + "\t" + (float)this.perf()+ "\t"+ " ("+ opname+ "/s)"); 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void longprint() {
+System.out.println("Timer            Calls         Time(s)       Performance(" + opname + "/s)");
+  System.out.println(name + "           " + calls+ "           "+ time+ "        "+ this.perf()); 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class test {
+@Perm(ensures="unique(this) in alive")
+test() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void createObject() {
+array=new Integer5; 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void readA() {
+System.out.println("array2 = " + array2);
+  System.out.println("t1.a = " + a); 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  void main(String[] arg) {
+test obj1=new test();
+  obj1.createObject();
+  obj1.readA(); 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class Utilities {
+@Perm(ensures="unique(this) in alive")
+Utilities() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  String which(String executable, String pathEnv) {
+String executablePath;
+  paths=splitString(System.getProperty("path.separator") pathEnv);
+  for (int i=0; i < paths.length; i++) {
+  if (pathsi.length() > 0) {
+    java.io.File pathFile=new java.io.File(pathsi);
+    if (pathFile.isDirectory()) {
+      String filesInDirectory;
+      filesInDirectory=pathFile.list();
+      for (int j=0; j < filesInDirectory.length; j++) {
+        if (DEBUG) {
+          System.out.println("DBG: Matching " + filesInDirectoryj);
+        }
+        if (filesInDirectoryj.equals(executable)) {
+          executablePath=pathsi + System.getProperty("file.separator") + executable;
+          return executablePath;
+        }
+      }
+    }
+ else {
+      if (DEBUG) {
+        System.out.println("DBG: path " + pathsi + " is not a directory!");
+      }
+    }
+  }
+}
+  executablePath=executable + " not found.";
+  return executablePath; 
+} 
+@Perm(requires="immutable(this) in alive",
+ensures="immutable(this) in alive")
+  String[] splitString(String splitChar, String arg) {
+String methodName="split";
+  String myArgs;
+  int nArgs=0;
+  int foundIndex=0  fromIndex=0;
+  while ((foundIndex=arg.indexOf(splitChar fromIndex)) > -1) {
+  nArgs++;
+  fromIndex=foundIndex + 1;
+}
+  if (DEBUG) {
+  System.out.println("DBG " + className + "."+ methodName+ ": "+ nArgs);
+}
+  myArgs=new StringnArgs + 1;
+  nArgs=0;
+  fromIndex=0;
+  while ((foundIndex=arg.indexOf(splitChar fromIndex)) > -1) {
+  if (DEBUG) {
+    System.out.println("DBG " + className + "."+ methodName+ ": "+ fromIndex+ " "+ foundIndex);
+  }
+  myArgsnArgs=arg.substring(fromIndex foundIndex);
+  nArgs++;
+  fromIndex=foundIndex + 1;
+}
+  myArgsnArgs=arg.substring(fromIndex);
+  return myArgs; 
+} 
+
+  String joinString(String joinChar, String stringArray[]) {
+return joinStringOverloaded(joinChar stringArray 0); 
+} 
+
+  String joinStringOverloaded(String joinChar, String stringArray[], int index) {
+String methodName="join";
+  StringBuffer tmpString;
+  int nStrings=java.lang.reflect.Array.getLength(stringArray);
+  if (nStrings <= index) {
+  tmpString=new StringBuffer();
+}
+ else {
+  tmpString=new StringBuffer(stringArrayindex);
+  for (int i=(index + 1); i < nStrings; i++) {
+    tmpString.append(joinChar).append(stringArrayi);
+  }
+}
+  return tmpString.toString(); 
+} 
+
+}ENDOFCLASS
+

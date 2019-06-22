@@ -1,0 +1,16 @@
+package aeminium.blackscholes;
+
+public class Test {
+
+	public static double uniform() {
+		return random.nextDouble();
+	}
+}
+class Random{
+	
+	int c= 10;
+	public void nextDouble(){
+		
+		c=100;
+	}
+}

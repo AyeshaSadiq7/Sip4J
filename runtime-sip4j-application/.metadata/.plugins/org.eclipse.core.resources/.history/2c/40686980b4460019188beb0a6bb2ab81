@@ -1,0 +1,35 @@
+package java_annotations;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+
+public class AnnotationParsing {
+
+	public static void main(String[] args) {
+		try {
+			for (Method method : AnnotationParsing.class.getClassLoader()
+					.loadClass(("java_annotations.AnnotationExample")).getMethods()) {
+				// checks if MethodInfo annotation is present for the method
+				if (method.isAnnotationPresent(java_annotations.Permissions.class)) {
+					try {
+						// iterates all the annotations available in the method
+						for (Annotation anno : method.getDeclaredAnnotations()) {
+							System.out.println("Annotation in Method '" + method + "' : " + anno);
+						}
+						Permissions methodAnno = method.getAnnotation(java_annotations.Permission.class);
+						
+						if (methodAnno.comments().equals("@Perm(requires=pure(this) in alive * pure(#0) in alive,ensures=pure(this) in alive * pure(#0) in alive")) {
+							System.out.println("Method with permision is correct= " + method);
+						}
+
+					} catch (Throwable ex) {
+						ex.printStackTrace();
+					}
+				}
+			}
+		} catch (SecurityException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

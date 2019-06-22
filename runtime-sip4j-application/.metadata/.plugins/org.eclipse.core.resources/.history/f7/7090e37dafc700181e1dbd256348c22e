@@ -1,0 +1,10 @@
+package antlrtests;
+
+public class MyObject {
+		
+	public static Integer a = 100;
+	
+	static int testA(){
+			return 0;
+		}
+}

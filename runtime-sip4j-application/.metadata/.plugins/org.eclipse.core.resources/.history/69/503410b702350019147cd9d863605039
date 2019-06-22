@@ -1,0 +1,43 @@
+package aeminium.health;
+
+
+
+public class SeqHealth {
+ 
+	static Village village = null;
+	public static void main(String[] args){
+		
+		//utility.start = System.nanoTime();// do nothing
+		//System.out.println("start "+utility.start);//  do nothing 
+		
+		
+		int size = Health.sim_time; // do nothing
+		
+		if (args.length > 0) {
+			size = Integer.parseInt(args[0]);
+		}
+		//allocate village
+		village = Health.allocateVillage(Health.sim_level, 0, null);// sim_level, village id, Village object
+		//display village
+		Village.displayVillageData(village);//
+		//simulate village
+		for (int i=0; i < size; i++) { // do nothing
+			simVillage(village);// unique(village)
+		}
+	
+		 //utility.end = System.nanoTime();// do nothing
+		 //double last = (((utility.end - utility.start) * 1.0) / utility.NPS);// do nothing
+		// System.out.println("elapsed "+last);// do nothing
+	
+	}
+	/*@Perm(requires="full(this) * full(#0) in alive",
+	ensures="requires="full(this) * full(#0) in alive")*/
+	public static void simVillage(Village village) {
+		for (Village child : village.children) {
+			 simVillage(child);
+		}
+		village.tick();//full(this)
+	}
+	
+	
+}

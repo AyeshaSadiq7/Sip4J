@@ -1,0 +1,118 @@
+package aeminium.gaknapsack;
+
+import aeminium.gaknapsack.MersenneTwisterFast;
+
+// Describes the KnapSack Problem
+public class Knapsack {
+	
+	public static int SIZE_LIMIT = 10000;
+
+	public final static int numberOfItems = 10000;
+
+	public static MersenneTwisterFast rand = new MersenneTwisterFast(1L);
+	
+	//public static Indiv ind;
+	
+	public static Item[] items;
+	// GA Settings:
+	public static int popSize = 5000;
+	public static int numGen = 100;
+	public final static int cromSize = numberOfItems;
+	public final static double prob_mut = 0.2;
+	public final static double prob_rec = 0.2;
+	public static final int elitism = 10;
+	public static final int DEFAULT_THRESHOLD = popSize / 100;
+	public static int bestLimit = elitism;
+
+	//none(items) -> unique(item)
+	//none(this) -> unique(this)
+	Knapsack(){
+	  items = Knapsack.createItems(numberOfItems);	
+	}
+	//none(rand) -> unique(rand)
+	//none(this) -> unique(this)
+	public static void resetSeed() {
+		//rand = new MersenneTwisterFast(1L);
+		rand = new MersenneTwisterFast(1L);
+	}
+	//none(this) * pure(#0) -> unique(this) * pure(#0)
+	private static Item[] createItems(int n) {
+		//Item[] tmp = null; 
+		items = new Item[n];
+		for (int i = 0; i < n; i++) {
+			items[i] = new Item("obj" + i, 100, 100);// refine this line for parsing
+		}
+		return items;
+	}
+	//pure(cromSize) * full(rand)  -> full(rand) * pure(cromSize)
+	//full(this) -> full(this) // what about full(ind), how to write it as a part of contract
+	public static Indiv createRandomIndiv(Indiv ind) {
+		
+		//none(ind) -> unique(ind)
+		
+		//Indiv ind = new Indiv(cromSize);
+		
+		boolean hasSth = false;
+		
+		for (int i = 0; i < cromSize; i++) {//pure(cromSize)
+			
+			boolean b = (Knapsack.rand.nextDouble() < 0.01);//full(rand)
+			
+			ind.set(i, b);//full(ind)
+			
+			hasSth = hasSth || b;
+		}
+		if (!hasSth) { // Enforce at least 1 item in backpack;
+			ind.set(rand.nextInt(cromSize), true);//full(ind)
+		}
+		return ind;
+	}
+	public static Indiv recombine(Indiv p1, Indiv p2) {
+		if (rand.nextFloat() > Knapsack.prob_rec) return p1;
+		Indiv ind = new Indiv(100);
+		int cutpoint = rand.nextInt(cromSize);
+		for (int i = 0; i < cromSize; i++) {
+			if (i < cutpoint) ind.set(i, p1.has[i]);
+			else ind.set(i, p2.has[i]);
+		}
+		return ind;
+	}
+	//pure(SIZE_LIMIT) * full(#0) -> pure(SIZE_LIMIT) * full(#0)
+	//pure(this) * full(#0) -> pure(this) * full(#0)
+	public static void evaluate(Indiv indiv) {
+		//pure(this) * pure(#0)-> pure(this) * pure(#0)
+		int[] ph = phenotype(indiv);
+		
+		int value = ph[0];
+		
+		int weight = ph[1];
+		// Evaluation
+		if (weight >= Knapsack.SIZE_LIMIT || value == 0) {
+			indiv.fitness = 2.0;
+		} else {
+			indiv.fitness = 1.0 / (value); // Minimization problem.
+		}
+	}
+	//pure(items) * pure(#0)  -> pure(items) * pure(#0) 
+	//pure(this) * pure(#0) -> pure(this) * pure(#0) 
+	public static int[] phenotype(Indiv indiv) {
+		int value = 0;
+		int weight = 0;
+		for (int i = 0; i < indiv.size; i++) {
+			if (indiv.has[i]) {
+				value  = value + Knapsack.items[i].value;
+				weight = value + Knapsack.items[i].weight;
+			}
+		}
+		return new int[]{value,weight};
+	}
+	//full(rand) * pure(prob_mut) * pure(cromSize) * pure(#0) 
+	//full(this) * pure(#0) -> full(this) * pure(#0)
+	public static void mutate(Indiv indiv) {
+		if (rand.nextFloat() < Knapsack.prob_mut) {
+			int p = rand.nextInt(cromSize);
+			indiv.set(p,!indiv.has[p]); // obj.methodcall()
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="671" localization="OSGI-INF/l10n/bundle" name="benchmarks" project="benchmarks">
+		<library name="jomp.jar"/>
+		<library name="lib/plaid-annotations.jar"/>
+	</bundle>
+	<bundle bundleID="672" class="edu.cmu.cs.plural.main.PluralPlugin" localization="OSGI-INF/l10n/bundle" name="Plural Plug-in" project="Plural">
+		<library name="edu.cmu.cs.plural/"/>
+		<library name="antlr-3.0.1/lib/antlr-runtime-3.0.1.jar"/>
+	</bundle>
+	<bundle bundleID="673" class="testcase.Activator" localization="OSGI-INF/l10n/bundle" name="TestCase" project="TestCase"/>
+	<bundle bundleID="674" class="uma.gap.plugin.Activator" localization="OSGI-INF/l10n/bundle" name="Pulse-new" project="pulse-new"/>
+</map>

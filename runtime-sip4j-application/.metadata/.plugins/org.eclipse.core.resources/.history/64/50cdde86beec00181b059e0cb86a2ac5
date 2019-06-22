@@ -1,0 +1,87 @@
+/**************************************************************************
+*                                                                         *
+*             Java Grande Forum Benchmark Suite - Version 2.0             *
+*                                                                         *
+*                            produced by                                  *
+*                                                                         *
+*                  Java Grande Benchmarking Project                       *
+*                                                                         *
+*                                at                                       *
+*                                                                         *
+*                Edinburgh Parallel Computing Centre                      *
+*                                                                         * 
+*                email: epcc-javagrande@epcc.ed.ac.uk                     *
+*                                                                         *
+*                                                                         *
+*      This version copyright (c) The University of Edinburgh, 1999.      *
+*                         All rights reserved.                            *
+*                                                                         *
+**************************************************************************/
+
+
+package jomp.montecarlo2; 
+
+import java.io.*;
+import jomp.jgfutil.JGFInstrumentor;
+import jomp.jgfutil.JGFSection3;
+
+public class JGFMonteCarloBench extends CallAppDemo implements JGFSection3 {
+	//full(this) -> full(this)
+  public void JGFsetsize(int size){
+    this.size = size;
+  }
+
+  public void JGFtidyup(){    
+
+	    System.gc();
+	  }
+
+//none(this) -> unique(this)
+  public void JGFinitialise(){
+	  initialise();
+  }
+
+//full(this) -> full(this)
+  public void JGFapplication(){ 
+
+    JGFInstrumentor.startTimer("Section3:MonteCarlo:Run");  
+
+    runiters();
+
+    JGFInstrumentor.stopTimer("Section3:MonteCarlo:Run");  
+    
+    presults();
+  } 
+
+  public void JGFvalidate(){
+   
+	System.out.println(""+AppDemo.JGFavgExpectedReturnRateMC+size);
+   double refval[] = {-0.0333976656762814,-0.03215796752868655};
+   double dev = Math.abs(AppDemo.JGFavgExpectedReturnRateMC - refval[size]);
+   if (dev > 1.0e-12 ){
+     System.out.println("Validation failed");
+     System.out.println(" expectedReturnRate= " + AppDemo.JGFavgExpectedReturnRateMC + "  " + dev + "  " + size);
+    }
+  }
+
+  public void JGFrun(int size){
+
+    JGFInstrumentor.addTimer("Section3:MonteCarlo:Total", "Solutions",size);
+    JGFInstrumentor.addTimer("Section3:MonteCarlo:Run", "Samples",size);
+
+    JGFsetsize(size); //rw
+    JGFinitialise(); //rw
+    JGFapplication(); //rw
+    JGFvalidate(); //
+    JGFtidyup(); 
+
+    JGFInstrumentor.addOpsToTimer("Section3:MonteCarlo:Run", (double) input[1] );
+    JGFInstrumentor.addOpsToTimer("Section3:MonteCarlo:Total", 1);
+
+    JGFInstrumentor.printTimer("Section3:MonteCarlo:Run"); 
+    JGFInstrumentor.printTimer("Section3:MonteCarlo:Total"); 
+  }
+
+
+}
+ 

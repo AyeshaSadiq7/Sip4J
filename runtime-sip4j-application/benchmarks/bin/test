@@ -1,0 +1,31 @@
+Class Name = Complex
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+Class Name = SeqFFT
+Method Name = main
+Ref-Var= DEFAULT_SIZE, Pre-Permissions=none, Post Permissions=unique
+Method Name = Complex
+Ref-Var= re, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= im, Pre-Permissions=none, Post Permissions=unique
+Method Name = plus
+Ref-Var= re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= im, Pre-Permissions=pure, Post Permissions=pure
+Method Name = minus
+Ref-Var= re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= im, Pre-Permissions=pure, Post Permissions=pure
+Method Name = times
+Ref-Var= re, Pre-Permissions=pure, Post Permissions=pure
+Ref-Var= im, Pre-Permissions=pure, Post Permissions=pure
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+Class Name = FFTUtility
+Method Name = FFTUtility
+Ref-Var= DEFAULT_SIZE, Pre-Permissions=none, Post Permissions=unique
+Method Name = createRandomComplexArray
+Ref-Var= x, Pre-Permissions=none, Post Permissions=none
+Method Name = show
+Ref-Var= DEFAULT_SIZE, Pre-Permissions=pure, Post Permissions=pure
+Method Name = main
+Ref-Var= DEFAULT_SIZE, Pre-Permissions=none, Post Permissions=unique

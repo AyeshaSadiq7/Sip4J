@@ -1,0 +1,17 @@
+Plural
+
+Sound Modular Typestate Checking for Java
+
+Copyright (C) 2007, 2008 Carnegie Mellon University and others
+
+Primary developers:
+Kevin Bierhoff, kevin dot bierhoff at cs dot cmu dot edu 
+Nels E. Beckman, nbeckman at cs dot cmu dot edu
+
+Plural is a sound modular typestate checking tool for Java that employs 
+fractional permissions to allow flexible aliasing control. Plural supports 
+atomic blocks to check concurrent programs. Typestates can be used to define 
+object protocols with finite state machines; Plural's protocols can involve 
+multiple interacting objects. The tool is an Eclipse plugin that relies on the 
+Crystal static analysis framework. It also uses the Antlr parser generator, 
+which is released under the BSD license, which is included with the Antlr binaries.

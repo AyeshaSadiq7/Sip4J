@@ -1,0 +1,51 @@
+package outputs;
+import edu.cmu.cs.plural.annot.*;
+
+@ClassStates({@State(name = "Alive")})
+
+class QuickSort {
+@Perm(ensures="unique(this) in Alive")
+QuickSort() {   }
+
+@Perm(requires="share(original_array) in Alive", 
+ ensures= "share(original_array) in Alive")
+ int partition(long[] data, int left, int right) { 
+ return 0;
+} 
+
+}
+
+class SeqQuickSort {
+@Perm(ensures="unique(this) in Alive")
+SeqQuickSort() {   }
+
+@Perm(requires="share(original_array) in Alive", 
+ ensures= "share(original_array) in Alive")
+ void qsort_seq(long[] data, int left, int right) { 
+} 
+@Perm(requires="pure(original_array) in Alive", 
+ ensures= "pure(original_array) in Alive")
+ void sort(long[] values) { 
+} 
+@Perm(requires="none(DEFAULT_SIZE) * none(original_array) in Alive", 
+ ensures= "none(DEFAULT_SIZE) * unique(original_array) in Alive")
+ void main(String[] args) { 
+} 
+
+}
+
+class ArrayHelper {
+@Perm(ensures="unique(this) in Alive")
+ArrayHelper() {   }
+
+@Perm(requires="pure(original_array) in Alive", 
+ ensures= "pure(original_array) in Alive")
+ boolean checkArray(long[] c) { 
+true} 
+@Perm(requires="none(original_array) in Alive", 
+ ensures= "unique(original_array) in Alive")
+ long[] generateRandomArray(long[] ar, int size) { 
+ return null;
+} 
+
+}

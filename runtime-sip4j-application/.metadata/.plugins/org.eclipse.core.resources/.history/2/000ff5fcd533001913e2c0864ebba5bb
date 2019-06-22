@@ -1,0 +1,68 @@
+package aeminium.gaknapsack;
+
+import java.util.Arrays;
+
+//import aeminium.runtime.benchmarks.helpers.Benchmark;
+
+public class SeqGA {
+
+	//public static Indiv[] pop = new Indiv[Knapsack.popSize];
+	
+	//public static Indiv[] next = new Indiv[Knapsack.popSize];
+	
+	//public static Indiv ind = new Indiv(Knapsack.cromSize);
+
+		public static void main(String[] args) {
+		
+			/*	Benchmark be = new Benchmark(args);
+		if (be.args.length > 0) Knapsack.popSize = Integer.parseInt(be.args[0]);
+		if (be.args.length > 1) Knapsack.numGen = Integer.parseInt(be.args[1]);
+	    */
+		
+		//while (!be.stop()) {
+			Knapsack.resetSeed(Knapsack.rand);
+		//	be.start();
+			// Initialize Population Randomly
+			 Indiv ind = new Indiv(Knapsack.cromSize);
+
+			 Indiv[] pop = new Indiv[Knapsack.popSize];
+			
+			 Indiv[] next = new Indiv[Knapsack.popSize];
+		
+
+			for (int i = 0; i < Knapsack.popSize; i++) {
+				pop[i] = Knapsack.createRandomIndiv(ind);
+			}
+
+			// Main loop
+			for (int g = 0; g < Knapsack.numGen; g++) {
+				// Sort by fitness
+				for (int i = 0; i < Knapsack.popSize; i++) {
+					Knapsack.evaluate(pop[i]);
+				}
+				Arrays.sort(pop);
+
+				// Elitism
+				for (int i = 0; i < Knapsack.elitism; i++) {
+					next[Knapsack.popSize - i - 1] = pop[i];
+				}
+
+				// Recombine
+				for (int i = 0; i < Knapsack.popSize - Knapsack.elitism; i++) {
+					Indiv other = (i < Knapsack.bestLimit) ? pop[i + 1] : pop[i - Knapsack.bestLimit];
+					next[i] = Knapsack.recombine(ind,pop[i],other);
+				}
+				// Mutation
+				for (int i = 0; i < Knapsack.popSize - Knapsack.elitism; i++) {
+					Knapsack.mutate(next[i]);
+				}
+
+				Indiv[] tmp = pop;
+				pop = next;
+				next = tmp;
+			}
+			System.out.println("Done");
+			//be.end();
+		//}
+	}
+}

@@ -1,0 +1,13 @@
+package jomp.montecarlo2;
+
+public class test {
+
+	Integer  a =10;
+	public void setFoo(){
+		a = 1000;
+	}
+	public void createObject(){
+		a =100000;
+		a = new Integer(300);
+	}
+}

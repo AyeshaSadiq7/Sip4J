@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/364/trunk/Plural/generated/edu/cmu/cs/plural/perm/parser
+END
+AccessPredLexer.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/364/trunk/Plural/generated/edu/cmu/cs/plural/perm/parser/AccessPredLexer.java
+END
+.cvsignore
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3/trunk/Plural/generated/edu/cmu/cs/plural/perm/parser/.cvsignore
+END
+AccessPred.tokens
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/266/trunk/Plural/generated/edu/cmu/cs/plural/perm/parser/AccessPred.tokens
+END
+AccessPred__.g
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/364/trunk/Plural/generated/edu/cmu/cs/plural/perm/parser/AccessPred__.g
+END
+AccessPredParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/364/trunk/Plural/generated/edu/cmu/cs/plural/perm/parser/AccessPredParser.java
+END

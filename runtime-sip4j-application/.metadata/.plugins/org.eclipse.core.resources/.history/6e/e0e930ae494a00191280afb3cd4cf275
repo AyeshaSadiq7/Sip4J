@@ -1,0 +1,15 @@
+package testan;
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
+public class ProjectVisitor {
+    public ProjectVisitor() {
+        IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
+        for (IProject project : projects) {
+            System.out.println(""+project.getName().toString());
+        }
+    }
+    public static void main(String[] args) {
+        ProjectVisitor m = new ProjectVisitor();
+    }
+}

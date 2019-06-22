@@ -1,0 +1,41 @@
+package jomp.montecarlo2;
+
+public class test {
+
+	Integer a = 10;
+	Integer[] array = new Integer[]{1,3,5,7,9};
+	
+	public void setA(){
+		a = 1000;
+		array[2] = 90;
+	}
+	public void createObject(){
+		
+		a = 10000;
+		
+		test obj = new test();
+		
+		obj.a = 9000;
+		obj.array[2] = 3000;
+		
+		Integer[]  temp = new Integer[5];
+		
+		temp = array;
+		
+		temp[2] = 90;
+		
+	}
+	public void readA(){
+		System.out.println("array[2] = "+array[2]);
+		System.out.println("a = "+a);
+	}
+
+	public static void main(String[] arg){
+		test obj = new test();
+		obj.setA();
+		obj.createObject();
+		obj.readA();
+		
+	}
+}
+

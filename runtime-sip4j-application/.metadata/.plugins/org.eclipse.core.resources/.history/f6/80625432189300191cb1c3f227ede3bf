@@ -1,0 +1,27 @@
+package working_examples;
+
+class ObjectClass{
+	 public static Integer[] array2 = new Integer[10]; 
+	 public static demoClient x,y,z,w; 
+	 public static void manipulateObjects(demoClient p1, demoClient p2){
+	    x = w;
+	    demoClient t = x;
+	    y = t;
+	    x.data = 10;
+	    System.out.println("z.data = "+p1.data+"x.data = "+t.data);
+	 }
+	}
+	public class demoClient{	
+		 Integer data = 100;
+		 public static void main(String[] args) {
+		  ArrayCollection obj1 = new ArrayCollection();
+		  //ObjectClass obj2 = new ObjectClass();
+		  obj1.createColl(obj1.array1);
+		  obj1.createColl(ObjectClass.array2);
+		   obj1.incrColl(ObjectClass.array2);
+		  obj1.computeStat(obj1.array1);
+		  obj1.computeStat(ObjectClass.array2);
+		  obj1.tidyupColls(ObjectClass.array2);
+		  ObjectClass.manipulateObjects(ObjectClass.w,ObjectClass.z);
+		}
+	}

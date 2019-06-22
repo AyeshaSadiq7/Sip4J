@@ -1,0 +1,9 @@
+package test;
+
+public class B {
+	int a;
+}
+public class A{
+	B x,y,z;
+	
+}

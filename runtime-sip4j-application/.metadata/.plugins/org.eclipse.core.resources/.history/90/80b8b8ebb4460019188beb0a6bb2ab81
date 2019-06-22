@@ -1,0 +1,24 @@
+package java_annotations;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import org.junit.Assert;
+import org.junit.Test;
+
+
+
+public class TestAnnotations {
+
+	    @Test
+	    public void testHasMethodsWithAnnotation() throws SecurityException, NoSuchMethodException {
+	    	Class resourceClass = AnnotationExample.class;
+	    	//Class resourceClass = SomeResource.class;
+	        Method[] methods = resourceClass.getDeclaredMethods();
+	        for (Method m : methods) {
+	            Assert.assertNotNull("Method :"+m.getName() + " does not have annotation AuthTokenRequired",m.isAnnotationPresent(java_annotations.Permissions.class));
+	            for (Annotation anno : m.getDeclaredAnnotations()) {
+					System.out.println("Hello g Annotation in Method '" + m + "' : " + anno);
+				}
+	            Assert.assertEquals("Permissions are either not correct or the safe permissions", expected, anno)
+	        }
+	    }
+}

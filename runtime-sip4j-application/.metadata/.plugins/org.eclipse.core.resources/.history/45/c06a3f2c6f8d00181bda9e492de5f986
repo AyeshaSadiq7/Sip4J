@@ -1,0 +1,21 @@
+package pt.uma.structure;
+
+public class E_APTypeState {
+	
+	String ap;
+	String ts;
+	
+	public void setAP(String str){
+		ap=str;	
+	}
+	public String getAP(String str){
+		return ap.toString();	
+	}
+	public void setTS(String str){
+		ts=str;	
+	}
+	public String getTS(){
+		return ts.toString();	
+	}	
+	
+}

@@ -1,0 +1,62 @@
+package aeminium.fibonacci;
+
+public class SeqFibonacci{
+	
+	public static Integer number = 1;
+	
+	static Test obj = new Test();
+	
+
+	//Immutable(num) -> Immutable(num)
+	public static void display(Integer num)
+	{  
+		obj.c = 900;
+		
+		//Test.c = 1000;
+		
+		System.out.println("The Fibonacci of Number =  " +num+" is = ");
+	}
+}
+	//Immutable(num) -> Immutable(num)
+/* 	public static Integer fibonacci(Integer num) {
+		//handle case when c is accesses with class name
+		
+		if (num <= 1) {// Read-Only rule applied on n
+			 return num; // Read-Only rule applied here
+        	}
+        else 
+        	return fibonacci(num-1) + fibonacci(num-2); // Immutable-M-Call(number)
+    }
+	//none(number) -> unique(number)
+  public static void main(String[] args) {
+        
+    	long start = System.nanoTime();// do -nothing
+        
+    	//SeqFibonacci obj2 = new SeqFibonacci();// generate unique permissions here for class object so that it can be used later on
+    	
+    	SeqFibonacci.fibonacci(SeqFibonacci.number);// Immutable-Method-Call(number)
+    	
+    	//System.out.println("number changed"+Fibo.number);
+    	
+    	SeqFibonacci.display(SeqFibonacci.number);//Immutable-M-Call(<number>)
+    	
+    	Test.show();
+    	
+    	long elapsedTime = System.nanoTime()-start;//do-nothing
+    	
+    	double ms = (double) elapsedTime / 1000000.0;//do-nothing
+    	
+    	System.out.println(" Milli Seconds Time = "+ms);//do-nothing
+    }
+    
+}
+*/
+class Test{
+	
+	public static Integer c;
+	
+	static void show(){
+	
+		System.out.println(" c  = "+c);
+	}
+}

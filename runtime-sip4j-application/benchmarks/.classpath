@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="javac/share/classes/javax/annotation/processing/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/javac/share/classes/javax/annotation/processing"/>
+	<classpathentry kind="lib" path="lib/plaid-annotations.jar"/>
+	<classpathentry kind="lib" path="src/plaid-annotations.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 11 (MacOS X Default)"/>
+	<classpathentry kind="output" path="src"/>
+</classpath>

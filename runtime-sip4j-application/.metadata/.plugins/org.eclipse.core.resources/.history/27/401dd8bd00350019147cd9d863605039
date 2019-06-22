@@ -1,0 +1,153 @@
+package aeminium.health;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+
+import edu.cmu.cs.plural.annot.Perm;
+
+public class Village {
+	public int id; // village id
+	public int level; // village level
+	public int seed; // village seed
+	public List<Village> children = new ArrayList<Village>();// list of Village childrens
+	public Village root; // Village itself
+	public List<Patient> population = new ArrayList<Patient>();//  List of patients in a village
+	public Hosp hosp = new Hosp(); // hospitals in a village
+	
+	
+//Unique(this.hosp), unique(this.population), Unique(this.root), Full(this.level), Immutable(Health.sim_convalescence_time), Immutable(Health.sim_convalescence_p), Immutable(Health.sim_realloc_p),  Immutable(Health.sim_level), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time)  
+//->Unique(this.hosp), unique(this.population), Unique(this.root), Full(this.level), Immutable(Health.sim_convalescence_time), Immutable(Health.sim_convalescence_p), Immutable(Health.sim_realloc_p),  Immutable(Health.sim_level), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time)  
+	public void tick() {
+		this.checkPatientsInside();
+		this.checkPatientsAssess();
+		this.checkPatientsWaiting();
+		this.checkPatientsRealloc();
+		this.checkPatientsPopulation();
+	}
+	
+//  Unique(this.hosp.), Unique(this.population), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time) -> Unique(this.hosp),Unique(this.population), Immutable(Health.sim_get_sick_p), Immutable(Health.sim_assess_time)
+	public void checkPatientsPopulation() {
+		List<Patient> rem = new ArrayList<Patient>(); //local array creation
+		for (Patient p : this.population) { //global list traversal
+			Random r = new Random(p.seed);//list element fetch
+			if (r.nextDouble() < Health.sim_get_sick_p) {//global field acccess
+				rem.add(p);//global field access
+				putInHosp(p);
+			}
+		}
+		this.population.remove(rem);
+	}
+	/*@Perm(requires="full(this) in alive",
+			ensures="full(this) in alive")*/
+	public void checkPatientsInside() {
+		List<Patient> rem = new ArrayList<Patient>(); 
+		for (Patient p : this.hosp.inside) {
+			p.time_left--;
+			if (p.time_left == 0) {
+				this.hosp.free_personnel++;
+				rem.add(p);//library method call
+				this.population.add(p);// library method call
+			}
+		}
+		this.hosp.inside.remove(rem);//library method call
+	}
+	/*@Perm(requires="full(this) in alive",
+	ensures="full(this) in alive")*/
+	public void checkPatientsAssess() {
+		List<Patient> rem = new ArrayList<Patient>(); 
+		for (Patient p : this.hosp.assess) {
+			p.time_left--;
+			if (p.time_left == 0) {
+				Random random = new Random(p.seed);
+				if (random.nextDouble() < Health.sim_convalescence_p) {
+					if (random.nextDouble() > Health.sim_realloc_p || this.level == Health.sim_level) {
+						rem.add(p);
+						this.hosp.inside.add(p);//library method call
+						p.time_left = Health.sim_convalescence_time;
+						p.time += p.time_left;
+					} else {
+						this.hosp.free_personnel++;
+						rem.add(p);
+						this.root.hosp.assess.add(p);
+					}
+				} else {
+					this.hosp.free_personnel++;
+					rem.add(p);
+					this.population.add(p);
+				}
+			}
+		}	
+		this.hosp.assess.remove(rem);
+	}
+	/*@Perm(requires="full(this) in alive",
+	ensures="full(this) in alive")*/
+	
+	public void checkPatientsWaiting() {
+		List<Patient> rem = new ArrayList<Patient>(); 
+		for (Patient p : this.hosp.waiting) {
+			if (this.hosp.free_personnel > 0) {
+				this.hosp.free_personnel--;
+				p.time_left = Health.sim_assess_time;
+				p.time += p.time_left;
+				rem.add(p);
+				this.hosp.assess.add(p);
+			} else {
+				p.time++;
+			}
+		}
+		this.hosp.waiting.remove(rem);
+	}
+	
+	/*@Perm(requires="full(this) in alive",
+			ensures="full(this) in alive")*/
+	public void checkPatientsRealloc() {
+		Patient s = null;
+		for (Patient p : this.hosp.realloc) {
+			if (s == null || p.id < s.id) 
+				s = p;
+		}
+		if (s != null) {
+			this.hosp.realloc.remove(s);
+			putInHosp(s);
+		}
+	}
+	/*@Perm(requires="full(this) in alive",
+	ensures="full(this) in alive")*/
+	public void putInHosp(Patient p) {
+		Hosp hosp = this.hosp; // get current hospital and create its local alias (copy) but it points to this.hosp memory location
+		p.hosps_visited++;
+		if (hosp.free_personnel > 0) {
+			hosp.free_personnel--;
+			hosp.assess.add(p);
+			p.time_left = Health.sim_assess_time;
+			p.time += p.time_left;
+		} else {
+			hosp.waiting.add(p);
+		}
+	}
+	/*@Perm(requires="full(this) * pure(#0) in alive",
+	ensures="requires="full(this) * pure(#0) in alive")*/
+	public static void displayVillageData(Village v){
+		
+		if(v.root != null)
+			System.out.println(", Root Village = "+ v.root.id);
+		Iterator<Village> it = v.children.iterator();
+		if(it.hasNext()){
+			Village.displayVillageData(it.next());}
+		if(v.population!=null){
+			  DisplayVillagePatients(v);
+			}	
+	}
+	/*@Perm(requires="pure(this) * pure(#0) in alive",
+	ensures="frequires="pure(this) * pure(#0) in alive")*/
+		static void DisplayVillagePatients(Village v){
+			for(Patient p: v.population){
+				System.out.print("patient_id = "+p.id+", hosps_visited = "+p.hosps_visited+", time_left = "+p.time_left+", time = "+p.time+", home_village ="+p.home_village.id);
+				System.out.println();
+			}
+		}
+		
+
+}

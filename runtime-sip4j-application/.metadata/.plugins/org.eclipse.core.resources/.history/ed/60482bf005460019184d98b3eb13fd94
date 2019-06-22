@@ -1,0 +1,69 @@
+package field_assignments;
+
+
+public class ValueAssignments extends ParentAssignment{
+	
+		public Integer[] coll = new Integer[]{1,2,3,4,5};
+		public Integer[] e = new Integer[]{6,7,8,9,10};
+		
+		public void simpleName() {
+			coll[0]  = 9;
+		}
+		public void thisExp() {
+		  this.coll[0] = 90;
+		}
+		public void qualifiedName(ValueAssignments obj) {
+			obj.coll[0] = 900;
+		}
+		public void localAssignment() {
+			Integer[] localref = coll;//aliasing
+			localref[0] = 9000;
+		}
+		public void superMethodCall(Integer a) {
+			coll[0] = a;// return a
+		}
+		public void paramAssign(Integer[] e) {//local parameter is not mapped with coll
+			this.coll[0] = e[0]; 
+		}
+		public void mcValue() {
+			Integer[] localarray = e;
+			//Integer[] localarray2 = new Integer[5];
+			paramAssign(localarray);
+			coll[0] =  returnValue(coll); 
+		}
+		public void superFieldAssignment() {
+			super.a = 10;//access a
+		}
+		public int returnValue(Integer[] coll) {
+			  return 9000000;
+		}
+		public void display() {
+			 System.out.println("coll[0] = "+coll[0]);
+		}
+	}
+class ParentAssignment{
+	
+	public static Integer a;
+	
+	ParentAssignment(){
+		a = 10;
+	}
+	Integer fieldAccess(){
+		return a;
+	}
+
+}
+class Test{
+	public static void main(String[] args){
+		ValueAssignments obj = new ValueAssignments();
+		obj.simpleName();
+		obj.fieldAccess();
+		obj.qualifiedName(obj);
+		obj.localAssignment();
+		obj.mcValue();
+		obj.superMethodCall(ParentAssignment.a);
+		obj.display();
+	}
+}
+
+	

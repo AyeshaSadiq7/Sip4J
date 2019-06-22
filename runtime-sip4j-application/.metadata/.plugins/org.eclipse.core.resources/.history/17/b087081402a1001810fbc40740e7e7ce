@@ -1,0 +1,99 @@
+package aeminium.quicksort;
+
+public class SeqQuickSort {
+	
+	static long[] original_array;
+	
+	public static void main(String[] args) {
+		
+		long start = System.nanoTime();// do -nothing
+    	
+    	int size = QuickSort.DEFAULT_SIZE;
+
+		ArrayHelper.generateRandomArray(original_array,size);// include this exprssion in 
+	
+		SeqQuickSort.sort(original_array);
+		
+		SeqQuickSort.sort(original_array);
+		
+		System.out.println("Sorted: " + ArrayHelper.checkArray(original_array));
+
+    	long elapsedTime = System.nanoTime()-start;//do-nothing
+    	
+    	double ms = (double) elapsedTime / 1000000.0;//do-nothing
+    	
+    	System.out.println(" Milli Seconds Time = "+ms);//do-nothing	
+	}
+
+	public static void sort(long[] original_array) {
+		qsort_seq(original_array, 0, original_array.length - 1);
+	}
+
+	public static void qsort_seq(long[] data, int left, int right) {		
+		int index = QuickSort.partition(data, left, right);
+		if (left < index - 1) qsort_seq(data, left, index - 1);
+		if (index < right) qsort_seq(data, index, right);
+	}
+
+}
+
+/*Class Name = QuickSort
+Class Name = SeqQuickSort
+Method Name = main
+Vertex Name = QuickSort.DEFAULT_SIZE, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = QuickSort.original, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = SeqQuickSort.original, Post Permissions = none, Pre-Permissions =none
+Vertex Name = ArrayHelper.original, Post Permissions = none, Pre-Permissions =none
+Method Name = partition
+Class Name = SeqQuickSort
+Class Name = SeqQuickSort
+Method Name = main
+Vertex Name = QuickSort.DEFAULT_SIZE, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = QuickSort.original, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = SeqQuickSort.original, Post Permissions = none, Pre-Permissions =none
+Vertex Name = ArrayHelper.original, Post Permissions = none, Pre-Permissions =none
+Method Name = generateRandomArray
+Method Name = sort
+Vertex Name = SeqQuickSort.original, Post Permissions = immutable, Pre-Permissions =immutable
+Method Name = qsort_seq
+Vertex Name = SeqQuickSort.original, Post Permissions = immutable, Pre-Permissions =immutable
+Method Name = checkArray
+Vertex Name = ArrayHelper.original, Post Permissions = immutable, Pre-Permissions =immutable
+Class Name = ArrayHelper
+Class Name = SeqQuickSort
+Method Name = main
+Vertex Name = QuickSort.DEFAULT_SIZE, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = QuickSort.original, Post Permissions = unique, Pre-Permissions =none
+Vertex Name = SeqQuickSort.original, Post Permissions = none, Pre-Permissions =none
+Vertex Name = ArrayHelper.original, Post Permissions = none, Pre-Permissions =none
+Method Name = checkArray
+Vertex Name = ArrayHelper.original, Post Permissions = immutable, Pre-Permissions =immutable
+Method Name = generateRandomArray
+/////////////////////////////////////////////////////////////////////////////////////////
+ * Class Name = SeqQuickSort
+Method Name = main
+Ref-Var= quicksort.QuickSort.DEFAULT_SIZE, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= quicksort.QuickSort.original, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= quicksort.SeqQuickSort.original, Pre-Permissions=none, Post Permissions=none
+Method Name = checkArray
+Ref-Var= quicksort.SeqQuickSort.original, Pre-Permissions=pure, Post Permissions=pure
+Method Name = generateRandomArray
+
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+Class Name = QuickSort
+Method Name = partition
+Method Name = main
+Ref-Var= quicksort.QuickSort.DEFAULT_SIZE, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= quicksort.QuickSort.original, Pre-Permissions=none, Post Permissions=unique
+Ref-Var= quicksort.SeqQuickSort.original, Pre-Permissions=none, Post Permissions=none
+Method Name = sort
+Ref-Var= quicksort.SeqQuickSort.original, Pre-Permissions=pure, Post Permissions=pure
+Method Name = qsort_seq
+Ref-Var= quicksort.SeqQuickSort.original, Pre-Permissions=pure, Post Permissions=pure
+ */
+ 

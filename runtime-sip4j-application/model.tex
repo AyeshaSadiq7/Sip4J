@@ -1,0 +1,2317 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{longtable}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+\usepackage{rotating}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstdefinestyle{mystyle}{
+language = JAVA,framexleftmargin=4pt, framexrightmargin=0.3cm,xleftmargin=2pt,showstringspaces=false,numbers = left,numberblanklines=false,numberstyle=\tiny, numbersep=6pt, firstnumber = 1, breaklines=true,basicstyle=\scriptsize\ttfamily, keywordstyle=\bfseries\color{blue},stringstyle=\color{orange},commentstyle=\color{Green}\ttfamily,frame=single,morekeywords={none,full,unique,ENDOFCLASS,ensures,requires,ALIVE,share,immutable,pure,main},morecomment={[s][\color{violet}]{@}{( }},escapeinside={*@}{@*}}
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+\begin{center}\huge{Summary}\end{center}
+\textbf{Sink States}:$ 0 (0\times10^0)$
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|}
+\caption{Sip4J Analysis Summary}\\
+\hline
+\begin{sideways}{\color{BlueGreen}Classes}\end{sideways}&\begin{sideways}{\color{BlueGreen}Methods}\end{sideways}&\begin{sideways}{\color{BlueGreen}States}\end{sideways}&\begin{sideways}{\color{BlueGreen}Unreachable clauses}\end{sideways}&\begin{sideways}{\color{BlueGreen}Unreachable states}\end{sideways}&\begin{sideways}{\color{BlueGreen} Possible concurrent methods}\end{sideways}&\begin{sideways}{\color{BlueGreen} Total. no. of method pairs}\end{sideways}&\begin{sideways}{\color{BlueGreen} No. of concurrent method pairs}\end{sideways}&\begin{sideways}{\color{BlueGreen} Percentage of concurrent methods pairs}\end{sideways}\\
+\hline
+\hyperref[JGFMonteCarloBenchSizeA]{\color{Fuchsia}JGFMonteCarloBenchSizeA}&2&1&0&0&0&3&0&0\\
+\hline
+\hyperref[JGFMonteCarloBench]{\color{Fuchsia}JGFMonteCarloBench}&7&1&0&0&1&28&1&4\\
+\hline
+\hyperref[CallAppDemo]{\color{Fuchsia}CallAppDemo}&4&1&0&0&0&10&0&0\\
+\hline
+\hyperref[AppDemo]{\color{Fuchsia}AppDemo}&18&1&0&0&6&171&21&12\\
+\hline
+\hyperref[Universal]{\color{Fuchsia}Universal}&11&1&0&0&7&66&28&42\\
+\hline
+\hyperref[PathId]{\color{Fuchsia}PathId}&11&1&0&0&5&66&15&23\\
+\hline
+\hyperref[RatePath]{\color{Fuchsia}RatePath}&11&1&0&0&4&66&10&15\\
+\hline
+\hyperref[ReturnPath]{\color{Fuchsia}ReturnPath}&23&1&0&0&9&276&45&16\\
+\hline
+\hyperref[MonteCarloPath]{\color{Fuchsia}MonteCarloPath}&21&1&0&0&20&231&56&24\\
+\hline
+\hyperref[ToInitAllTasks]{\color{Fuchsia}ToInitAllTasks}&21&1&0&0&10&231&55&24\\
+\hline
+\hyperref[ToResult]{\color{Fuchsia}ToResult}&14&1&0&0&7&105&28&27\\
+\hline
+\hyperref[PriceStock]{\color{Fuchsia}PriceStock}&5&1&0&0&1&15&1&7\\
+\hline
+\hyperref[ToTask]{\color{Fuchsia}ToTask}&5&1&0&0&2&15&3&20\\
+\hline
+\hyperref[DemoException]{\color{Fuchsia}DemoException}&1&1&0&0&0&1&0&0\\
+\hline
+\hyperref[JGFInstrumentor]{\color{Fuchsia}JGFInstrumentor}&13&1&0&0&12&91&12&13\\
+\hline
+\hyperref[JGFTimer]{\color{Fuchsia}JGFTimer}&9&1&0&0&3&45&6&13\\
+\hline
+\hyperref[test]{\color{Fuchsia}test}&4&1&0&0&1&10&1&10\\
+\hline
+\hyperref[Utilities]{\color{Fuchsia}Utilities}&5&1&0&0&4&15&8&53\\
+\hline
+Total Classes=18&185&18&0&0&92&1445&290&20\\
+\hline
+\end{longtable}
+\newpage
+\tableofcontents
+\newpage
+
+\section{{\color{Fuchsia}JGFMonteCarloBenchSizeA}}
+\label{JGFMonteCarloBenchSizeA}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+JGFMonteCarloBenchSizeA&{\color{blue}$\surd$}\\
+\hline
+main&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}JGFMonteCarloBenchSizeA\end{sideways}&\begin{sideways}main\end{sideways}\\
+\hline
+JGFMonteCarloBenchSizeA&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+main&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}JGFMonteCarloBench}}
+\label{JGFMonteCarloBench}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+JGFMonteCarloBench&{\color{blue}$\surd$}\\
+\hline
+JGFrun&{\color{blue}$\surd$}\\
+\hline
+JGFsetsize&{\color{blue}$\surd$}\\
+\hline
+JGFinitialise&{\color{blue}$\surd$}\\
+\hline
+JGFapplication&{\color{blue}$\surd$}\\
+\hline
+JGFvalidate&{\color{blue}$\surd$}\\
+\hline
+JGFtidyup&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}JGFMonteCarloBench\end{sideways}&\begin{sideways}JGFrun\end{sideways}&\begin{sideways}JGFsetsize\end{sideways}&\begin{sideways}JGFinitialise\end{sideways}&\begin{sideways}JGFapplication\end{sideways}&\begin{sideways}JGFvalidate\end{sideways}&\begin{sideways}JGFtidyup\end{sideways}\\
+\hline
+JGFMonteCarloBench&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+JGFrun&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+JGFsetsize&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+JGFinitialise&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+JGFapplication&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+JGFvalidate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+JGFtidyup&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}CallAppDemo}}
+\label{CallAppDemo}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+CallAppDemo&{\color{blue}$\surd$}\\
+\hline
+initialise&{\color{blue}$\surd$}\\
+\hline
+presults&{\color{blue}$\surd$}\\
+\hline
+runiters&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}CallAppDemo\end{sideways}&\begin{sideways}initialise\end{sideways}&\begin{sideways}presults\end{sideways}&\begin{sideways}runiters\end{sideways}\\
+\hline
+CallAppDemo&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+initialise&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+presults&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+runiters&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}AppDemo}}
+\label{AppDemo}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+AppDemo&{\color{blue}$\surd$}\\
+\hline
+initSerial&{\color{blue}$\surd$}\\
+\hline
+initTasks&{\color{blue}$\surd$}\\
+\hline
+processSerial&{\color{blue}$\surd$}\\
+\hline
+processResults&{\color{blue}$\surd$}\\
+\hline
+runSerial&{\color{blue}$\surd$}\\
+\hline
+getdataDirname&{\color{blue}$\surd$}\\
+\hline
+setdataDirname&{\color{blue}$\surd$}\\
+\hline
+getdataFilename&{\color{blue}$\surd$}\\
+\hline
+setdataFilename&{\color{blue}$\surd$}\\
+\hline
+getnTimeStepsMC&{\color{blue}$\surd$}\\
+\hline
+setnTimeStepsMC&{\color{blue}$\surd$}\\
+\hline
+getnRunsMC&{\color{blue}$\surd$}\\
+\hline
+setnRunsMC&{\color{blue}$\surd$}\\
+\hline
+gettasks&{\color{blue}$\surd$}\\
+\hline
+settasks&{\color{blue}$\surd$}\\
+\hline
+getresults&{\color{blue}$\surd$}\\
+\hline
+setresults&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}AppDemo\end{sideways}&\begin{sideways}initSerial\end{sideways}&\begin{sideways}initTasks\end{sideways}&\begin{sideways}processSerial\end{sideways}&\begin{sideways}processResults\end{sideways}&\begin{sideways}runSerial\end{sideways}&\begin{sideways}getdataDirname\end{sideways}&\begin{sideways}setdataDirname\end{sideways}&\begin{sideways}getdataFilename\end{sideways}&\begin{sideways}setdataFilename\end{sideways}&\begin{sideways}getnTimeStepsMC\end{sideways}&\begin{sideways}setnTimeStepsMC\end{sideways}&\begin{sideways}getnRunsMC\end{sideways}&\begin{sideways}setnRunsMC\end{sideways}&\begin{sideways}gettasks\end{sideways}&\begin{sideways}settasks\end{sideways}&\begin{sideways}getresults\end{sideways}&\begin{sideways}setresults\end{sideways}\\
+\hline
+AppDemo&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+initSerial&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+initTasks&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+processSerial&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+processResults&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+runSerial&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getdataDirname&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setdataDirname&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getdataFilename&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setdataFilename&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getnTimeStepsMC&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setnTimeStepsMC&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getnRunsMC&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setnRunsMC&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+gettasks&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+settasks&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getresults&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setresults&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}Universal}}
+\label{Universal}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+Universal&{\color{blue}$\surd$}\\
+\hline
+setprompt&{\color{blue}$\surd$}\\
+\hline
+setDEBUG&{\color{blue}$\surd$}\\
+\hline
+dbgPrintln&{\color{blue}$\surd$}\\
+\hline
+errPrintln&{\color{blue}$\surd$}\\
+\hline
+getDEBUG&{\color{blue}$\surd$}\\
+\hline
+getUNIVERSALDEBUG&{\color{blue}$\surd$}\\
+\hline
+setUNIVERSALDEBUG&{\color{blue}$\surd$}\\
+\hline
+getprompt&{\color{blue}$\surd$}\\
+\hline
+dbgPrint&{\color{blue}$\surd$}\\
+\hline
+errPrint&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}Universal\end{sideways}&\begin{sideways}setprompt\end{sideways}&\begin{sideways}setDEBUG\end{sideways}&\begin{sideways}dbgPrintln\end{sideways}&\begin{sideways}errPrintln\end{sideways}&\begin{sideways}getDEBUG\end{sideways}&\begin{sideways}getUNIVERSALDEBUG\end{sideways}&\begin{sideways}setUNIVERSALDEBUG\end{sideways}&\begin{sideways}getprompt\end{sideways}&\begin{sideways}dbgPrint\end{sideways}&\begin{sideways}errPrint\end{sideways}\\
+\hline
+Universal&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setprompt&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setDEBUG&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+dbgPrintln&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+errPrintln&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+getDEBUG&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+getUNIVERSALDEBUG&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+setUNIVERSALDEBUG&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getprompt&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+dbgPrint&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+errPrint&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}PathId}}
+\label{PathId}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+PathId&{\color{blue}$\surd$}\\
+\hline
+dbgDumpFields&{\color{blue}$\surd$}\\
+\hline
+copyInstanceVariables&{\color{blue}$\surd$}\\
+\hline
+getdTime&{\color{blue}$\surd$}\\
+\hline
+getname&{\color{blue}$\surd$}\\
+\hline
+getstartDate&{\color{blue}$\surd$}\\
+\hline
+getendDate&{\color{blue}$\surd$}\\
+\hline
+setname&{\color{blue}$\surd$}\\
+\hline
+setstartDate&{\color{blue}$\surd$}\\
+\hline
+setendDate&{\color{blue}$\surd$}\\
+\hline
+setdTime&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}PathId\end{sideways}&\begin{sideways}dbgDumpFields\end{sideways}&\begin{sideways}copyInstanceVariables\end{sideways}&\begin{sideways}getdTime\end{sideways}&\begin{sideways}getname\end{sideways}&\begin{sideways}getstartDate\end{sideways}&\begin{sideways}getendDate\end{sideways}&\begin{sideways}setname\end{sideways}&\begin{sideways}setstartDate\end{sideways}&\begin{sideways}setendDate\end{sideways}&\begin{sideways}setdTime\end{sideways}\\
+\hline
+PathId&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+dbgDumpFields&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+copyInstanceVariables&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getdTime&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getname&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getstartDate&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getendDate&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setname&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setstartDate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setendDate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setdTime&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}RatePath}}
+\label{RatePath}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+RatePath&{\color{blue}$\surd$}\\
+\hline
+getReturnCompounded&{\color{blue}$\surd$}\\
+\hline
+getReturnNonCompounded&{\color{blue}$\surd$}\\
+\hline
+readRatesFile&{\color{blue}$\surd$}\\
+\hline
+getEndPathValue&{\color{blue}$\surd$}\\
+\hline
+getPathValue&{\color{blue}$\surd$}\\
+\hline
+incpathValue&{\color{blue}$\surd$}\\
+\hline
+getpathValue&{\color{blue}$\surd$}\\
+\hline
+setpathValue&{\color{blue}$\surd$}\\
+\hline
+getpathDate&{\color{blue}$\surd$}\\
+\hline
+setpathDate&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}RatePath\end{sideways}&\begin{sideways}getReturnCompounded\end{sideways}&\begin{sideways}getReturnNonCompounded\end{sideways}&\begin{sideways}readRatesFile\end{sideways}&\begin{sideways}getEndPathValue\end{sideways}&\begin{sideways}getPathValue\end{sideways}&\begin{sideways}incpathValue\end{sideways}&\begin{sideways}getpathValue\end{sideways}&\begin{sideways}setpathValue\end{sideways}&\begin{sideways}getpathDate\end{sideways}&\begin{sideways}setpathDate\end{sideways}\\
+\hline
+RatePath&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getReturnCompounded&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getReturnNonCompounded&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+readRatesFile&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getEndPathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getPathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+incpathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getpathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setpathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getpathDate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setpathDate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}ReturnPath}}
+\label{ReturnPath}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+ReturnPath&{\color{blue}$\surd$}\\
+\hline
+estimatePath&{\color{blue}$\surd$}\\
+\hline
+computeMean&{\color{blue}$\surd$}\\
+\hline
+computeVariance&{\color{blue}$\surd$}\\
+\hline
+computeExpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+computeVolatility&{\color{blue}$\surd$}\\
+\hline
+dbgDumpFields&{\color{blue}$\surd$}\\
+\hline
+getexpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+getvolatility&{\color{blue}$\surd$}\\
+\hline
+getreturnDefinition&{\color{blue}$\surd$}\\
+\hline
+getvolatility2&{\color{blue}$\surd$}\\
+\hline
+getpathValue&{\color{blue}$\surd$}\\
+\hline
+setpathValue&{\color{blue}$\surd$}\\
+\hline
+getnPathValue&{\color{blue}$\surd$}\\
+\hline
+setnPathValue&{\color{blue}$\surd$}\\
+\hline
+setreturnDefinition&{\color{blue}$\surd$}\\
+\hline
+setexpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+setvolatility&{\color{blue}$\surd$}\\
+\hline
+setvolatility2&{\color{blue}$\surd$}\\
+\hline
+getmean&{\color{blue}$\surd$}\\
+\hline
+setmean&{\color{blue}$\surd$}\\
+\hline
+getvariance&{\color{blue}$\surd$}\\
+\hline
+setvariance&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}ReturnPath\end{sideways}&\begin{sideways}estimatePath\end{sideways}&\begin{sideways}computeMean\end{sideways}&\begin{sideways}computeVariance\end{sideways}&\begin{sideways}computeExpectedReturnRate\end{sideways}&\begin{sideways}computeVolatility\end{sideways}&\begin{sideways}dbgDumpFields\end{sideways}&\begin{sideways}getexpectedReturnRate\end{sideways}&\begin{sideways}getvolatility\end{sideways}&\begin{sideways}getreturnDefinition\end{sideways}&\begin{sideways}getvolatility2\end{sideways}&\begin{sideways}getpathValue\end{sideways}&\begin{sideways}setpathValue\end{sideways}&\begin{sideways}getnPathValue\end{sideways}&\begin{sideways}setnPathValue\end{sideways}&\begin{sideways}setreturnDefinition\end{sideways}&\begin{sideways}setexpectedReturnRate\end{sideways}&\begin{sideways}setvolatility\end{sideways}&\begin{sideways}setvolatility2\end{sideways}&\begin{sideways}getmean\end{sideways}&\begin{sideways}setmean\end{sideways}&\begin{sideways}getvariance\end{sideways}&\begin{sideways}setvariance\end{sideways}\\
+\hline
+ReturnPath&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+estimatePath&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+computeMean&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+computeVariance&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+computeExpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+computeVolatility&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+dbgDumpFields&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getexpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getvolatility&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getreturnDefinition&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getvolatility2&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getpathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setpathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getnPathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setnPathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setreturnDefinition&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setexpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setvolatility&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setvolatility2&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getmean&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setmean&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getvariance&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setvariance&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}MonteCarloPath}}
+\label{MonteCarloPath}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+MonteCarloPath&{\color{blue}$\surd$}\\
+\hline
+copyInstanceVariables&{\color{blue}$\surd$}\\
+\hline
+setreturnDefinition&{\color{blue}$\surd$}\\
+\hline
+setexpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+setvolatility&{\color{blue}$\surd$}\\
+\hline
+setnTimeSteps&{\color{blue}$\surd$}\\
+\hline
+setpathStartValue&{\color{blue}$\surd$}\\
+\hline
+setpathValue&{\color{blue}$\surd$}\\
+\hline
+setfluctuations&{\color{blue}$\surd$}\\
+\hline
+computeFluctuationsGaussian&{\color{blue}$\surd$}\\
+\hline
+computePathValue&{\color{blue}$\surd$}\\
+\hline
+getpathValue&{\color{blue}$\surd$}\\
+\hline
+getnTimeSteps&{\color{blue}$\surd$}\\
+\hline
+getfluctuations&{\color{blue}$\surd$}\\
+\hline
+getreturnDefinition&{\color{blue}$\surd$}\\
+\hline
+getexpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+getvolatility&{\color{blue}$\surd$}\\
+\hline
+getpathStartValue&{\color{blue}$\surd$}\\
+\hline
+writeFile&{\color{blue}$\surd$}\\
+\hline
+getRatePath&{\color{blue}$\surd$}\\
+\hline
+computeFluctuationsGaussianOverload&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}MonteCarloPath\end{sideways}&\begin{sideways}copyInstanceVariables\end{sideways}&\begin{sideways}setreturnDefinition\end{sideways}&\begin{sideways}setexpectedReturnRate\end{sideways}&\begin{sideways}setvolatility\end{sideways}&\begin{sideways}setnTimeSteps\end{sideways}&\begin{sideways}setpathStartValue\end{sideways}&\begin{sideways}setpathValue\end{sideways}&\begin{sideways}setfluctuations\end{sideways}&\begin{sideways}computeFluctuationsGaussian\end{sideways}&\begin{sideways}computePathValue\end{sideways}&\begin{sideways}getpathValue\end{sideways}&\begin{sideways}getnTimeSteps\end{sideways}&\begin{sideways}getfluctuations\end{sideways}&\begin{sideways}getreturnDefinition\end{sideways}&\begin{sideways}getexpectedReturnRate\end{sideways}&\begin{sideways}getvolatility\end{sideways}&\begin{sideways}getpathStartValue\end{sideways}&\begin{sideways}writeFile\end{sideways}&\begin{sideways}getRatePath\end{sideways}&\begin{sideways}computeFluctuationsGaussianOverload\end{sideways}\\
+\hline
+MonteCarloPath&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+copyInstanceVariables&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setreturnDefinition&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setexpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setvolatility&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setnTimeSteps&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setpathStartValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setpathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setfluctuations&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+computeFluctuationsGaussian&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+computePathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getpathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getnTimeSteps&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getfluctuations&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getreturnDefinition&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getexpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getvolatility&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getpathStartValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+writeFile&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getRatePath&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+computeFluctuationsGaussianOverload&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}ToInitAllTasks}}
+\label{ToInitAllTasks}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+ToInitAllTasks&{\color{blue}$\surd$}\\
+\hline
+getname&{\color{blue}$\surd$}\\
+\hline
+getstartDate&{\color{blue}$\surd$}\\
+\hline
+getendDate&{\color{blue}$\surd$}\\
+\hline
+getdTime&{\color{blue}$\surd$}\\
+\hline
+getreturnDefinition&{\color{blue}$\surd$}\\
+\hline
+getexpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+getvolatility&{\color{blue}$\surd$}\\
+\hline
+getnTimeSteps&{\color{blue}$\surd$}\\
+\hline
+getpathStartValue&{\color{blue}$\surd$}\\
+\hline
+getheader&{\color{blue}$\surd$}\\
+\hline
+setheader&{\color{blue}$\surd$}\\
+\hline
+setname&{\color{blue}$\surd$}\\
+\hline
+setstartDate&{\color{blue}$\surd$}\\
+\hline
+setendDate&{\color{blue}$\surd$}\\
+\hline
+setDTime&{\color{blue}$\surd$}\\
+\hline
+setReturnDefinition&{\color{blue}$\surd$}\\
+\hline
+setExpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+setVolatility&{\color{blue}$\surd$}\\
+\hline
+setnTimeSteps&{\color{blue}$\surd$}\\
+\hline
+setpathStartValue&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}ToInitAllTasks\end{sideways}&\begin{sideways}getname\end{sideways}&\begin{sideways}getstartDate\end{sideways}&\begin{sideways}getendDate\end{sideways}&\begin{sideways}getdTime\end{sideways}&\begin{sideways}getreturnDefinition\end{sideways}&\begin{sideways}getexpectedReturnRate\end{sideways}&\begin{sideways}getvolatility\end{sideways}&\begin{sideways}getnTimeSteps\end{sideways}&\begin{sideways}getpathStartValue\end{sideways}&\begin{sideways}getheader\end{sideways}&\begin{sideways}setheader\end{sideways}&\begin{sideways}setname\end{sideways}&\begin{sideways}setstartDate\end{sideways}&\begin{sideways}setendDate\end{sideways}&\begin{sideways}setDTime\end{sideways}&\begin{sideways}setReturnDefinition\end{sideways}&\begin{sideways}setExpectedReturnRate\end{sideways}&\begin{sideways}setVolatility\end{sideways}&\begin{sideways}setnTimeSteps\end{sideways}&\begin{sideways}setpathStartValue\end{sideways}\\
+\hline
+ToInitAllTasks&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getname&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getstartDate&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getendDate&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getdTime&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getreturnDefinition&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getexpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getvolatility&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getnTimeSteps&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getpathStartValue&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getheader&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setheader&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setname&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setstartDate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setendDate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setDTime&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setReturnDefinition&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setExpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setVolatility&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setnTimeSteps&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setpathStartValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}ToResult}}
+\label{ToResult}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+ToResult&{\color{blue}$\surd$}\\
+\hline
+getexpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+getvolatility&{\color{blue}$\surd$}\\
+\hline
+toString&{\color{blue}$\surd$}\\
+\hline
+getheader&{\color{blue}$\surd$}\\
+\hline
+setheader&{\color{blue}$\surd$}\\
+\hline
+setexpectedReturnRate&{\color{blue}$\surd$}\\
+\hline
+setvolatility&{\color{blue}$\surd$}\\
+\hline
+getVolatility2&{\color{blue}$\surd$}\\
+\hline
+setvolatility2&{\color{blue}$\surd$}\\
+\hline
+getfinalStockPrice&{\color{blue}$\surd$}\\
+\hline
+setfinalStockPrice&{\color{blue}$\surd$}\\
+\hline
+getpathValue&{\color{blue}$\surd$}\\
+\hline
+setpathValue&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}ToResult\end{sideways}&\begin{sideways}getexpectedReturnRate\end{sideways}&\begin{sideways}getvolatility\end{sideways}&\begin{sideways}toString\end{sideways}&\begin{sideways}getheader\end{sideways}&\begin{sideways}setheader\end{sideways}&\begin{sideways}setexpectedReturnRate\end{sideways}&\begin{sideways}setvolatility\end{sideways}&\begin{sideways}getVolatility2\end{sideways}&\begin{sideways}setvolatility2\end{sideways}&\begin{sideways}getfinalStockPrice\end{sideways}&\begin{sideways}setfinalStockPrice\end{sideways}&\begin{sideways}getpathValue\end{sideways}&\begin{sideways}setpathValue\end{sideways}\\
+\hline
+ToResult&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getexpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getvolatility&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+toString&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getheader&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setheader&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setexpectedReturnRate&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setvolatility&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getVolatility2&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setvolatility2&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getfinalStockPrice&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setfinalStockPrice&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getpathValue&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setpathValue&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}PriceStock}}
+\label{PriceStock}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+PriceStock&{\color{blue}$\surd$}\\
+\hline
+setInitAllTasks&{\color{blue}$\surd$}\\
+\hline
+setTask&{\color{blue}$\surd$}\\
+\hline
+run&{\color{blue}$\surd$}\\
+\hline
+getResult&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}PriceStock\end{sideways}&\begin{sideways}setInitAllTasks\end{sideways}&\begin{sideways}setTask\end{sideways}&\begin{sideways}run\end{sideways}&\begin{sideways}getResult\end{sideways}\\
+\hline
+PriceStock&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setInitAllTasks&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setTask&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+run&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getResult&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}ToTask}}
+\label{ToTask}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+ToTask&{\color{blue}$\surd$}\\
+\hline
+getheader&{\color{blue}$\surd$}\\
+\hline
+getrandomSeed&{\color{blue}$\surd$}\\
+\hline
+setheader&{\color{blue}$\surd$}\\
+\hline
+setrandomSeed&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}ToTask\end{sideways}&\begin{sideways}getheader\end{sideways}&\begin{sideways}getrandomSeed\end{sideways}&\begin{sideways}setheader\end{sideways}&\begin{sideways}setrandomSeed\end{sideways}\\
+\hline
+ToTask&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getheader&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+getrandomSeed&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setheader&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+setrandomSeed&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}DemoException}}
+\label{DemoException}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+DemoException&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}JGFInstrumentor}}
+\label{JGFInstrumentor}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+JGFInstrumentor&{\color{blue}$\surd$}\\
+\hline
+addTimer&{\color{blue}$\surd$}\\
+\hline
+startTimer&{\color{blue}$\surd$}\\
+\hline
+stopTimer&{\color{blue}$\surd$}\\
+\hline
+addOpsToTimer&{\color{blue}$\surd$}\\
+\hline
+readTimer&{\color{blue}$\surd$}\\
+\hline
+resetTimer&{\color{blue}$\surd$}\\
+\hline
+printTimer&{\color{blue}$\surd$}\\
+\hline
+printperfTimer&{\color{blue}$\surd$}\\
+\hline
+storeData&{\color{blue}$\surd$}\\
+\hline
+retrieveData&{\color{blue}$\surd$}\\
+\hline
+printHeader&{\color{blue}$\surd$}\\
+\hline
+main&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}JGFInstrumentor\end{sideways}&\begin{sideways}addTimer\end{sideways}&\begin{sideways}startTimer\end{sideways}&\begin{sideways}stopTimer\end{sideways}&\begin{sideways}addOpsToTimer\end{sideways}&\begin{sideways}readTimer\end{sideways}&\begin{sideways}resetTimer\end{sideways}&\begin{sideways}printTimer\end{sideways}&\begin{sideways}printperfTimer\end{sideways}&\begin{sideways}storeData\end{sideways}&\begin{sideways}retrieveData\end{sideways}&\begin{sideways}printHeader\end{sideways}&\begin{sideways}main\end{sideways}\\
+\hline
+JGFInstrumentor&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+addTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+startTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+stopTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+addOpsToTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+readTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+resetTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+printTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+printperfTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+storeData&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+retrieveData&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+printHeader&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+main&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}JGFTimer}}
+\label{JGFTimer}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+JGFTimer&{\color{blue}$\surd$}\\
+\hline
+start&{\color{blue}$\surd$}\\
+\hline
+stop&{\color{blue}$\surd$}\\
+\hline
+addops&{\color{blue}$\surd$}\\
+\hline
+reset&{\color{blue}$\surd$}\\
+\hline
+print&{\color{blue}$\surd$}\\
+\hline
+perf&{\color{blue}$\surd$}\\
+\hline
+printperf&{\color{blue}$\surd$}\\
+\hline
+longprint&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}JGFTimer\end{sideways}&\begin{sideways}start\end{sideways}&\begin{sideways}stop\end{sideways}&\begin{sideways}addops\end{sideways}&\begin{sideways}reset\end{sideways}&\begin{sideways}print\end{sideways}&\begin{sideways}perf\end{sideways}&\begin{sideways}printperf\end{sideways}&\begin{sideways}longprint\end{sideways}\\
+\hline
+JGFTimer&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+start&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+stop&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+addops&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+reset&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+print&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+perf&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+printperf&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+longprint&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}test}}
+\label{test}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+test&{\color{blue}$\surd$}\\
+\hline
+createObject&{\color{blue}$\surd$}\\
+\hline
+readA&{\color{blue}$\surd$}\\
+\hline
+main&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}test\end{sideways}&\begin{sideways}createObject\end{sideways}&\begin{sideways}readA\end{sideways}&\begin{sideways}main\end{sideways}\\
+\hline
+test&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+createObject&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+readA&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+main&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}Utilities}}
+\label{Utilities}
+\begin{longtable}{|l|l|}
+\caption{Method's Satisfiability(Code Reachabiity Analysis}\\
+\hline
+Method & Satisfiability\\
+\hline
+Utilities&{\color{blue}$\surd$}\\
+\hline
+which&{\color{blue}$\surd$}\\
+\hline
+splitString&{\color{blue}$\surd$}\\
+\hline
+joinString&{\color{blue}$\surd$}\\
+\hline
+joinStringOverloaded&{\color{blue}$\surd$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|}
+\caption{State Transition Matrix}\\
+\hline
+&\begin{sideways}alive\end{sideways}\\
+\hline
+alive&{\color{blue}$\uparrow$}\\
+\hline
+\end{longtable}
+\begin{longtable}{|l|l|l|l|l|l|}
+\caption{Methods Concurrency Matrix}\\
+\hline
+&\begin{sideways}Utilities\end{sideways}&\begin{sideways}which\end{sideways}&\begin{sideways}splitString\end{sideways}&\begin{sideways}joinString\end{sideways}&\begin{sideways}joinStringOverloaded\end{sideways}\\
+\hline
+Utilities&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}\\
+\hline
+which&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+splitString&{\color{BrickRed}$\nparallel$}&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+joinString&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+joinStringOverloaded&{\color{BrickRed}$\nparallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}&{\color{blue}$\parallel$}\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}Abbreviation}}
+\label{Abbreviation}
+\begin{longtable}{|l|l|}
+\caption{Used Abbreviation}\\
+\hline
+Symbol & Meaning\\
+\hline
+{\color{blue}$\surd$}&requires clause of the method is satisfiable\\
+\hline
+{\color{red}$\times$}&requires clause of the method is unsatisfiable\\
+\hline
+{\color{blue}$\uparrow$}&The row-state can be transitioned to the column-state\\
+\hline
+{\color{BlueGreen}$\times$}&The row-state cannot be transitioned to the column-state\\
+\hline
+{\color{blue}$\parallel$}&The row-method can be possibly executed parallel with the column-method\\
+\hline
+{\color{BrickRed}$\nparallel$}&The row-method cannot be executed parallel with the column-method\\
+\hline
+\end{longtable}
+\newpage
+
+\section{{\color{Fuchsia}Annotated version of the input program generated by Sip4J}}
+\label{annotated-version}
+\begin{lstlisting}
+package outputs;
+import edu.cmu.cs.plural.annot.*;
+
+@ClassStates({@State(name = "alive")})
+class JGFMonteCarloBenchSizeA {
+@Perm(ensures="unique(this) in alive")
+JGFMonteCarloBenchSizeA() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  void main(String argv[]) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class JGFMonteCarloBench {
+@Perm(ensures="unique(this) in alive")
+JGFMonteCarloBench() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void JGFrun(int size) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void JGFsetsize(int size) {
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void JGFinitialise() {
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void JGFapplication() {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void JGFvalidate() {
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void JGFtidyup() {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class CallAppDemo {
+@Perm(ensures="unique(this) in alive")
+CallAppDemo() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void initialise() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void presults() {
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void runiters() {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class AppDemo {
+@Perm(ensures="unique(this) in alive")
+AppDemo() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void initSerial() {
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ private void initTasks(int nRunsMC) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void processSerial() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ private void processResults() {
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void runSerial() {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getdataDirname() {
+ return null;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setdataDirname(String dataDirname) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getdataFilename() {
+ return null;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setdataFilename(String dataFilename) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnTimeStepsMC() {
+ return 0;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setnTimeStepsMC(int nTimeStepsMC) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnRunsMC() {
+ return 0;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setnRunsMC(int nRunsMC) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public Vector gettasks() {
+ return null;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void settasks(Vector tasks) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public Vector getresults() {
+ return null;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setresults(Vector results) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class Universal {
+@Perm(ensures="unique(this) in alive")
+Universal() {   }
+
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setprompt(String prompt) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setDEBUG(boolean DEBUG) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void dbgPrintln(String s) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void errPrintln(String s) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public boolean getDEBUG() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public boolean getUNIVERSALDEBUG() {
+ return 0;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setUNIVERSALDEBUG(boolean UNIVERSAL_DEBUG) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getprompt() {
+ return null;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void dbgPrint(String s) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void errPrint(String s) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class PathId {
+@Perm(ensures="unique(this) in alive")
+PathId() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void dbgDumpFields() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void copyInstanceVariables(PathId obj) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getdTime() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getname() {
+ return null;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getstartDate() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getendDate() {
+ return 0;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setname(String name) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setstartDate(int startDate) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setendDate(int endDate) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setdTime(double dTime) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class RatePath {
+@Perm(ensures="unique(this) in alive")
+RatePath() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public ReturnPath getReturnCompounded() {
+ return null;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public ReturnPath getReturnNonCompounded() {
+ return null;
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ private void readRatesFile(String dirName, String filename) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getEndPathValue() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getPathValue(int index) {
+ return 0;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void incpathValue(double[] operandPath) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getpathValue() {
+ return null;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setpathValue(double[] pathValue) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int[] getpathDate() {
+ return null;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setpathDate(int[] pathDate) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class ReturnPath {
+@Perm(ensures="unique(this) in alive")
+ReturnPath() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void estimatePath() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeMean() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeVariance() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeExpectedReturnRate() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeVolatility() {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void dbgDumpFields() {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getexpectedReturnRate() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getreturnDefinition() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility2() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getpathValue() {
+ return null;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setpathValue(double[] pathValue) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnPathValue() {
+ return 0;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setnPathValue(int nPathValue) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setreturnDefinition(int returnDefinition) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setexpectedReturnRate(double expectedReturnRate) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setvolatility(double volatility) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setvolatility2(double volatility2) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getmean() {
+ return 0;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setmean(double mean) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvariance() {
+ return 0;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setvariance(double variance) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class MonteCarloPath {
+@Perm(ensures="unique(this) in alive")
+MonteCarloPath() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ private void copyInstanceVariables(ReturnPath obj) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setreturnDefinition(int returnDefinition) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setexpectedReturnRate(double expectedReturnRate) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setvolatility(double volatility) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setnTimeSteps(int nTimeSteps) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setpathStartValue(double pathStartValue) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setpathValue(double[] pathValue) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setfluctuations(double[] fluctuations) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeFluctuationsGaussian(long randomSeed) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computePathValue(double startValue) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getpathValue() {
+ return null;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnTimeSteps() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getfluctuations() {
+ return null;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getreturnDefinition() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getexpectedReturnRate() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getpathStartValue() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void writeFile(String dirName, String filename) {
+ 
+} 
+
+ public RatePath getRatePath() {
+ return null;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void computeFluctuationsGaussianOverload() {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class ToInitAllTasks {
+@Perm(ensures="unique(this) in alive")
+ToInitAllTasks() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getname() {
+ return null;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getstartDate() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getendDate() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getdTime() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getreturnDefinition() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getexpectedReturnRate() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public int getnTimeSteps() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getpathStartValue() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getheader() {
+ return null;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setheader(String header) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setname(String name) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setstartDate(int startDate) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setendDate(int endDate) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setDTime(double dTime) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setReturnDefinition(int returnDefinition) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setExpectedReturnRate(double expectedReturnRate) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setVolatility(double volatility) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setnTimeSteps(int nTimeSteps) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setpathStartValue(double pathStartValue) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class ToResult {
+@Perm(ensures="unique(this) in alive")
+ToResult() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getexpectedReturnRate() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getvolatility() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String toString() {
+ return null;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getheader() {
+ return null;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setheader(String header) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setexpectedReturnRate(double expectedReturnRate) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setvolatility(double volatility) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getVolatility2() {
+ return 0;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setvolatility2(double volatility2) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double getfinalStockPrice() {
+ return 0;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setfinalStockPrice(double finalStockPrice) {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double[] getpathValue() {
+ return null;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setpathValue(double[] pathValue) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class PriceStock {
+@Perm(ensures="unique(this) in alive")
+PriceStock() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setInitAllTasks(Object obj) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void setTask(Object obj) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void run() {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public Object getResult() {
+ return null;
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class ToTask {
+@Perm(ensures="unique(this) in alive")
+ToTask() {   }
+
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public String getheader() {
+ return null;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public long getrandomSeed() {
+ return 0;
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setheader(String header) {
+ 
+} 
+@Perm(requires="full(this) in alive",
+ensures="full(this) in alive")
+ public void setrandomSeed(long randomSeed) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class DemoException {
+@Perm(ensures="unique(this) in alive")
+DemoException() {   }
+
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class JGFInstrumentor {
+@Perm(ensures="unique(this) in alive")
+JGFInstrumentor() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void addTimer(String name) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void startTimer(String name) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void stopTimer(String name) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void addOpsToTimer(String name, double count) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  double readTimer(String name) {
+ return 0;
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void resetTimer(String name) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void printTimer(String name) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void printperfTimer(String name) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void storeData(String name, Object obj) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+  void retrieveData(String name, Object obj) {
+ 
+} 
+
+  void printHeader(int section, int size) {
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  void main(String argv[]) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class JGFTimer {
+@Perm(ensures="unique(this) in alive")
+JGFTimer() {   }
+
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void start() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void stop() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void addops(double count) {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void reset() {
+ 
+} 
+@Perm(requires="share(this) in alive",
+ensures="share(this) in alive")
+ public void print() {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public double perf() {
+ return 0;
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void printperf() {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void longprint() {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class test {
+@Perm(ensures="unique(this) in alive")
+test() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+ public void createObject() {
+ 
+} 
+@Perm(requires="pure(this) in alive",
+ensures="pure(this) in alive")
+ public void readA() {
+ 
+} 
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  void main(String[] arg) {
+ 
+} 
+
+}ENDOFCLASS
+
+@ClassStates({@State(name = "alive")})
+
+class Utilities {
+@Perm(ensures="unique(this) in alive")
+Utilities() {   }
+
+@Perm(requires="unique(this) in alive",
+ensures="unique(this) in alive")
+  String which(String executable, String pathEnv) {
+ return null;
+ 
+} 
+@Perm(requires="immutable(this) in alive",
+ensures="immutable(this) in alive")
+  String[] splitString(String splitChar, String arg) {
+ return null;
+ 
+} 
+
+  String joinString(String joinChar, String stringArray[]) {
+ return null;
+ 
+} 
+
+  String joinStringOverloaded(String joinChar, String stringArray[], int index) {
+ return null;
+ 
+} 
+
+}ENDOFCLASS
+
+
+\end{lstlisting}
+\end{document}
