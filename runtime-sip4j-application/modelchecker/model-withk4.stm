@@ -1,0 +1,849 @@
+Declarations
+/*ArrayCollection-->*/
+    state_ArrayCollection_0        [0, 2]
+    tkrB_ArrayCollection_0         [0, 5]
+    tkwB_ArrayCollection_0         [0, 5]
+
+    pc_ArrayCollection_0_0         [0, 1]
+    method_ArrayCollection_0_0     [0, 7]
+    ap_ArrayCollection_0_0         [0, 5]
+    tkr_ArrayCollection_0_0        [0, 5]
+    tkw_ArrayCollection_0_0        [0, 5]
+
+    pc_ArrayCollection_0_1         [0, 1]
+    method_ArrayCollection_0_1     [0, 7]
+    ap_ArrayCollection_0_1         [0, 5]
+    tkr_ArrayCollection_0_1        [0, 5]
+    tkw_ArrayCollection_0_1        [0, 5]
+
+    pc_ArrayCollection_0_2         [0, 1]
+    method_ArrayCollection_0_2     [0, 7]
+    ap_ArrayCollection_0_2         [0, 5]
+    tkr_ArrayCollection_0_2        [0, 5]
+    tkw_ArrayCollection_0_2        [0, 5]
+
+    pc_ArrayCollection_0_3         [0, 1]
+    method_ArrayCollection_0_3     [0, 7]
+    ap_ArrayCollection_0_3         [0, 5]
+    tkr_ArrayCollection_0_3        [0, 5]
+    tkw_ArrayCollection_0_3        [0, 5]
+
+    pc_ArrayCollection_0_4         [0, 1]
+    method_ArrayCollection_0_4     [0, 7]
+    ap_ArrayCollection_0_4         [0, 5]
+    tkr_ArrayCollection_0_4        [0, 5]
+    tkw_ArrayCollection_0_4        [0, 5]
+
+/*<--ArrayCollection*/
+
+/*ObjectClass-->*/
+    state_ObjectClass_0        [0, 2]
+    tkrB_ObjectClass_0         [0, 5]
+    tkwB_ObjectClass_0         [0, 5]
+
+    pc_ObjectClass_0_0         [0, 1]
+    method_ObjectClass_0_0     [0, 2]
+    ap_ObjectClass_0_0         [0, 5]
+    tkr_ObjectClass_0_0        [0, 5]
+    tkw_ObjectClass_0_0        [0, 5]
+
+    pc_ObjectClass_0_1         [0, 1]
+    method_ObjectClass_0_1     [0, 2]
+    ap_ObjectClass_0_1         [0, 5]
+    tkr_ObjectClass_0_1        [0, 5]
+    tkw_ObjectClass_0_1        [0, 5]
+
+    pc_ObjectClass_0_2         [0, 1]
+    method_ObjectClass_0_2     [0, 2]
+    ap_ObjectClass_0_2         [0, 5]
+    tkr_ObjectClass_0_2        [0, 5]
+    tkw_ObjectClass_0_2        [0, 5]
+
+    pc_ObjectClass_0_3         [0, 1]
+    method_ObjectClass_0_3     [0, 2]
+    ap_ObjectClass_0_3         [0, 5]
+    tkr_ObjectClass_0_3        [0, 5]
+    tkw_ObjectClass_0_3        [0, 5]
+
+    pc_ObjectClass_0_4         [0, 1]
+    method_ObjectClass_0_4     [0, 2]
+    ap_ObjectClass_0_4         [0, 5]
+    tkr_ObjectClass_0_4        [0, 5]
+    tkw_ObjectClass_0_4        [0, 5]
+
+/*<--ObjectClass*/
+
+/*Client-->*/
+    state_Client_0        [0, 2]
+    tkrB_Client_0         [0, 5]
+    tkwB_Client_0         [0, 5]
+
+    pc_Client_0_0         [0, 1]
+    method_Client_0_0     [0, 2]
+    ap_Client_0_0         [0, 5]
+    tkr_Client_0_0        [0, 5]
+    tkw_Client_0_0        [0, 5]
+
+    pc_Client_0_1         [0, 1]
+    method_Client_0_1     [0, 2]
+    ap_Client_0_1         [0, 5]
+    tkr_Client_0_1        [0, 5]
+    tkw_Client_0_1        [0, 5]
+
+    pc_Client_0_2         [0, 1]
+    method_Client_0_2     [0, 2]
+    ap_Client_0_2         [0, 5]
+    tkr_Client_0_2        [0, 5]
+    tkw_Client_0_2        [0, 5]
+
+    pc_Client_0_3         [0, 1]
+    method_Client_0_3     [0, 2]
+    ap_Client_0_3         [0, 5]
+    tkr_Client_0_3        [0, 5]
+    tkw_Client_0_3        [0, 5]
+
+    pc_Client_0_4         [0, 1]
+    method_Client_0_4     [0, 2]
+    ap_Client_0_4         [0, 5]
+    tkr_Client_0_4        [0, 5]
+    tkw_Client_0_4        [0, 5]
+
+/*<--Client*/
+
+Initial states
+/*ArrayCollection-->*/
+    state_ArrayCollection_0        =0
+    tkrB_ArrayCollection_0         =5
+    tkwB_ArrayCollection_0         =5
+
+    pc_ArrayCollection_0_0         =1
+    method_ArrayCollection_0_0     =0
+    ap_ArrayCollection_0_0         =0
+    tkr_ArrayCollection_0_0        =0
+    tkw_ArrayCollection_0_0        =0
+
+    pc_ArrayCollection_0_1         =1
+    method_ArrayCollection_0_1     =0
+    ap_ArrayCollection_0_1         =0
+    tkr_ArrayCollection_0_1        =0
+    tkw_ArrayCollection_0_1        =0
+
+    pc_ArrayCollection_0_2         =1
+    method_ArrayCollection_0_2     =0
+    ap_ArrayCollection_0_2         =0
+    tkr_ArrayCollection_0_2        =0
+    tkw_ArrayCollection_0_2        =0
+
+    pc_ArrayCollection_0_3         =1
+    method_ArrayCollection_0_3     =0
+    ap_ArrayCollection_0_3         =0
+    tkr_ArrayCollection_0_3        =0
+    tkw_ArrayCollection_0_3        =0
+
+    pc_ArrayCollection_0_4         =1
+    method_ArrayCollection_0_4     =0
+    ap_ArrayCollection_0_4         =0
+    tkr_ArrayCollection_0_4        =0
+    tkw_ArrayCollection_0_4        =0
+
+/*<--ArrayCollection*/
+
+/*ObjectClass-->*/
+    state_ObjectClass_0        =0
+    tkrB_ObjectClass_0         =5
+    tkwB_ObjectClass_0         =5
+
+    pc_ObjectClass_0_0         =1
+    method_ObjectClass_0_0     =0
+    ap_ObjectClass_0_0         =0
+    tkr_ObjectClass_0_0        =0
+    tkw_ObjectClass_0_0        =0
+
+    pc_ObjectClass_0_1         =1
+    method_ObjectClass_0_1     =0
+    ap_ObjectClass_0_1         =0
+    tkr_ObjectClass_0_1        =0
+    tkw_ObjectClass_0_1        =0
+
+    pc_ObjectClass_0_2         =1
+    method_ObjectClass_0_2     =0
+    ap_ObjectClass_0_2         =0
+    tkr_ObjectClass_0_2        =0
+    tkw_ObjectClass_0_2        =0
+
+    pc_ObjectClass_0_3         =1
+    method_ObjectClass_0_3     =0
+    ap_ObjectClass_0_3         =0
+    tkr_ObjectClass_0_3        =0
+    tkw_ObjectClass_0_3        =0
+
+    pc_ObjectClass_0_4         =1
+    method_ObjectClass_0_4     =0
+    ap_ObjectClass_0_4         =0
+    tkr_ObjectClass_0_4        =0
+    tkw_ObjectClass_0_4        =0
+
+/*<--ObjectClass*/
+
+/*Client-->*/
+    state_Client_0        =0
+    tkrB_Client_0         =5
+    tkwB_Client_0         =5
+
+    pc_Client_0_0         =1
+    method_Client_0_0     =0
+    ap_Client_0_0         =0
+    tkr_Client_0_0        =0
+    tkw_Client_0_0        =0
+
+    pc_Client_0_1         =1
+    method_Client_0_1     =0
+    ap_Client_0_1         =0
+    tkr_Client_0_1        =0
+    tkw_Client_0_1        =0
+
+    pc_Client_0_2         =1
+    method_Client_0_2     =0
+    ap_Client_0_2         =0
+    tkr_Client_0_2        =0
+    tkw_Client_0_2        =0
+
+    pc_Client_0_3         =1
+    method_Client_0_3     =0
+    ap_Client_0_3         =0
+    tkr_Client_0_3        =0
+    tkw_Client_0_3        =0
+
+    pc_Client_0_4         =1
+    method_Client_0_4     =0
+    ap_Client_0_4         =0
+    tkr_Client_0_4        =0
+    tkw_Client_0_4        =0
+
+/*<--Client*/
+
+Transitions
+/*K=0-->*/
+/*ArrayCollection-->*/
+/*ArrayCollection*/
+    start_ArrayCollection_ArrayCollection_0_0:    ap_ArrayCollection_0_0 = 0    /\ ap_ArrayCollection_0_1 = 0    /\ ap_ArrayCollection_0_2 = 0    /\ ap_ArrayCollection_0_3 = 0    /\ ap_ArrayCollection_0_4 = 0    ->    pc_ArrayCollection_0_0' = 0    /\ method_ArrayCollection_0_0' = 1/*ArrayCollection*/    /\ ap_ArrayCollection_0_0' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_0' = 5    /\ tkw_ArrayCollection_0_0' = 5
+    end_ArrayCollection_ArrayCollection_0_0:    pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_0 = 1/*ArrayCollection*/    ->    pc_ArrayCollection_0_0' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_0' = 0    /\ tkw_ArrayCollection_0_0' = 0
+
+    start_ArrayCollection_printColl_0_0:    pc_ArrayCollection_0_0 = 1    /\ ap_ArrayCollection_0_0 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_0' = 0    /\ method_ArrayCollection_0_0' = 2/*printColl*/    /\ ap_ArrayCollection_0_0' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_0' = 1    /\ tkw_ArrayCollection_0_0' = 1
+    end_ArrayCollection_printColl_0_0:    pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_0 = 2/*printColl*/    ->    pc_ArrayCollection_0_0' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_0' = 0    /\ tkw_ArrayCollection_0_0' = 0
+
+    start_ArrayCollection_computeStat_0_0:    pc_ArrayCollection_0_0 = 1    /\ ap_ArrayCollection_0_0 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_0' = 0    /\ method_ArrayCollection_0_0' = 3/*computeStat*/    /\ ap_ArrayCollection_0_0' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_0' = 1    /\ tkw_ArrayCollection_0_0' = 1
+    end_ArrayCollection_computeStat_0_0:    pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_0 = 3/*computeStat*/    ->    pc_ArrayCollection_0_0' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_0' = 0    /\ tkw_ArrayCollection_0_0' = 0
+
+    start_ArrayCollection_isSorted_0_0:    pc_ArrayCollection_0_0 = 1    /\ ap_ArrayCollection_0_0 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_0' = 0    /\ method_ArrayCollection_0_0' = 4/*isSorted*/    /\ ap_ArrayCollection_0_0' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_0' = 1    /\ tkw_ArrayCollection_0_0' = 1
+    end_ArrayCollection_isSorted_0_0:    pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_0 = 4/*isSorted*/    ->    pc_ArrayCollection_0_0' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_0' = 0    /\ tkw_ArrayCollection_0_0' = 0
+
+    start_ArrayCollection_findMax_0_0:    pc_ArrayCollection_0_0 = 1    /\ ap_ArrayCollection_0_0 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_0' = 0    /\ method_ArrayCollection_0_0' = 5/*findMax*/    /\ ap_ArrayCollection_0_0' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_0' = 1    /\ tkw_ArrayCollection_0_0' = 1
+    end_ArrayCollection_findMax_0_0:    pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_0 = 5/*findMax*/    ->    pc_ArrayCollection_0_0' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_0' = 0    /\ tkw_ArrayCollection_0_0' = 0
+
+    start_ArrayCollection_incrColl_0_0:    pc_ArrayCollection_0_0 = 1    /\ ap_ArrayCollection_0_0 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_0' = 0    /\ method_ArrayCollection_0_0' = 6/*incrColl*/    /\ ap_ArrayCollection_0_0' = 3/*share*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_0' = 1    /\ tkw_ArrayCollection_0_0' = 5
+    end_ArrayCollection_incrColl_0_0:    pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_0 = 6/*incrColl*/    ->    pc_ArrayCollection_0_0' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_0' = 0    /\ tkw_ArrayCollection_0_0' = 0
+
+    start_ArrayCollection_tidyupColls_0_0:    pc_ArrayCollection_0_0 = 1    /\ ap_ArrayCollection_0_0 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 = 5    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_0' = 0    /\ method_ArrayCollection_0_0' = 7/*tidyupColls*/    /\ ap_ArrayCollection_0_0' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_0' = 5    /\ tkw_ArrayCollection_0_0' = 5
+    end_ArrayCollection_tidyupColls_0_0:    pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_0 = 7/*tidyupColls*/    ->    pc_ArrayCollection_0_0' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_0' = 0    /\ tkw_ArrayCollection_0_0' = 0
+
+/*<--ArrayCollection*/
+
+/*ObjectClass-->*/
+/*ObjectClass*/
+    start_ObjectClass_ObjectClass_0_0:    ap_ObjectClass_0_0 = 0    /\ ap_ObjectClass_0_1 = 0    /\ ap_ObjectClass_0_2 = 0    /\ ap_ObjectClass_0_3 = 0    /\ ap_ObjectClass_0_4 = 0    ->    pc_ObjectClass_0_0' = 0    /\ method_ObjectClass_0_0' = 1/*ObjectClass*/    /\ ap_ObjectClass_0_0' = 1/*unique*/    /\ tkrB_ObjectClass_0' = 0    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_0' = 5    /\ tkw_ObjectClass_0_0' = 5
+    end_ObjectClass_ObjectClass_0_0:    pc_ObjectClass_0_0 = 0    /\ method_ObjectClass_0_0 = 1/*ObjectClass*/    ->    pc_ObjectClass_0_0' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = 5    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_0' = 0    /\ tkw_ObjectClass_0_0' = 0
+
+    start_ObjectClass_manipulateObjects_0_0:    pc_ObjectClass_0_0 = 1    /\ ap_ObjectClass_0_0 != 0    /\ state_ObjectClass_0 > 0 /*alive*/    /\ tkrB_ObjectClass_0 > 0    /\ tkwB_ObjectClass_0 = 5    ->    pc_ObjectClass_0_0' = 0    /\ method_ObjectClass_0_0' = 2/*manipulateObjects*/    /\ ap_ObjectClass_0_0' = 3/*share*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 - 1    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_0' = 1    /\ tkw_ObjectClass_0_0' = 5
+    end_ObjectClass_manipulateObjects_0_0:    pc_ObjectClass_0_0 = 0    /\ method_ObjectClass_0_0 = 2/*manipulateObjects*/    ->    pc_ObjectClass_0_0' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 + 1    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_0' = 0    /\ tkw_ObjectClass_0_0' = 0
+
+/*<--ObjectClass*/
+
+/*Client-->*/
+/*Client*/
+    start_Client_Client_0_0:    ap_Client_0_0 = 0    /\ ap_Client_0_1 = 0    /\ ap_Client_0_2 = 0    /\ ap_Client_0_3 = 0    /\ ap_Client_0_4 = 0    ->    pc_Client_0_0' = 0    /\ method_Client_0_0' = 1/*Client*/    /\ ap_Client_0_0' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_0' = 5    /\ tkw_Client_0_0' = 5
+    end_Client_Client_0_0:    pc_Client_0_0 = 0    /\ method_Client_0_0 = 1/*Client*/    ->    pc_Client_0_0' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_0' = 0    /\ tkw_Client_0_0' = 0
+
+    start_Client_main_0_0:    pc_Client_0_0 = 1    /\ ap_Client_0_0 != 0    /\ state_Client_0 > 0 /*alive*/    /\ tkrB_Client_0 = 5    /\ tkwB_Client_0 = 5    ->    pc_Client_0_0' = 0    /\ method_Client_0_0' = 2/*main*/    /\ ap_Client_0_0' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_0' = 5    /\ tkw_Client_0_0' = 5
+    end_Client_main_0_0:    pc_Client_0_0 = 0    /\ method_Client_0_0 = 2/*main*/    ->    pc_Client_0_0' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_0' = 0    /\ tkw_Client_0_0' = 0
+
+/*<--Client*/
+
+/*<--K=0*/
+
+/*K=1-->*/
+/*ArrayCollection-->*/
+/*ArrayCollection*/
+    start_ArrayCollection_ArrayCollection_0_1:    ap_ArrayCollection_0_1 = 0    /\ ap_ArrayCollection_0_0 = 0    /\ ap_ArrayCollection_0_2 = 0    /\ ap_ArrayCollection_0_3 = 0    /\ ap_ArrayCollection_0_4 = 0    ->    pc_ArrayCollection_0_1' = 0    /\ method_ArrayCollection_0_1' = 1/*ArrayCollection*/    /\ ap_ArrayCollection_0_1' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_1' = 5    /\ tkw_ArrayCollection_0_1' = 5
+    end_ArrayCollection_ArrayCollection_0_1:    pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_1 = 1/*ArrayCollection*/    ->    pc_ArrayCollection_0_1' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_1' = 0    /\ tkw_ArrayCollection_0_1' = 0
+
+    start_ArrayCollection_printColl_0_1:    pc_ArrayCollection_0_1 = 1    /\ ap_ArrayCollection_0_1 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_1' = 0    /\ method_ArrayCollection_0_1' = 2/*printColl*/    /\ ap_ArrayCollection_0_1' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_1' = 1    /\ tkw_ArrayCollection_0_1' = 1
+    end_ArrayCollection_printColl_0_1:    pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_1 = 2/*printColl*/    ->    pc_ArrayCollection_0_1' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_1' = 0    /\ tkw_ArrayCollection_0_1' = 0
+
+    start_ArrayCollection_computeStat_0_1:    pc_ArrayCollection_0_1 = 1    /\ ap_ArrayCollection_0_1 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_1' = 0    /\ method_ArrayCollection_0_1' = 3/*computeStat*/    /\ ap_ArrayCollection_0_1' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_1' = 1    /\ tkw_ArrayCollection_0_1' = 1
+    end_ArrayCollection_computeStat_0_1:    pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_1 = 3/*computeStat*/    ->    pc_ArrayCollection_0_1' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_1' = 0    /\ tkw_ArrayCollection_0_1' = 0
+
+    start_ArrayCollection_isSorted_0_1:    pc_ArrayCollection_0_1 = 1    /\ ap_ArrayCollection_0_1 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_1' = 0    /\ method_ArrayCollection_0_1' = 4/*isSorted*/    /\ ap_ArrayCollection_0_1' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_1' = 1    /\ tkw_ArrayCollection_0_1' = 1
+    end_ArrayCollection_isSorted_0_1:    pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_1 = 4/*isSorted*/    ->    pc_ArrayCollection_0_1' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_1' = 0    /\ tkw_ArrayCollection_0_1' = 0
+
+    start_ArrayCollection_findMax_0_1:    pc_ArrayCollection_0_1 = 1    /\ ap_ArrayCollection_0_1 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_1' = 0    /\ method_ArrayCollection_0_1' = 5/*findMax*/    /\ ap_ArrayCollection_0_1' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_1' = 1    /\ tkw_ArrayCollection_0_1' = 1
+    end_ArrayCollection_findMax_0_1:    pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_1 = 5/*findMax*/    ->    pc_ArrayCollection_0_1' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_1' = 0    /\ tkw_ArrayCollection_0_1' = 0
+
+    start_ArrayCollection_incrColl_0_1:    pc_ArrayCollection_0_1 = 1    /\ ap_ArrayCollection_0_1 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_1' = 0    /\ method_ArrayCollection_0_1' = 6/*incrColl*/    /\ ap_ArrayCollection_0_1' = 3/*share*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_1' = 1    /\ tkw_ArrayCollection_0_1' = 5
+    end_ArrayCollection_incrColl_0_1:    pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_1 = 6/*incrColl*/    ->    pc_ArrayCollection_0_1' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_1' = 0    /\ tkw_ArrayCollection_0_1' = 0
+
+    start_ArrayCollection_tidyupColls_0_1:    pc_ArrayCollection_0_1 = 1    /\ ap_ArrayCollection_0_1 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 = 5    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_1' = 0    /\ method_ArrayCollection_0_1' = 7/*tidyupColls*/    /\ ap_ArrayCollection_0_1' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_1' = 5    /\ tkw_ArrayCollection_0_1' = 5
+    end_ArrayCollection_tidyupColls_0_1:    pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_1 = 7/*tidyupColls*/    ->    pc_ArrayCollection_0_1' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_1' = 0    /\ tkw_ArrayCollection_0_1' = 0
+
+/*<--ArrayCollection*/
+
+/*ObjectClass-->*/
+/*ObjectClass*/
+    start_ObjectClass_ObjectClass_0_1:    ap_ObjectClass_0_1 = 0    /\ ap_ObjectClass_0_0 = 0    /\ ap_ObjectClass_0_2 = 0    /\ ap_ObjectClass_0_3 = 0    /\ ap_ObjectClass_0_4 = 0    ->    pc_ObjectClass_0_1' = 0    /\ method_ObjectClass_0_1' = 1/*ObjectClass*/    /\ ap_ObjectClass_0_1' = 1/*unique*/    /\ tkrB_ObjectClass_0' = 0    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_1' = 5    /\ tkw_ObjectClass_0_1' = 5
+    end_ObjectClass_ObjectClass_0_1:    pc_ObjectClass_0_1 = 0    /\ method_ObjectClass_0_1 = 1/*ObjectClass*/    ->    pc_ObjectClass_0_1' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = 5    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_1' = 0    /\ tkw_ObjectClass_0_1' = 0
+
+    start_ObjectClass_manipulateObjects_0_1:    pc_ObjectClass_0_1 = 1    /\ ap_ObjectClass_0_1 != 0    /\ state_ObjectClass_0 > 0 /*alive*/    /\ tkrB_ObjectClass_0 > 0    /\ tkwB_ObjectClass_0 = 5    ->    pc_ObjectClass_0_1' = 0    /\ method_ObjectClass_0_1' = 2/*manipulateObjects*/    /\ ap_ObjectClass_0_1' = 3/*share*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 - 1    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_1' = 1    /\ tkw_ObjectClass_0_1' = 5
+    end_ObjectClass_manipulateObjects_0_1:    pc_ObjectClass_0_1 = 0    /\ method_ObjectClass_0_1 = 2/*manipulateObjects*/    ->    pc_ObjectClass_0_1' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 + 1    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_1' = 0    /\ tkw_ObjectClass_0_1' = 0
+
+/*<--ObjectClass*/
+
+/*Client-->*/
+/*Client*/
+    start_Client_Client_0_1:    ap_Client_0_1 = 0    /\ ap_Client_0_0 = 0    /\ ap_Client_0_2 = 0    /\ ap_Client_0_3 = 0    /\ ap_Client_0_4 = 0    ->    pc_Client_0_1' = 0    /\ method_Client_0_1' = 1/*Client*/    /\ ap_Client_0_1' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_1' = 5    /\ tkw_Client_0_1' = 5
+    end_Client_Client_0_1:    pc_Client_0_1 = 0    /\ method_Client_0_1 = 1/*Client*/    ->    pc_Client_0_1' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_1' = 0    /\ tkw_Client_0_1' = 0
+
+    start_Client_main_0_1:    pc_Client_0_1 = 1    /\ ap_Client_0_1 != 0    /\ state_Client_0 > 0 /*alive*/    /\ tkrB_Client_0 = 5    /\ tkwB_Client_0 = 5    ->    pc_Client_0_1' = 0    /\ method_Client_0_1' = 2/*main*/    /\ ap_Client_0_1' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_1' = 5    /\ tkw_Client_0_1' = 5
+    end_Client_main_0_1:    pc_Client_0_1 = 0    /\ method_Client_0_1 = 2/*main*/    ->    pc_Client_0_1' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_1' = 0    /\ tkw_Client_0_1' = 0
+
+/*<--Client*/
+
+/*<--K=1*/
+
+/*K=2-->*/
+/*ArrayCollection-->*/
+/*ArrayCollection*/
+    start_ArrayCollection_ArrayCollection_0_2:    ap_ArrayCollection_0_2 = 0    /\ ap_ArrayCollection_0_0 = 0    /\ ap_ArrayCollection_0_1 = 0    /\ ap_ArrayCollection_0_3 = 0    /\ ap_ArrayCollection_0_4 = 0    ->    pc_ArrayCollection_0_2' = 0    /\ method_ArrayCollection_0_2' = 1/*ArrayCollection*/    /\ ap_ArrayCollection_0_2' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_2' = 5    /\ tkw_ArrayCollection_0_2' = 5
+    end_ArrayCollection_ArrayCollection_0_2:    pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_2 = 1/*ArrayCollection*/    ->    pc_ArrayCollection_0_2' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_2' = 0    /\ tkw_ArrayCollection_0_2' = 0
+
+    start_ArrayCollection_printColl_0_2:    pc_ArrayCollection_0_2 = 1    /\ ap_ArrayCollection_0_2 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_2' = 0    /\ method_ArrayCollection_0_2' = 2/*printColl*/    /\ ap_ArrayCollection_0_2' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_2' = 1    /\ tkw_ArrayCollection_0_2' = 1
+    end_ArrayCollection_printColl_0_2:    pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_2 = 2/*printColl*/    ->    pc_ArrayCollection_0_2' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_2' = 0    /\ tkw_ArrayCollection_0_2' = 0
+
+    start_ArrayCollection_computeStat_0_2:    pc_ArrayCollection_0_2 = 1    /\ ap_ArrayCollection_0_2 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_2' = 0    /\ method_ArrayCollection_0_2' = 3/*computeStat*/    /\ ap_ArrayCollection_0_2' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_2' = 1    /\ tkw_ArrayCollection_0_2' = 1
+    end_ArrayCollection_computeStat_0_2:    pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_2 = 3/*computeStat*/    ->    pc_ArrayCollection_0_2' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_2' = 0    /\ tkw_ArrayCollection_0_2' = 0
+
+    start_ArrayCollection_isSorted_0_2:    pc_ArrayCollection_0_2 = 1    /\ ap_ArrayCollection_0_2 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_2' = 0    /\ method_ArrayCollection_0_2' = 4/*isSorted*/    /\ ap_ArrayCollection_0_2' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_2' = 1    /\ tkw_ArrayCollection_0_2' = 1
+    end_ArrayCollection_isSorted_0_2:    pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_2 = 4/*isSorted*/    ->    pc_ArrayCollection_0_2' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_2' = 0    /\ tkw_ArrayCollection_0_2' = 0
+
+    start_ArrayCollection_findMax_0_2:    pc_ArrayCollection_0_2 = 1    /\ ap_ArrayCollection_0_2 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_2' = 0    /\ method_ArrayCollection_0_2' = 5/*findMax*/    /\ ap_ArrayCollection_0_2' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_2' = 1    /\ tkw_ArrayCollection_0_2' = 1
+    end_ArrayCollection_findMax_0_2:    pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_2 = 5/*findMax*/    ->    pc_ArrayCollection_0_2' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_2' = 0    /\ tkw_ArrayCollection_0_2' = 0
+
+    start_ArrayCollection_incrColl_0_2:    pc_ArrayCollection_0_2 = 1    /\ ap_ArrayCollection_0_2 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_2' = 0    /\ method_ArrayCollection_0_2' = 6/*incrColl*/    /\ ap_ArrayCollection_0_2' = 3/*share*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_2' = 1    /\ tkw_ArrayCollection_0_2' = 5
+    end_ArrayCollection_incrColl_0_2:    pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_2 = 6/*incrColl*/    ->    pc_ArrayCollection_0_2' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_2' = 0    /\ tkw_ArrayCollection_0_2' = 0
+
+    start_ArrayCollection_tidyupColls_0_2:    pc_ArrayCollection_0_2 = 1    /\ ap_ArrayCollection_0_2 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 = 5    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_2' = 0    /\ method_ArrayCollection_0_2' = 7/*tidyupColls*/    /\ ap_ArrayCollection_0_2' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_2' = 5    /\ tkw_ArrayCollection_0_2' = 5
+    end_ArrayCollection_tidyupColls_0_2:    pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_2 = 7/*tidyupColls*/    ->    pc_ArrayCollection_0_2' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_2' = 0    /\ tkw_ArrayCollection_0_2' = 0
+
+/*<--ArrayCollection*/
+
+/*ObjectClass-->*/
+/*ObjectClass*/
+    start_ObjectClass_ObjectClass_0_2:    ap_ObjectClass_0_2 = 0    /\ ap_ObjectClass_0_0 = 0    /\ ap_ObjectClass_0_1 = 0    /\ ap_ObjectClass_0_3 = 0    /\ ap_ObjectClass_0_4 = 0    ->    pc_ObjectClass_0_2' = 0    /\ method_ObjectClass_0_2' = 1/*ObjectClass*/    /\ ap_ObjectClass_0_2' = 1/*unique*/    /\ tkrB_ObjectClass_0' = 0    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_2' = 5    /\ tkw_ObjectClass_0_2' = 5
+    end_ObjectClass_ObjectClass_0_2:    pc_ObjectClass_0_2 = 0    /\ method_ObjectClass_0_2 = 1/*ObjectClass*/    ->    pc_ObjectClass_0_2' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = 5    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_2' = 0    /\ tkw_ObjectClass_0_2' = 0
+
+    start_ObjectClass_manipulateObjects_0_2:    pc_ObjectClass_0_2 = 1    /\ ap_ObjectClass_0_2 != 0    /\ state_ObjectClass_0 > 0 /*alive*/    /\ tkrB_ObjectClass_0 > 0    /\ tkwB_ObjectClass_0 = 5    ->    pc_ObjectClass_0_2' = 0    /\ method_ObjectClass_0_2' = 2/*manipulateObjects*/    /\ ap_ObjectClass_0_2' = 3/*share*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 - 1    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_2' = 1    /\ tkw_ObjectClass_0_2' = 5
+    end_ObjectClass_manipulateObjects_0_2:    pc_ObjectClass_0_2 = 0    /\ method_ObjectClass_0_2 = 2/*manipulateObjects*/    ->    pc_ObjectClass_0_2' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 + 1    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_2' = 0    /\ tkw_ObjectClass_0_2' = 0
+
+/*<--ObjectClass*/
+
+/*Client-->*/
+/*Client*/
+    start_Client_Client_0_2:    ap_Client_0_2 = 0    /\ ap_Client_0_0 = 0    /\ ap_Client_0_1 = 0    /\ ap_Client_0_3 = 0    /\ ap_Client_0_4 = 0    ->    pc_Client_0_2' = 0    /\ method_Client_0_2' = 1/*Client*/    /\ ap_Client_0_2' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_2' = 5    /\ tkw_Client_0_2' = 5
+    end_Client_Client_0_2:    pc_Client_0_2 = 0    /\ method_Client_0_2 = 1/*Client*/    ->    pc_Client_0_2' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_2' = 0    /\ tkw_Client_0_2' = 0
+
+    start_Client_main_0_2:    pc_Client_0_2 = 1    /\ ap_Client_0_2 != 0    /\ state_Client_0 > 0 /*alive*/    /\ tkrB_Client_0 = 5    /\ tkwB_Client_0 = 5    ->    pc_Client_0_2' = 0    /\ method_Client_0_2' = 2/*main*/    /\ ap_Client_0_2' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_2' = 5    /\ tkw_Client_0_2' = 5
+    end_Client_main_0_2:    pc_Client_0_2 = 0    /\ method_Client_0_2 = 2/*main*/    ->    pc_Client_0_2' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_2' = 0    /\ tkw_Client_0_2' = 0
+
+/*<--Client*/
+
+/*<--K=2*/
+
+/*K=3-->*/
+/*ArrayCollection-->*/
+/*ArrayCollection*/
+    start_ArrayCollection_ArrayCollection_0_3:    ap_ArrayCollection_0_3 = 0    /\ ap_ArrayCollection_0_0 = 0    /\ ap_ArrayCollection_0_1 = 0    /\ ap_ArrayCollection_0_2 = 0    /\ ap_ArrayCollection_0_4 = 0    ->    pc_ArrayCollection_0_3' = 0    /\ method_ArrayCollection_0_3' = 1/*ArrayCollection*/    /\ ap_ArrayCollection_0_3' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_3' = 5    /\ tkw_ArrayCollection_0_3' = 5
+    end_ArrayCollection_ArrayCollection_0_3:    pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_3 = 1/*ArrayCollection*/    ->    pc_ArrayCollection_0_3' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_3' = 0    /\ tkw_ArrayCollection_0_3' = 0
+
+    start_ArrayCollection_printColl_0_3:    pc_ArrayCollection_0_3 = 1    /\ ap_ArrayCollection_0_3 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_3' = 0    /\ method_ArrayCollection_0_3' = 2/*printColl*/    /\ ap_ArrayCollection_0_3' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_3' = 1    /\ tkw_ArrayCollection_0_3' = 1
+    end_ArrayCollection_printColl_0_3:    pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_3 = 2/*printColl*/    ->    pc_ArrayCollection_0_3' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_3' = 0    /\ tkw_ArrayCollection_0_3' = 0
+
+    start_ArrayCollection_computeStat_0_3:    pc_ArrayCollection_0_3 = 1    /\ ap_ArrayCollection_0_3 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_3' = 0    /\ method_ArrayCollection_0_3' = 3/*computeStat*/    /\ ap_ArrayCollection_0_3' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_3' = 1    /\ tkw_ArrayCollection_0_3' = 1
+    end_ArrayCollection_computeStat_0_3:    pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_3 = 3/*computeStat*/    ->    pc_ArrayCollection_0_3' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_3' = 0    /\ tkw_ArrayCollection_0_3' = 0
+
+    start_ArrayCollection_isSorted_0_3:    pc_ArrayCollection_0_3 = 1    /\ ap_ArrayCollection_0_3 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_3' = 0    /\ method_ArrayCollection_0_3' = 4/*isSorted*/    /\ ap_ArrayCollection_0_3' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_3' = 1    /\ tkw_ArrayCollection_0_3' = 1
+    end_ArrayCollection_isSorted_0_3:    pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_3 = 4/*isSorted*/    ->    pc_ArrayCollection_0_3' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_3' = 0    /\ tkw_ArrayCollection_0_3' = 0
+
+    start_ArrayCollection_findMax_0_3:    pc_ArrayCollection_0_3 = 1    /\ ap_ArrayCollection_0_3 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_3' = 0    /\ method_ArrayCollection_0_3' = 5/*findMax*/    /\ ap_ArrayCollection_0_3' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_3' = 1    /\ tkw_ArrayCollection_0_3' = 1
+    end_ArrayCollection_findMax_0_3:    pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_3 = 5/*findMax*/    ->    pc_ArrayCollection_0_3' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_3' = 0    /\ tkw_ArrayCollection_0_3' = 0
+
+    start_ArrayCollection_incrColl_0_3:    pc_ArrayCollection_0_3 = 1    /\ ap_ArrayCollection_0_3 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_3' = 0    /\ method_ArrayCollection_0_3' = 6/*incrColl*/    /\ ap_ArrayCollection_0_3' = 3/*share*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_3' = 1    /\ tkw_ArrayCollection_0_3' = 5
+    end_ArrayCollection_incrColl_0_3:    pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_3 = 6/*incrColl*/    ->    pc_ArrayCollection_0_3' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_3' = 0    /\ tkw_ArrayCollection_0_3' = 0
+
+    start_ArrayCollection_tidyupColls_0_3:    pc_ArrayCollection_0_3 = 1    /\ ap_ArrayCollection_0_3 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 = 5    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_3' = 0    /\ method_ArrayCollection_0_3' = 7/*tidyupColls*/    /\ ap_ArrayCollection_0_3' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_3' = 5    /\ tkw_ArrayCollection_0_3' = 5
+    end_ArrayCollection_tidyupColls_0_3:    pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_3 = 7/*tidyupColls*/    ->    pc_ArrayCollection_0_3' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_3' = 0    /\ tkw_ArrayCollection_0_3' = 0
+
+/*<--ArrayCollection*/
+
+/*ObjectClass-->*/
+/*ObjectClass*/
+    start_ObjectClass_ObjectClass_0_3:    ap_ObjectClass_0_3 = 0    /\ ap_ObjectClass_0_0 = 0    /\ ap_ObjectClass_0_1 = 0    /\ ap_ObjectClass_0_2 = 0    /\ ap_ObjectClass_0_4 = 0    ->    pc_ObjectClass_0_3' = 0    /\ method_ObjectClass_0_3' = 1/*ObjectClass*/    /\ ap_ObjectClass_0_3' = 1/*unique*/    /\ tkrB_ObjectClass_0' = 0    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_3' = 5    /\ tkw_ObjectClass_0_3' = 5
+    end_ObjectClass_ObjectClass_0_3:    pc_ObjectClass_0_3 = 0    /\ method_ObjectClass_0_3 = 1/*ObjectClass*/    ->    pc_ObjectClass_0_3' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = 5    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_3' = 0    /\ tkw_ObjectClass_0_3' = 0
+
+    start_ObjectClass_manipulateObjects_0_3:    pc_ObjectClass_0_3 = 1    /\ ap_ObjectClass_0_3 != 0    /\ state_ObjectClass_0 > 0 /*alive*/    /\ tkrB_ObjectClass_0 > 0    /\ tkwB_ObjectClass_0 = 5    ->    pc_ObjectClass_0_3' = 0    /\ method_ObjectClass_0_3' = 2/*manipulateObjects*/    /\ ap_ObjectClass_0_3' = 3/*share*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 - 1    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_3' = 1    /\ tkw_ObjectClass_0_3' = 5
+    end_ObjectClass_manipulateObjects_0_3:    pc_ObjectClass_0_3 = 0    /\ method_ObjectClass_0_3 = 2/*manipulateObjects*/    ->    pc_ObjectClass_0_3' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 + 1    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_3' = 0    /\ tkw_ObjectClass_0_3' = 0
+
+/*<--ObjectClass*/
+
+/*Client-->*/
+/*Client*/
+    start_Client_Client_0_3:    ap_Client_0_3 = 0    /\ ap_Client_0_0 = 0    /\ ap_Client_0_1 = 0    /\ ap_Client_0_2 = 0    /\ ap_Client_0_4 = 0    ->    pc_Client_0_3' = 0    /\ method_Client_0_3' = 1/*Client*/    /\ ap_Client_0_3' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_3' = 5    /\ tkw_Client_0_3' = 5
+    end_Client_Client_0_3:    pc_Client_0_3 = 0    /\ method_Client_0_3 = 1/*Client*/    ->    pc_Client_0_3' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_3' = 0    /\ tkw_Client_0_3' = 0
+
+    start_Client_main_0_3:    pc_Client_0_3 = 1    /\ ap_Client_0_3 != 0    /\ state_Client_0 > 0 /*alive*/    /\ tkrB_Client_0 = 5    /\ tkwB_Client_0 = 5    ->    pc_Client_0_3' = 0    /\ method_Client_0_3' = 2/*main*/    /\ ap_Client_0_3' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_3' = 5    /\ tkw_Client_0_3' = 5
+    end_Client_main_0_3:    pc_Client_0_3 = 0    /\ method_Client_0_3 = 2/*main*/    ->    pc_Client_0_3' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_3' = 0    /\ tkw_Client_0_3' = 0
+
+/*<--Client*/
+
+/*<--K=3*/
+
+/*K=4-->*/
+/*ArrayCollection-->*/
+/*ArrayCollection*/
+    start_ArrayCollection_ArrayCollection_0_4:    ap_ArrayCollection_0_4 = 0    /\ ap_ArrayCollection_0_0 = 0    /\ ap_ArrayCollection_0_1 = 0    /\ ap_ArrayCollection_0_2 = 0    /\ ap_ArrayCollection_0_3 = 0    ->    pc_ArrayCollection_0_4' = 0    /\ method_ArrayCollection_0_4' = 1/*ArrayCollection*/    /\ ap_ArrayCollection_0_4' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_4' = 5    /\ tkw_ArrayCollection_0_4' = 5
+    end_ArrayCollection_ArrayCollection_0_4:    pc_ArrayCollection_0_4 = 0    /\ method_ArrayCollection_0_4 = 1/*ArrayCollection*/    ->    pc_ArrayCollection_0_4' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_4' = 0    /\ tkw_ArrayCollection_0_4' = 0
+
+    start_ArrayCollection_printColl_0_4:    pc_ArrayCollection_0_4 = 1    /\ ap_ArrayCollection_0_4 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_4' = 0    /\ method_ArrayCollection_0_4' = 2/*printColl*/    /\ ap_ArrayCollection_0_4' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_4' = 1    /\ tkw_ArrayCollection_0_4' = 1
+    end_ArrayCollection_printColl_0_4:    pc_ArrayCollection_0_4 = 0    /\ method_ArrayCollection_0_4 = 2/*printColl*/    ->    pc_ArrayCollection_0_4' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_4' = 0    /\ tkw_ArrayCollection_0_4' = 0
+
+    start_ArrayCollection_computeStat_0_4:    pc_ArrayCollection_0_4 = 1    /\ ap_ArrayCollection_0_4 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_4' = 0    /\ method_ArrayCollection_0_4' = 3/*computeStat*/    /\ ap_ArrayCollection_0_4' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_4' = 1    /\ tkw_ArrayCollection_0_4' = 1
+    end_ArrayCollection_computeStat_0_4:    pc_ArrayCollection_0_4 = 0    /\ method_ArrayCollection_0_4 = 3/*computeStat*/    ->    pc_ArrayCollection_0_4' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_4' = 0    /\ tkw_ArrayCollection_0_4' = 0
+
+    start_ArrayCollection_isSorted_0_4:    pc_ArrayCollection_0_4 = 1    /\ ap_ArrayCollection_0_4 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_4' = 0    /\ method_ArrayCollection_0_4' = 4/*isSorted*/    /\ ap_ArrayCollection_0_4' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_4' = 1    /\ tkw_ArrayCollection_0_4' = 1
+    end_ArrayCollection_isSorted_0_4:    pc_ArrayCollection_0_4 = 0    /\ method_ArrayCollection_0_4 = 4/*isSorted*/    ->    pc_ArrayCollection_0_4' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_4' = 0    /\ tkw_ArrayCollection_0_4' = 0
+
+    start_ArrayCollection_findMax_0_4:    pc_ArrayCollection_0_4 = 1    /\ ap_ArrayCollection_0_4 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 > 0    ->    pc_ArrayCollection_0_4' = 0    /\ method_ArrayCollection_0_4' = 5/*findMax*/    /\ ap_ArrayCollection_0_4' = 4/*pure*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkr_ArrayCollection_0_4' = 1    /\ tkw_ArrayCollection_0_4' = 1
+    end_ArrayCollection_findMax_0_4:    pc_ArrayCollection_0_4 = 0    /\ method_ArrayCollection_0_4 = 5/*findMax*/    ->    pc_ArrayCollection_0_4' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = tkwB_ArrayCollection_0 + 1    /\ tkr_ArrayCollection_0_4' = 0    /\ tkw_ArrayCollection_0_4' = 0
+
+    start_ArrayCollection_incrColl_0_4:    pc_ArrayCollection_0_4 = 1    /\ ap_ArrayCollection_0_4 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 > 0    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_4' = 0    /\ method_ArrayCollection_0_4' = 6/*incrColl*/    /\ ap_ArrayCollection_0_4' = 3/*share*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 - 1    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_4' = 1    /\ tkw_ArrayCollection_0_4' = 5
+    end_ArrayCollection_incrColl_0_4:    pc_ArrayCollection_0_4 = 0    /\ method_ArrayCollection_0_4 = 6/*incrColl*/    ->    pc_ArrayCollection_0_4' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = tkrB_ArrayCollection_0 + 1    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_4' = 0    /\ tkw_ArrayCollection_0_4' = 0
+
+    start_ArrayCollection_tidyupColls_0_4:    pc_ArrayCollection_0_4 = 1    /\ ap_ArrayCollection_0_4 != 0    /\ state_ArrayCollection_0 > 0 /*alive*/    /\ tkrB_ArrayCollection_0 = 5    /\ tkwB_ArrayCollection_0 = 5    ->    pc_ArrayCollection_0_4' = 0    /\ method_ArrayCollection_0_4' = 7/*tidyupColls*/    /\ ap_ArrayCollection_0_4' = 1/*unique*/    /\ tkrB_ArrayCollection_0' = 0    /\ tkwB_ArrayCollection_0' = 0    /\ tkr_ArrayCollection_0_4' = 5    /\ tkw_ArrayCollection_0_4' = 5
+    end_ArrayCollection_tidyupColls_0_4:    pc_ArrayCollection_0_4 = 0    /\ method_ArrayCollection_0_4 = 7/*tidyupColls*/    ->    pc_ArrayCollection_0_4' = 1    /\ state_ArrayCollection_0' = 1 /*alive*/    /\ tkrB_ArrayCollection_0' = 5    /\ tkwB_ArrayCollection_0' = 5    /\ tkr_ArrayCollection_0_4' = 0    /\ tkw_ArrayCollection_0_4' = 0
+
+/*<--ArrayCollection*/
+
+/*ObjectClass-->*/
+/*ObjectClass*/
+    start_ObjectClass_ObjectClass_0_4:    ap_ObjectClass_0_4 = 0    /\ ap_ObjectClass_0_0 = 0    /\ ap_ObjectClass_0_1 = 0    /\ ap_ObjectClass_0_2 = 0    /\ ap_ObjectClass_0_3 = 0    ->    pc_ObjectClass_0_4' = 0    /\ method_ObjectClass_0_4' = 1/*ObjectClass*/    /\ ap_ObjectClass_0_4' = 1/*unique*/    /\ tkrB_ObjectClass_0' = 0    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_4' = 5    /\ tkw_ObjectClass_0_4' = 5
+    end_ObjectClass_ObjectClass_0_4:    pc_ObjectClass_0_4 = 0    /\ method_ObjectClass_0_4 = 1/*ObjectClass*/    ->    pc_ObjectClass_0_4' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = 5    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_4' = 0    /\ tkw_ObjectClass_0_4' = 0
+
+    start_ObjectClass_manipulateObjects_0_4:    pc_ObjectClass_0_4 = 1    /\ ap_ObjectClass_0_4 != 0    /\ state_ObjectClass_0 > 0 /*alive*/    /\ tkrB_ObjectClass_0 > 0    /\ tkwB_ObjectClass_0 = 5    ->    pc_ObjectClass_0_4' = 0    /\ method_ObjectClass_0_4' = 2/*manipulateObjects*/    /\ ap_ObjectClass_0_4' = 3/*share*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 - 1    /\ tkwB_ObjectClass_0' = 0    /\ tkr_ObjectClass_0_4' = 1    /\ tkw_ObjectClass_0_4' = 5
+    end_ObjectClass_manipulateObjects_0_4:    pc_ObjectClass_0_4 = 0    /\ method_ObjectClass_0_4 = 2/*manipulateObjects*/    ->    pc_ObjectClass_0_4' = 1    /\ state_ObjectClass_0' = 1 /*alive*/    /\ tkrB_ObjectClass_0' = tkrB_ObjectClass_0 + 1    /\ tkwB_ObjectClass_0' = 5    /\ tkr_ObjectClass_0_4' = 0    /\ tkw_ObjectClass_0_4' = 0
+
+/*<--ObjectClass*/
+
+/*Client-->*/
+/*Client*/
+    start_Client_Client_0_4:    ap_Client_0_4 = 0    /\ ap_Client_0_0 = 0    /\ ap_Client_0_1 = 0    /\ ap_Client_0_2 = 0    /\ ap_Client_0_3 = 0    ->    pc_Client_0_4' = 0    /\ method_Client_0_4' = 1/*Client*/    /\ ap_Client_0_4' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_4' = 5    /\ tkw_Client_0_4' = 5
+    end_Client_Client_0_4:    pc_Client_0_4 = 0    /\ method_Client_0_4 = 1/*Client*/    ->    pc_Client_0_4' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_4' = 0    /\ tkw_Client_0_4' = 0
+
+    start_Client_main_0_4:    pc_Client_0_4 = 1    /\ ap_Client_0_4 != 0    /\ state_Client_0 > 0 /*alive*/    /\ tkrB_Client_0 = 5    /\ tkwB_Client_0 = 5    ->    pc_Client_0_4' = 0    /\ method_Client_0_4' = 2/*main*/    /\ ap_Client_0_4' = 1/*unique*/    /\ tkrB_Client_0' = 0    /\ tkwB_Client_0' = 0    /\ tkr_Client_0_4' = 5    /\ tkw_Client_0_4' = 5
+    end_Client_main_0_4:    pc_Client_0_4 = 0    /\ method_Client_0_4 = 2/*main*/    ->    pc_Client_0_4' = 1    /\ state_Client_0' = 1 /*alive*/    /\ tkrB_Client_0' = 5    /\ tkwB_Client_0' = 5    /\ tkr_Client_0_4' = 0    /\ tkw_Client_0_4' = 0
+
+/*<--Client*/
+
+/*<--K=4*/
+
+/*ArrayCollection*/
+    create_alias_ArrayCollection_0_0:    ap_ArrayCollection_0_0 = 0    /\ tkrB_ArrayCollection_0 > 0     /\ state_ArrayCollection_0 != 0    ->    pc_ArrayCollection_0_0' = 1    /\ method_ArrayCollection_0_0' = 0    /\ ap_ArrayCollection_0_0' = 4
+
+/*ObjectClass*/
+    create_alias_ObjectClass_0_0:    ap_ObjectClass_0_0 = 0    /\ tkrB_ObjectClass_0 > 0     /\ state_ObjectClass_0 != 0    ->    pc_ObjectClass_0_0' = 1    /\ method_ObjectClass_0_0' = 0    /\ ap_ObjectClass_0_0' = 4
+
+/*Client*/
+    create_alias_Client_0_0:    ap_Client_0_0 = 0    /\ tkrB_Client_0 > 0     /\ state_Client_0 != 0    ->    pc_Client_0_0' = 1    /\ method_Client_0_0' = 0    /\ ap_Client_0_0' = 4
+
+/*ArrayCollection*/
+    create_alias_ArrayCollection_0_1:    ap_ArrayCollection_0_1 = 0    /\ tkrB_ArrayCollection_0 > 0     /\ state_ArrayCollection_0 != 0    ->    pc_ArrayCollection_0_1' = 1    /\ method_ArrayCollection_0_1' = 0    /\ ap_ArrayCollection_0_1' = 4
+
+/*ObjectClass*/
+    create_alias_ObjectClass_0_1:    ap_ObjectClass_0_1 = 0    /\ tkrB_ObjectClass_0 > 0     /\ state_ObjectClass_0 != 0    ->    pc_ObjectClass_0_1' = 1    /\ method_ObjectClass_0_1' = 0    /\ ap_ObjectClass_0_1' = 4
+
+/*Client*/
+    create_alias_Client_0_1:    ap_Client_0_1 = 0    /\ tkrB_Client_0 > 0     /\ state_Client_0 != 0    ->    pc_Client_0_1' = 1    /\ method_Client_0_1' = 0    /\ ap_Client_0_1' = 4
+
+/*ArrayCollection*/
+    create_alias_ArrayCollection_0_2:    ap_ArrayCollection_0_2 = 0    /\ tkrB_ArrayCollection_0 > 0     /\ state_ArrayCollection_0 != 0    ->    pc_ArrayCollection_0_2' = 1    /\ method_ArrayCollection_0_2' = 0    /\ ap_ArrayCollection_0_2' = 4
+
+/*ObjectClass*/
+    create_alias_ObjectClass_0_2:    ap_ObjectClass_0_2 = 0    /\ tkrB_ObjectClass_0 > 0     /\ state_ObjectClass_0 != 0    ->    pc_ObjectClass_0_2' = 1    /\ method_ObjectClass_0_2' = 0    /\ ap_ObjectClass_0_2' = 4
+
+/*Client*/
+    create_alias_Client_0_2:    ap_Client_0_2 = 0    /\ tkrB_Client_0 > 0     /\ state_Client_0 != 0    ->    pc_Client_0_2' = 1    /\ method_Client_0_2' = 0    /\ ap_Client_0_2' = 4
+
+/*ArrayCollection*/
+    create_alias_ArrayCollection_0_3:    ap_ArrayCollection_0_3 = 0    /\ tkrB_ArrayCollection_0 > 0     /\ state_ArrayCollection_0 != 0    ->    pc_ArrayCollection_0_3' = 1    /\ method_ArrayCollection_0_3' = 0    /\ ap_ArrayCollection_0_3' = 4
+
+/*ObjectClass*/
+    create_alias_ObjectClass_0_3:    ap_ObjectClass_0_3 = 0    /\ tkrB_ObjectClass_0 > 0     /\ state_ObjectClass_0 != 0    ->    pc_ObjectClass_0_3' = 1    /\ method_ObjectClass_0_3' = 0    /\ ap_ObjectClass_0_3' = 4
+
+/*Client*/
+    create_alias_Client_0_3:    ap_Client_0_3 = 0    /\ tkrB_Client_0 > 0     /\ state_Client_0 != 0    ->    pc_Client_0_3' = 1    /\ method_Client_0_3' = 0    /\ ap_Client_0_3' = 4
+
+/*ArrayCollection*/
+    create_alias_ArrayCollection_0_4:    ap_ArrayCollection_0_4 = 0    /\ tkrB_ArrayCollection_0 > 0     /\ state_ArrayCollection_0 != 0    ->    pc_ArrayCollection_0_4' = 1    /\ method_ArrayCollection_0_4' = 0    /\ ap_ArrayCollection_0_4' = 4
+
+/*ObjectClass*/
+    create_alias_ObjectClass_0_4:    ap_ObjectClass_0_4 = 0    /\ tkrB_ObjectClass_0 > 0     /\ state_ObjectClass_0 != 0    ->    pc_ObjectClass_0_4' = 1    /\ method_ObjectClass_0_4' = 0    /\ ap_ObjectClass_0_4' = 4
+
+/*Client*/
+    create_alias_Client_0_4:    ap_Client_0_4 = 0    /\ tkrB_Client_0 > 0     /\ state_Client_0 != 0    ->    pc_Client_0_4' = 1    /\ method_Client_0_4' = 0    /\ ap_Client_0_4' = 4
+
+
+Properties
+
+/*ArrayCollection*/
+requires_clause_of_ArrayCollection_ArrayCollection_0_0:    method_ArrayCollection_0_0 = 1    /\ pc_ArrayCollection_0_0 = 0
+requires_clause_of_ArrayCollection_printColl_0_0:    method_ArrayCollection_0_0 = 2    /\ pc_ArrayCollection_0_0 = 0
+requires_clause_of_ArrayCollection_computeStat_0_0:    method_ArrayCollection_0_0 = 3    /\ pc_ArrayCollection_0_0 = 0
+requires_clause_of_ArrayCollection_isSorted_0_0:    method_ArrayCollection_0_0 = 4    /\ pc_ArrayCollection_0_0 = 0
+requires_clause_of_ArrayCollection_findMax_0_0:    method_ArrayCollection_0_0 = 5    /\ pc_ArrayCollection_0_0 = 0
+requires_clause_of_ArrayCollection_incrColl_0_0:    method_ArrayCollection_0_0 = 6    /\ pc_ArrayCollection_0_0 = 0
+requires_clause_of_ArrayCollection_tidyupColls_0_0:    method_ArrayCollection_0_0 = 7    /\ pc_ArrayCollection_0_0 = 0
+
+
+stateTransition_of_ArrayCollection_from_alive_to_alive:    state_ArrayCollection_0 = 1    /\ EX(state_ArrayCollection_0 = 1)
+stateTransition_of_ArrayCollection_from_alive_to_alive:    state_ArrayCollection_0 = 1    /\ EX(state_ArrayCollection_0 = 2)
+
+stateTransition_of_ArrayCollection_from_alive_to_alive:    state_ArrayCollection_0 = 2    /\ EX(state_ArrayCollection_0 = 1)
+stateTransition_of_ArrayCollection_from_alive_to_alive:    state_ArrayCollection_0 = 2    /\ EX(state_ArrayCollection_0 = 2)
+
+
+
+
+concurrentMethods_ArrayCollection_0_0_ArrayCollection_and_ArrayCollection_0_1_ArrayCollection:    method_ArrayCollection_0_0 = 1 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_ArrayCollection_and_ArrayCollection_0_1_printColl:    method_ArrayCollection_0_0 = 1 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_ArrayCollection_and_ArrayCollection_0_1_computeStat:    method_ArrayCollection_0_0 = 1 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_ArrayCollection_and_ArrayCollection_0_1_isSorted:    method_ArrayCollection_0_0 = 1 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_ArrayCollection_and_ArrayCollection_0_1_findMax:    method_ArrayCollection_0_0 = 1 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_ArrayCollection_and_ArrayCollection_0_1_incrColl:    method_ArrayCollection_0_0 = 1 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_ArrayCollection_and_ArrayCollection_0_1_tidyupColls:    method_ArrayCollection_0_0 = 1 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0
+
+concurrentMethods_ArrayCollection_0_0_printColl_and_ArrayCollection_0_1_ArrayCollection:    method_ArrayCollection_0_0 = 2 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_printColl_and_ArrayCollection_0_1_printColl:    method_ArrayCollection_0_0 = 2 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_printColl_and_ArrayCollection_0_1_computeStat:    method_ArrayCollection_0_0 = 2 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_printColl_and_ArrayCollection_0_1_isSorted:    method_ArrayCollection_0_0 = 2 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_printColl_and_ArrayCollection_0_1_findMax:    method_ArrayCollection_0_0 = 2 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_printColl_and_ArrayCollection_0_1_incrColl:    method_ArrayCollection_0_0 = 2 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_printColl_and_ArrayCollection_0_1_tidyupColls:    method_ArrayCollection_0_0 = 2 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0
+
+concurrentMethods_ArrayCollection_0_0_computeStat_and_ArrayCollection_0_1_ArrayCollection:    method_ArrayCollection_0_0 = 3 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_computeStat_and_ArrayCollection_0_1_printColl:    method_ArrayCollection_0_0 = 3 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_computeStat_and_ArrayCollection_0_1_computeStat:    method_ArrayCollection_0_0 = 3 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_computeStat_and_ArrayCollection_0_1_isSorted:    method_ArrayCollection_0_0 = 3 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_computeStat_and_ArrayCollection_0_1_findMax:    method_ArrayCollection_0_0 = 3 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_computeStat_and_ArrayCollection_0_1_incrColl:    method_ArrayCollection_0_0 = 3 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_computeStat_and_ArrayCollection_0_1_tidyupColls:    method_ArrayCollection_0_0 = 3 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0
+
+concurrentMethods_ArrayCollection_0_0_isSorted_and_ArrayCollection_0_1_ArrayCollection:    method_ArrayCollection_0_0 = 4 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_isSorted_and_ArrayCollection_0_1_printColl:    method_ArrayCollection_0_0 = 4 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_isSorted_and_ArrayCollection_0_1_computeStat:    method_ArrayCollection_0_0 = 4 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_isSorted_and_ArrayCollection_0_1_isSorted:    method_ArrayCollection_0_0 = 4 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_isSorted_and_ArrayCollection_0_1_findMax:    method_ArrayCollection_0_0 = 4 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_isSorted_and_ArrayCollection_0_1_incrColl:    method_ArrayCollection_0_0 = 4 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_isSorted_and_ArrayCollection_0_1_tidyupColls:    method_ArrayCollection_0_0 = 4 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0
+
+concurrentMethods_ArrayCollection_0_0_findMax_and_ArrayCollection_0_1_ArrayCollection:    method_ArrayCollection_0_0 = 5 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_findMax_and_ArrayCollection_0_1_printColl:    method_ArrayCollection_0_0 = 5 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_findMax_and_ArrayCollection_0_1_computeStat:    method_ArrayCollection_0_0 = 5 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_findMax_and_ArrayCollection_0_1_isSorted:    method_ArrayCollection_0_0 = 5 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_findMax_and_ArrayCollection_0_1_findMax:    method_ArrayCollection_0_0 = 5 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_findMax_and_ArrayCollection_0_1_incrColl:    method_ArrayCollection_0_0 = 5 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_findMax_and_ArrayCollection_0_1_tidyupColls:    method_ArrayCollection_0_0 = 5 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0
+
+concurrentMethods_ArrayCollection_0_0_incrColl_and_ArrayCollection_0_1_ArrayCollection:    method_ArrayCollection_0_0 = 6 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_incrColl_and_ArrayCollection_0_1_printColl:    method_ArrayCollection_0_0 = 6 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_incrColl_and_ArrayCollection_0_1_computeStat:    method_ArrayCollection_0_0 = 6 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_incrColl_and_ArrayCollection_0_1_isSorted:    method_ArrayCollection_0_0 = 6 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_incrColl_and_ArrayCollection_0_1_findMax:    method_ArrayCollection_0_0 = 6 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_incrColl_and_ArrayCollection_0_1_incrColl:    method_ArrayCollection_0_0 = 6 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_incrColl_and_ArrayCollection_0_1_tidyupColls:    method_ArrayCollection_0_0 = 6 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0
+
+concurrentMethods_ArrayCollection_0_0_tidyupColls_and_ArrayCollection_0_1_ArrayCollection:    method_ArrayCollection_0_0 = 7 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_tidyupColls_and_ArrayCollection_0_1_printColl:    method_ArrayCollection_0_0 = 7 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_tidyupColls_and_ArrayCollection_0_1_computeStat:    method_ArrayCollection_0_0 = 7 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_tidyupColls_and_ArrayCollection_0_1_isSorted:    method_ArrayCollection_0_0 = 7 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_tidyupColls_and_ArrayCollection_0_1_findMax:    method_ArrayCollection_0_0 = 7 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_tidyupColls_and_ArrayCollection_0_1_incrColl:    method_ArrayCollection_0_0 = 7 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0
+concurrentMethods_ArrayCollection_0_0_tidyupColls_and_ArrayCollection_0_1_tidyupColls:    method_ArrayCollection_0_0 = 7 /\ pc_ArrayCollection_0_0 = 0    /\ method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0
+
+
+
+concurrentMethods_ArrayCollection_0_1_ArrayCollection_and_ArrayCollection_0_2_ArrayCollection:    method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_ArrayCollection_and_ArrayCollection_0_2_printColl:    method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_ArrayCollection_and_ArrayCollection_0_2_computeStat:    method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_ArrayCollection_and_ArrayCollection_0_2_isSorted:    method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_ArrayCollection_and_ArrayCollection_0_2_findMax:    method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_ArrayCollection_and_ArrayCollection_0_2_incrColl:    method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_ArrayCollection_and_ArrayCollection_0_2_tidyupColls:    method_ArrayCollection_0_1 = 1 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0
+
+concurrentMethods_ArrayCollection_0_1_printColl_and_ArrayCollection_0_2_ArrayCollection:    method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_printColl_and_ArrayCollection_0_2_printColl:    method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_printColl_and_ArrayCollection_0_2_computeStat:    method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_printColl_and_ArrayCollection_0_2_isSorted:    method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_printColl_and_ArrayCollection_0_2_findMax:    method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_printColl_and_ArrayCollection_0_2_incrColl:    method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_printColl_and_ArrayCollection_0_2_tidyupColls:    method_ArrayCollection_0_1 = 2 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0
+
+concurrentMethods_ArrayCollection_0_1_computeStat_and_ArrayCollection_0_2_ArrayCollection:    method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_computeStat_and_ArrayCollection_0_2_printColl:    method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_computeStat_and_ArrayCollection_0_2_computeStat:    method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_computeStat_and_ArrayCollection_0_2_isSorted:    method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_computeStat_and_ArrayCollection_0_2_findMax:    method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_computeStat_and_ArrayCollection_0_2_incrColl:    method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_computeStat_and_ArrayCollection_0_2_tidyupColls:    method_ArrayCollection_0_1 = 3 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0
+
+concurrentMethods_ArrayCollection_0_1_isSorted_and_ArrayCollection_0_2_ArrayCollection:    method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_isSorted_and_ArrayCollection_0_2_printColl:    method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_isSorted_and_ArrayCollection_0_2_computeStat:    method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_isSorted_and_ArrayCollection_0_2_isSorted:    method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_isSorted_and_ArrayCollection_0_2_findMax:    method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_isSorted_and_ArrayCollection_0_2_incrColl:    method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_isSorted_and_ArrayCollection_0_2_tidyupColls:    method_ArrayCollection_0_1 = 4 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0
+
+concurrentMethods_ArrayCollection_0_1_findMax_and_ArrayCollection_0_2_ArrayCollection:    method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_findMax_and_ArrayCollection_0_2_printColl:    method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_findMax_and_ArrayCollection_0_2_computeStat:    method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_findMax_and_ArrayCollection_0_2_isSorted:    method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_findMax_and_ArrayCollection_0_2_findMax:    method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_findMax_and_ArrayCollection_0_2_incrColl:    method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_findMax_and_ArrayCollection_0_2_tidyupColls:    method_ArrayCollection_0_1 = 5 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0
+
+concurrentMethods_ArrayCollection_0_1_incrColl_and_ArrayCollection_0_2_ArrayCollection:    method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_incrColl_and_ArrayCollection_0_2_printColl:    method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_incrColl_and_ArrayCollection_0_2_computeStat:    method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_incrColl_and_ArrayCollection_0_2_isSorted:    method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_incrColl_and_ArrayCollection_0_2_findMax:    method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_incrColl_and_ArrayCollection_0_2_incrColl:    method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_incrColl_and_ArrayCollection_0_2_tidyupColls:    method_ArrayCollection_0_1 = 6 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0
+
+concurrentMethods_ArrayCollection_0_1_tidyupColls_and_ArrayCollection_0_2_ArrayCollection:    method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_tidyupColls_and_ArrayCollection_0_2_printColl:    method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_tidyupColls_and_ArrayCollection_0_2_computeStat:    method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_tidyupColls_and_ArrayCollection_0_2_isSorted:    method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_tidyupColls_and_ArrayCollection_0_2_findMax:    method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_tidyupColls_and_ArrayCollection_0_2_incrColl:    method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0
+concurrentMethods_ArrayCollection_0_1_tidyupColls_and_ArrayCollection_0_2_tidyupColls:    method_ArrayCollection_0_1 = 7 /\ pc_ArrayCollection_0_1 = 0    /\ method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0
+
+
+
+concurrentMethods_ArrayCollection_0_2_ArrayCollection_and_ArrayCollection_0_3_ArrayCollection:    method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_ArrayCollection_and_ArrayCollection_0_3_printColl:    method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_ArrayCollection_and_ArrayCollection_0_3_computeStat:    method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_ArrayCollection_and_ArrayCollection_0_3_isSorted:    method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_ArrayCollection_and_ArrayCollection_0_3_findMax:    method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_ArrayCollection_and_ArrayCollection_0_3_incrColl:    method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_ArrayCollection_and_ArrayCollection_0_3_tidyupColls:    method_ArrayCollection_0_2 = 1 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0
+
+concurrentMethods_ArrayCollection_0_2_printColl_and_ArrayCollection_0_3_ArrayCollection:    method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_printColl_and_ArrayCollection_0_3_printColl:    method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_printColl_and_ArrayCollection_0_3_computeStat:    method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_printColl_and_ArrayCollection_0_3_isSorted:    method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_printColl_and_ArrayCollection_0_3_findMax:    method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_printColl_and_ArrayCollection_0_3_incrColl:    method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_printColl_and_ArrayCollection_0_3_tidyupColls:    method_ArrayCollection_0_2 = 2 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0
+
+concurrentMethods_ArrayCollection_0_2_computeStat_and_ArrayCollection_0_3_ArrayCollection:    method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_computeStat_and_ArrayCollection_0_3_printColl:    method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_computeStat_and_ArrayCollection_0_3_computeStat:    method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_computeStat_and_ArrayCollection_0_3_isSorted:    method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_computeStat_and_ArrayCollection_0_3_findMax:    method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_computeStat_and_ArrayCollection_0_3_incrColl:    method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_computeStat_and_ArrayCollection_0_3_tidyupColls:    method_ArrayCollection_0_2 = 3 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0
+
+concurrentMethods_ArrayCollection_0_2_isSorted_and_ArrayCollection_0_3_ArrayCollection:    method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_isSorted_and_ArrayCollection_0_3_printColl:    method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_isSorted_and_ArrayCollection_0_3_computeStat:    method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_isSorted_and_ArrayCollection_0_3_isSorted:    method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_isSorted_and_ArrayCollection_0_3_findMax:    method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_isSorted_and_ArrayCollection_0_3_incrColl:    method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_isSorted_and_ArrayCollection_0_3_tidyupColls:    method_ArrayCollection_0_2 = 4 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0
+
+concurrentMethods_ArrayCollection_0_2_findMax_and_ArrayCollection_0_3_ArrayCollection:    method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_findMax_and_ArrayCollection_0_3_printColl:    method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_findMax_and_ArrayCollection_0_3_computeStat:    method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_findMax_and_ArrayCollection_0_3_isSorted:    method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_findMax_and_ArrayCollection_0_3_findMax:    method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_findMax_and_ArrayCollection_0_3_incrColl:    method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_findMax_and_ArrayCollection_0_3_tidyupColls:    method_ArrayCollection_0_2 = 5 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0
+
+concurrentMethods_ArrayCollection_0_2_incrColl_and_ArrayCollection_0_3_ArrayCollection:    method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_incrColl_and_ArrayCollection_0_3_printColl:    method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_incrColl_and_ArrayCollection_0_3_computeStat:    method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_incrColl_and_ArrayCollection_0_3_isSorted:    method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_incrColl_and_ArrayCollection_0_3_findMax:    method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_incrColl_and_ArrayCollection_0_3_incrColl:    method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_incrColl_and_ArrayCollection_0_3_tidyupColls:    method_ArrayCollection_0_2 = 6 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0
+
+concurrentMethods_ArrayCollection_0_2_tidyupColls_and_ArrayCollection_0_3_ArrayCollection:    method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_tidyupColls_and_ArrayCollection_0_3_printColl:    method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_tidyupColls_and_ArrayCollection_0_3_computeStat:    method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_tidyupColls_and_ArrayCollection_0_3_isSorted:    method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_tidyupColls_and_ArrayCollection_0_3_findMax:    method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_tidyupColls_and_ArrayCollection_0_3_incrColl:    method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0
+concurrentMethods_ArrayCollection_0_2_tidyupColls_and_ArrayCollection_0_3_tidyupColls:    method_ArrayCollection_0_2 = 7 /\ pc_ArrayCollection_0_2 = 0    /\ method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0
+
+
+
+concurrentMethods_ArrayCollection_0_3_ArrayCollection_and_ArrayCollection_0_4_ArrayCollection:    method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 1 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_ArrayCollection_and_ArrayCollection_0_4_printColl:    method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 2 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_ArrayCollection_and_ArrayCollection_0_4_computeStat:    method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 3 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_ArrayCollection_and_ArrayCollection_0_4_isSorted:    method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 4 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_ArrayCollection_and_ArrayCollection_0_4_findMax:    method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 5 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_ArrayCollection_and_ArrayCollection_0_4_incrColl:    method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 6 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_ArrayCollection_and_ArrayCollection_0_4_tidyupColls:    method_ArrayCollection_0_3 = 1 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 7 /\ pc_ArrayCollection_0_4 = 0
+
+concurrentMethods_ArrayCollection_0_3_printColl_and_ArrayCollection_0_4_ArrayCollection:    method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 1 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_printColl_and_ArrayCollection_0_4_printColl:    method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 2 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_printColl_and_ArrayCollection_0_4_computeStat:    method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 3 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_printColl_and_ArrayCollection_0_4_isSorted:    method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 4 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_printColl_and_ArrayCollection_0_4_findMax:    method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 5 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_printColl_and_ArrayCollection_0_4_incrColl:    method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 6 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_printColl_and_ArrayCollection_0_4_tidyupColls:    method_ArrayCollection_0_3 = 2 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 7 /\ pc_ArrayCollection_0_4 = 0
+
+concurrentMethods_ArrayCollection_0_3_computeStat_and_ArrayCollection_0_4_ArrayCollection:    method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 1 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_computeStat_and_ArrayCollection_0_4_printColl:    method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 2 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_computeStat_and_ArrayCollection_0_4_computeStat:    method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 3 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_computeStat_and_ArrayCollection_0_4_isSorted:    method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 4 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_computeStat_and_ArrayCollection_0_4_findMax:    method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 5 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_computeStat_and_ArrayCollection_0_4_incrColl:    method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 6 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_computeStat_and_ArrayCollection_0_4_tidyupColls:    method_ArrayCollection_0_3 = 3 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 7 /\ pc_ArrayCollection_0_4 = 0
+
+concurrentMethods_ArrayCollection_0_3_isSorted_and_ArrayCollection_0_4_ArrayCollection:    method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 1 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_isSorted_and_ArrayCollection_0_4_printColl:    method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 2 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_isSorted_and_ArrayCollection_0_4_computeStat:    method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 3 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_isSorted_and_ArrayCollection_0_4_isSorted:    method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 4 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_isSorted_and_ArrayCollection_0_4_findMax:    method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 5 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_isSorted_and_ArrayCollection_0_4_incrColl:    method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 6 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_isSorted_and_ArrayCollection_0_4_tidyupColls:    method_ArrayCollection_0_3 = 4 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 7 /\ pc_ArrayCollection_0_4 = 0
+
+concurrentMethods_ArrayCollection_0_3_findMax_and_ArrayCollection_0_4_ArrayCollection:    method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 1 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_findMax_and_ArrayCollection_0_4_printColl:    method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 2 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_findMax_and_ArrayCollection_0_4_computeStat:    method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 3 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_findMax_and_ArrayCollection_0_4_isSorted:    method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 4 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_findMax_and_ArrayCollection_0_4_findMax:    method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 5 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_findMax_and_ArrayCollection_0_4_incrColl:    method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 6 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_findMax_and_ArrayCollection_0_4_tidyupColls:    method_ArrayCollection_0_3 = 5 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 7 /\ pc_ArrayCollection_0_4 = 0
+
+concurrentMethods_ArrayCollection_0_3_incrColl_and_ArrayCollection_0_4_ArrayCollection:    method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 1 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_incrColl_and_ArrayCollection_0_4_printColl:    method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 2 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_incrColl_and_ArrayCollection_0_4_computeStat:    method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 3 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_incrColl_and_ArrayCollection_0_4_isSorted:    method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 4 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_incrColl_and_ArrayCollection_0_4_findMax:    method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 5 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_incrColl_and_ArrayCollection_0_4_incrColl:    method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 6 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_incrColl_and_ArrayCollection_0_4_tidyupColls:    method_ArrayCollection_0_3 = 6 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 7 /\ pc_ArrayCollection_0_4 = 0
+
+concurrentMethods_ArrayCollection_0_3_tidyupColls_and_ArrayCollection_0_4_ArrayCollection:    method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 1 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_tidyupColls_and_ArrayCollection_0_4_printColl:    method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 2 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_tidyupColls_and_ArrayCollection_0_4_computeStat:    method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 3 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_tidyupColls_and_ArrayCollection_0_4_isSorted:    method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 4 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_tidyupColls_and_ArrayCollection_0_4_findMax:    method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 5 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_tidyupColls_and_ArrayCollection_0_4_incrColl:    method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 6 /\ pc_ArrayCollection_0_4 = 0
+concurrentMethods_ArrayCollection_0_3_tidyupColls_and_ArrayCollection_0_4_tidyupColls:    method_ArrayCollection_0_3 = 7 /\ pc_ArrayCollection_0_3 = 0    /\ method_ArrayCollection_0_4 = 7 /\ pc_ArrayCollection_0_4 = 0
+/*ObjectClass*/
+requires_clause_of_ObjectClass_ObjectClass_0_0:    method_ObjectClass_0_0 = 1    /\ pc_ObjectClass_0_0 = 0
+requires_clause_of_ObjectClass_manipulateObjects_0_0:    method_ObjectClass_0_0 = 2    /\ pc_ObjectClass_0_0 = 0
+
+
+stateTransition_of_ObjectClass_from_alive_to_alive:    state_ObjectClass_0 = 1    /\ EX(state_ObjectClass_0 = 1)
+stateTransition_of_ObjectClass_from_alive_to_alive:    state_ObjectClass_0 = 1    /\ EX(state_ObjectClass_0 = 2)
+
+stateTransition_of_ObjectClass_from_alive_to_alive:    state_ObjectClass_0 = 2    /\ EX(state_ObjectClass_0 = 1)
+stateTransition_of_ObjectClass_from_alive_to_alive:    state_ObjectClass_0 = 2    /\ EX(state_ObjectClass_0 = 2)
+
+
+
+
+concurrentMethods_ObjectClass_0_0_ObjectClass_and_ObjectClass_0_1_ObjectClass:    method_ObjectClass_0_0 = 1 /\ pc_ObjectClass_0_0 = 0    /\ method_ObjectClass_0_1 = 1 /\ pc_ObjectClass_0_1 = 0
+concurrentMethods_ObjectClass_0_0_ObjectClass_and_ObjectClass_0_1_manipulateObjects:    method_ObjectClass_0_0 = 1 /\ pc_ObjectClass_0_0 = 0    /\ method_ObjectClass_0_1 = 2 /\ pc_ObjectClass_0_1 = 0
+
+concurrentMethods_ObjectClass_0_0_manipulateObjects_and_ObjectClass_0_1_ObjectClass:    method_ObjectClass_0_0 = 2 /\ pc_ObjectClass_0_0 = 0    /\ method_ObjectClass_0_1 = 1 /\ pc_ObjectClass_0_1 = 0
+concurrentMethods_ObjectClass_0_0_manipulateObjects_and_ObjectClass_0_1_manipulateObjects:    method_ObjectClass_0_0 = 2 /\ pc_ObjectClass_0_0 = 0    /\ method_ObjectClass_0_1 = 2 /\ pc_ObjectClass_0_1 = 0
+
+
+
+concurrentMethods_ObjectClass_0_1_ObjectClass_and_ObjectClass_0_2_ObjectClass:    method_ObjectClass_0_1 = 1 /\ pc_ObjectClass_0_1 = 0    /\ method_ObjectClass_0_2 = 1 /\ pc_ObjectClass_0_2 = 0
+concurrentMethods_ObjectClass_0_1_ObjectClass_and_ObjectClass_0_2_manipulateObjects:    method_ObjectClass_0_1 = 1 /\ pc_ObjectClass_0_1 = 0    /\ method_ObjectClass_0_2 = 2 /\ pc_ObjectClass_0_2 = 0
+
+concurrentMethods_ObjectClass_0_1_manipulateObjects_and_ObjectClass_0_2_ObjectClass:    method_ObjectClass_0_1 = 2 /\ pc_ObjectClass_0_1 = 0    /\ method_ObjectClass_0_2 = 1 /\ pc_ObjectClass_0_2 = 0
+concurrentMethods_ObjectClass_0_1_manipulateObjects_and_ObjectClass_0_2_manipulateObjects:    method_ObjectClass_0_1 = 2 /\ pc_ObjectClass_0_1 = 0    /\ method_ObjectClass_0_2 = 2 /\ pc_ObjectClass_0_2 = 0
+
+
+
+concurrentMethods_ObjectClass_0_2_ObjectClass_and_ObjectClass_0_3_ObjectClass:    method_ObjectClass_0_2 = 1 /\ pc_ObjectClass_0_2 = 0    /\ method_ObjectClass_0_3 = 1 /\ pc_ObjectClass_0_3 = 0
+concurrentMethods_ObjectClass_0_2_ObjectClass_and_ObjectClass_0_3_manipulateObjects:    method_ObjectClass_0_2 = 1 /\ pc_ObjectClass_0_2 = 0    /\ method_ObjectClass_0_3 = 2 /\ pc_ObjectClass_0_3 = 0
+
+concurrentMethods_ObjectClass_0_2_manipulateObjects_and_ObjectClass_0_3_ObjectClass:    method_ObjectClass_0_2 = 2 /\ pc_ObjectClass_0_2 = 0    /\ method_ObjectClass_0_3 = 1 /\ pc_ObjectClass_0_3 = 0
+concurrentMethods_ObjectClass_0_2_manipulateObjects_and_ObjectClass_0_3_manipulateObjects:    method_ObjectClass_0_2 = 2 /\ pc_ObjectClass_0_2 = 0    /\ method_ObjectClass_0_3 = 2 /\ pc_ObjectClass_0_3 = 0
+
+
+
+concurrentMethods_ObjectClass_0_3_ObjectClass_and_ObjectClass_0_4_ObjectClass:    method_ObjectClass_0_3 = 1 /\ pc_ObjectClass_0_3 = 0    /\ method_ObjectClass_0_4 = 1 /\ pc_ObjectClass_0_4 = 0
+concurrentMethods_ObjectClass_0_3_ObjectClass_and_ObjectClass_0_4_manipulateObjects:    method_ObjectClass_0_3 = 1 /\ pc_ObjectClass_0_3 = 0    /\ method_ObjectClass_0_4 = 2 /\ pc_ObjectClass_0_4 = 0
+
+concurrentMethods_ObjectClass_0_3_manipulateObjects_and_ObjectClass_0_4_ObjectClass:    method_ObjectClass_0_3 = 2 /\ pc_ObjectClass_0_3 = 0    /\ method_ObjectClass_0_4 = 1 /\ pc_ObjectClass_0_4 = 0
+concurrentMethods_ObjectClass_0_3_manipulateObjects_and_ObjectClass_0_4_manipulateObjects:    method_ObjectClass_0_3 = 2 /\ pc_ObjectClass_0_3 = 0    /\ method_ObjectClass_0_4 = 2 /\ pc_ObjectClass_0_4 = 0
+/*Client*/
+requires_clause_of_Client_Client_0_0:    method_Client_0_0 = 1    /\ pc_Client_0_0 = 0
+requires_clause_of_Client_main_0_0:    method_Client_0_0 = 2    /\ pc_Client_0_0 = 0
+
+
+stateTransition_of_Client_from_alive_to_alive:    state_Client_0 = 1    /\ EX(state_Client_0 = 1)
+stateTransition_of_Client_from_alive_to_alive:    state_Client_0 = 1    /\ EX(state_Client_0 = 2)
+
+stateTransition_of_Client_from_alive_to_alive:    state_Client_0 = 2    /\ EX(state_Client_0 = 1)
+stateTransition_of_Client_from_alive_to_alive:    state_Client_0 = 2    /\ EX(state_Client_0 = 2)
+
+
+
+
+concurrentMethods_Client_0_0_Client_and_Client_0_1_Client:    method_Client_0_0 = 1 /\ pc_Client_0_0 = 0    /\ method_Client_0_1 = 1 /\ pc_Client_0_1 = 0
+concurrentMethods_Client_0_0_Client_and_Client_0_1_main:    method_Client_0_0 = 1 /\ pc_Client_0_0 = 0    /\ method_Client_0_1 = 2 /\ pc_Client_0_1 = 0
+
+concurrentMethods_Client_0_0_main_and_Client_0_1_Client:    method_Client_0_0 = 2 /\ pc_Client_0_0 = 0    /\ method_Client_0_1 = 1 /\ pc_Client_0_1 = 0
+concurrentMethods_Client_0_0_main_and_Client_0_1_main:    method_Client_0_0 = 2 /\ pc_Client_0_0 = 0    /\ method_Client_0_1 = 2 /\ pc_Client_0_1 = 0
+
+
+
+concurrentMethods_Client_0_1_Client_and_Client_0_2_Client:    method_Client_0_1 = 1 /\ pc_Client_0_1 = 0    /\ method_Client_0_2 = 1 /\ pc_Client_0_2 = 0
+concurrentMethods_Client_0_1_Client_and_Client_0_2_main:    method_Client_0_1 = 1 /\ pc_Client_0_1 = 0    /\ method_Client_0_2 = 2 /\ pc_Client_0_2 = 0
+
+concurrentMethods_Client_0_1_main_and_Client_0_2_Client:    method_Client_0_1 = 2 /\ pc_Client_0_1 = 0    /\ method_Client_0_2 = 1 /\ pc_Client_0_2 = 0
+concurrentMethods_Client_0_1_main_and_Client_0_2_main:    method_Client_0_1 = 2 /\ pc_Client_0_1 = 0    /\ method_Client_0_2 = 2 /\ pc_Client_0_2 = 0
+
+
+
+concurrentMethods_Client_0_2_Client_and_Client_0_3_Client:    method_Client_0_2 = 1 /\ pc_Client_0_2 = 0    /\ method_Client_0_3 = 1 /\ pc_Client_0_3 = 0
+concurrentMethods_Client_0_2_Client_and_Client_0_3_main:    method_Client_0_2 = 1 /\ pc_Client_0_2 = 0    /\ method_Client_0_3 = 2 /\ pc_Client_0_3 = 0
+
+concurrentMethods_Client_0_2_main_and_Client_0_3_Client:    method_Client_0_2 = 2 /\ pc_Client_0_2 = 0    /\ method_Client_0_3 = 1 /\ pc_Client_0_3 = 0
+concurrentMethods_Client_0_2_main_and_Client_0_3_main:    method_Client_0_2 = 2 /\ pc_Client_0_2 = 0    /\ method_Client_0_3 = 2 /\ pc_Client_0_3 = 0
+
+
+
+concurrentMethods_Client_0_3_Client_and_Client_0_4_Client:    method_Client_0_3 = 1 /\ pc_Client_0_3 = 0    /\ method_Client_0_4 = 1 /\ pc_Client_0_4 = 0
+concurrentMethods_Client_0_3_Client_and_Client_0_4_main:    method_Client_0_3 = 1 /\ pc_Client_0_3 = 0    /\ method_Client_0_4 = 2 /\ pc_Client_0_4 = 0
+
+concurrentMethods_Client_0_3_main_and_Client_0_4_Client:    method_Client_0_3 = 2 /\ pc_Client_0_3 = 0    /\ method_Client_0_4 = 1 /\ pc_Client_0_4 = 0
+concurrentMethods_Client_0_3_main_and_Client_0_4_main:    method_Client_0_3 = 2 /\ pc_Client_0_3 = 0    /\ method_Client_0_4 = 2 /\ pc_Client_0_4 = 0
+sinkstates_deadlocks:    !EX(true)
+
