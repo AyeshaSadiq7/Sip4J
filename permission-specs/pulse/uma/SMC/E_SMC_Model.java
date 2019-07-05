@@ -60,7 +60,7 @@ public class E_SMC_Model {
 		
 		try{ 
 			
-				K = 4; //PulseSettings.getAliasPerObject();
+				K = 2; //PulseSettings.getAliasPerObject();
 				
 				sTestType = testType;
 				
@@ -534,7 +534,7 @@ public class E_SMC_Model {
 					  	tab+"/\\ tkrB_"+className+"_"+objectIndex+"'"+" = "+"tkrB_"+className+"_"+objectIndex+" - 1"+
 					    tab+"/\\ tkwB_"+className+"_"+objectIndex+"'"+" = 0"+
 					    tab+"/\\ tkr_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = 1"+
-					    tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = "+(K+1)
+					    tab+"/\\ tkw_"+className+"_"+objectIndex+"_"+refIndex+"'"+" = "+(K+1)// added by me
 					    );
 		else if (ap.compareToIgnoreCase("PURE")==0)
 			out.write( 
@@ -1037,12 +1037,12 @@ private static void updateStateInvariants(E_Class _class,String methodName, Stri
 		else if (ap.compareToIgnoreCase("FULL")==0)
 			out.write(
 				  tab+"/\\ tkrB_"+_class.getName()+"_"+objectIndex+" > 0"+
-				  tab+"/\\ tkwB_"+_class.getName()+"_"+objectIndex+" = "+(K+1)
+				  tab+"/\\ tkwB_"+_class.getName()+"_"+objectIndex+" = "+(K+1)//1
 				  );
 		else if (ap.compareToIgnoreCase("SHARE")==0)
 			out.write(
 				  tab+"/\\ tkrB_"+_class.getName()+"_"+objectIndex+" > 0"+
-				  tab+"/\\ tkwB_"+_class.getName()+"_"+objectIndex+" = "+(K+1)//added by ayesha
+				  tab+"/\\ tkwB_"+_class.getName()+"_"+objectIndex+" = "+(K+1)//1 should be added by ayesha
 				  );
 		else if (ap.compareToIgnoreCase("PURE")==0)
 			out.write(
@@ -1056,7 +1056,6 @@ private static void updateStateInvariants(E_Class _class,String methodName, Stri
 					);
 	}
 	
-
 	private static void error(String state, String method) {
 		if (state.compareToIgnoreCase("alive")!=0)
 		System.out.println("WARNING: The state '"+state+"' in "+method+ " is undefined. There are two possible reasons for this error, either state is not defined for this class" +
