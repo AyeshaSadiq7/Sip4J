@@ -60,7 +60,7 @@ public class E_SMC_Model {
 		
 		try{ 
 			
-				K = 2; //PulseSettings.getAliasPerObject();
+				K = 4; //PulseSettings.getAliasPerObject();
 				
 				sTestType = testType;
 				
