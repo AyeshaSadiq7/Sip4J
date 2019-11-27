@@ -1062,7 +1062,8 @@ private static String setObjectPermission(int max) {
 					else if (var.getPre_permissions().equals("none")){
 						temp[i] = 1;
 					}
-					else if (var.getPre_permissions().equals("none") && var.getPost_permissions().equals("unique") && var.getRefMethod().getMgraphName().equals(GlobalVariables.JGFrun) == false){
+					else if (var.getPre_permissions().equals("none") && var.getPost_permissions().equals("unique") && 
+							var.getRefMethod().getMgraphName().equals(GlobalVariables.JGFrun) == false){
 						temp[i] = 1;
 						tempMax = 1;
 						//return tempMax;

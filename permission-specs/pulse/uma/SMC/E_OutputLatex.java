@@ -129,7 +129,7 @@ public static void create_CommandLine(){
 			if (bRequires==true)
 				writeRequiresClauseSatisfiabilty(_class);
 			if (bSTM==true)
-				writeStateTransitionMatrix(_class);
+				//writeStateTransitionMatrix(_class);
 			if (bconcurrency==true)
 				writeMethodConcurrencyMatrix(_class);
 		}
@@ -284,9 +284,9 @@ private static void writeAbbervations() throws IOException {
 		  
 		  int c_total_methods = (int) Math.sqrt(total_methods *1.0);
 		  
-		  System.out.println("Class Name ="+_class.getName().toString());
+		  //System.out.println("Class Name ="+_class.getName().toString());
 		  
-		  System.out.println("Total methods at class level ="+c_total_methods);
+		  //System.out.println("Total methods at class level ="+c_total_methods);
 		  
 		  int c_total_pairs = c_total_methods * (c_total_methods - 1) / 2 + c_total_methods;
 		  
@@ -298,22 +298,22 @@ private static void writeAbbervations() throws IOException {
 		
 		  int c_concur_percentage;
 		
-		  System.out.println("Total no. of pairs at class level= "+c_total_pairs);
+		  //System.out.println("Total no. of pairs at class level= "+c_total_pairs);
 			
-		  System.out.println("No. of concurrent pairs at class level= "+(c_parallel_pairs));
+		 // System.out.println("No. of concurrent pairs at class level= "+(c_parallel_pairs));
 			
-		  System.out.println("No. of diagonal pairs at class level = "+(c_parallel_diag));
+		  //System.out.println("No. of diagonal pairs at class level = "+(c_parallel_diag));
 			
 		  int half = (int) Math.ceil(1.0*(c_parallel_pairs - c_parallel_diag)/2);
 				
 		 //System.out.println("No. of pairs that can be parallelised with each others = "+half);
 		  int actual_parallel = half + c_parallel_diag;
 		 
-		  System.out.println("No. of actual concurrent pairs at class level= "+(actual_parallel));
+		  //System.out.println("No. of actual concurrent pairs at class level= "+(actual_parallel));
 		 
 		  c_concur_percentage = (int) Math.round(1.0 * actual_parallel/ c_total_pairs * 100.0);
 		
-		 System.out.println("% Parallelisation at class level= "+c_concur_percentage);
+		 //System.out.println("% Parallelisation at class level= "+c_concur_percentage);
 		 
 		 E_MCombinations parallel_m_stat = new E_MCombinations();
 		  
@@ -370,7 +370,7 @@ private static void writeAbbervations() throws IOException {
 		latex.write("&"+beginSideWay+"{\\color{BlueGreen}States}"+endSideWay);
 		
 		if (bRequires==true)
-			latex.write("&"+beginSideWay+"{\\color{BlueGreen}Unreachable clauses}"+endSideWay);
+			latex.write("&"+beginSideWay+"{\\color{BlueGreen}Unreachable Methods}"+endSideWay);
 		
 		if (bSTM==true)
 			latex.write("&"+beginSideWay+"{\\color{BlueGreen}Unreachable states}"+endSideWay);
@@ -379,7 +379,7 @@ private static void writeAbbervations() throws IOException {
 			latex.write("&"+beginSideWay+"{\\color{BlueGreen} Possible concurrent methods}"+endSideWay);
 			latex.write("&"+beginSideWay+"{\\color{BlueGreen} Total. no. of method pairs}"+endSideWay);
 			latex.write("&"+beginSideWay+"{\\color{BlueGreen} No. of concurrent method pairs}"+endSideWay);
-			latex.write("&"+beginSideWay+"{\\color{BlueGreen} Percentage of concurrent methods pairs}"+endSideWay);
+			latex.write("&"+beginSideWay+"{\\color{BlueGreen} Percentage of concurrent method pairs}"+endSideWay);
 			
 		latex.write(endOfRow);
 		latex.write("\n\\hline\n");
@@ -482,7 +482,7 @@ private static void writeAbbervations() throws IOException {
 				return;
 		
 			latex.write("\n\\begin{longtable}{|l|l|}");
-			latex.write("\n\\caption{Method's Satisfiability(Code Reachabiity Analysis}\\\\\n\\hline");
+			latex.write("\n\\caption{Code Reachability Analysis}\\\\\n\\hline");
 			latex.write("\nMethod & Satisfiability\\\\\n\\hline\n");
 			String value;
 			

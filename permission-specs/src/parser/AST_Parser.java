@@ -636,6 +636,8 @@ public static void addMethodRefParameters(SingleVariableDeclaration para,IVariab
 	
 			if (invM != null) {
 				
+				System.out.println("My method call is = "+ invM.getName().toString());
+				
 				mDecl = fetchParentMethodDecl(invM);
 				
 				arg = mapFormalParameter(invkM, pb, mDecl);
@@ -763,7 +765,7 @@ public static void addConstRefParameters(SingleVariableDeclaration para,IVariabl
 	
 	LinkedList<E_Argument> argList = new LinkedList<E_Argument>();
 
-	E_Object obj = null;
+	E_Object obj = new E_Object();
 	
   for(ClassInstanceCreation invM: thisMethInv){
 	
@@ -780,7 +782,7 @@ public static void addConstRefParameters(SingleVariableDeclaration para,IVariabl
 				}
 				else{
 					
-					obj = AST_Parser.getQualifyingObject(sourceDecl);
+					//obj = AST_Parser.getQualifyingObject(sourceDecl);
 				}
 		   }
 			
@@ -816,6 +818,7 @@ public static void addConstRefParameters(SingleVariableDeclaration para,IVariabl
 						 sourceMethod = AST_Parser.createNewMethod(mDecl, pObj);
 					
 						 AST_Parser.addMethodData(mDecl, pObj);
+						 
 						 E_Class parentClass = null;
 						 
 						if(mDecl.resolveBinding().getDeclaringClass() != null && mDecl.resolveBinding().getDeclaringClass().isInterface()==false){
@@ -831,7 +834,7 @@ public static void addConstRefParameters(SingleVariableDeclaration para,IVariabl
 				  }
 				  if(sourceMethod!=null){  
 				    	  
-				   // pObj =  AST_Parser.getMQualifyingObject(sourceMethod);
+				    //pObj =  AST_Parser.getMQualifyingObject(sourceMethod);
 			
 				 	if(sourceMethod.getRefparams()!=null){
 								    					
@@ -894,12 +897,11 @@ public static MethodInvocation findRecursiveMInvocations(List<MethodInvocation> 
 	return result;
 			 
 }
+
 public static E_Argument mapFormalParameter(List<E_InvokedMethod>  invkM, IVariableBinding pb, MethodDeclaration callerMethod){
 	
 	E_Argument a = null;
-	
 	LinkedList<E_Argument> argList = null;
-	
 	for (E_InvokedMethod inv : invkM){
 		if (inv != null && inv.getCallerMethod() != null) {
 			if(inv.getName().equals(callerMethod.getName().toString()) && 
@@ -3145,10 +3147,12 @@ public static void addSubMethodFields(E_Method sourceMethod) {
 					
 					for(E_MRefField rf : refs){
 						
-						if(rf.isParam()){// changes made for plural translation
+						/*if(rf.isParam()){// changes made for plural translation
 							continue;
-						}else
-						if(rf.getName().equals("result") &&( Parser_Utilities.checkPrimitiveType(sourceMethod.getReturnType().toString()) ||Parser_Utilities.checkWrapperType(sourceMethod.getReturnType().toString())|| (sourceMethod.getReturnType().equals("") 
+						}else*/
+						if(rf.getName().equals("result") && ( Parser_Utilities.checkPrimitiveType(sourceMethod.getReturnType().toString()) 
+								|| Parser_Utilities.checkWrapperType(sourceMethod.getReturnType().toString()) 
+								|| (sourceMethod.getReturnType().equals("") 
 								|| sourceMethod.getReturnType().equals("void")))){
 							continue;
 						}
@@ -3291,9 +3295,9 @@ public static boolean matchArgwithParam(E_Argument arg, E_MRefParameter p){
 		}*/
 	public static void addMFieldsContext(LinkedList<E_Class> _class){
 
- LinkedList<E_Method> _allmethods = Data_Controller.fetchAllMethods();
+   LinkedList<E_Method> _allmethods = Data_Controller.fetchAllMethods();
 			
-  for(E_Class c: _class){
+   for(E_Class c: _class){
 			
 	  LinkedList<E_Method> _cmethods = c.getMethods();
 					
@@ -3301,7 +3305,7 @@ public static boolean matchArgwithParam(E_Argument arg, E_MRefParameter p){
 				
 			  if (_cmethods.listIterator(i).hasNext()) {
 					
-				if (_cmethods.listIterator(i).next().getName().equals(_cmethods.listIterator(i).next().getDeclaringClass())) {
+				if (_cmethods.listIterator(i).next().getName().toString().equals(_cmethods.listIterator(i).next().getDeclaringClass().toString())) {
 
 					LinkedList<E_MRefField> rv1 = _cmethods.listIterator(i).next()
 							.getRefVariable();
@@ -3310,7 +3314,7 @@ public static boolean matchArgwithParam(E_Argument arg, E_MRefParameter p){
 							 r1.setCOperation(null);
 						}
 				} 
-				else if (_cmethods.listIterator(i).next().getName().equals(GlobalVariables.MAIN) || _cmethods.listIterator(i).next().getName().equals(GlobalVariables.JGFrun)) {
+				else if (_cmethods.listIterator(i).next().getName().toString().equals(GlobalVariables.MAIN) || _cmethods.listIterator(i).next().getName().toString().equals(GlobalVariables.JGFrun)) {
 
 					LinkedList<E_MRefField> rv1 = _cmethods.listIterator(i).next().getRefVariable();
 					
@@ -3324,21 +3328,21 @@ public static boolean matchArgwithParam(E_Argument arg, E_MRefParameter p){
 	
 				}else{
 					
-					     LinkedList<E_MRefField> rv1 = _cmethods.listIterator(i).next().getRefVariable();
+					    LinkedList<E_MRefField> rv1 = _cmethods.listIterator(i).next().getRefVariable();
 					
-				       if(rv1.isEmpty() == false && rv1 !=null){
+				        if(rv1.isEmpty() == false && rv1 !=null){
 					 
 					      for (int j = 0; j < _allmethods.size(); j++) {
 
-						     if (_allmethods.listIterator(j).hasNext()) {
+						   if (_allmethods.listIterator(j).hasNext()) {
 							
-							  /*if(_allmethods.listIterator(j).next().getName().equals("main")){
+							  if(_allmethods.listIterator(j).next().getName().toString().equals(GlobalVariables.MAIN)){
 							 	continue;
-							 }
-							 else*/
+							  }
+							  else{
 							  ////////
-								if(_cmethods.listIterator(i).next().getName().equals(_allmethods.listIterator(j).next().getName()) 
-										&& _cmethods.listIterator(i).next().getDeclClassQName().equals(_allmethods.listIterator(j).next().getDeclClassQName())){
+								if(_cmethods.listIterator(i).next().getName().toString().equals(_allmethods.listIterator(j).next().getName().toString()) 
+										&& _cmethods.listIterator(i).next().getDeclClassQName().toString().equals(_allmethods.listIterator(j).next().getDeclClassQName().toString())){
 									continue;
 								}
 								else if(_allmethods.listIterator(j).next().isConstr()){ 
@@ -3380,6 +3384,7 @@ public static boolean matchArgwithParam(E_Argument arg, E_MRefParameter p){
 									   }
 									}
 								 } 
+							 }
 							  }
 							}
 					       }
@@ -3505,7 +3510,7 @@ public static boolean matchArgwithParam(E_Argument arg, E_MRefParameter p){
 						    		
 						    		for(MethodInvocation inv:subInvs){
 						    			if(inv.getName().toString().equals(thi_inv.getName().toString())){
-						    				obj = new E_Object();
+						    				//obj = new E_Object();
 						    				return obj;
 						    				//break;
 						    			}
@@ -3522,7 +3527,8 @@ public static boolean matchArgwithParam(E_Argument arg, E_MRefParameter p){
 								 				//}
 								    		 }
 								    		 else{
-								    			 return getQualifyingObject(pDecl);
+								    			
+								    			 //return getQualifyingObject(pDecl);
 								    		 }
 						    			}
 						    		}
@@ -4656,17 +4662,7 @@ public static void addLocalAsLocalAlias(E_MLocalVariable pointeeLocalVar,E_MLoca
 		
 	    LinkedList<E_Class> _class = Data_Controller.fetchAllClasses();
 			
-	    // we need to fetch all methods irrespective of class when there are multiple classes
-	
-		//addMParamAsFields(_class);// find and add referenced parameters at method level
-		
-	     //addSubMethodsFields(_class);// add sub methods fields as referenced fields at method level
-			
-		//updateLocalAsFieldAlias(_class);
-		
-		//updateFieldAsFieldAlias(_class);
-		
-		// find and add context for all the referenced variables in a method
+	   	// find and add context for all the referenced variables in a method
 		addMFieldsContext(_class);
 	
 	}
@@ -6377,7 +6373,13 @@ public static void checkRightSide(Expression laExp,Expression raExp, E_Method _m
 			if (p.getNodeType() == ASTNode.METHOD_DECLARATION){
 				mDecl = (MethodDeclaration) p;
 				break;
-			}	
+			}
+			else if(p.getNodeType() == ASTNode.TYPE_DECLARATION){
+				TypeDeclaration _class = (TypeDeclaration) p;
+				
+				System.out.println("I am in Class = "+_class.resolveBinding().getName().toString());
+				//method = Data_Controller.searchConstMethod(initClass);
+			}
 		}
 	
 		return mDecl;	
@@ -7195,9 +7197,9 @@ public static List<ClassInstanceCreation> getConstructorInvokation(final MethodD
 	        					qualObj.setObjBind(qualBind);
 	        				 }
 	        				 else{
-        						 MethodDeclaration mDecl = getMethodDeclaration(cmb);
+        						// MethodDeclaration mDecl = getMethodDeclaration(cmb);
         						 
-        						 qualObj = getQualifyingObject(mDecl);
+        						// qualObj = getQualifyingObject(mDecl);
         					 }
         					 if(qualObj.getName().equals("this")){
         						qualObj.setName(cmb.getDeclaringClass().getQualifiedName().toString());
@@ -7243,9 +7245,9 @@ public static List<ClassInstanceCreation> getConstructorInvokation(final MethodD
 	        						qualObj.setObjBind(qualBind);
 	        					 }
 	        					 else{
-	        						 MethodDeclaration mDecl = getMethodDeclaration(cmb);
+	        						 //MethodDeclaration mDecl = getMethodDeclaration(cmb);
 	        						 
-	        						 qualObj = getQualifyingObject(mDecl);
+	        						// qualObj = getQualifyingObject(mDecl);
 	        						
 	        					 }
 	        					 if(qualObj.getName().equals("this")){

@@ -570,7 +570,7 @@ public class AST_Statment_Visitor extends ASTVisitor {
 				
 				MethodDeclaration mDec = AST_Parser.getMethodDeclaration(smb);
 				
-				obj = AST_Parser.getQualifyingObject(mDec);
+				//obj = AST_Parser.getQualifyingObject(mDec);
 				
 				//E_MRefField field = AST_Parser.addQualObjofInvokMethod(node.getExpression(),pMethod,node.getNodeType());	// add receiver object of invoked method
   		 	   
